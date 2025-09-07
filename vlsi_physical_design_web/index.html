@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLSI Physical Design Interview Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for a sleeker look */
+        #sidebar {
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #1f2937;
+        }
+        #sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        #sidebar::-webkit-scrollbar-track {
+            background: #1f2937; 
+        }
+        #sidebar::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        #sidebar::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        #sidebar-nav a.active {
+            background-color: #1d4ed8; /* A darker blue for active state */
+            color: white;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <div id="app" class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-gray-800 w-72 flex-shrink-0 p-4 space-y-2 h-full overflow-y-auto">
+            <h1 class="text-2xl font-bold text-white mb-4">VLSI PD Topics</h1>
+            <nav id="sidebar-nav">
+                <a href="cmos_fundamentals.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white active">CMOS Fundamentals</a>
+                <a href="logic_synthesis.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Logic Synthesis</a>
+                <a href="pd_inputs.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">PD Inputs</a>
+                <a href="floorplan.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Floorplanning</a>
+                <a href="powerplan.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Power Planning</a>
+                <a href="placement.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Placement</a>
+                <a href="cts.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Clock Tree Synthesis (CTS)</a>
+                <a href="sta.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Static Timing Analysis (STA)</a>
+                <a href="sta_numericals.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">STA Numericals</a>
+                <a href="pd_verification.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">PD Verification</a>
+                <a href="congestion_analysis.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Congestion Analysis</a>
+                <a href="ir_analysis.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">IR Analysis</a>
+                <a href="power_analysis.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Power Analysis</a>
+                <a href="eco.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">ECO</a>
+                <a href="pd_issues.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">PD Issues</a>
+                <a href="io_design.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">IO Design</a>
+                <a href="std_cell_types.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Standard Cell Types</a>
+                <a href="pd_cells.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">PD Cells</a>
+                <a href="delay_models.html" target="content_frame" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-600 hover:text-white">Delay Models</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-gray-800 shadow-md p-4 text-center">
+                 <div class="text-xl font-semibold">VLSI Physical Design Interview Hub</div>
+            </header>
+            <iframe name="content_frame" src="cmos_fundamentals.html" class="flex-1 w-full h-full border-0"></iframe>
+             <footer class="text-center p-2 text-gray-500 bg-gray-800 text-xs">
+                Content derived from "VLSI BACK-END ADVENTURE" © 2021. This is an educational tool.
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('#sidebar-nav a');
+            
+            // Function to set the active link
+            function setActiveLink(activeLink) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                if(activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Set initial active link based on iframe src
+            const initialSrc = document.querySelector('iframe[name="content_frame"]').src;
+            const initialLink = Array.from(navLinks).find(link => link.href === initialSrc);
+            setActiveLink(initialLink);
+
+            // Add click event listener to all nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    setActiveLink(this);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
