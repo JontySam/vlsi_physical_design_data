@@ -6,6 +6,11 @@
     <title>CMOS Fundamentals</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- MathJax for rendering equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Chart.js for interactive graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #111827; color: #d1d5db;}
         .content-container { max-width: 900px; margin: auto; }
@@ -18,8 +23,10 @@
         strong { color: #93c5fd; font-weight: 600; }
         .yt-link { color: #f87171; text-decoration: underline; font-weight: 500;}
         .q-title { font-weight: 700; color: #a5b4fc;}
-        .answer { border-left: 3px solid #4f46e5; padding-left: 1rem; margin-top: 0.5rem; }
+        .answer { border-left: 3px solid #4f46e5; padding-left: 1rem; margin-top: 0.5rem; margin-bottom: 2rem; }
         code { background-color: #1f2937; color: #a5b4fc; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: 'Courier New', Courier, monospace; }
+        details { background-color: #1f2937; border-radius: 0.5rem; padding: 1rem; margin-bottom: 1rem; border: 1px solid #374151; }
+        summary { font-size: 1.5rem; font-weight: 600; color: #e5e7eb; cursor: pointer; }
     </style>
 </head>
 <body class="p-6 lg:p-8">
@@ -27,137 +34,227 @@
         <h2>CMOS Fundamentals</h2>
 
         <!-- Content from PDF -->
-        <section>
-            <h3 class="q-title">Q1. Why low power has become an important issue in the present day VLSI circuit realization?</h3>
-            <div class="answer">
-                <p>In deep submicron technology the power has become as one of the most important issue because of: Increasing transistor count; the number of transistors is getting doubled in every 18 months based on Moore's Law. Higher speed of operation; the power dissipation is proportional to the clock frequency. Greater device leakage currents; In nanometer technology the leakage component becomes a significant percentage of the total power and the leakage current increases at a faster rate than dynamic power in technology generations.</p>
-            </div>
-
-            <h3 class="q-title">Q2. How reliability of a VLSI circuit is related to its power dissipation?</h3>
-            <div class="answer">
-                <p>It has been observed that every 10°C rise in temperature roughly doubles the failure rate because various failure mechanism such as silicon interconnect fatigue, electromigration, ion diffusion, junction diffusion and thermal runaway starts occurring as temperature increases.</p>
-            </div>
-
-            <h3 class="q-title">Q3. How environment is affected by the power dissipation of VLSI circuits?</h3>
-            <div class="answer">
-                <p>According to an estimate of the U.S. Environmental Protection Agency (EPA), 80% of the power consumption by office equipment are due to computing equipment and a large part from unused equipment. Moreover, the power is dissipated mostly in the form of heat. The cooling techniques, such as AC transfers the heat to the environment.</p>
-            </div>
-
-            <h3 class="q-title">Q4. Why leakage power dissipation has become an important issue in deep submicron technology?</h3>
-            <div class="answer">
-                <p>In deep submicron technology the leakage component becomes a significant percentage of the total power and the leakage current increases at a faster rate than dynamic power in new technology generations. That is why the leakage power has become an important issue.</p>
-            </div>
-
-            <h3 class="q-title">Q5. Distinguish between energy and power dissipation of VLSI circuits. Which one is more important for portable systems?</h3>
-            <div class="answer">
-                <p>Power (P) is the power dissipation in Watts at different instances of time. On the other hand, energy (E) refers to the energy consumed in Joule over a period of time (E = P * t).</p>
-                <p>For portable systems, <strong>energy</strong> is the more critical metric. A battery stores a finite amount of energy, and minimizing the total energy consumed for a task directly translates to longer battery life.</p>
-            </div>
-
-            <h3 class="q-title">Q6. What are the commonly used conducting layers used in IC fabrication?</h3>
-            <div class="answer">
-                <p>Fabrication involves fabrication of patterned layers of the three conducting materials: metal, poly-silicon and diffusion by using a series of photolithographic techniques and chemical processes involving oxidation of silicon, diffusion of impurities into the silicon and deposition and etching of aluminum or polysilicon on the silicon to provide interconnection.</p>
-            </div>
-
-            <h3 class="q-title">Q7. Show the basic structure of a MOS transistor.</h3>
-            <div class="answer">
-                <p>The basic structure of a MOS transistor is given below. On a lightly doped substrate of silicon two islands of diffusion regions called as source and drain, of opposite polarity of that of the substrate, are created. Between these two regions, a thin insulating layer of silicon dioxide is formed and on top of this a conducting material made of poly-silicon or metal called gate is deposited.</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/MOSFET_structure.svg/500px-MOSFET_structure.svg.png" alt="Basic structure of a MOS transistor">
-            </div>
-
-            <h3 class="q-title">Q8. What is the latch up problem that arises in bulk CMOS technology?</h3>
-            <div class="answer">
-                <p>The latch-up is an inherent problem in both n-well as well as p-well based CMOS circuits. The phenomenon is caused by the parasitic bipolar transistors formed in the bulk of silicon as shown in the figure for the n-well process. Latch-up can be defined as the formation of a low-impedance path between the power supply and ground rails through the parasitic npn and pnp bipolar transistors. As shown the BJTs are cross-coupled to form the structure of a silicon-controlled-rectifier (SCR) providing a short-circuit path between the power rail and ground. Leakage current through the parasitic resistors can cause one transistor to turn on, which in turn turns on the other transistor due to positive feedback and leading to heavy current flow and consequent device failure.</p>
-                 <img src="https://i.stack.imgur.com/e5mIe.png" alt="Latch-up parasitic SCR in CMOS">
-            </div>
-
-            <h3 class="q-title">Q9. How the latch up problem can be overcome?</h3>
-            <div class="answer">
-                <p>There are several approaches to reduce the tendency of Latch-up. Some of the important techniques are mentioned below:</p>
-                <ul>
-                    <li>Use guard ring around p- and/or n-well with frequent contacts to the rings</li>
-                    <li>To reduce the gain product B1XB2</li>
-                    <li>Moving the n-well and the n+ source/drain further apart</li>
-                    <li>Buried n+ layer in well to reduce gain of Q1</li>
-                    <li>Higher substrate doping level to reduce R-sub</li>
-                    <li>Reduce R-well by making low resistance contact to GND</li>
-                </ul>
-            </div>
-            
-             <h3 class="q-title">Q11. What are the benefits of SOI technology relative to conventional bulk CMOS technology?</h3>
-            <div class="answer">
-                <p>Benefits of SOI technology relative to conventional silicon (bulk CMOS):</p>
-                <ul>
-                    <li>Lowers parasitic capacitance due to isolation from the bulk silicon, which improves power consumption and thus high speed performance.</li>
-                    <li>Reduced short channel effects</li>
-                    <li>Better sub-threshold slope.</li>
-                    <li>No Latch up due to BOX (buried oxide).</li>
-                    <li>Lower Threshold voltage.</li>
-                    <li>Reduction in junction depth leads to low leakage current.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Advanced Content -->
-        <section>
-            <h2>Advanced CMOS Concepts</h2>
-            
-            <h3>MOSFET Modes of Operation</h3>
-            <p>The operation of an n-channel MOSFET is categorized into three modes based on the gate voltage ($V_{GS}$) relative to the threshold voltage ($V_T$).</p>
-            <ul>
-                <li><strong>Accumulation Mode ($V_{GS} << V_T$):</strong> A negative gate voltage attracts majority carriers (holes in p-substrate) to the silicon-oxide interface. No conductive channel exists.</li>
-                <li><strong>Depletion Mode ($0 < V_{GS} \approx V_T$):</strong> A small positive gate voltage repels holes, creating a region under the gate depleted of mobile charge carriers, exposing fixed negative acceptor ions.</li>
-                <li><strong>Inversion Mode ($V_{GS} > V_T$):</strong> A sufficiently large positive gate voltage attracts minority carriers (electrons) to the surface, forming a conductive n-type channel between the source and drain. This is the "ON" state of the transistor.</li>
-            </ul>
-             <img src="https://i.stack.imgur.com/lO7kK.png" alt="Energy band diagrams for MOS capacitor states">
-            
-            <h3>MOSFET Regions of Operation (I-V Characteristics)</h3>
-            <p>Once in inversion mode ($V_{GS} > V_T$), the transistor's behavior is further divided into three regions based on the drain-to-source voltage ($V_{DS}$).</p>
-            <ul>
-                <li><strong>Cut-off Region ($V_{GS} < V_T$):</strong> The transistor is off, and ideally, no current flows ($I_D = 0$).</li>
-                <li><strong>Non-saturated (Linear/Triode) Region ($V_{DS} < V_{GS} - V_T$):</strong> A continuous channel exists. The drain current increases with both $V_{GS}$ and $V_{DS}$. The transistor acts like a voltage-controlled resistor.</li>
-                <li><strong>Saturated Region ($V_{DS} \ge V_{GS} - V_T$):</strong> The channel is "pinched-off" near the drain. The drain current becomes largely independent of $V_{DS}$ and is primarily controlled by $V_{GS}$, acting as a voltage-controlled current source.</li>
-            </ul>
-
-            <h3>Threshold Voltage and Body Effect</h3>
-            <p>The threshold voltage ($V_T$) is the gate voltage at which a MOS transistor begins to conduct. It is influenced by fabrication parameters and the voltage difference between the source and the substrate (body), $V_{SB}$. This is known as the <strong>body effect</strong>. Increasing $V_{SB}$ (i.e., raising the source potential above the substrate potential) increases the threshold voltage, making the transistor harder to turn on. This is a critical consideration in series-connected transistors (e.g., in a NAND gate).</p>
-            
-            <h3>Channel Length Modulation</h3>
-            <p>In the saturation region, the drain current is not perfectly constant but increases slightly with $V_{DS}$. As $V_{DS}$ increases, the channel pinch-off point moves slightly toward the source, reducing the effective channel length. This effect is known as channel length modulation and is more pronounced in short-channel devices.</p>
-
-            <h3>The CMOS Inverter</h3>
-            <p>The fundamental building block of CMOS logic is the inverter, which consists of one PMOS and one NMOS transistor connected in series. Its near-ideal characteristics make it robust and power-efficient.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/CMOS_inverter.svg/400px-CMOS_inverter.svg.png" alt="CMOS Inverter Circuit Diagram">
-
-            <h4>Ideal vs. Actual Characteristics</h4>
-            <p>The ideal inverter has an infinitely sharp transition at $V_{DD}/2$. The actual characteristic has a finite transition region. Key parameters are:</p>
-            <ul>
-                <li>$V_{OH}$ (Output High Voltage) = $V_{DD}$</li>
-                <li>$V_{OL}$ (Output Low Voltage) = 0V</li>
-                <li>$V_{IH}$ (Input High Voltage): The point where the slope of the VTC is -1.</li>
-                <li>$V_{IL}$ (Input Low Voltage): The other point where the slope of the VTC is -1.</li>
-                <li>$V_{inv}$ or $V_T$ (Inversion Voltage): The point where $V_{in} = V_{out}$.</li>
-            </ul>
-             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Inverter_VTC.svg/500px-Inverter_VTC.svg.png" alt="Ideal vs Actual Inverter VTC">
-            <p>The large regions where the output is strongly high or low give CMOS logic excellent <strong>noise margins</strong>.</p>
-            
-            <h4>Voltage Scaling and its Limits</h4>
-            <p>As the supply voltage ($V_{DD}$) is reduced (scaled down) to save power, the noise margins also decrease. The theoretical lower limit for $V_{DD}$ is the sum of the nMOS and pMOS threshold voltages ($V_{DD,min} = V_{Tn} + |V_{Tp}|$). If the supply voltage is reduced further, the inverter fails to operate correctly and exhibits hysteresis in its transfer characteristic.</p>
-             <img src="https://i.imgur.com/uG9Xl6j.png" alt="CMOS Inverter VTC with Voltage Scaling">
-
-        </section>
+        <details open>
+            <summary>Fundamental Q&A</summary>
+            <section class="pt-4">
+                <h3 class="q-title">Q1. Why low power has become an important issue in the present day VLSI circuit realization?</h3>
+                <div class="answer"><p>In deep submicron technology the power has become as one of the most important issue because of: Increasing transistor count; the number of transistors is getting doubled in every 18 months based on Moore,s Law. Higher speed of operation; the power dissipation is proportional to the clock frequency. Greater device leakage currents; In nanometer technology the leakage component becomes a significant percentage of the total power and the leakage current increases at a faster rate than dynamic power in technology generations.</p></div>
+                <h3 class="q-title">Q2. How reliability of a VLSI circuit is related to its power dissipation?</h3>
+                <div class="answer"><p>It has been observed that every 10°C rise in temperature roughly doubles the failure rate because various failure mechanism such as silicon interconnect fatigue, electromigration, ion diffusion, junction diffusion and thermal runaway starts occurring as temperature increases.</p></div>
+                <h3 class="q-title">Q3. How environment is affected by the power dissipation of VLSI circuits?</h3>
+                <div class="answer"><p>According to an estimate of the U.S. Environmental Protection Agency (EPA), 80% of the power consumption by office equipment are due to computing equipment and a large part from unused equipment. Moreover, the power is dissipated mostly in the form of heat. The cooling techniques, such as AC transfers the heat to the environment.</p></div>
+                <h3 class="q-title">Q4. Why leakage power dissipation has become an important issue in deep submicron technology?</h3>
+                <div class="answer"><p>In deep submicron technology the leakage component becomes a significant percentage of the total power and the leakage current increases at a faster rate than dynamic power in new technology generations. That is why the leakage power has become an important issue.</p></div>
+                <h3 class="q-title">Q5. Distinguish between energy and power dissipation of VLSI circuits. Which one is more important for portable systems?</h3>
+                <div class="answer"><p>Power (P) is the power dissipation in Watts at different instances of time. On the other has energy (E) refers to the energy consumed in Joule over a period of time (E=P*t).</p></div>
+                <h3 class="q-title">Q6. What are the commonly used conducting layers used in IC fabrication?</h3>
+                <div class="answer"><p>Fabrication involves fabrication of patterned layers of the three conducting materials: metal, poly-silicon and diffusion by using a series of photolithographic techniques and chemical processes involving oxidation of silicon, diffusion of impurities into the silicon and deposition and etching of aluminum or polysilicon on the silicon to provide interconnection.</p></div>
+                <h3 class="q-title">Q7. Show the basic structure of a MOS transistor.</h3>
+                <div class="answer"><p>The basic structure of a MOS transistor is given below. On a lightly doped substrate of silicon two islands of diffusion regions called as source and drain, of opposite polarity of that of the substrate, are created. Between these two regions, a thin insulating layer of silicon dioxide is formed and on top of this a conducting material made of poly-silicon or metal called gate is deposited.</p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/MOSFET_structure.svg/500px-MOSFET_structure.svg.png" alt="Basic structure of a MOS transistor"></div>
+                <h3 class="q-title">Q8. What is the latch up problem that arises in bulk CMOS technology?</h3>
+                <div class="answer"><p>The latch-up is an inherent problem in both n-well as well as pwell based CMOS circuits. The phenomenon is caused by the parasitic bipolar transistors formed in the bulk of silicon as shown in the figure for the n-well process. Latch-up can be defined as the formation of a low-impedance path between the power supply and ground rails through the parasitic npn and pnp bipolar transistors. As shown the BJTs are cross-coupled to form the structure of a silicon-controlled-rectifier (SCR) providing a short-circuit path between the power rail and ground. Leakage current through the parasitic resistors can cause one transistor to turn on, which in turn turns on the other transistor due to positive feedback and leading to heavy current flow and consequent device failure.</p><img src="https://i.stack.imgur.com/e5mIe.png" alt="Latch-up parasitic SCR in CMOS"></div>
+                <h3 class="q-title">Q9. How the latch up problem can be overcome?</h3>
+                <div class="answer"><p>There are several approaches to reduce the tendency of Latch-up. Some of the important techniques are mentioned below:</p><ul><li>Use guard ring around p- and/or n-well with frequent contacts to the rings</li><li>To reduce the gain product B1XB2</li><li>Moving the n-well and the n+ source/drain further apart</li><li>Buried n+ layer in well to reduce gain of Q1</li><li>Higher substrate doping level to reduce R-sub</li><li>Reduce R-well by making low resistance contact to GND</li></ul></div>
+                <h3 class="q-title">Q11. What are the benefits of SOI technology relative to conventional bulk CMOS technology?</h3>
+                <div class="answer"><p>Benefits of SOI technology relative to conventional silicon (bulk CMOS):</p><ul><li>Lowers parasitic capacitance due to isolation from the bulk silicon, which improves power consumption and thus high speed performance.</li><li>Reduced short channel effects</li><li>Better sub-threshold slope.</li><li>No Latch up due to BOX (buried oxide).</li><li>Lower Threshold voltage.</li><li>Reduction in junction depth leads to low leakage current.</li><li>Higher Device density.</li></ul></div>
+                <h3 class="q-title">Q14. Explain the three modes of operation of a MOS transistor.</h3>
+                <div class="answer"><p>The three modes are:</p><ul><li>(a) Accumulation mode when Vgs is much less than Vt.</li><li>(b) Depletion mode when Vgs is equal to Vt.</li><li>(c) Inversion mode when Vgs is greater than Vt.</li></ul></div>
+                <h3 class="q-title">Q15. What are the three regions of operation of a MOS transistor?</h3>
+                <div class="answer"><p>The three regions are:</p><ul><li>Cut-off region: This is essentially the accumulation mode, where there is no effective flow of current between the source and drain.</li><li>Non-saturated region: This is the active, linear or week inversion region, where the drain current is dependent on both the gate and drain voltages.</li><li>Saturated region: This is the strong inversion region, where the drain current is independent of the drain-to-source voltage but depends on the gate voltage.</li></ul><img src="https://i.stack.imgur.com/wP6v8.png" alt="MOSFET regions of operation on I-V curve"></div>
+                <h3 class="q-title">Q16. What is the threshold voltage of a MOS transistor? How it varies with the body bias?</h3>
+                <div class="answer"><p>One of the parameters that characterizes the switching behavior of a MOS transistor is its threshold voltage Vt. This can be defined as the gate voltage at which a MOS transistor begins to conduct.</p></div>
+                <h3 class="q-title">Q17. What is channel length modulation effect? How the voltage current characteristics are affected because of this effect?</h3>
+                <div class="answer"><p>It is assumed that channel length remains constant as the drain voltage is increased appreciably beyond the on set of saturation. As a consequence, the drain current remains constant in the saturation region. In practice, however the channel length shortens as the drain voltage is increased. For long channel lengths, say more than 5µm, this variation of length is relatively very small compared to the total length and is of little consequence. However, as the device sizes are scaled down, the variation of length becomes more and more predominant and should be taken into consideration. As a consequence, the drain current increases with the increase in drain voltage even in the saturation region.</p><img src="https://i.imgur.com/M6L5gLg.png" alt="Channel Length Modulation Diagram"></div>
+                <h3 class="q-title">Q18. What is body effect? How does it influences the threshold voltage of a MOS transistor?</h3>
+                <div class="answer"><p>All MOS transistors are usually fabricated on a common substrate and substrate (body) voltage of all devices is normally constant. However, as we shall see in subsequent chapters, when circuits are realized using a number of MOS devices, several devices are connected in series. This results in different source potentials for different devices. It may be noted that the threshold voltage Vt is not constant with respect to the voltage difference between the substrate and the source of the MOS transistor. This is known as the substrate-bias effect or body effect. Increasing the Vsb causes the channel to be depleted of charge carries and this leads to increase in the threshold voltage.</p></div>
+                <h3 class="q-title">Q19. What is transconductance of a MOS transistor? Explain its role in the operation of the transistor.</h3>
+                <div class="answer"><p>Trans-conductance is represented by the change in drain current for change in gate voltage for constant value of drain voltage. This parameter is somewhat similar to ẞ, the current gain of bipolar junction transistors. The following equation shows the dependence of on various parameters. As MOS transistors are voltage controlled devices, this parameter plays an important role in identifying the efficiency of the MOS transistor.</p>
+                $$ g_m = \frac{\partial i_D}{\partial v_{GS}} \bigg|_{v_{DS}=const} = (\mu_n C_{ox}) (\frac{W}{L}) (V_{GS} - V_{T}) = \sqrt{2 (\mu_n C_{ox}) (\frac{W}{L}) I_D} = \frac{2I_D}{V_{OV}} $$
+                </div>
+            </section>
+        </details>
         
+        <details>
+            <summary>Advanced CMOS Concepts</summary>
+            <section class="pt-4">
+                <h3>The CMOS Inverter Detailed Analysis</h3>
+                <p>The fundamental building block of CMOS logic is the inverter. Its robust characteristics come from the complementary nature of the PMOS (pull-up) and NMOS (pull-down) transistors.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/CMOS_inverter.svg/400px-CMOS_inverter.svg.png" alt="CMOS Inverter Circuit Diagram">
+                <h4>Voltage Transfer Characteristic (VTC)</h4>
+                <p>The VTC defines the static behavior of the inverter. For a CMOS inverter, $V_{OH} = V_{DD}$ and $V_{OL} = 0$, providing a full rail-to-rail swing and high noise margins. The sharpness of the transition region determines the robustness of the inverter.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Inverter_VTC.svg/500px-Inverter_VTC.svg.png" alt="Ideal vs Actual Inverter VTC">
+                <h4>Inversion Voltage ($V_{inv}$)</h4>
+                <p>The inversion voltage (or switching threshold), where $V_{in} = V_{out}$, is a critical parameter. For an ideal symmetric inverter, this voltage is exactly $V_{DD}/2$. The general expression is:</p>
+                $$ V_{inv} = \frac{V_{DD} + V_{Tp} + V_{Tn} \sqrt{\frac{k_n}{k_p}}}{1 + \sqrt{\frac{k_n}{k_p}}} $$
+                <p>Where $k_n = \mu_n C_{ox} (W/L)_n$ and $k_p = \mu_p C_{ox} (W/L)_p$. To achieve a symmetric VTC with $V_{inv} = V_{DD}/2$ (assuming $V_{Tn} = |V_{Tp}|$), we must have $k_n = k_p$. Since electron mobility ($\mu_n$) is typically 2-3 times higher than hole mobility ($\mu_p$), the PMOS transistor must have a W/L ratio 2-3 times larger than the NMOS transistor.</p>
+            </section>
+        </details>
+
+        <details>
+            <summary>Interactive Visualizations</summary>
+            <section class="pt-4">
+                <h3>CMOS Inverter VTC Simulation</h3>
+                <p>Adjust the slider to see how the PMOS/NMOS transistor ratio ($\beta_p / \beta_n$, where $\beta = \mu C_{ox} (W/L)$) affects the Voltage Transfer Characteristic (VTC) and the switching threshold ($V_{inv}$). A symmetric inverter ($\beta_p / \beta_n = 1$) has its threshold at exactly $V_{DD}/2$. Observe how the threshold shifts as the pull-up (PMOS) or pull-down (NMOS) network becomes stronger.</p>
+                <canvas id="vtcChart" class="bg-gray-800 p-2 rounded-lg"></canvas>
+                <div class="mt-4">
+                    <label for="ratioSlider" class="block mb-2 text-sm font-medium text-gray-300">PMOS/NMOS Ratio ($\beta_p / \beta_n$): <span id="ratioValue">1.0</span></label>
+                    <input id="ratioSlider" type="range" min="0.2" max="5" value="1" step="0.1" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+                </div>
+            </section>
+        </details>
+
         <section>
             <h2>Further Learning</h2>
             <p>To deepen your understanding, check out these excellent video resources:</p>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=gI-q4p-y_V4" target="_blank" class="yt-link">Neso Academy: Introduction to CMOS</a></li>
                 <li><a href="https://www.youtube.com/watch?v=Yp92fA9Ggfk" target="_blank" class="yt-link">Latch-up in CMOS Explained</a></li>
-                 <li><a href="https://www.youtube.com/watch?v=GjUhj30FtjU" target="_blank" class="yt-link">MOSFET I-V Characteristics (Georgia Tech)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=GjUhj30FtjU" target="_blank" class="yt-link">MOSFET I-V Characteristics (Georgia Tech)</a></li>
             </ul>
         </section>
-
     </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const ctx = document.getElementById('vtcChart').getContext('2d');
+        const slider = document.getElementById('ratioSlider');
+        const ratioValueSpan = document.getElementById('ratioValue');
+
+        const VDD = 5;
+        const VTn = 0.8;
+        const VTp = -0.8;
+
+        let chart;
+
+        function calculateVout(Vin, ratio) {
+            const kn_kp_ratio = 1 / ratio; // We are varying Bp/Bn, so Bn/Bp = 1/ratio
+
+            const VGSn = Vin;
+            const VGSp = Vin - VDD;
+
+            // Region analysis
+            if (VGSn < VTn) { // NMOS off
+                if (VGSp > VTp) return VDD; // PMOS off, floating (should not happen in inverter)
+                // PMOS must be on, pulls to VDD
+                return VDD;
+            }
+            if (VGSp > VTp) { // PMOS off
+                if (VGSn < VTn) return 0; // NMOS off, floating
+                // NMOS must be on, pulls to 0
+                return 0;
+            }
+
+            // Both transistors are on. Find Vout by equating currents.
+            // Simplified equations for demonstration
+            let Vout = 0;
+            for (let v = 0; v <= VDD; v += 0.01) {
+                const VDSn = v;
+                const VDSp = v - VDD;
+
+                let idn, idp;
+                
+                // NMOS current
+                if (VDSn < VGSn - VTn) { // Linear
+                    idn = kn_kp_ratio * ( (VGSn - VTn) * VDSn - 0.5 * VDSn * VDSn );
+                } else { // Saturation
+                    idn = 0.5 * kn_kp_ratio * (VGSn - VTn) * (VGSn - VTn);
+                }
+
+                // PMOS current
+                if (VDSp > VGSp - VTp) { // Linear
+                    idp = -1 * ( (VGSp - VTp) * VDSp - 0.5 * VDSp * VDSp );
+                } else { // Saturation
+                    idp = -0.5 * (VGSp - VTp) * (VGSp - VTp);
+                }
+
+                if (Math.abs(idn - idp) < 0.01) {
+                    Vout = v;
+                    break;
+                }
+            }
+            return Vout;
+        }
+
+        function updateChart() {
+            const ratio = parseFloat(slider.value);
+            ratioValueSpan.textContent = ratio.toFixed(1);
+
+            const v_in_values = [];
+            const v_out_values = [];
+            const ideal_line = [];
+            
+            for (let vin = 0; vin <= VDD; vin += 0.1) {
+                v_in_values.push(vin);
+                v_out_values.push(calculateVout(vin, ratio));
+                ideal_line.push({x: vin, y: vin});
+            }
+            
+            chart.data.labels = v_in_values;
+            chart.data.datasets[0].data = v_out_values;
+            chart.update();
+        }
+
+        function createChart() {
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Inverter VTC',
+                        data: [],
+                        borderColor: '#a5b4fc',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.1,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Vin = Vout',
+                        data: Array.from({length: 51}, (_, i) => ({x: i * 0.1, y: i * 0.1})),
+                        borderColor: '#f87171',
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        fill: false,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: { display: true, text: 'Vin (V)', color: '#d1d5db' },
+                            ticks: { color: '#d1d5db' },
+                            grid: { color: '#374151' },
+                            min: 0,
+                            max: VDD
+                        },
+                        y: {
+                            title: { display: true, text: 'Vout (V)', color: '#d1d5db' },
+                            ticks: { color: '#d1d5db' },
+                            grid: { color: '#374151' },
+                             min: 0,
+                            max: VDD
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#d1d5db' } }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index',
+                    }
+                }
+            });
+            updateChart();
+        }
+
+        slider.addEventListener('input', updateChart);
+        createChart();
+    });
+</script>
 </body>
 </html>
 
