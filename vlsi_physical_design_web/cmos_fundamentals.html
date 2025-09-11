@@ -19,7 +19,7 @@
         h4 { font-size: 1.25rem; font-weight: 600; color: #c2d2e4; margin-top: 1.5rem; margin-bottom: 0.5rem; }
         p, li { font-size: 1rem; line-height: 1.75; }
         ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
-        img, canvas { border-radius: 0.5rem; margin-top: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;}
+        img, canvas { border-radius: 0.5rem; margin-top: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; background-color: #f9fafb; }
         strong { color: #93c5fd; font-weight: 600; }
         .yt-link { color: #f87171; text-decoration: underline; font-weight: 500;}
         .q-title { font-weight: 700; color: #a5b4fc;}
@@ -57,11 +57,13 @@
                 
                 <h3 class="q-title">Q7. Show the basic structure of a MOS transistor.</h3>
                 <div class="answer"><p>The basic structure of a MOS transistor is given below. On a lightly doped substrate of silicon two islands of diffusion regions called as source and drain, of opposite polarity of that of the substrate, are created. Between these two regions, a thin insulating layer of silicon dioxide is formed and on top of this a conducting material made of poly-silicon or metal called gate is deposited.</p>
-                                </div>
+                
+                </div>
                 
                 <h3 class="q-title">Q8. What is the latch up problem that arises in bulk CMOS technology?</h3>
                 <div class="answer"><p>The latch-up is an inherent problem in both n-well as well as pwell based CMOS circuits. The phenomenon is caused by the parasitic bipolar transistors formed in the bulk of silicon as shown in the figure for the n-well process. Latch-up can be defined as the formation of a low-impedance path between the power supply and ground rails through the parasitic npn and pnp bipolar transistors. As shown the BJTs are cross-coupled to form the structure of a silicon-controlled-rectifier (SCR) providing a short-circuit path between the power rail and ground. Leakage current through the parasitic resistors can cause one transistor to turn on, which in turn turns on the other transistor due to positive feedback and leading to heavy current flow and consequent device failure.</p>
-                                </div>
+                
+                </div>
                 
                 <h3 class="q-title">Q9. How the latch up problem can be overcome?</h3>
                 <div class="answer"><p>There are several approaches to reduce the tendency of Latch-up. Some of the important techniques are mentioned below:</p><ul><li>Use guard ring around p- and/or n-well with frequent contacts to the rings</li><li>To reduce the gain product B1XB2</li><li>Moving the n-well and the n+ source/drain further apart</li><li>Buried n+ layer in well to reduce gain of Q1</li><li>Higher substrate doping level to reduce R-sub</li><li>Reduce R-well by making low resistance contact to GND</li></ul></div>
@@ -74,14 +76,16 @@
                 
                 <h3 class="q-title">Q15. What are the three regions of operation of a MOS transistor?</h3>
                 <div class="answer"><p>The three regions are:</p><ul><li>Cut-off region: This is essentially the accumulation mode, where there is no effective flow of current between the source and drain.</li><li>Non-saturated region: This is the active, linear or week inversion region, where the drain current is dependent on both the gate and drain voltages.</li><li>Saturated region: This is the strong inversion region, where the drain current is independent of the drain-to-source voltage but depends on the gate voltage.</li></ul>
-                                </div>
+                
+                </div>
 
                 <h3 class="q-title">Q16. What is the threshold voltage of a MOS transistor? How it varies with the body bias?</h3>
                 <div class="answer"><p>One of the parameters that characterizes the switching behavior of a MOS transistor is its threshold voltage Vt. This can be defined as the gate voltage at which a MOS transistor begins to conduct.</p></div>
 
                 <h3 class="q-title">Q17. What is channel length modulation effect? How the voltage current characteristics are affected because of this effect?</h3>
                 <div class="answer"><p>It is assumed that channel length remains constant as the drain voltage is increased appreciably beyond the on set of saturation. As a consequence, the drain current remains constant in the saturation region. In practice, however the channel length shortens as the drain voltage is increased. For long channel lengths, say more than 5µm, this variation of length is relatively very small compared to the total length and is of little consequence. However, as the device sizes are scaled down, the variation of length becomes more and more predominant and should be taken into consideration. As a consequence, the drain current increases with the increase in drain voltage even in the saturation region.</p>
-                                </div>
+                
+                </div>
 
                 <h3 class="q-title">Q18. What is body effect? How does it influences the threshold voltage of a MOS transistor?</h3>
                 <div class="answer"><p>All MOS transistors are usually fabricated on a common substrate and substrate (body) voltage of all devices is normally constant. However, as we shall see in subsequent chapters, when circuits are realized using a number of MOS devices, several devices are connected in series. This results in different source potentials for different devices. It may be noted that the threshold voltage Vt is not constant with respect to the voltage difference between the substrate and the source of the MOS transistor. This is known as the substrate-bias effect or body effect. Increasing the Vsb causes the channel to be depleted of charge carries and this leads to increase in the threshold voltage.</p></div>
@@ -93,16 +97,18 @@
 
                 <h3 class="q-title">Q20. How one nMOS and one pMOS transistor are combined to behave like an ideal switch.</h3>
                 <div class="answer"><p>To overcome the limitation of either of the transistors, one pMOS and one nMOS transistor can be connected in parallel with complementary inputs at their gates. In this case we can get both LOW and HIGH levels of good quality at the output. The low level passes through the nMOS switch and HIGH level passes through the PMOS switch without any degradation as shown in the figure.</p>
-                                </div>
+                
+                </div>
 
                 <h3 class="q-title">Q25. What is the inversion voltage of an inverter? Find out the inversion voltage of a CMOS inverter.</h3>
                 <div class="answer"><p>The inversion voltage Vinv is defined as the voltage at which the output voltage Vo is equal to the input voltage Vin. For a CMOS inverter it can be expressed in terms of the threshold voltages of the MOS transistors and other parameters.</p>
-                $$ V_{inv} = \frac{V_{DD} + V_{Tp} + V_{Tn} \sqrt{\frac{k_n}{k_p}}}{1 + \sqrt{\frac{k_n}{k_p}}} $$
+                $$ V_{inv} = \frac{V_{DD} + V_{Tp} + V_{Tn} \sqrt{k_n/k_p}}{1 + \sqrt{k_n/k_p}} $$
                 </div>
 
                 <h3 class="q-title">Q27. What is the lower limit of supply voltage of a CMOS inverter. What happens if the supply voltage is further reduced?</h3>
                 <div class="answer"><p>The lower limit of the supply voltage depends on the sum of the threshold voltages of the nMOS and the PMOS transistors. \(V_{dd,min} = V_{tn} + |V_{tp}|\). As the supply voltage is reduced further, it leads to hysteresis in the transfer characteristic.</p>
-                                </div>
+                
+                </div>
             </section>
         </details>
         
@@ -111,11 +117,13 @@
             <section class="pt-4">
                 <h3>The CMOS Inverter Detailed Analysis</h3>
                 <p>The fundamental building block of CMOS logic is the inverter. Its robust characteristics come from the complementary nature of the PMOS (pull-up) and NMOS (pull-down) transistors.</p>
-                                <h4>Voltage Transfer Characteristic (VTC)</h4>
+                
+                <h4>Voltage Transfer Characteristic (VTC)</h4>
                 <p>The VTC defines the static behavior of the inverter. For a CMOS inverter, \(V_{OH} = V_{DD}\) and \(V_{OL} = 0\), providing a full rail-to-rail swing and high noise margins. The sharpness of the transition region determines the robustness of the inverter.</p>
-                                <h4>Inversion Voltage (\(V_{inv}\))</h4>
+                
+                <h4>Inversion Voltage (\(V_{inv}\))</h4>
                 <p>The inversion voltage (or switching threshold), where \(V_{in} = V_{out}\), is a critical parameter. For an ideal symmetric inverter, this voltage is exactly \(V_{DD}/2\). The general expression is:</p>
-                $$ V_{inv} = \frac{V_{DD} + V_{Tp} + V_{Tn} \sqrt{\frac{k_n}{k_p}}}{1 + \sqrt{\frac{k_n}{k_p}}} $$
+                $$ V_{inv} = \frac{V_{DD} + V_{Tp} + V_{Tn} \sqrt{k_n/k_p}}{1 + \sqrt{k_n/k_p}} $$
                 <p>Where \(k_n = \mu_n C_{ox} (W/L)_n\) and \(k_p = \mu_p C_{ox} (W/L)_p\). To achieve a symmetric VTC with \(V_{inv} = V_{DD}/2\) (assuming \(V_{Tn} = |V_{Tp}|\)), we must have \(k_n = k_p\). Since electron mobility (\(\mu_n\)) is typically 2-3 times higher than hole mobility (\(\mu_p\)), the PMOS transistor must have a W/L ratio 2-3 times larger than the NMOS transistor.</p>
             </section>
         </details>
@@ -125,7 +133,9 @@
             <section class="pt-4">
                 <h3>CMOS Inverter VTC Simulation</h3>
                 <p>Adjust the slider to see how the PMOS/NMOS transistor ratio (\(\beta_p / \beta_n\), where \(\beta = \mu C_{ox} (W/L)\)) affects the Voltage Transfer Characteristic (VTC) and the switching threshold ($V_{inv}$). A symmetric inverter (\(\beta_p / \beta_n = 1\)) has its threshold at exactly $V_{DD}/2$. Observe how the threshold shifts as the pull-up (PMOS) or pull-down (NMOS) network becomes stronger.</p>
-                <canvas id="vtcChart" class="bg-gray-800 p-2 rounded-lg"></canvas>
+                <div class="chart-container" style="position: relative; height:40vh; width:100%; max-width: 600px; margin: auto;">
+                    <canvas id="vtcChart"></canvas>
+                </div>
                 <div class="mt-4">
                     <label for="ratioSlider" class="block mb-2 text-sm font-medium text-gray-300">PMOS/NMOS Ratio (\(\beta_p / \beta_n\)): <span id="ratioValue">1.0</span></label>
                     <input id="ratioSlider" type="range" min="0.2" max="5" value="1" step="0.1" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
@@ -133,10 +143,22 @@
                 
                 <h3 class="mt-8">MOSFET Transfer Characteristic (\(I_D\) vs. \(V_{GS}\))</h3>
                 <p>This graph shows how the drain current ($I_D$) of an NMOS transistor changes with the gate-to-source voltage ($V_{GS}$) when in saturation. Adjust the slider to change the threshold voltage ($V_T$) and see how it shifts the curve, affecting the transistor's turn-on point.</p>
-                <canvas id="idVgsChart" class="bg-gray-800 p-2 rounded-lg"></canvas>
+                <div class="chart-container" style="position: relative; height:40vh; width:100%; max-width: 600px; margin: auto;">
+                    <canvas id="idVgsChart"></canvas>
+                </div>
                  <div class="mt-4">
                     <label for="vtSlider" class="block mb-2 text-sm font-medium text-gray-300">Threshold Voltage (\(V_T\)): <span id="vtValue">0.8</span> V</label>
                     <input id="vtSlider" type="range" min="0.1" max="2.0" value="0.8" step="0.1" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+                </div>
+
+                <h3 class="mt-8">MOSFET Output Characteristic (\(I_D\) vs. \(V_{DS}\))</h3>
+                <p>This graph shows the drain current ($I_D$) versus the drain-to-source voltage ($V_{DS}$) for an NMOS transistor. Adjust the slider to change the gate-to-source voltage ($V_{GS}$) and observe how the transistor moves from the linear (triode) region to the saturation region.</p>
+                <div class="chart-container" style="position: relative; height:40vh; width:100%; max-width: 600px; margin: auto;">
+                     <canvas id="idVdsChart"></canvas>
+                </div>
+                <div class="mt-4">
+                    <label for="vgsSlider" class="block mb-2 text-sm font-medium text-gray-300">Gate-to-Source Voltage (\(V_{GS}\)): <span id="vgsValue">2.5</span> V</label>
+                    <input id="vgsSlider" type="range" min="0" max="5" value="2.5" step="0.5" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
                 </div>
             </section>
         </details>
@@ -154,116 +176,120 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        const VDD = 5;
+        const CHART_FONT_COLOR = '#d1d5db';
+        const CHART_GRID_COLOR = '#374151';
+
         // --- VTC Chart Logic ---
-        const vtcCtx = document.getElementById('vtcChart').getContext('2d');
+        const vtcCtx = document.getElementById('vtcChart')?.getContext('2d');
         const ratioSlider = document.getElementById('ratioSlider');
         const ratioValueSpan = document.getElementById('ratioValue');
-        const VDD = 5;
-        const VTn_vtc = 0.8;
-        const VTp_vtc = -0.8;
-        let vtcChart;
+        if (vtcCtx && ratioSlider) {
+            const VTn_vtc = 0.8;
+            const VTp_vtc = -0.8;
+            let vtcChart;
 
-        function calculateVout(Vin, ratio) {
-            const kn_kp_ratio = 1 / ratio;
-            const VGSn = Vin;
-            const VGSp = Vin - VDD;
+            function calculateVout(Vin, ratio) {
+                const kn_kp_ratio = 1 / ratio;
+                const VGSn = Vin;
+                const VGSp = Vin - VDD;
 
-            if (VGSn < VTn_vtc) return VDD; // NMOS off
-            if (VGSp > VTp_vtc) return 0;   // PMOS off
+                if (VGSn < VTn_vtc) return VDD;
+                if (VGSp > VTp_vtc) return 0;
 
-            // Both on, find equilibrium by solving Idn = Idp
-            // This is a complex quadratic, we can approximate the transition
-            // using the inversion voltage formula.
-            const sqrt_ratio = Math.sqrt(kn_kp_ratio);
-            const Vinv = (VDD + VTp_vtc + VTn_vtc * sqrt_ratio) / (1 + sqrt_ratio);
-            
-            // Simplified solver for visualization
-             for (let v_out = VDD; v_out >= 0; v_out -= 0.01) {
-                let idn, idp;
-                const VDSn = v_out;
-                const VDSp = v_out - VDD;
-
-                if (VDSn >= VGSn - VTn_vtc) { // NMOS Saturation
-                    idn = 0.5 * kn_kp_ratio * Math.pow(VGSn - VTn_vtc, 2);
-                } else { // NMOS Linear
-                    idn = kn_kp_ratio * ((VGSn - VTn_vtc) * VDSn - 0.5 * Math.pow(VDSn, 2));
+                for (let v_out = VDD; v_out >= 0; v_out -= 0.01) {
+                    let idn, idp;
+                    const VDSn = v_out;
+                    const VDSp = v_out - VDD;
+                    
+                    idn = (VDSn >= VGSn - VTn_vtc) ? 0.5 * kn_kp_ratio * Math.pow(VGSn - VTn_vtc, 2) : kn_kp_ratio * ((VGSn - VTn_vtc) * VDSn - 0.5 * Math.pow(VDSn, 2));
+                    idp = (VDSp <= VGSp - VTp_vtc) ? 0.5 * Math.pow(VGSp - VTp_vtc, 2) : ((VGSp - VTp_vtc) * VDSp - 0.5 * Math.pow(VDSp, 2));
+                    
+                    if (Math.abs(idn - idp) < 0.001) return v_out;
                 }
-
-                if (VDSp <= VGSp - VTp_vtc) { // PMOS Saturation
-                    idp = -0.5 * Math.pow(VGSp - VTp_vtc, 2);
-                } else { // PMOS Linear
-                    idp = -1 * ((VGSp - VTp_vtc) * VDSp - 0.5 * Math.pow(VDSp, 2));
-                }
-
-                if (Math.abs(idn + idp) < 0.05) { // Check for current equality (Idn = -Idp)
-                    return v_out;
-                }
+                const Vinv = (VDD + VTp_vtc + VTn_vtc * Math.sqrt(kn_kp_ratio)) / (1 + Math.sqrt(kn_kp_ratio));
+                return (Vin > Vinv) ? 0 : VDD;
             }
-            return (Vin > Vinv) ? 0 : VDD; // Fallback
+
+            function updateVtcChart() {
+                const ratio = parseFloat(ratioSlider.value);
+                ratioValueSpan.textContent = ratio.toFixed(1);
+                const dataPoints = Array.from({length: 101}, (_, i) => calculateVout(i * 0.05, ratio));
+                vtcChart.data.datasets[0].data = dataPoints;
+                vtcChart.update();
+            }
+            
+            ratioSlider.addEventListener('input', updateVtcChart);
+            
+            vtcChart = new Chart(vtcCtx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 101}, (_, i) => (i * 0.05).toFixed(2)),
+                    datasets: [{ label: 'Inverter VTC', data: [], borderColor: '#a5b4fc', borderWidth: 2.5, tension: 0.4, pointRadius: 0 }, { label: 'Vin = Vout', data: Array.from({length: 101}, (_, i) => i * 0.05), borderColor: '#f87171', borderWidth: 1.5, borderDash: [5, 5], pointRadius: 0 }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Vin (V)', color: CHART_FONT_COLOR }, ticks: { color: CHART_FONT_COLOR }, grid: { color: CHART_GRID_COLOR }, min: 0, max: VDD }, y: { title: { display: true, text: 'Vout (V)', color: CHART_FONT_COLOR }, ticks: { color: CHART_FONT_COLOR }, grid: { color: CHART_GRID_COLOR }, min: 0, max: VDD } }, plugins: { legend: { labels: { color: CHART_FONT_COLOR } } }, interaction: { intersect: false, mode: 'index' } }
+            });
+            updateVtcChart();
         }
 
-        function updateVtcChart() {
-            const ratio = parseFloat(ratioSlider.value);
-            ratioValueSpan.textContent = ratio.toFixed(1);
-            const data = Array.from({length: 51}, (_, i) => calculateVout(i * 0.1, ratio));
-            vtcChart.data.datasets[0].data = data;
-            vtcChart.update();
-        }
-        
-        ratioSlider.addEventListener('input', updateVtcChart);
-        
-        vtcChart = new Chart(vtcCtx, {
-            type: 'line',
-            data: {
-                labels: Array.from({length: 51}, (_, i) => (i * 0.1).toFixed(1)),
-                datasets: [{
-                    label: 'Inverter VTC', data: [], borderColor: '#a5b4fc', borderWidth: 2, fill: false, tension: 0.4, pointRadius: 0
-                }, {
-                    label: 'Vin = Vout', data: Array.from({length: 51}, (_, i) => i * 0.1), borderColor: '#f87171', borderWidth: 1, borderDash: [5, 5], fill: false, pointRadius: 0
-                }]
-            },
-            options: { scales: { x: { title: { display: true, text: 'Vin (V)', color: '#d1d5db' }, ticks: { color: '#d1d5db' }, grid: { color: '#374151' }, min: 0, max: VDD }, y: { title: { display: true, text: 'Vout (V)', color: '#d1d5db' }, ticks: { color: '#d1d5db' }, grid: { color: '#374151' }, min: 0, max: VDD } }, plugins: { legend: { labels: { color: '#d1d5db' } } }, interaction: { intersect: false, mode: 'index' } }
-        });
-        updateVtcChart();
-
-
-        // --- I-V Curve Chart Logic ---
-        const idVgsCtx = document.getElementById('idVgsChart').getContext('2d');
+        // --- Id vs Vgs Chart Logic ---
+        const idVgsCtx = document.getElementById('idVgsChart')?.getContext('2d');
         const vtSlider = document.getElementById('vtSlider');
         const vtValueSpan = document.getElementById('vtValue');
-        let idVgsChart;
-
-        function calculateId(Vgs, Vt) {
-            const k_prime_W_L = 50; // A constant for visualization, in uA/V^2
-            if (Vgs < Vt) {
-                return 0;
-            } else {
-                // Saturation current equation
-                return 0.5 * k_prime_W_L * Math.pow(Vgs - Vt, 2);
+        if(idVgsCtx && vtSlider){
+            let idVgsChart;
+            function calculateId_Vgs(Vgs, Vt) {
+                const k_prime_W_L = 50;
+                return (Vgs < Vt) ? 0 : 0.5 * k_prime_W_L * Math.pow(Vgs - Vt, 2);
             }
+
+            function updateIdVgsChart() {
+                const vt = parseFloat(vtSlider.value);
+                vtValueSpan.textContent = vt.toFixed(1);
+                idVgsChart.data.datasets[0].data = Array.from({length: 51}, (_, i) => calculateId_Vgs(i * 0.1, vt));
+                idVgsChart.update();
+            }
+            vtSlider.addEventListener('input', updateIdVgsChart);
+            idVgsChart = new Chart(idVgsCtx, {
+                type: 'line',
+                data: { labels: Array.from({length: 51}, (_, i) => (i * 0.1).toFixed(1)), datasets: [{ label: 'Drain Current (uA)', data: [], borderColor: '#6ee7b7', borderWidth: 2, tension: 0.1, pointRadius: 0, fill: { target: 'origin', above: 'rgba(110, 231, 183, 0.2)' } }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Vgs (V)', color: CHART_FONT_COLOR }, ticks: { color: CHART_FONT_COLOR }, grid: { color: CHART_GRID_COLOR }, min: 0, max: VDD }, y: { title: { display: true, text: 'Id (uA)', color: CHART_FONT_COLOR }, ticks: { color: CHART_FONT_COLOR }, grid: { color: CHART_GRID_COLOR }, min: 0 } }, plugins: { legend: { labels: { color: CHART_FONT_COLOR } } }, interaction: { intersect: false, mode: 'index' } }
+            });
+            updateIdVgsChart();
         }
 
-        function updateIdVgsChart() {
-            const vt = parseFloat(vtSlider.value);
-            vtValueSpan.textContent = vt.toFixed(1);
-            const data = Array.from({length: 51}, (_, i) => calculateId(i * 0.1, vt));
-            idVgsChart.data.datasets[0].data = data;
-            idVgsChart.update();
+        // --- Id vs Vds Chart Logic ---
+        const idVdsCtx = document.getElementById('idVdsChart')?.getContext('2d');
+        const vgsSlider = document.getElementById('vgsSlider');
+        const vgsValueSpan = document.getElementById('vgsValue');
+        if(idVdsCtx && vgsSlider){
+            let idVdsChart;
+            const VTn_iv = 0.8;
+            function calculateId_Vds(Vds, Vgs) {
+                const k_prime_W_L = 40;
+                if (Vgs < VTn_iv) return 0;
+                const Vdsat = Vgs - VTn_iv;
+                if (Vds < Vdsat) { // Linear
+                    return k_prime_W_L * (Vdsat * Vds - 0.5 * Vds * Vds);
+                } else { // Saturation
+                    return 0.5 * k_prime_W_L * Vdsat * Vdsat;
+                }
+            }
+
+            function updateIdVdsChart() {
+                const vgs = parseFloat(vgsSlider.value);
+                vgsValueSpan.textContent = vgs.toFixed(1);
+                idVdsChart.data.datasets[0].data = Array.from({length: 51}, (_, i) => calculateId_Vds(i * 0.1, vgs));
+                idVdsChart.update();
+            }
+            vgsSlider.addEventListener('input', updateIdVdsChart);
+            idVdsChart = new Chart(idVdsCtx, {
+                type: 'line',
+                data: { labels: Array.from({length: 51}, (_, i) => (i * 0.1).toFixed(1)), datasets: [{ label: 'Drain Current (uA)', data: [], borderColor: '#f472b6', borderWidth: 2, tension: 0.1, pointRadius: 0, fill: { target: 'origin', above: 'rgba(244, 114, 182, 0.2)' } }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Vds (V)', color: CHART_FONT_COLOR }, ticks: { color: CHART_FONT_COLOR }, grid: { color: CHART_GRID_COLOR }, min: 0, max: VDD }, y: { title: { display: true, text: 'Id (uA)', color: CHART_FONT_COLOR }, ticks: { color: CHART_FONT_COLOR }, grid: { color: CHART_GRID_COLOR }, min: 0 } }, plugins: { legend: { labels: { color: CHART_FONT_COLOR } } }, interaction: { intersect: false, mode: 'index' } }
+            });
+            updateIdVdsChart();
         }
-
-        vtSlider.addEventListener('input', updateIdVgsChart);
-
-        idVgsChart = new Chart(idVgsCtx, {
-            type: 'line',
-            data: {
-                labels: Array.from({length: 51}, (_, i) => (i * 0.1).toFixed(1)),
-                datasets: [{
-                    label: 'Drain Current (uA)', data: [], borderColor: '#6ee7b7', borderWidth: 2, fill: true, tension: 0.1, pointRadius: 0, backgroundColor: 'rgba(110, 231, 183, 0.2)'
-                }]
-            },
-            options: { scales: { x: { title: { display: true, text: 'Vgs (V)', color: '#d1d5db' }, ticks: { color: '#d1d5db' }, grid: { color: '#374151' }, min: 0, max: VDD }, y: { title: { display: true, text: 'Id (uA)', color: '#d1d5db' }, ticks: { color: '#d1d5db' }, grid: { color: '#374151' }, min: 0 } }, plugins: { legend: { labels: { color: '#d1d5db' } } }, interaction: { intersect: false, mode: 'index' } }
-        });
-        updateIdVgsChart();
     });
 </script>
 </body>
