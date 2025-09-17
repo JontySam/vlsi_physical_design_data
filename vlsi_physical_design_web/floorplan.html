@@ -10,54 +10,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark-purple: #0a091a;
-            --bg-mid-purple: #16152e;
-            --border-purple: #3a395e;
-            --text-light-lavender: #c7c7d2;
-            --text-white: #ffffff;
-            --accent-cyan: #00f5ff;
-            --accent-magenta: #ff00ff;
-            --accent-green: #00ff9c;
+            --bg-body: #1E1E1E; /* Near Black Background */
+            --bg-content: #2F3D5A; /* Dark Blue Content Background */
+            --border-muted: #4a5a7d; /* Lighter Blue for borders */
+            --text-body: #DCDCDC; /* Light Gray for text */
+            --text-heading: #FFFFFF; /* White for headings */
+            --text-strong: #FFFFFF; /* White for strong emphasis */
+            --code-bg: #222d42;
+            --code-text: #a9b7d1;
         }
         
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark-purple);
-            color: var(--text-light-lavender);
+            background-color: var(--bg-body);
+            color: var(--text-body);
+            line-height: 1.7;
         }
         h1, h2, h3, h4 {
-            color: var(--text-white);
+            color: var(--text-heading);
             font-weight: 700;
+            line-height: 1.3;
         }
         h1.page-title {
-            border-bottom: 2px solid var(--border-purple);
+            color: var(--text-heading);
+            border-bottom: 2px solid var(--border-muted);
             padding-bottom: 0.5rem;
         }
         h2 {
-            border-bottom: 1px solid var(--border-purple);
-            padding-bottom: 0.5rem;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta), var(--accent-cyan));
+            border-bottom: 1px solid var(--border-muted);
+            padding-bottom: 0.75rem;
+            margin-top: 4rem;
+            /* Adding a subtle gradient to the heading text for sophistication */
+            background: linear-gradient(90deg, #FFFFFF, #DCDCDC);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradient-animation 6s ease-in-out infinite;
         }
         h3 {
-             color: var(--accent-cyan);
+             color: var(--text-heading);
+             opacity: 0.9;
+             margin-top: 2.5rem;
         }
-        strong {
-            color: var(--accent-cyan);
+        strong, b {
+            color: var(--text-strong);
+            font-weight: 600;
         }
         code {
-            background-color: var(--bg-mid-purple);
-            color: var(--accent-magenta);
+            background-color: var(--code-bg);
+            color: var(--code-text);
             padding: 0.2rem 0.4rem;
             border-radius: 0.25rem;
             font-family: 'Courier New', Courier, monospace;
@@ -69,40 +69,35 @@
             margin-bottom: 1.5rem;
         }
         th, td {
-            border: 1px solid var(--border-purple);
+            border: 1px solid var(--border-muted);
             padding: 0.75rem 1rem;
             text-align: left;
         }
         th {
-            background-color: var(--bg-mid-purple);
-            color: var(--text-white);
+            background-color: var(--code-bg);
+            color: var(--text-heading);
+            font-weight: 600;
         }
         tr:nth-child(even) {
-            background-color: var(--bg-mid-purple);
+            background-color: rgba(0,0,0,0.1);
         }
-        ul {
+        ul, ol {
             list-style: none;
             padding-left: 1rem;
             margin-bottom: 1rem;
         }
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             position: relative;
-            padding-left: 1.25rem;
+            padding-left: 1.5rem;
         }
-        li::before {
-            content: '⬩';
+        ul li::before {
+            content: '■';
             position: absolute;
             left: 0;
-            color: var(--accent-cyan);
-            font-size: 1.25rem;
-            line-height: 1;
-        }
-        ol {
-            list-style: none;
-            counter-reset: item;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
+            color: var(--border-muted);
+            font-size: 0.75rem;
+            line-height: 1.7;
         }
         ol li {
             counter-increment: item;
@@ -111,23 +106,44 @@
             content: counter(item);
             position: absolute;
             left: -0.5rem;
-            color: var(--accent-cyan);
+            color: var(--text-heading);
             font-size: 1rem;
             font-weight: bold;
             text-align: right;
             width: 1.25rem;
         }
-        .hero-section {
-            background-color: var(--bg-mid-purple);
-            border: 1px solid var(--border-purple);
-        }
         .work-cited li {
             word-break: break-all;
         }
 
+        header {
+            background-color: transparent;
+        }
         header.scrolled {
-            background-color: rgba(10, 9, 26, 0.85);
+            background-color: rgba(30, 30, 30, 0.85);
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-muted);
+        }
+        
+        main > article {
+            background-color: var(--bg-content);
+            padding: 2rem 4rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-section {
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+        }
+        .hero-section h1 {
+            color: var(--text-heading);
+        }
+        .hero-section p {
+            color: var(--text-body);
         }
     </style>
 </head>
