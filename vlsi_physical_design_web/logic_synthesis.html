@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,153 +7,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark-purple: #0a091a;
-            --bg-mid-purple: #16152e;
-            --border-purple: #3a395e;
-            --text-light-lavender: #c7c7d2;
-            --text-white: #ffffff;
-            --accent-cyan: #00f5ff;
-            --accent-magenta: #ff00ff;
-            --accent-green: #00ff9c;
-        }
-        
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark-purple);
-            color: var(--text-light-lavender);
-        }
-        h1, h2, h3, h4 {
-            color: var(--text-white);
-            font-weight: 700;
-        }
-        h1.page-title {
-            border-bottom: 2px solid var(--border-purple);
-            padding-bottom: 0.5rem;
-        }
-        h2 {
-            border-bottom: 1px solid var(--border-purple);
-            padding-bottom: 0.5rem;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta), var(--accent-cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradient-animation 6s ease-in-out infinite;
-        }
-        h3 {
-             color: var(--accent-cyan);
-        }
-        strong {
-            color: var(--accent-cyan);
-        }
-        code {
-            background-color: var(--bg-mid-purple);
-            color: var(--accent-magenta);
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        th, td {
-            border: 1px solid var(--border-purple);
-            padding: 0.75rem 1rem;
-            text-align: left;
-        }
-        th {
-            background-color: var(--bg-mid-purple);
-            color: var(--text-white);
-        }
-        tr:nth-child(even) {
-            background-color: var(--bg-mid-purple);
-        }
-        ul {
-            list-style: none;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.25rem;
-        }
-        li::before {
-            content: '⬩';
-            position: absolute;
-            left: 0;
-            color: var(--accent-cyan);
-            font-size: 1.25rem;
-            line-height: 1;
-        }
-        ol {
-            list-style: none;
-            counter-reset: item;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        ol li {
-            counter-increment: item;
-        }
-        ol li::before {
-            content: counter(item);
-            position: absolute;
-            left: -0.5rem;
-            color: var(--accent-cyan);
-            font-size: 1rem;
-            font-weight: bold;
-            text-align: right;
-            width: 1.25rem;
-        }
-        .hero-section {
-            background-color: var(--bg-mid-purple);
-            border: 1px solid var(--border-purple);
-        }
-        .work-cited li {
-            word-break: break-all;
-        }
-
-        header.scrolled {
-            background-color: rgba(10, 9, 26, 0.85);
-            backdrop-filter: blur(10px);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body class="antialiased">
 
-    <header id="main-header" class="bg-transparent shadow-lg sticky top-0 z-50 transition-colors duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <h1 class="text-2xl font-bold text-white page-title">Logic Synthesis</h1>
-        </div>
+    <header id="main-header">
+        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-        <article class="max-w-4xl mx-auto space-y-12">
-
-            <section class="text-center mb-16 hero-section py-20 rounded-lg">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight text-white">A Comprehensive Treatise on Logical Synthesis:</h1>
-                <p class="text-lg md:text-xl text-gray-300">From Boolean Algebra to Silicon Implementation</p>
+    <main class="container">
+        <article>
+            <section class="hero-section">
+                <h1>A Comprehensive Treatise on Logical Synthesis:</h1>
+                <p>From Boolean Algebra to Silicon Implementation</p>
             </section>
             
             <section>
-                <h2 class="text-3xl font-bold mb-6">Section 1: The Foundation of Synthesis: Transforming Abstraction into Structure</h2>
-                <p class="mb-4">Logical synthesis stands as a cornerstone of modern Very Large Scale Integration (VLSI) design, acting as the critical link between a designer's abstract intent and a concrete, physical implementation. It is a sophisticated, automated process that translates a behavioral or functional description of a digital circuit, typically written at the Register-Transfer Level (RTL), into a structurally equivalent gate-level netlist. This netlist is a detailed blueprint describing the interconnection of logic gates and sequential elements that can be physically realized on a silicon chip. Far more than a simple compilation, synthesis is a complex, multi-stage process of constraint-driven optimization, tasked with creating an implementation that is not only functionally correct but also meets stringent goals for performance (speed), power consumption, and area (cost).</p>
+                <h2>Section 1: The Foundation of Synthesis: Transforming Abstraction into Structure</h2>
+                <p>Logical synthesis stands as a cornerstone of modern Very Large Scale Integration (VLSI) design, acting as the critical link between a designer's abstract intent and a concrete, physical implementation. It is a sophisticated, automated process that translates a behavioral or functional description of a digital circuit, typically written at the Register-Transfer Level (RTL), into a structurally equivalent gate-level netlist. This netlist is a detailed blueprint describing the interconnection of logic gates and sequential elements that can be physically realized on a silicon chip. Far more than a simple compilation, synthesis is a complex, multi-stage process of constraint-driven optimization, tasked with creating an implementation that is not only functionally correct but also meets stringent goals for performance (speed), power consumption, and area (cost).</p>
                 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">1.1 Defining Logical Synthesis: The Bridge from Intent to Implementation</h3>
-                <p class="mb-4">The fundamental purpose of logical synthesis is to automate the transformation from a high level of abstraction to a lower, implementable one. In the context of the Gajski-Kuhn Y-Chart, a conceptual model that illustrates the different domains of VLSI design, synthesis operates primarily by traversing down the levels of abstraction within the behavioral and structural domains. It begins with an RTL description, which specifies the flow of data between registers and the logical operations performed on that data, and concludes with a structural netlist at the logic-gate level. This process systematically converts the what of the design (its function) into the how (its structure).</p>
-                <p class="mb-4">The primary output of this process is a gate-level netlist. However, the overarching goals of synthesis are far more nuanced and are dictated by the project's specific requirements. These goals include:</p>
+                <h3>1.1 Defining Logical Synthesis: The Bridge from Intent to Implementation</h3>
+                <p>The fundamental purpose of logical synthesis is to automate the transformation from a high level of abstraction to a lower, implementable one. In the context of the Gajski-Kuhn Y-Chart, a conceptual model that illustrates the different domains of VLSI design, synthesis operates primarily by traversing down the levels of abstraction within the behavioral and structural domains. It begins with an RTL description, which specifies the flow of data between registers and the logical operations performed on that data, and concludes with a structural netlist at the logic-gate level. This process systematically converts the what of the design (its function) into the how (its structure).</p>
+                <p>The primary output of this process is a gate-level netlist. However, the overarching goals of synthesis are far more nuanced and are dictated by the project's specific requirements. These goals include:</p>
                 <ul>
                     <li><strong>Performance Optimization:</strong> Achieving the target operating frequency by minimizing the delay of critical signal paths within the circuit. This is often the most critical objective.</li>
                     <li><strong>Area Minimization:</strong> Creating the most compact circuit possible by reducing the number and size of logic gates, which directly translates to lower manufacturing costs.</li>
@@ -161,32 +38,32 @@
                     <li><strong>Testability Insertion:</strong> Automatically inserting structures, such as scan chains, to facilitate post-manufacturing testing. This is known as Design for Testability (DFT).</li>
                     <li><strong>Power Intent Implementation:</strong> Inserting specialized logic, such as clock-gating cells, to manage and reduce power consumption based on the design's activity.</li>
                 </ul>
-                <p class="mt-4">Throughout these complex transformations, one goal remains non-negotiable: the absolute preservation of logical equivalence. The final gate-level netlist must be functionally identical to the original RTL description under all possible input conditions. This functional fidelity is the bedrock upon which all other optimizations are built.</p>
-                <p class="mt-4">The entire synthesis process is a classic example of constraint-driven optimization rather than a simple one-to-one translation. While a software compiler's main objective is to correctly translate high-level code into machine instructions, a synthesis tool is given a multifaceted problem: find a functionally correct hardware structure that best satisfies a set of often-conflicting constraints for timing, power, and area. The RTL code defines the functional specification, but the design constraints and the technology library provide the critical context for how that function should be implemented and how well it must perform. This distinction explains why the same RTL code can yield vastly different physical implementations when synthesized with different constraints.</p>
+                <p>Throughout these complex transformations, one goal remains non-negotiable: the absolute preservation of logical equivalence. The final gate-level netlist must be functionally identical to the original RTL description under all possible input conditions. This functional fidelity is the bedrock upon which all other optimizations are built.</p>
+                <p>The entire synthesis process is a classic example of constraint-driven optimization rather than a simple one-to-one translation. While a software compiler's main objective is to correctly translate high-level code into machine instructions, a synthesis tool is given a multifaceted problem: find a functionally correct hardware structure that best satisfies a set of often-conflicting constraints for timing, power, and area. The RTL code defines the functional specification, but the design constraints and the technology library provide the critical context for how that function should be implemented and how well it must perform. This distinction explains why the same RTL code can yield vastly different physical implementations when synthesized with different constraints.</p>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">1.2 The Triad of Synthesis: A Detailed Process Breakdown</h3>
-                <p class="mb-4">The synthesis process, while appearing as a single "compile" command to the user, is internally a sequence of three distinct stages: Translation, Logic Optimization, and Technology Mapping. This division of labor is a fundamental "divide and conquer" strategy that makes the enormously complex task of RTL-to-gate conversion computationally manageable. By separating technology-independent optimizations from technology-dependent mapping, Electronic Design Automation (EDA) tools can apply powerful, generalized algorithms before grappling with the specific physical characteristics of a given semiconductor process.</p>
+                <h3>1.2 The Triad of Synthesis: A Detailed Process Breakdown</h3>
+                <p>The synthesis process, while appearing as a single "compile" command to the user, is internally a sequence of three distinct stages: Translation, Logic Optimization, and Technology Mapping. This division of labor is a fundamental "divide and conquer" strategy that makes the enormously complex task of RTL-to-gate conversion computationally manageable. By separating technology-independent optimizations from technology-dependent mapping, Electronic Design Automation (EDA) tools can apply powerful, generalized algorithms before grappling with the specific physical characteristics of a given semiconductor process.</p>
                 
-                <h4 class="text-xl font-semibold mt-6 mb-2">1.2.1 Translation (Elaboration): From HDL to a Generic Representation</h4>
-                <p class="mb-4">The synthesis process begins by reading and interpreting the source Hardware Description Language (HDL) files. This initial step, often called elaboration, involves more than just parsing syntax; it involves inferring the hardware structures intended by the designer.</p>
-                <p class="mb-4">EDA tools like Synopsys Design Compiler typically use a two-command approach for this stage: <code>analyze</code> and <code>elaborate</code>. The <code>analyze</code> command reads the VHDL or Verilog source files, performs comprehensive syntax and rule checking, and creates intermediate, compiled representations of the HDL objects. These are stored in a working directory for the next step. The <code>elaborate</code> command then takes these compiled objects and translates the design into a technology-independent format. During this phase, it resolves parameters, replaces high-level HDL operators (like + or *) with pre-designed, optimized components from synthetic libraries (e.g., Synopsys DesignWare), and builds a unified, hierarchical representation of the design. An alternative, the <code>read_file</code> command, performs both analysis and elaboration in a single step, though it may handle intermediate files and linking differently.</p>
-                <p class="mb-4">The output of the translation stage is a generic, technology-independent netlist. In the Synopsys ecosystem, this format is known as GTECH (Generic Technology). The GTECH netlist is composed of idealized logic primitives, such as GTECH_AND2, GTECH_OR2, and GTECH_DFF. This representation is a pure structural abstraction; it contains no information about the timing, power, or area of the components, as it is not tied to any specific semiconductor technology library. This abstraction is the key that enables the tool to perform powerful, generalized optimizations in the subsequent stage without being constrained by the peculiarities of a specific process node.</p>
+                <h4>1.2.1 Translation (Elaboration): From HDL to a Generic Representation</h4>
+                <p>The synthesis process begins by reading and interpreting the source Hardware Description Language (HDL) files. This initial step, often called elaboration, involves more than just parsing syntax; it involves inferring the hardware structures intended by the designer.</p>
+                <p>EDA tools like Synopsys Design Compiler typically use a two-command approach for this stage: <code>analyze</code> and <code>elaborate</code>. The <code>analyze</code> command reads the VHDL or Verilog source files, performs comprehensive syntax and rule checking, and creates intermediate, compiled representations of the HDL objects. These are stored in a working directory for the next step. The <code>elaborate</code> command then takes these compiled objects and translates the design into a technology-independent format. During this phase, it resolves parameters, replaces high-level HDL operators (like + or *) with pre-designed, optimized components from synthetic libraries (e.g., Synopsys DesignWare), and builds a unified, hierarchical representation of the design. An alternative, the <code>read_file</code> command, performs both analysis and elaboration in a single step, though it may handle intermediate files and linking differently.</p>
+                <p>The output of the translation stage is a generic, technology-independent netlist. In the Synopsys ecosystem, this format is known as GTECH (Generic Technology). The GTECH netlist is composed of idealized logic primitives, such as GTECH_AND2, GTECH_OR2, and GTECH_DFF. This representation is a pure structural abstraction; it contains no information about the timing, power, or area of the components, as it is not tied to any specific semiconductor technology library. This abstraction is the key that enables the tool to perform powerful, generalized optimizations in the subsequent stage without being constrained by the peculiarities of a specific process node.</p>
                 
-                <h4 class="text-xl font-semibold mt-6 mb-2">1.2.2 Logic Optimization: The Art of Boolean Manipulation</h4>
-                <p class="mb-4">With the design translated into a generic GTECH format, the synthesis tool enters the technology-independent optimization phase. This is the core of the synthesis engine, where the tool restructures the Boolean logic of the circuit to better meet the specified constraints for timing, area, and power. The tool manipulates the network of generic gates, applying a vast array of algorithms to find a logically equivalent structure that is more efficient.</p>
-                <p class="mb-4">This optimization process itself occurs at multiple levels of granularity:</p>
+                <h4>1.2.2 Logic Optimization: The Art of Boolean Manipulation</h4>
+                <p>With the design translated into a generic GTECH format, the synthesis tool enters the technology-independent optimization phase. This is the core of the synthesis engine, where the tool restructures the Boolean logic of the circuit to better meet the specified constraints for timing, area, and power. The tool manipulates the network of generic gates, applying a vast array of algorithms to find a logically equivalent structure that is more efficient.</p>
+                <p>This optimization process itself occurs at multiple levels of granularity:</p>
                 <ul>
                     <li><strong>Architectural Optimization:</strong> At the highest level, the tool performs transformations that can significantly alter the design's structure. This includes identifying and sharing common sub-expressions across different parts of the design, optimizing datapath elements like adders and multipliers, and restructuring multiplexer logic.</li>
                     <li><strong>Logic-Level Optimization:</strong> This involves the direct manipulation of Boolean equations. The tool employs techniques like flattening (reducing logic to a two-level sum-of-products form) and structuring (factoring logic to introduce intermediate terms) to trade off between logic depth and gate count. These techniques are explored in greater detail in Section 2.</li>
                 </ul>
-                <p class="mt-4">This entire phase operates on the abstract GTECH representation, allowing the tool to focus solely on the logical and structural properties of the design, deferring any consideration of physical implementation to the final stage.</p>
+                <p>This entire phase operates on the abstract GTECH representation, allowing the tool to focus solely on the logical and structural properties of the design, deferring any consideration of physical implementation to the final stage.</p>
                 
-                <h4 class="text-xl font-semibold mt-6 mb-2">1.2.3 Technology Mapping: Binding Logic to a Physical Library</h4>
-                <p class="mb-4">The final stage of synthesis is technology mapping, where the optimized, generic GTECH netlist is transformed into a physical, implementable netlist. In this technology-dependent phase, the abstract GTECH_AND2 and GTECH_OR2 primitives are replaced with specific, real-world cells from the target technology library, such as NAND2_X1B or NOR2_X4A.</p>
-                <p class="mb-4">The mapping process is a complex optimization problem in itself. The tool must "cover" the generic logic network with a selection of available library cells. For each piece of logic, there may be multiple valid cell choices, each with different area, timing, and power characteristics. For instance, a simple AND function could be implemented with a dedicated AND gate, or with a NAND gate followed by an inverter. A high-drive-strength version of a gate might be faster but consume more area and power than a low-drive-strength version. The mapping algorithm, detailed in Section 3, must navigate these choices to find a combination of cells that best satisfies the overall design constraints. The result of this stage is the final, primary output of the synthesis process: a gate-level netlist containing instances of standard cells from a specific technology library, ready for physical implementation.</p>
+                <h4>1.2.3 Technology Mapping: Binding Logic to a Physical Library</h4>
+                <p>The final stage of synthesis is technology mapping, where the optimized, generic GTECH netlist is transformed into a physical, implementable netlist. In this technology-dependent phase, the abstract GTECH_AND2 and GTECH_OR2 primitives are replaced with specific, real-world cells from the target technology library, such as NAND2_X1B or NOR2_X4A.</p>
+                <p>The mapping process is a complex optimization problem in itself. The tool must "cover" the generic logic network with a selection of available library cells. For each piece of logic, there may be multiple valid cell choices, each with different area, timing, and power characteristics. For instance, a simple AND function could be implemented with a dedicated AND gate, or with a NAND gate followed by an inverter. A high-drive-strength version of a gate might be faster but consume more area and power than a low-drive-strength version. The mapping algorithm, detailed in Section 3, must navigate these choices to find a combination of cells that best satisfies the overall design constraints. The result of this stage is the final, primary output of the synthesis process: a gate-level netlist containing instances of standard cells from a specific technology library, ready for physical implementation.</p>
                 
                 <div class="overflow-x-auto">
-                    <h4 class="text-xl font-semibold my-4">Table 1.1: The Three Stages of Logical Synthesis</h4>
+                    <h4>Table 1.1: The Three Stages of Logical Synthesis</h4>
                     <table>
                         <thead>
                             <tr>
@@ -223,48 +100,48 @@
                     </table>
                 </div>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">1.3 Inputs and Outputs: The Artifacts of the Synthesis Flow</h3>
-                <p class="mb-4">A successful synthesis run depends on a complete and accurate set of input files that provide the tool with the design's function, its performance goals, and the physical characteristics of the target technology. The process, in turn, generates a set of output files that document the resulting implementation and its quality.</p>
+                <h3>1.3 Inputs and Outputs: The Artifacts of the Synthesis Flow</h3>
+                <p>A successful synthesis run depends on a complete and accurate set of input files that provide the tool with the design's function, its performance goals, and the physical characteristics of the target technology. The process, in turn, generates a set of output files that document the resulting implementation and its quality.</p>
                 
-                <h4 class="text-xl font-semibold mt-6 mb-2">1.3.1 Compulsory Inputs: The Non-Negotiable Requirements</h4>
-                <p class="mb-4">These files are essential for any synthesis run. Without them, the tool cannot produce a meaningful or optimized netlist.</p>
+                <h4>1.3.1 Compulsory Inputs: The Non-Negotiable Requirements</h4>
+                <p>These files are essential for any synthesis run. Without them, the tool cannot produce a meaningful or optimized netlist.</p>
                 <ul>
                     <li><strong>RTL (Register-Transfer Level) Code:</strong> The design itself, described in a synthesizable subset of an HDL like Verilog, VHDL, or SystemVerilog. The coding style and partitioning of the RTL can significantly affect the quality of the synthesis results.</li>
                     <li><strong>Technology Library (.lib or .db):</strong> This is the most critical input file, acting as the source of "ground truth" for the synthesis tool. Provided by the semiconductor foundry, this file contains detailed characterization data for every standard cell available in the manufacturing process. For each cell, it specifies:
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Functionality:</strong> The Boolean logic function the cell performs.</li>
                             <li><strong>Timing:</strong> Propagation delays, setup and hold times, and transition times, typically provided in multi-dimensional lookup tables as a function of input slew and output load capacitance.</li>
                             <li><strong>Power:</strong> Dynamic and static (leakage) power consumption characteristics.</li>
                             <li><strong>Area:</strong> The physical area of the cell.</li>
                             <li><strong>Design Rules:</strong> Physical constraints such as maximum fanout and maximum transition time.</li>
                         </ul>
-                        <p class="mt-2">The synthesis tool relies entirely on this data to make every optimization decision. An inaccurate library will lead to a suboptimal design, as the tool's cost analysis will be based on flawed premises. Within the tool's environment, different library roles are specified: the <code>target_library</code> is the primary library used for mapping the design, while the <code>link_library</code> is used to resolve references to cells in pre-compiled sub-modules.</p>
+                        <p>The synthesis tool relies entirely on this data to make every optimization decision. An inaccurate library will lead to a suboptimal design, as the tool's cost analysis will be based on flawed premises. Within the tool's environment, different library roles are specified: the <code>target_library</code> is the primary library used for mapping the design, while the <code>link_library</code> is used to resolve references to cells in pre-compiled sub-modules.</p>
                     </li>
                     <li><strong>Design Constraints (SDC - Synopsys Design Constraints):</strong> This file is the mechanism by which the designer communicates performance goals to the tool. It is a script, typically in the Tool Command Language (Tcl), that specifies the design's timing environment. Key constraints include:
-                         <ul class="pl-6 mt-2">
+                         <ul>
                             <li><code>create_clock</code>: Defines all clock signals, their sources, periods, and waveforms.</li>
                             <li><code>set_input_delay</code> / <code>set_output_delay</code>: Specifies the timing of signals at the design's primary inputs and outputs, modeling the external logic connected to the chip.</li>
                             <li><code>set_max_delay</code> / <code>set_min_delay</code>: Constrains purely combinational paths.</li>
                             <li><strong>Timing Exceptions:</strong> Commands like <code>set_false_path</code> and <code>set_multicycle_path</code> inform the tool about paths that should be ignored or analyzed differently from the default single-cycle assumption.</li>
                         </ul>
-                        <p class="mt-2">Without a comprehensive SDC file, the synthesis tool has no timing targets and will default to optimizing only for minimum area, almost certainly failing to meet performance requirements.</p>
+                        <p>Without a comprehensive SDC file, the synthesis tool has no timing targets and will default to optimizing only for minimum area, almost certainly failing to meet performance requirements.</p>
                     </li>
                 </ul>
 
-                <h4 class="text-xl font-semibold mt-6 mb-2">1.3.2 Optional & Specialized Inputs</h4>
-                <p class="mb-4">These files are used for more advanced synthesis methodologies that go beyond standard logical optimization.</p>
+                <h4>1.3.2 Optional & Specialized Inputs</h4>
+                <p>These files are used for more advanced synthesis methodologies that go beyond standard logical optimization.</p>
                 <ul>
                     <li><strong>Unified Power Format (UPF):</strong> For designs with complex power management schemes, the UPF file describes the power architecture. This includes defining multiple voltage domains, specifying which parts of the design can be powered down (power gating), and indicating where level shifters and isolation cells are required. This file is essential for power-aware synthesis.</li>
                     <li><strong>Floorplan or Physical Constraints:</strong> For physical-aware synthesis, a preliminary floorplan file (e.g., in DEF format) can be provided. This file contains the physical locations of I/O pads, macros (like memories or analog blocks), and the overall chip shape. This information allows the tool to perform more accurate wire delay estimation, leading to better correlation between pre-synthesis and post-layout timing.</li>
                 </ul>
 
-                <h4 class="text-xl font-semibold mt-6 mb-2">1.3.3 Primary Outputs: The Deliverables</h4>
-                <p class="mb-4">Upon completion, the synthesis tool generates several critical files that are passed to the next stages of the design flow.</p>
+                <h4>1.3.3 Primary Outputs: The Deliverables</h4>
+                <p>Upon completion, the synthesis tool generates several critical files that are passed to the next stages of the design flow.</p>
                 <ul>
                     <li><strong>Gate-Level Netlist (.v or .vg):</strong> The primary output is a Verilog file that describes the synthesized circuit as an interconnection of standard cell instances from the technology library. This file is the input to the physical design (place and route) stage.</li>
                     <li><strong>Updated SDC File:</strong> The synthesis process can modify the timing landscape of the design, for example, by creating generated clocks for clock-gating cells or by propagating clocks through the design. The tool writes out an updated SDC file that reflects these changes, ensuring that the timing intent remains consistent for downstream tools like static timing analysis and place and route.</li>
                     <li><strong>Comprehensive Reports:</strong> A suite of text-based reports is generated to allow the designer to analyze the Quality of Results (QoR). These are essential for debugging and sign-off. Common reports include:
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><code>report_qor</code>: A high-level summary of the results, including timing slack, cell counts, area, power estimates, and design rule violations.</li>
                             <li><code>report_timing</code>: A detailed analysis of the most critical timing paths in the design, showing the delay contribution of each cell and net.</li>
                             <li><code>report_area</code>: A breakdown of the total cell area, often categorized by module and cell type.</li>
@@ -275,7 +152,7 @@
                 </ul>
 
                 <div class="overflow-x-auto">
-                    <h4 class="text-xl font-semibold my-4">Table 1.2: Compulsory and Optional Inputs for Logical Synthesis</h4>
+                    <h4>Table 1.2: Compulsory and Optional Inputs for Logical Synthesis</h4>
                     <table>
                         <thead>
                             <tr>
@@ -299,8 +176,6 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Section 2: The Core Engine: Algorithms for Logic Optimization</h2>
-                <p class="mb-4">The heart of the synthesis process lies in the technology-independent logic optimization stage. Here, the generic GTECH netlist is manipulated using a powerful suite of algorithms derived from decades of research in Boolean algebra and computational logic. The goal is to transform the initial, straightforward translation of the RTL into a logically equivalent structure that is superior in terms of area, delay, and power. This section delves into the fundamental algorithms that drive this transformation, starting with the theoretical foundations of two-level minimization and progressing to the more complex, heuristic-driven techniques used for real-world multi-level circuits. The evolution of these algorithms is a direct reflection of the constant trade-off between achieving a mathematically perfect, optimal solution and the practical necessity of finding a high-quality solution in a computationally feasible amount of time.</p>
 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">2.1 Two-Level Logic Minimization: The Theoretical Bedrock</h3>
                 <p class="mb-4">Two-level logic, represented in a Sum-of-Products (SOP) or Product-of-Sums (POS) form, is the simplest and fastest possible implementation of a Boolean function, as any signal path traverses at most two levels of logic (e.g., an AND plane followed by an OR plane). While this structure is often inefficient in terms of area for complex functions, the problem of its minimization is well-defined and serves as a theoretical foundation for more advanced optimization techniques. The primary objective is to find an equivalent two-level representation that uses the minimum number of product terms (implicants) and, secondarily, the minimum number of literals (inputs to the terms).</p>
@@ -609,125 +484,10 @@
                 <p class="mb-4">Looking forward, the trend towards higher levels of abstraction continues with the rise of High-Level Synthesis (HLS), which automates the creation of RTL itself. Concurrently, the increasing specialization of synthesis for domains like DSP demonstrates that the future of design automation lies in the synergy between general-purpose optimization algorithms and deep, domain-specific knowledge. Ultimately, logical synthesis remains a vibrant and essential field, continually evolving to empower designers to conquer the immense complexity of creating the next generation of integrated circuits.</p>
             </section>
             
-            <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-4">Works Cited</h2>
-                <ul class="list-decimal pl-6 mb-4 work-cited">
-                    <li>logic_synthesis_html_1.pdf</li>
-                    <li>What is Synthesis in VLSI? - Maven Silicon, accessed September 11, 2025, https://www.maven-silicon.com/blog/what-is-synthesis-in-vlsi/</li>
-                    <li>VLSI Synthesis: Complete Guide from Basics to Advanced | Theory & Hands-On Practical Marathon, accessed September 11, 2025, https://www.youtube.com/watch?v=gLqr8t-RRIA</li>
-                    <li>Topic 3 in PD: Synthesis Flow Overview: Optimizing RTL to Netlist - YouTube, accessed September 11, 2025, https://www.youtube.com/watch?v=9OQUBt9HLXo</li>
-                    <li>Digital VLSI Design Lecture 5: Logic Synthesis, accessed September 11, 2025, https://www.eng.biu.ac.il/temanad/files/2017/02/Lecture-5-Synthesis.pdf</li>
-                    <li>RTL Synthesis- Part I - YouTube, accessed September 11, 2025, https://www.youtube.com/watch?v=cnpWgZLgB41</li>
-                    <li>Technology Mapping in VLSI (Introduction) | by The Arch Bytes: From Core to Code, accessed September 11, 2025, https://medium.com/@himanshu0525125/technology-mapping-in-vlsi-intro-2ddc3a335fe0</li>
-                    <li>Technology Mapping in VLSI (Part #2) | by The Arch Bytes: From ..., accessed September 11, 2025, https://medium.com/@himanshu0525125/technology-mapping-527e450229f8</li>
-                    <li>Technology mapping of digital circuits, accessed September 11, 2025, https://si2.epfl.ch/demichel/publications/archive/1991/ACTRSA91pg580.pdf</li>
-                    <li>Mastering VLSI Synthesis: Essential Insights into Basics, Generalization, Abstraction & Introduction - YouTube, accessed September 11, 2025, https://www.youtube.com/watch?v=TR3IMS_TYxw</li>
-                    <li>Multi-Level Logic Synthesis, accessed September 11, 2025, https://cseweb.ucsd.edu/classes/fa23/cse248-a/slides/07-Multi-Level-Logic-Synthesis.pdf</li>
-                    <li>Two Level Implementation of Logic Gates - GeeksforGeeks, accessed September 11, 2025, https://www.geeksforgeeks.org/digital-logic/two-level-implementation-of-logic-gates/</li>
-                    <li>Multilevel logic synthesis - Proceedings of the IEEE - People @EECS, accessed September 11, 2025, https://people.eecs.berkeley.edu/~alanmi/publications/other/multi_level.pdf</li>
-                    <li>Two-level Logic Synthesis and Optimization, accessed September 11, 2025, https://si2.epfl.ch/demichel/publications/mcgraw/powerpoint/DT7%20(21%20exact).pptx</li>
-                    <li>Introduction - Columbia CS, accessed September 11, 2025, http://www.cs.columbia.edu/~cs6861/handouts/quine-mccluskey-handout.pdf</li>
-                    <li>Quine McCluskey Method - GeeksforGeeks, accessed September 11, 2025, https://www.geeksforgeeks.org/digital-logic/quine-mccluskey-method/</li>
-                    <li>Quine-McCluskey Tabular Method - Tutorials Point, accessed September 11, 2025, https://www.tutorialspoint.com/digital-electronics/quine-mccluskey-tabular-method.htm</li>
-                    <li>Everything About the Quine-McCluskey Method - Technical Articles, accessed September 11, 2025, https://www.allaboutcircuits.com/technical-articles/everything-about-the-quine-mccluskey-method/</li>
-                    <li>Unit 17 Espresso minimization algorithm. The ESPRESSO program is an example of a HEURISTIC algorithm., accessed September 11, 2025, https://www.physics.dcu.ie/~bl/digi/unitd17.pdf</li>
-                    <li>The input format for espresso that we will use is a simple listing of product terms from a sum-of-products Boolean expression. The file will begin with lines to tell espresso how many inputs the function has and how many outputs it uses. These are followed by the - Washington, accessed September 11, 2025, https://courses.cs.washington.edu/courses/cse467/98au/espresso/espresso.html</li>
-                    <li>(Lec 6) 2-Level Minimization: Basics & Algs - Electrical and Computer Engineering, accessed September 11, 2025, http://course.ece.cmu.edu/~ee760/760docs/lec06.pdf</li>
-                    <li>Command: espresso, accessed September 11, 2025, http://www.ecs.umass.edu/ece/labs/vlsicad/ece667/links/espresso.1.html</li>
-                    <li>L6: Two-level minimization Reading material, accessed September 11, 2025, https://people.kth.se/~dubrova/LScourse/LECTURES/lecture6.pdf</li>
-                    <li>Logic Synthesis and Verification Multi-Level Logic Minimization, accessed September 11, 2025, https://cc.ee.ntu.edu.tw/~jhjiang/instruction/courses/fall11-Isv/lec06_4p.pdf</li>
-                    <li>MULTI-LEVEL LOGIC OPTIMIZATION - ResearchGate, accessed September 11, 2025, https://www.researchgate.net/profile/Maciej-Ciesielski-4/publication/226067960_Multi-Level_Logic_Optimization/links/6140c5b6578238365b0af97d/Multi-Level-Logic-Optimization.pdf</li>
-                    <li>(PDF) Two-Level and Multilevel Approximate Logic Synthesis - ResearchGate, accessed September 11, 2025, https://www.researchgate.net/publication/367497560_Two-Level_and_Multilevel_Approximate_Logic_Synthesis</li>
-                    <li>Multi-level logic synthesis (Chapter 6) - Switching and Finite Automata Theory, accessed September 11, 2025, https://www.cambridge.org/core/books/switching-and-finite-automata-theory/multilevel-logic-synthesis/3617BFC5869C82EDD9A6A17CCBD1B106</li>
-                    <li>Lecture 5: Gate Logic Logic Optimization Overview - EIA, accessed September 11, 2025, http://eia.udg.es/~forest/VLSI/lect.05.pdf</li>
-                    <li>(PDF) Multi-Level Logic Optimization - ResearchGate, accessed September 11, 2025, https://www.researchgate.net/publication/226067960_Multi-Level_Logic_Optimization</li>
-                    <li>Logic Synthesis and Verification Technology Mapping, accessed September 11, 2025, https://cc.ee.ntu.edu.tw/~jhjiang/instruction/courses/fall12-Isv/lec08_4p.pdf</li>
-                    <li>Delay-Optimal Technology Mapping by DAG Covering - CECS, accessed September 11, 2025, https://cecs.uci.edu/~papers/compendium94-03/papers/1998/dac98/pdffiles/22_4.pdf</li>
-                    <li>Performing Technology Mapping and Optimization by DAG Covering: A Review of Traditional Approaches, accessed September 11, 2025, https://www.csd.uoc.gr/~hy583/presentations_fall_2005/euric.pdf</li>
-                    <li>Reducing Structural Bias in Technology Mapping, accessed September 11, 2025, http://www-cad.eecs.berkeley.edu/~alanmi/publications/2005/iccad05_map.pdf</li>
-                    <li>Technology Mapping with Boolean Matching ... - People @EECS, accessed September 11, 2025, https://people.eecs.berkeley.edu/~alanmi/publications/2005/tech05_map.pdf</li>
-                    <li>Technology mapping using Boolean matching and don't care sets, accessed September 11, 2025, https://si2.epfl.ch/demichel/publications/archive/1990/DAC90pg212.pdf</li>
-                    <li>Technology mapping using Boolean matching and don't care sets - ResearchGate, accessed September 11, 2025, https://www.researchgate.net/publication/3502700_Technology_mapping_using_Boolean_matching_and_don't_care_sets</li>
-                    <li>Large-scale Boolean Matching - University of Michigan, accessed September 11, 2025, https://web.eecs.umich.edu/~imarkov/pubs/book/lsynth-match.pdf</li>
-                    <li>Performance-oriented technology mapping - ProQuest, accessed September 11, 2025, https://search.proquest.com/openview/1e903ed0809b9709793b1f23f8074c6f/1?pq-origsite=gscholar&cbl=18750&diss=y</li>
-                    <li>DAG-Map: Graph Based FPGA Technology Mapping For Delay Optimization - Jason Anderson (University of Toronto), accessed September 11, 2025, https://janders.eecg.utoronto.ca/1387/readings/dagmap.pdf</li>
-                    <li>Synthesis: Technology Mapping. Technology mapping is where your ..., accessed September 11, 2025, https://medium.com/@ranaumarnadeem/synthesis-technology-mapping-54fcf14ad6a3</li>
-                    <li>What is Physical Synthesis? - How Does it Work? - Synopsys, accessed September 11, 2025, https://www.synopsys.com/glossary/what-is-physical-synthesis.html</li>
-                    <li>Physically Aware Synthesis Revisited: Guiding Technology Mapping with Primitive Logic Gate Placement - arXiv, accessed September 11, 2025, https://arxiv.org/html/2408.07886v1</li>
-                    <li>Top 7 Dos and Don'ts for Efficient RTL Design - Expertia Al, accessed September 11, 2025, https://www.expertia.ai/career-tips/top-7-dos-and-don-ts-for-efficient-rtl-design-553921</li>
-                    <li>Low Power Design with High-Level Power Estimation and Power-Aware Synthesis Sumit Ahuja, Avinash Lakshminarayana, Sandeep Kumar Shukla - Google Books, accessed September 11, 2025, https://books.google.com/books/about/Low_Power_Design_with_High_Level_Power_E.html?id=daQDmqCpilMC</li>
-                    <li>Logic Synthesis: Post Mapping Optimization | by Rana Umar Nadeem | Medium, accessed September 11, 2025, https://medium.com/@ranaumarnadeem/logic-synthesis-post-mapping-optimization-6b0fc3a64b10</li>
-                    <li>Logic Synthesis for Low Power VLSI Designs by Sasan Iman ..., accessed September 11, 2025, https://www.barnesandnoble.com/w/logic-synthesis-for-low-power-vlsi-designs-sasan-iman/1119437956</li>
-                    <li>Logic Synthesis for Low Power VLSI Designs - Sasan Iman, Massoud Pedram - Google Books, accessed September 11, 2025, https://books.google.com.pr/books?id=NKTaBwAAQBAJ&printsec=frontcover</li>
-                    <li>LOGIC SYNTHESIS FOR LOW POWER VLSI DESIGNS, accessed September 11, 2025, https://www.eng.auburn.edu/~agrawvd/COURSE/E6270_06/BOOKS/BookReview(Iman).doc</li>
-                    <li>Lint in VLSI Design and its importance in RTL Design - ChipEdge, accessed September 11, 2025, https://chipedge.com/resources/lint-in-vlsi-design-and-its-importance-in-rtl-design/</li>
-                    <li>Common RTL Lint Violations - SiliconCrafters, accessed September 11, 2025, https://www.siliconcrafters.com/post/common-rtl-lint-violations</li>
-                    <li>Ascent Lint - RTL Linting Sign-Off - Real Intent, accessed September 11, 2025, https://www.realintent.com/rtl-linting-ascent-lint/</li>
-                    <li>Lint Check in VLSI Design: Common Linting Errors and How to Fix ..., accessed September 11, 2025, https://vlsifacts.com/lint-check-in-vlsi-design-common-linting-errors-and-how-to-fix-them/</li>
-                    <li>Linting - OpenTitan Documentation, accessed September 11, 2025, https://opentitan.org/book/hw/lint/index.html</li>
-                    <li>Creating and Linting a Design in ALINT - Application Notes - Documentation - Aldec, Inc, accessed September 11, 2025, https://www.aldec.com/en/support/resources/documentation/articles/1519</li>
-                    <li>electronic-bit.com, accessed September 11, 2025, https://electronic-bit.com/developers/pages/blog.php?c_id=38&b_id=137#:~:text=On%20other%20hand%2C%20Non%2DSynthesizable.the%20functionality%20of%20the%20design.</li>
-                    <li>What is meant by synthesizable and non synthesizable statements in VLSI? Give two examples of each. - Quora, accessed September 11, 2025, https://www.quora.com/What-is-meant-by-synthesizable-and-non-synthesizable-statements-in-VLSI-Give-two-examples-of-each</li>
-                    <li>Verilog Synthesis Tutorial Part-II - ASIC World, accessed September 11, 2025, https://www.asic-world.com/verilog/synthesis2.html</li>
-                    <li>What is Synthesizable and Non-Synthesizable Constructs in Verilog? - Electronic Bit, accessed September 11, 2025, https://electronic-bit.com/developers/pages/blog.php?c_id=38&b_id=137</li>
-                    <li>RTL Coding Guidelines for Beginners | Best Practices and Tips - VLSI, accessed September 11, 2025, https://vlsifirst.com/blog/top-rtl-design-mistakes-freshers-make</li>
-                    <li>Best practices in RTL design are important for several reaso open-source-silicon.dev #general, accessed September 11, 2025, https://web.open-source-silicon.dev/t/16231454/best-practices-in-rtl-design-are-important-for-several-reaso</li>
-                    <li>What is Equivalence Checking? - How Does it Work? | Synopsys, accessed September 11, 2025, https://www.synopsys.com/glossary/what-is-equivalence-checking.html</li>
-                    <li>Synthesis Methodology & Netlist Qualification - Design And Reuse, accessed September 11, 2025, https://www.design-reuse.com/article/61358-synthesis-methodology-netlist-qualification/</li>
-                    <li>Equivalence Checking, accessed September 11, 2025, https://www21.in.tum.de/~lammich/2015_SS_Seminar_SAT/resources/Equivalence_Checking_11_30_08.pdf</li>
-                    <li>Formal Equivalence Checking Logic Verification, accessed September 11, 2025, http://mtv.ece.ucsb.edu/courses/ece156B_14/Lecture%2005%20-%202014%20-%20BEQ-Symbolic%20Simulation.pdf</li>
-                    <li>Formal Verification - An Overview - VLSI Pro, accessed September 11, 2025, https://vlsi.pro/formal-verification-an-overview/</li>
-                    <li>Understanding Logic Equivalence Check (LEC) Flow and Its Challenges and Proposed Solution - Design And Reuse, accessed September 11, 2025, https://www.design-reuse.com/article/61332-understanding-logic-equivalence-check-lec-flow-and-its-challenges-and-proposed-solution/</li>
-                    <li>What is Static Timing Analysis (STA)? - How STA works? | Synopsys, accessed September 11, 2025, https://www.synopsys.com/glossary/what-is-static-timing-analysis.html</li>
-                    <li>Static timing analysis - Wikipedia, accessed September 11, 2025, https://en.wikipedia.org/wiki/Static_timing_analysis</li>
-                    <li>The Ultimate Guide to Static Timing Analysis (STA) - AnySilicon, accessed September 11, 2025, https://anysilicon.com/the-ultimate-guide-to-static-timing-analysis-sta/</li>
-                    <li>Static Timing Analysis (STA) - VLSI System Design, accessed September 11, 2025, https://www.vlsisystemdesign.com/kunal58625/php/sta.php</li>
-                    <li>STA in VLSI Design: A Beginner's Guide to Timing Analysis - MOSart Labs, accessed September 11, 2025, https://mosartlabs.com/a-beginners-guide-to-sta-static-timing-analysis-in-vlsi-design/</li>
-                    <li>Gate Level Simulation: Ensuring Chip Functionality and Timing ..., accessed September 11, 2025, https://verifasttech.com/gate-level-simulation-ensuring-chip-functionality-and-timing/</li>
-                    <li>Dan Joyce's 29 tips for gate-level simulation - DeepChip, accessed September 11, 2025, https://www.deepchip.com/items/0569-03.html</li>
-                    <li>High-level synthesis - Wikipedia, accessed September 11, 2025, https://en.wikipedia.org/wiki/High-level_synthesis</li>
-                    <li>Logic synthesis - Wikipedia, accessed September 11, 2025, https://en.wikipedia.org/wiki/Logic_synthesis</li>
-                    <li>What is High-Level Synthesis? | HLS - Semiconductor Club, accessed September 11, 2025, https://semiconductorclub.com/what-is-high-level-synthesis/</li>
-                    <li>A look inside behavioral synthesis - EE Times, accessed September 11, 2025, https://www.eetimes.com/a-look-inside-behavioral-synthesis/</li>
-                    <li>Understanding What High-Level Synthesis (HLS) Is - BLT Inc., accessed September 11, 2025, https://bltinc.com/2023/08/21/understanding-high-level-synthesis-hls/</li>
-                    <li>High-Level Synthesis - IDA.LIU.SE, accessed September 11, 2025, https://www.ida.liu.se/~petel71/SysSyn/lect3.frm.pdf</li>
-                    <li>Introduction to HLS: Scheduling, Allocation and Binding Problem - Design Verification and Test of Digital VLSI Circuits NPTEL Video Course, accessed September 11, 2025, https://archive.nptel.ac.in/content/storage2/courses/106103116/handout/mod2.pdf</li>
-                    <li>VLSI Synthesis of DSP Kernels: Algorithmic and Architectural ..., accessed September 11, 2025, https://www.barnesandnoble.com/w/vlsi-synthesis-of-dsp-kernels-mahesh-mehendale/1101513908</li>
-                    <li>VLSI Synthesis of DSP Kernels | Request PDF - ResearchGate, accessed September 11, 2025, https://www.researchgate.net/publication/314089286_VLSI_Synthesis_of_DSP_Kernels</li>
-                    <li>VLSI Synthesis of DSP Kernels - Algorithmic and Architectural Transformations - Scribd, accessed September 11, 2025, https://www.scribd.com/document/371280007/VLSI-Synthesis-of-DSP-Kernels-Algorithmic-and-Architectural-Transformations</li>
-                    <li>Synthesis of Configurable Architectures for DSP Algorithms - IEEE Computer Society, accessed September 11, 2025, https://www.computer.org/csdl/proceedings-article/vlsid/1999/00130350/12OmNwDSdzD</li>
-                </ul>
-            </section>
         </article>
-    </main>
+    </div>
+</main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const scrollElements = document.querySelectorAll(".scroll-reveal");
-
-            const elementObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            scrollElements.forEach(el => {
-                elementObserver.observe(el);
-            });
-
-            const header = document.getElementById('main-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
-

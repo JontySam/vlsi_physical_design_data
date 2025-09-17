@@ -1,0 +1,297 @@
+/* --- Main Content Page Stylesheet --- */
+
+/* 
+ * 1. THEME & BASE STYLES
+ * A light, editorial theme with a warm, blurred background image.
+ * Typography uses a modern sans-serif for headings and a classic serif for body text.
+*/
+:root {
+    --bg-content: rgba(253, 250, 246, 0.92); /* Softer, slightly transparent off-white */
+    --border-muted: #e9ecef;
+    --text-body: #5a6268;        /* Soft Greyish Black */
+    --text-heading: #343a40;     /* Darker Greyish Black */
+    --accent-primary: #008080;  /* Deep Teal */
+    --accent-green: #28a745;
+    --code-bg: #f8f9fa;
+    --code-text: #343a40;
+}
+
+body {
+    font-family: 'Lora', serif;
+    /* Placeholder background image from unsplash.com for a warm, blurred effect */
+    background-image: url('https://images.unsplash.com/photo-1554189097-90d836021d44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
+/* 
+ * 2. HEADER & NAVIGATION
+ * A sticky header that appears on scroll, containing the logo and a "Back" button.
+*/
+header#main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header#main-header.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-heading);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent-primary);
+}
+
+.back-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text-body);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-muted);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+/* 
+ * 3. MAIN CONTENT AREA
+ * The central, scrollable container for the article content, covering ~85% of the viewport width.
+*/
+main.container {
+    width: 75%;
+    max-width: 1100px; /* Adjust max-width as needed */
+    margin: 4rem auto;
+}
+
+main article {
+    background-color: var(--bg-content);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* For Safari */
+    padding: 3rem 5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    main.container {
+        width: 92%;
+        margin: 2rem auto;
+    }
+    main article {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* 
+ * 4. TYPOGRAPHY & CONTENT STYLING
+ * Styles for headings, text, lists, tables, and code blocks.
+*/
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-heading);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.75rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border-muted);
+    padding-bottom: 0.75rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+     font-size: 1.5rem;
+     color: var(--accent-primary);
+     margin-top: 2.5rem;
+     margin-bottom: 1rem;
+}
+
+strong, b {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+code {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-muted);
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    position: relative;
+}
+
+pre code {
+    padding: 0;
+    background: none;
+    color: var(--text-body);
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--border-muted);
+    color: var(--text-body);
+    border: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.copy-btn-success {
+    background-color: var(--accent-green);
+    color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+th, td {
+    border: 1px solid var(--border-muted);
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--code-bg);
+    color: var(--text-heading);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: var(--code-bg);
+}
+
+ul, ol {
+    list-style: none;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+ul li::before {
+    content: '■';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 0.5rem;
+    line-height: 1.7;
+    top: 0.25rem;
+}
+
+ol li {
+    counter-increment: item;
+}
+
+ol li::before {
+    content: counter(item);
+    position: absolute;
+    left: -0.5rem;
+    color: var(--accent-primary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+    width: 1.25rem;
+}
+
+.work-cited li {
+    word-break: break-all;
+}
+
+.hero-section {
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid var(--border-muted);
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    color: var(--text-heading);
+}
+
+.hero-section p {
+    color: var(--text-body);
+}
+
+/* 
+ * 5. ANIMATIONS
+ * Smooth fade-in and slide-up effect for content sections.
+*/
+.scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+    transform: translateY(40px);
+}
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}

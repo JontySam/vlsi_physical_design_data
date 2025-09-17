@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,160 +7,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-body: #1E1E1E; /* Near Black Background */
-            --bg-content: #2F3D5A; /* Dark Blue Content Background */
-            --border-muted: #4a5a7d; /* Lighter Blue for borders */
-            --text-body: #DCDCDC; /* Light Gray for text */
-            --text-heading: #FFFFFF; /* White for headings */
-            --text-strong: #FFFFFF; /* White for strong emphasis */
-            --code-bg: #222d42;
-            --code-text: #a9b7d1;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-body);
-            line-height: 1.7;
-        }
-        h1, h2, h3, h4 {
-            color: var(--text-heading);
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        h1.page-title {
-            color: var(--text-heading);
-            border-bottom: 2px solid var(--border-muted);
-            padding-bottom: 0.5rem;
-        }
-        h2 {
-            border-bottom: 1px solid var(--border-muted);
-            padding-bottom: 0.75rem;
-            margin-top: 4rem;
-            /* Adding a subtle gradient to the heading text for sophistication */
-            background: linear-gradient(90deg, #FFFFFF, #DCDCDC);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        h3 {
-             color: var(--text-heading);
-             opacity: 0.9;
-             margin-top: 2.5rem;
-        }
-        strong, b {
-            color: var(--text-strong);
-            font-weight: 600;
-        }
-        code {
-            background-color: var(--code-bg);
-            color: var(--code-text);
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        th, td {
-            border: 1px solid var(--border-muted);
-            padding: 0.75rem 1rem;
-            text-align: left;
-        }
-        th {
-            background-color: var(--code-bg);
-            color: var(--text-heading);
-            font-weight: 600;
-        }
-        tr:nth-child(even) {
-            background-color: rgba(0,0,0,0.1);
-        }
-        ul, ol {
-            list-style: none;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        li {
-            margin-bottom: 0.75rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        ul li::before {
-            content: '■';
-            position: absolute;
-            left: 0;
-            color: var(--border-muted);
-            font-size: 0.75rem;
-            line-height: 1.7;
-        }
-        ol li {
-            counter-increment: item;
-        }
-        ol li::before {
-            content: counter(item);
-            position: absolute;
-            left: -0.5rem;
-            color: var(--text-heading);
-            font-size: 1rem;
-            font-weight: bold;
-            text-align: right;
-            width: 1.25rem;
-        }
-        .work-cited li {
-            word-break: break-all;
-        }
-
-        header {
-            background-color: transparent;
-        }
-        header.scrolled {
-            background-color: rgba(30, 30, 30, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-muted);
-        }
-        
-        main > article {
-            background-color: var(--bg-content);
-            padding: 2rem 4rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .hero-section {
-            padding: 4rem 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background-color: transparent;
-            border: none;
-        }
-        .hero-section h1 {
-            color: var(--text-heading);
-        }
-        .hero-section p {
-            color: var(--text-body);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body class="antialiased">
 
-    <header id="main-header" class="bg-transparent sticky top-0 z-50 transition-colors duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <h1 class="text-2xl font-bold page-title">VLSI Placement</h1>
-        </div>
+    <header id="main-header">
+        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
-        <article class="max-w-4xl mx-auto space-y-8">
-
+    <main class="container">
+        <article class="space-y-8">
             <section class="hero-section py-20 rounded-lg">
                 <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">The Definitive Guide to the Placement Stage in VLSI Physical Design</h1>
-                <p class="text-lg md:text-xl text-gray-300">From Netlist to Physical Layout</p>
+                <p class="text-lg md:text-xl">From Netlist to Physical Layout</p>
             </section>
             
             <section>
@@ -487,80 +348,10 @@
                 <p class="mb-4">As the industry ventures further into the nanometer era, the challenges confronting placement continue to intensify. Hyper-congestion, byzantine manufacturing rules driven by multiple patterning, severe power density concerns, and the effects of process variability have transformed the problem. The focus has shifted from pure optimization to a constrained search for a legal, routable, and reliable solution. This has necessitated a paradigm shift in EDA tools and methodologies, fostering a move towards more integrated, convergent design platforms where placement is co-optimized with synthesis, floorplanning, and routing in a holistic manner. For the physical design engineer, mastering the art and science of placement-understanding its algorithms, guiding its strategies, and interpreting its results-remains an indispensable skill at the very heart of creating the next generation of integrated circuits.</p>
             </section>
             
-            <section>
-                <h2 class="text-3xl font-bold mb-4">Works Cited</h2>
-                <ol class="pl-6 mb-4 work-cited">
-                    <li>www.scribd.com, accessed September 17, 2025, https://www.scribd.com/document/461537047/Placement#:~:text=It%20defines%20placement%20as%20the, more%20signals%20than%20available%20tracks.</li>
-                    <li>Placement in VLSI Design: A Detailed Overview | 2025 | New Tricks - logicmadness.com, accessed September 17, 2025, https://logicmadness.com/placement-in-vlsi/</li>
-                    <li>1.define Placement in Physical Design? | PDF | Digital Technology - Scribd, accessed September 17, 2025, https://www.scribd.com/document/461537047/Placement</li>
-                    <li>Placement - VLSI Begin, accessed September 17, 2025, http://vlsibegin.blogspot.com/p/placement.html</li>
-                    <li>placement_html.pdf</li>
-                    <li>VLSI Placement Optimization Algorithms | Journal of Integrated Circuits and Systems, accessed September 17, 2025, https://jics.org.br/ojs/index.php/JICS/article/view/645</li>
-                    <li>Congestion in VLSI Physical Design Flow - ChipEdge, accessed September 17, 2025, https://chipedge.com/resources/congestion-in-visi-physical-design-flow/</li>
-                    <li>VLSI Placement Optimization Algorithms - Journal of Integrated Circuits and Systems, accessed September 17, 2025, https://jics.org.br/ojs/index.php/JICS/article/download/645/425/2982</li>
-                    <li>Parameter Optimization of VLSI Placement Through Deep Reinforcement Learning - Georgia Institute of Technology, accessed September 17, 2025, https://gtcad.gatech.edu/www/papers/anthony-tcad22.pdf</li>
-                    <li>VLSI cell placement techniques - Electrical and Computer Engineering, accessed September 17, 2025, https://www.eecs.northwestern.edu/~haizhou/357/p143-shahookar.pdf</li>
-                    <li>"Placement of VLSI circuits" by Chen Li - Purdue e-Pubs, accessed September 17, 2025, https://docs.lib.purdue.edu/dissertations/AAI3232111/</li>
-                    <li>Tips for evaluating the placement in VLSI Physical Design | by VLSIPD - Medium, accessed September 17, 2025, https://medium.com/@vlsipd4/tips-for-evaluating-the-placement-in-visi-physical-design-15c45d4694c1</li>
-                    <li>Placement - VLSI - Physical Design, accessed September 17, 2025, https://physicaldesignconcepts.blogspot.com/2019/01/placement.html</li>
-                    <li>Placement Objectives & Quality Checks - VLSI Master, accessed September 17, 2025, https://vlsimaster.com/placement-objectives-quality-checks/</li>
-                    <li>Chapter 8 - Timing Closure - VLSI Physical Design, Springer Verlag, accessed September 17, 2025, https://www.ifte.de/books/eda/chap8.pdf</li>
-                    <li>Congestion & Timing Optimization Techniques at 7nm Design, accessed September 17, 2025, https://www.design-reuse.com/article/61236-congestion-timing-optimization-techniques-at-7nm-design/</li>
-                    <li>Inputs and Outputs of Placement - VLSI Master, accessed September 17, 2025, https://vlsimaster.com/inputs-and-outputs-of-placement/</li>
-                    <li>What are the inputs required for physical design? | by VLSIPD - Medium, accessed September 17, 2025, https://medium.com/@vlsipd4/what-are-the-inputs-required-for-physical-design-f342e1711648</li>
-                    <li>Pre Placement Sanity Checks in VLSI Physical Design | iVLSI Technologies, accessed September 17, 2025, https://www.ivlsi.com/pre-placement-sanity-checks-vlsi-physical-design/</li>
-                    <li>Pre-Placement - VLSI Master, accessed September 17, 2025, https://verificationmaster.com/pre-placement/</li>
-                    <li>Placement Steps - VLSI Master, accessed September 17, 2025, https://verificationmaster.com/placement-steps/</li>
-                    <li>Detailed Placement and Global Routing Co-Optimization with Complex Constraints - MDPI, accessed September 17, 2025, https://www.mdpi.com/2079-9292/11/1/51</li>
-                    <li>jics.org.br, accessed September 17, 2025, https://jics.org.br/ojs/index.php/JICS/article/download/645/425/2982#:~:text=In%2Olegaliza%20%20tion%2C%20the%20locations.solution%20is%20further%20optimized%20locally.</li>
-                    <li>US7934188B2 - Legalization of VLSI circuit placement with blockages using hierarchical row slicing - Google Patents, accessed September 17, 2025, https://patents.google.com/patent/US7934188B2/en</li>
-                    <li>VLSI placement algorithms for better detailed routability - Purdue e-Pubs, accessed September 17, 2025, https://docs.lib.purdue.edu/dissertations/AA13669459/</li>
-                    <li>Timing and Congestion Driven Algorithms for FPGA Placement - UNT Digital Library, accessed September 17, 2025, https://digital.library.unt.edu/ark:/67531/metadc5423/</li>
-                    <li>Design Compiler Graphical - Synopsys, accessed September 17, 2025, https://www.synopsys.com/content/dam/synopsys/implementation&signoff/datasheets/dc-graphical-ds.pdf</li>
-                    <li>Congestion in Placement VLSI Physical Design | by VLSIPD - Medium, accessed September 17, 2025, https://medium.com/@vlsipd4/congestion-in-placement-vlsi-physical-design-bcc13a06bf3a</li>
-                    <li>CTS (PART-1) - VLSI- Physical Design For Freshers, accessed September 17, 2025, https://www.physicaldesign4u.com/2020/02/clock-tree-synthesis.html</li>
-                    <li>Clock Tree Synthesis (CTS) in VLSI Physical Design | by VLSIPD..., accessed September 17, 2025, https://medium.com/@vlsipd4/clock-tree-synthesis-cts-in-vlsi-physical-design-c8912b414cdb</li>
-                    <li>Clock Tree Synthesis in VLSI Physical Design | iVLSI Technologies, accessed September 17, 2025, https://ivlsi.com/clock-tree-synthesis-cts-vlsi-physical-design/</li>
-                    <li>What is Clock Tree Synthesis? - ChipEdge, accessed September 17, 2025, https://chipedge.com/resources/what-is-clock-tree-synthesis/</li>
-                    <li>Congestion + timing violations. How to approach this? - Digital Implementation - Cadence Technology Forums, accessed September 17, 2025, https://community.cadence.com/cadence_technology_forums/f/digital-implementation/11989/congestion-timing-violations-how-to-approach-this</li>
-                    <li>Understanding Horizontal and Vertical Congestion in VLSI Design - Success Bridge, accessed September 17, 2025, https://www.successbridge.co.in/horizontal-and-vertical-congestion-in-vlsi/</li>
-                    <li>Congestion and Timing Optimization Techniques in VLSI Physical Design - BITSILICA, accessed September 17, 2025, https://bitsilica.com/congestion-and-timing-optimization-techniques-in-visi-physical-design/</li>
-                    <li>Mitigating Congestion, CTS, OCV and Other Challenges using Cadence Tools and Support, accessed September 17, 2025, https://community.cadence.com/cadence_blogs_8/b/di/posts/mitigating-congestion-cts-ocv-and-other-challenges-using-cadence-tools-and-support</li>
-                    <li>Routing Congestion in VLSI Circuits: Estimation and Optimization, accessed September 17, 2025, https://picture.iczhiku.com/resource/eetop/WHKDfRjygeqLPnbB.pdf</li>
-                    <li>Placement and algorithm. | PPTX - SlideShare, accessed September 17, 2025, https://www.slideshare.net/slideshow/placement-and-algorithm/59779143</li>
-                    <li>(PDF) Progress and Challenges in VLSI Placement Research - ResearchGate, accessed September 17, 2025, https://www.researchgate.net/publication/283644741_Progress_and_Challenges_in_VLSI_Placement_Research</li>
-                    <li>Top VLSI Design Tools in 2025 | GUVI-Blog, accessed September 17, 2025, https://www.guvi.in/blog/top-vlsi-design-tools/</li>
-                    <li>Essential Tools for Physical Design Engineers: A Comprehensive Guide, accessed September 17, 2025, https://www.takshila-vlsi.com/essential-tools-for-physical-design-engineers-a-comprehensive-guide/</li>
-                    <li>VLSI Design Analysis with Commercial EDA Tools - From Logic Synthesis to Physical Design - International Journal of Science and Research (IJSR), accessed September 17, 2025, https://www.ijsr.net/archive/v12i6/SR23531124329.pdf</li>
-                    <li>IC Compiler II: Industry Leading Place and Route System - Synopsys, accessed September 17, 2025, https://www.synopsys.com/content/dam/synopsys/implementation&signoff/datasheets/ic-compiler-ii-ds.pdf</li>
-                    <li>CALIFORNIA STATE UNIVERSITY NORTHRIDGE IMPLEMENTATION OF COMPLETE ASIC DESIGN USING LOW POWER METHODOLOGY A graduate project sub, accessed September 17, 2025, https://scholarworks.calstate.edu/downloads/zk51vk980</li>
-                    <li>EDA Tools Integration for Physical Design Automation (PDA) - Takshila VLSI, accessed September 17, 2025, https://www.takshila-vlsi.com/eda-tools-integration-for-physical-design-automation-pda/</li>
-                    <li>Automatic Placement and Routing using Cadence Encounter Getting started - MIT, accessed September 17, 2025, https://csg.csail.mit.edu/6.375/6_375_2009_www/handouts/tutorials/tut5-enc.pdf</li>
-                    <li>Electronic Design Automation (EDA) - Siemens Digital Industries Software, accessed September 17, 2025, https://www.sw.siemens.com/en-US/technology/electronic-design-automation-eda/</li>
-                    <li>Place-and-Route Software for Digital IC Design - Siemens EDA, accessed September 17, 2025, https://eda.sw.siemens.com/en-US/ic/ic-design/place-route/</li>
-                    <li>Oasys-RTL Synthesis - Siemens EDA, accessed September 17, 2025, https://eda.sw.siemens.com/en-US/ic/oasys-rtl/</li>
-                    <li>Challenges Faced By VLSI Industry in Today's Era | Blog entry by Shreyas BT | eTech Prowess, accessed September 17, 2025, $=33$</li>
-                    <li>Yield and Reliability Challenges at 7nm and Below - PDF Solutions, accessed September 17, 2025, https://ko.pdf.com/wp-content/uploads/2020/05/PublishedPaper_2019-EDTM_DCiplickas_AStrowjas_KDoong_Yield_Rel_7nm.pdf</li>
-                    <li>Detailed Placement In Advanced Technology Nodes: A Survey - Computer Engineering Research Center (CERC), accessed September 17, 2025, https://www.cerc.utexas.edu/utda/publications/C194.pdf</li>
-                    <li>5nm Design Progress - Semiconductor Engineering, accessed September 17, 2025, https://semiengineering.com/5nm-challenges-come-into-focus/</li>
-                    <li>Physical Design Challenges in Modern Semiconductor Manufacturing - Takshila VLSI, accessed September 17, 2025, https://www.takshila-vlsi.com/physical-design-challenges-in-modern-semiconductor-manufacturing/</li>
-                </ol>
-            </section>
         </article>
-    </main>
+    </div>
+</main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const header = document.getElementById('main-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
-
