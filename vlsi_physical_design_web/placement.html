@@ -4,52 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VLSI Placement: A Comprehensive Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark-navy: #1A222F; /* Deep Navy Blue */
-            --bg-mid-charcoal: #2C3543; /* Dark Charcoal */
-            --border-muted: #4F5A69; /* Muted border */
-            --text-off-white: #EAEAEA; /* Warm Off-White */
-            --text-white: #FFFFFF;
-            --accent-light: #FFFFFF; /* A clean accent color */
+            --bg-body: #1E1E1E; /* Near Black Background */
+            --bg-content: #2F3D5A; /* Dark Blue Content Background */
+            --border-muted: #4a5a7d; /* Lighter Blue for borders */
+            --text-body: #DCDCDC; /* Light Gray for text */
+            --text-heading: #FFFFFF; /* White for headings */
+            --text-strong: #FFFFFF; /* White for strong emphasis */
+            --code-bg: #222d42;
+            --code-text: #a9b7d1;
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark-navy);
-            color: var(--text-off-white);
+            background-color: var(--bg-body);
+            color: var(--text-body);
             line-height: 1.7;
         }
         h1, h2, h3, h4 {
-            color: var(--text-white);
+            color: var(--text-heading);
             font-weight: 700;
             line-height: 1.3;
         }
         h1.page-title {
+            color: var(--text-heading);
             border-bottom: 2px solid var(--border-muted);
             padding-bottom: 0.5rem;
         }
         h2 {
             border-bottom: 1px solid var(--border-muted);
             padding-bottom: 0.75rem;
-            color: var(--text-white);
             margin-top: 4rem;
+            /* Adding a subtle gradient to the heading text for sophistication */
+            background: linear-gradient(90deg, #FFFFFF, #DCDCDC);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         h3 {
-             color: var(--text-white);
+             color: var(--text-heading);
              opacity: 0.9;
              margin-top: 2.5rem;
         }
         strong, b {
-            color: var(--accent-light);
+            color: var(--text-strong);
             font-weight: 600;
         }
         code {
-            background-color: var(--bg-mid-charcoal);
-            color: var(--text-off-white);
+            background-color: var(--code-bg);
+            color: var(--code-text);
             padding: 0.2rem 0.4rem;
             border-radius: 0.25rem;
             font-family: 'Courier New', Courier, monospace;
@@ -66,12 +74,12 @@
             text-align: left;
         }
         th {
-            background-color: var(--bg-mid-charcoal);
-            color: var(--text-white);
+            background-color: var(--code-bg);
+            color: var(--text-heading);
             font-weight: 600;
         }
         tr:nth-child(even) {
-            background-color: var(--bg-mid-charcoal);
+            background-color: rgba(0,0,0,0.1);
         }
         ul, ol {
             list-style: none;
@@ -98,32 +106,52 @@
             content: counter(item);
             position: absolute;
             left: -0.5rem;
-            color: var(--text-white);
+            color: var(--text-heading);
             font-size: 1rem;
             font-weight: bold;
             text-align: right;
             width: 1.25rem;
         }
-        .hero-section {
-            background-color: var(--bg-mid-charcoal);
-            border: 1px solid var(--border-muted);
-            text-align: center;
-        }
         .work-cited li {
             word-break: break-all;
         }
 
+        header {
+            background-color: transparent;
+        }
         header.scrolled {
-            background-color: rgba(26, 34, 47, 0.85);
+            background-color: rgba(30, 30, 30, 0.85);
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-muted);
+        }
+        
+        main > article {
+            background-color: var(--bg-content);
+            padding: 2rem 4rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-section {
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+        }
+        .hero-section h1 {
+            color: var(--text-heading);
+        }
+        .hero-section p {
+            color: var(--text-body);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header id="main-header" class="bg-transparent shadow-lg sticky top-0 z-50 transition-colors duration-300">
+    <header id="main-header" class="bg-transparent sticky top-0 z-50 transition-colors duration-300">
         <div class="container mx-auto px-6 py-4">
-            <h1 class="text-2xl font-bold text-white page-title">VLSI Placement</h1>
+            <h1 class="text-2xl font-bold page-title">VLSI Placement</h1>
         </div>
     </header>
 
@@ -131,7 +159,7 @@
         <article class="max-w-4xl mx-auto space-y-8">
 
             <section class="hero-section py-20 rounded-lg">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-white">The Definitive Guide to the Placement Stage in VLSI Physical Design</h1>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">The Definitive Guide to the Placement Stage in VLSI Physical Design</h1>
                 <p class="text-lg md:text-xl text-gray-300">From Netlist to Physical Layout</p>
             </section>
             
@@ -141,7 +169,7 @@
                 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">What is Placement? The Bridge Between Logical and Physical Design</h3>
                 <p class="mb-4">At its core, placement is the automated process of assigning specific (x, y) coordinates to every standard cell within the core area of an integrated circuit, as defined by the floorplan. An Electronic Design Automation (EDA) tool, equipped with sophisticated algorithms, takes the synthesized gate-level netlist and meticulously arranges each component into legally defined rows on the chip. However, this process is far more than a simple geometric arrangement. Placement is a multi-faceted optimization challenge that fundamentally determines the chip's routability, timing characteristics, and power consumption. The quality of the placement solution establishes the foundation for all subsequent physical design stages. A well-executed placement makes the later, complex tasks of Clock Tree Synthesis (CTS) and Routing more manageable and likely to succeed, whereas a poor placement can introduce insurmountable problems. The placement problem is formally classified as NP-complete, meaning no known algorithm can find the absolute optimal solution in polynomial time for large designs. This computational complexity necessitates the use of advanced heuristics and iterative refinement techniques to arrive at a high-quality solution.</p>
-                <p class="mb-4">The transition from logical to physical design is most pronounced at this stage. During synthesis, the design is optimized using statistical and often inaccurate Wire Load Models (WLMs) to estimate interconnect delays. Placement discards these estimations and, for the first time, uses physically-aware delay calculations based on "virtual routes" (VR)-the shortest Manhattan distance between the pins of connected cells. This shift from abstract models to concrete physical distances provides a much more accurate, albeit still preliminary, assessment of the design's performance, making placement the first true test of the design's physical viability.</p>
+                <p class="mb-4">The transition from logical to a physical design is most pronounced at this stage. During synthesis, the design is optimized using statistical and often inaccurate Wire Load Models (WLMs) to estimate interconnect delays. Placement discards these estimations and, for the first time, uses physically-aware delay calculations based on "virtual routes" (VR)-the shortest Manhattan distance between the pins of connected cells. This shift from abstract models to concrete physical distances provides a much more accurate, albeit still preliminary, assessment of the design's performance, making placement the first true test of the design's physical viability.</p>
             </section>
 
             <section>
@@ -535,3 +563,4 @@
     </script>
 </body>
 </html>
+
