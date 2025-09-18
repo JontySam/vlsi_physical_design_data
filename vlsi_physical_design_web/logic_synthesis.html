@@ -26,12 +26,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            /* Revert flex centering to allow normal document flow and scrolling */
+            display: block;
+            height: auto;
+            overflow-y: auto;
+            padding: 0; /* Reset body padding */
+        }
+        main.container {
+            /* Add vertical margin and center horizontally */
+            margin: 3rem auto;
+            
+            /* Apply visual styles to make it a distinct box */
+            background-color: #F5F1EC; /* var(--bg-container) */
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem 4rem;
+
+            /* Explicitly un-scale the container */
+            transform: none !important;
+        }
+
+        @media (max-width: 768px) {
+            main.container {
+                margin: 1.5rem auto;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body class="antialiased">
 
     <header id="main-header">
         <a href="index.html" class="logo">VLSI <span>Hub</span></a>
-        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="page-nav" id="page-navigation">
+            <a href="projects.html">Projects</a>
+            <a href="work_sited.html">Works Cited</a>
+            <a href="about.html#about">About</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="index.html" class="back-link">&larr; Back to Home</a>
+        </nav>
     </header>
 
     <main class="container">
@@ -296,9 +338,9 @@
             
             <section class="scroll-reveal">
                 <h2 class="text-3xl font-bold mb-6">Section 4: Advanced Synthesis Methodologies</h2>
-                <p class="mb-4">As VLSI technology has scaled into the deep submicron era, the classical synthesis flow—based on purely logical optimizations and statistical delay estimates—has become insufficient for achieving design closure on high-performance chips. The physical effects of interconnects, which were once negligible, now dominate overall circuit delay, and power consumption has emerged as a first-class design constraint. In response, the industry has developed advanced synthesis methodologies that integrate physical and power-related information directly into the logical optimization process. These techniques represent a paradigm shift, breaking down the traditional abstraction barriers between the logical and physical design domains to create a more holistic and convergent workflow.</p>
+                <p class="mb-4">As VLSI technology has scaled into the deep submicron era, the classical synthesis flow—based on purely logical optimizations and statistical delay estimates—has become insufficient for achieving design closure on high-performance chips. The physical effects of interconnects (wires) now dominate overall circuit delay, and power consumption has emerged as a first-class design constraint. In response, the industry has developed advanced synthesis methodologies that integrate physical and power-related information directly into the logical optimization process. These techniques represent a paradigm shift, breaking down the traditional abstraction barriers between the logical and physical design domains to create a more holistic and convergent workflow.</p>
                 <h3 class="text-2xl font-semibold mt-8 mb-4">4.1 Physical-Aware Synthesis: A Paradigm Shift for Design Closure</h3>
-                <p class="mb-4">In a traditional synthesis flow, the tool has no knowledge of the physical layout of the chip. To estimate the delay of the wires (nets) connecting the logic gates, it relies on statistical Wire Load Models (WLMs). A WLM provides a rough estimate of a net's capacitance, resistance, and area based on its fanout (the number of gates it drives) and the size of the block it is in. While this was a reasonable approximation at older process nodes (e.g., >130 nm), it is highly inaccurate for modern designs where interconnect delay can account for 70% or more of a path's total delay.</p>
+                <p class="mb-4">In a traditional synthesis flow, the tool has no knowledge of the physical layout of the chip. To estimate the delay of the wires (nets) connecting the logic gates, it relies on statistical Wire Load Models (WLMs). A WLM is essentially a lookup table that provides an estimated wire length, capacitance, and resistance based on a net's fanout (the number of gates it drives) and the size of the block it is in. While this was a reasonable approximation at older process nodes (e.g., >130 nm), it is highly inaccurate for modern designs where interconnect delay can account for 70% or more of a path's total delay.</p>
                 <p class="mb-4">This inaccuracy leads to the "timing closure" problem. A design that appears to meet timing constraints after synthesis (based on WLM estimates) will often have thousands of new timing violations after the cells are physically placed and routed by the physical design team. This discrepancy forces a painful and time-consuming iterative loop: the physical design team generates new timing information, which is sent back to the synthesis team to re-optimize the netlist, which is then sent back for another attempt at placement. This cycle can take weeks and is a major bottleneck in chip development.</p>
                 <p class="mb-4">Physical-aware synthesis (also known as topographical synthesis) was developed to solve this problem by breaking down the abstraction barrier between the logical and physical worlds. Instead of relying on abstract WLMs, this methodology incorporates concrete physical information early in the synthesis process.</p>
                 <ul class="mb-4">
@@ -501,8 +543,7 @@
             </section>
             
         </article>
-    </div>
-</main>
+    </main>
 
     <script src="main.js"></script>
 

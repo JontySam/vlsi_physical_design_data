@@ -26,12 +26,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            /* Revert flex centering to allow normal document flow and scrolling */
+            display: block;
+            height: auto;
+            overflow-y: auto;
+            padding: 0; /* Reset body padding */
+        }
+        main.container {
+            /* Add vertical margin and center horizontally */
+            margin: 3rem auto;
+            
+            /* Apply visual styles to make it a distinct box */
+            background-color: #F5F1EC; /* var(--bg-container) */
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem 4rem;
+
+            /* Explicitly un-scale the container */
+            transform: none !important;
+        }
+
+        @media (max-width: 768px) {
+            main.container {
+                margin: 1.5rem auto;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body class="antialiased">
 
     <header id="main-header">
         <a href="index.html" class="logo">VLSI <span>Hub</span></a>
-        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="page-nav" id="page-navigation">
+            <a href="projects.html">Projects</a>
+            <a href="work_sited.html">Works Cited</a>
+            <a href="about.html#about">About</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="index.html" class="back-link">&larr; Back to Home</a>
+        </nav>
     </header>
 
     <main class="container">
@@ -460,7 +502,6 @@
             </section>
             
         </article>
-    </div>
 </main>
 
     <script src="main.js"></script>

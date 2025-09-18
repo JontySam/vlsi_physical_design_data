@@ -1,19 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Sticky header logic
     const header = document.getElementById('main-header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+    const mainContainer = document.querySelector('main.container');
+
+    if (header && mainContainer) {
+        mainContainer.addEventListener('scroll', () => {
+            if (mainContainer.scrollTop > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
     }
-
     // Scroll-reveal animation logic
     const scrollElements = document.querySelectorAll(".scroll-reveal");
     if (scrollElements.length > 0) {
+        const observerOptions = {
+            threshold: 0.1
+        };
+        // Use the main container as the scroll root for intersection observer
+        if (mainContainer) {
+            observerOptions.root = mainContainer;
+        }
+
         const elementObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -21,9 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
         scrollElements.forEach(el => elementObserver.observe(el));
+    }
+
+    // Helper function for copy button state
+    function setCopyButtonState(button, message, success) {
+        const originalText = 'Copy';
+        button.innerText = message;
+        if (success) button.classList.add('copy-btn-success');
+
+        setTimeout(() => {
+            button.innerText = originalText;
+            if (success) button.classList.remove('copy-btn-success');
+        }, 2000);
     }
 
     // Copy to clipboard function
@@ -32,21 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener('click', () => {
             const preElement = button.parentElement;
             const codeElement = preElement.querySelector('code');
-            const textToCopy = codeElement.innerText;
-            
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                button.innerText = 'Copied!';
-                button.classList.add('copy-btn-success');
-                setTimeout(() => {
-                    button.innerText = 'Copy';
-                    button.classList.remove('copy-btn-success');
-                }, 2000);
+            navigator.clipboard.writeText(codeElement.innerText).then(() => {
+                setCopyButtonState(button, 'Copied!', true);
             }).catch(err => {
                 console.error('Failed to copy text: ', err);
-                button.innerText = 'Failed!';
-                setTimeout(() => {
-                    button.innerText = 'Copy';
-                }, 2000);
+                setCopyButtonState(button, 'Failed!', false);
             });
         });
     });
