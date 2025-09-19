@@ -1,64 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/index.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/cmos_fundamentals.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/logic_synthesis.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/pd_inputs.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/floorplan.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/placement.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/cts.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/advanced_synthesis.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/work_sited.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.50</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/projects.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://www.vlsiphysicaldesign.site/project-template.html</loc>
-  <lastmod>2023-10-27T00:00:00+00:00</lastmod>
-  <priority>0.40</priority>
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/index.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/cmos_fundamentals.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/logic_synthesis.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/advanced_synthesis.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/pd_inputs.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/floorplan.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/powerplan.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/placement.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/cts.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/routing.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/projects.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/work_sited.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.site/about.html</loc>
+    <lastmod>2024-09-18</lastmod>
+    <priority>0.60</priority>
+  </url>
 </urlset>
