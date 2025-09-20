@@ -21,7 +21,11 @@
     <meta property="twitter:description" content="An in-depth guide to VLSI power planning, covering the power distribution network (PDN), power integrity analysis (IR drop, EM), and low-power design techniques using UPF.">
     <meta property="twitter:image" content="https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.site/powerplan.html" />
+
+    <!-- Link to production-ready CSS. Generate this file using the command in the documentation. -->
+    <link href="dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -739,19 +743,38 @@ set_level_shifter LtoH_sig_to_aonpgd \
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "A Comprehensive Guide to Power Planning and Integrity in Modern VLSI Design",
-      "description": "An in-depth guide to VLSI power planning, covering the power distribution network (PDN), power integrity analysis (IR drop, EM), and low-power design techniques using UPF.",
-      "author": {
-        "@type": "Organization",
-        "name": "VLSI Hub"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "VLSI Hub"
-      },
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.vlsiphysicaldesign.site/powerplan.html"
+      },
+      "headline": "A Guide to Power Planning and Integrity in VLSI Design",
+      "description": "An in-depth guide to VLSI power planning, covering the power distribution network (PDN), power integrity analysis (IR drop, EM), low-power design techniques using UPF, and advanced transistor architectures like FinFET and GAA.",
+      "image": "https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg",
+      "datePublished": "2024-09-18",
+      "dateModified": "2024-09-18",
+      "author": {
+        "@type": "Organization",
+        "name": "VLSI Hub",
+        "url": "https://www.vlsiphysicaldesign.site/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VLSI Hub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.vlsiphysicaldesign.site/assets/images/logo.png"
+        }
+      },
+      "keywords": "VLSI, Power Planning, Power Integrity, PDN, IR Drop, Electromigration, UPF, Low Power Design, Power Gating, FinFET, GAA",
+      "about": [
+        {"@type": "Thing", "name": "Power network", "sameAs": "https://en.wikipedia.org/wiki/Power_network_(integrated_circuits)"},
+        {"@type": "Thing", "name": "Unified Power Format", "sameAs": "https://en.wikipedia.org/wiki/Unified_Power_Format"},
+        {"@type": "Thing", "name": "Electromigration", "sameAs": "https://en.wikipedia.org/wiki/Electromigration"}
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "VLSI Physical Design Hub",
+        "url": "https://www.vlsiphysicaldesign.site/"
       }
     }
     </script>
