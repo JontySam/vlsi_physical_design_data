@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock Tree Synthesis (CTS) Deep Dive | VLSI Physical Design Hub</title>
     <meta name="description" content="A deep dive into Clock Tree Synthesis (CTS), covering fundamentals, architectures like mesh and H-tree, low-power techniques, and advanced challenges.">
     <meta name="keywords" content="CTS, Clock Tree Synthesis, VLSI, Clock Skew, Clock Latency, OCV, Clock Mesh, Low Power">
@@ -397,6 +397,18 @@
                 <p class="mb-4">Clock Tree Synthesis has evolved from a relatively straightforward process of buffer insertion to a highly complex, multi-objective optimization problem that sits at the nexus of performance, power, reliability, and manufacturability. The design of a modern clock network is a delicate balancing act, navigating the fundamental trade-offs between low skew and low latency, high performance and low power, and small area versus robustness to physical variations.</p>
                 <p class="mb-4">The methodologies and architectures employed today-from sophisticated clustering algorithms and physically-aware clock gating to hierarchical two-stage distribution networks-are the direct result of decades of innovation driven by the relentless scaling of semiconductor technology. The challenges posed by interconnect dominance, on-chip variation, and electromigration at advanced FinFET nodes have transformed CTS from a purely timing-focused task into a holistic discipline that requires the co-optimization of timing, power, and reliability.</p>
                 <p class="mb-4">Looking ahead, the challenges are set to intensify. The move towards 3D-ICs, where multiple dies are stacked vertically, will require the development of novel clocking strategies that can distribute a synchronized clock across dies through Through-Silicon Vias (TSVs), introducing a new dimension of complexity to the balancing problem. The ever-increasing scale and complexity of SoC designs will continue to push the limits of computational efficiency, creating opportunities for the application of Artificial Intelligence and Machine Learning (AI/ML) in EDA. ML models show promise in more accurately predicting post-CTS timing and congestion early in the flow, enabling more intelligent placement decisions and optimizing the selection of clock tree architectures. Finally, as systems continue to integrate a heterogeneous mix of high-performance processors, low-power controllers, and sensitive analog IP on a single chip, the need for more sophisticated techniques for managing multiple clock domains and ensuring safe and reliable synchronization between them will become even more critical. The clock tree will remain the vital heartbeat of the chip, and its synthesis will continue to be a cornerstone of successful silicon design.</p>
+            </section>
+
+            <!-- Bottom Navigation -->
+            <section class="bottom-nav">
+                <a href="placement.html" class="nav-prev">
+                    <span class="nav-label">&larr; Previous</span>
+                    <span class="nav-title">Placement</span>
+                </a>
+                <a href="routing.html" class="nav-next">
+                    <span class="nav-label">Next &rarr;</span>
+                    <span class="nav-title">Routing</span>
+                </a>
             </section>
             
         </article>
