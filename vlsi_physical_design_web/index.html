@@ -26,7 +26,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
         /* --- CSS --- */
 
@@ -237,6 +236,16 @@
             transition: color 0.3s ease;
         }
 
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2; /* Place it behind the overlay */
+        }
+
         /* 
          * 4. RESPONSIVE DESIGN
          * Grid collapses to 2 columns on tablets and 1 on mobile.
@@ -319,7 +328,10 @@
 
     <main class="content-grid-container" style="margin-top: 2rem; background-color: transparent; box-shadow: none; padding: 0;">
         <a href="who-am-i.html" class="horizontal-item">
-            <div class="horizontal-item__content" style="background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80')"><h3>Who Am I</h3></div>
+            <div class="horizontal-item__content">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="A professional working on a laptop in a modern office" class="bg-image" fetchpriority="high">
+                <h3>Who Am I</h3>
+            </div>
         </a>
     </main>
 </body>
