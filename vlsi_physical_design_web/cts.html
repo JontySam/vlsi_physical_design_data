@@ -31,6 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <style>
+        html {
+            font-size: 90%;
+        }
         body {
             /* Revert flex centering to allow normal document flow and scrolling */
             display: block;
@@ -88,7 +91,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 1: The Foundational Principles of Clock Distribution</h2>
+                <h2>The Foundational Principles of Clock Distribution</h2>
                 
                 <h3 class="mt-8 mb-4">1.1 The Role of the Clock in Synchronous Systems</h3>
                 <p class="mb-4">In the domain of synchronous digital integrated circuits (ICs), the clock signal serves as the fundamental orchestrator of all data transactions. It is the metronome that governs the operation of sequential logic elements, such as flip-flops and latches, ensuring that data is captured and propagated in a predictable, synchronized manner. The performance of a digital system, measured by its operating frequency, is intrinsically linked to the speed and integrity of this clock signal. As designers push for higher frequencies to meet escalating performance demands, the physical challenge of distributing a high-fidelity clock signal across a vast and complex silicon die becomes a paramount concern.</p>
@@ -133,7 +136,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 2: The Clock Tree Synthesis Workflow and Methodologies</h2>
+                <h2>The Clock Tree Synthesis Workflow and Methodologies</h2>
                 <p class="mb-4">The practical implementation of CTS is a systematic process within the broader physical design flow, situated between cell placement and signal routing. It requires a specific set of inputs, a rigorous series of preparatory checks, the application of sophisticated tree-building algorithms, and a thorough phase of post-synthesis analysis and optimization.</p>
                 <h3 class="mt-8 mb-4">2.1 Inputs and Pre-CTS Verification</h3>
                 <p class="mb-4">Before initiating CTS, the design database and constraints must be prepared and validated. The quality of these inputs directly dictates the quality of the resulting clock tree.</p>
@@ -200,7 +203,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 3: A Comparative Analysis of Clock Tree Architectures</h2>
+                <h2>A Comparative Analysis of Clock Tree Architectures</h2>
                 <p class="mb-4">Beyond the specific algorithm used to connect the sinks, the high-level topology or architecture of the clock distribution network is a critical design choice. This choice has profound implications for the design's PPA metrics and, most importantly, its robustness against on-chip variations. The emergence of complex architectures is a direct and necessary response to the overwhelming challenge of physical variation at advanced process nodes.</p>
                 <p class="mb-4">In older technologies, where process variations were a smaller fraction of the total delay, a conventional tree could provide acceptable skew. However, at nodes like 7nm and 5nm, random variations in device and interconnect properties can cause significant, unpredictable delay fluctuations. A conventional tree topology propagates and can even amplify these variations; a small delay shift in a high-level buffer can cause a large skew at the leaves. To combat this, architectures with a high degree of path sharing have been developed. These structures ensure that the clock paths to the launch and capture flops of a timing path share a long common segment. Variations occurring on this common path affect both flops equally and are thus canceled out from the skew calculation, leading to a much more robust design. The choice of clock architecture is therefore a fundamental decision about how much to invest in "variation immunity."</p>
                 <h3 class="mt-8 mb-4">3.1 Conventional Clock Tree (Single-Point CTS)</h3>
@@ -282,7 +285,7 @@
                 </div>
             </section>
             <section class="scroll-reveal">
-                 <h2>Section 4: Low-Power Design Techniques in CTS</h2>
+                 <h2>Low-Power Design Techniques in CTS</h2>
                 <p class="mb-4">Given that the clock network is a dominant consumer of chip power, the integration of low-power design techniques is not an optional enhancement but a fundamental requirement of modern CTS flows. These techniques aim to reduce both the dynamic (switching) power and static (leakage) power of the clock distribution network.</p>
                 <h3 class="mt-8 mb-4">4.1 The Primacy of Clock Gating</h3>
                 <p class="mb-4">Clock gating is the single most effective technique for reducing the dynamic power consumption of a synchronous design. The principle is straightforward: if a block of logic or a group of registers is not performing useful work in a given clock cycle, its clock signal is temporarily disabled, or "gated." This action eliminates all unnecessary switching activity within that logic, saving a significant amount of power.</p>
@@ -310,7 +313,7 @@
                 </ul>
             </section>
              <section class="scroll-reveal">
-                 <h2>Section 5: Managing Physical and Timing Constraints</h2>
+                 <h2>Managing Physical and Timing Constraints</h2>
                  <p class="mb-4">The CTS tool, despite its sophistication, is not autonomous. It relies on a precise set of instructions from the designer to understand the design's intent and physical requirements. These instructions are communicated through timing constraints, physical rules, and specific exceptions. The quality and correctness of these constraints are a first-order determinant of the quality of the final silicon. They are the architectural blueprint-the DNA-of the clock network. An error in a constraint, such as an incorrectly defined generated clock or a missing physical rule, can lead to a functionally incorrect or unreliable chip, often resulting in costly design iterations.</p>
                 <h3 class="mt-8 mb-4">5.1 The Role of the Synopsys Design Constraints (SDC) File</h3>
                 <p class="mb-4">The SDC file is the primary vehicle for conveying timing intent to the entire synthesis and implementation flow. For CTS, several commands are of paramount importance:</p>
@@ -340,7 +343,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 6: Advanced Hierarchical CTS for High-Performance Designs</h2>
+                <h2>Advanced Hierarchical CTS for High-Performance Designs</h2>
                 <p class="mb-4">As SoCs have scaled to contain hundreds of millions or even billions of transistors, building a single, monolithic ("flat") clock tree has become computationally infeasible and technically suboptimal. The sheer number of sinks, the vast physical distances, and the overwhelming impact of interconnect delay at advanced nodes necessitate a hierarchical, "divide and conquer" approach. This methodology is standard practice at leading semiconductor companies for the design of high-performance CPUs, GPUs, and AI accelerators.</p>
                 <p class="mb-4">The move to hierarchical CTS is a direct consequence of the physics of interconnects at advanced nodes. At 7nm and below, the resistance of the lower and intermediate metal layers has increased dramatically. Attempting to build a deep clock tree that weaves through many of these resistive layers would result in massive, unpredictable RC delay and severe slew rate degradation. The only way to propagate a high-frequency clock signal across a large die with predictable delay and high fidelity is to utilize the thick, low-resistance upper metal layers. This physical reality naturally leads to a multi-stage architecture: a robust "superhighway" on the upper metal layers for global distribution, and a network of "local roads" on the lower layers for final delivery to the sinks.</p>
                 <h3 class="mt-8 mb-4">6.1 The Two-Stage Distribution Model (RCB-to-LCB)</h3>
@@ -364,7 +367,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 7: Resolving Physical Design Challenges in Advanced Nodes</h2>
+                <h2>Resolving Physical Design Challenges in Advanced Nodes</h2>
                 <p class="mb-4">As process technology scales to 7nm, 5nm, and beyond, the physical challenges associated with CTS intensify dramatically. The focus of a "good" clock tree design expands beyond traditional PPA metrics. At these advanced nodes, CTS becomes a first-order reliability and manufacturing yield problem. In older technologies, the primary goals were meeting skew and latency targets to close timing. Reliability concerns like electromigration were largely confined to the power grid. At 7nm, however, the current densities in the clock network itself have risen to levels where EM is a critical design constraint. A clock tree that meets all timing requirements but violates EM rules is a design failure, as the chip may not function reliably over its intended lifespan. Similarly, a design that closes timing at the nominal process corner but is highly sensitive to OCV will suffer from low manufacturing yield, as a large percentage of dies will fail due to random variations. Consequently, a modern clock tree must not only be fast (low latency) and precise (low skew) but also robust (OCV tolerant) and reliable (EM-proof).</p>
                 <h3 class="mt-8 mb-4">7.1 Electromigration (EM) in Clock Nets</h3>
                 <ul class="mb-4">
@@ -390,7 +393,7 @@
             </section>
             
              <section class="scroll-reveal">
-                <h2>Section 8: Conclusion and Future Outlook</h2>
+                <h2>Conclusion and Future Outlook</h2>
                 <p class="mb-4">Clock Tree Synthesis has evolved from a relatively straightforward process of buffer insertion to a highly complex, multi-objective optimization problem that sits at the nexus of performance, power, reliability, and manufacturability. The design of a modern clock network is a delicate balancing act, navigating the fundamental trade-offs between low skew and low latency, high performance and low power, and small area versus robustness to physical variations.</p>
                 <p class="mb-4">The methodologies and architectures employed today-from sophisticated clustering algorithms and physically-aware clock gating to hierarchical two-stage distribution networks-are the direct result of decades of innovation driven by the relentless scaling of semiconductor technology. The challenges posed by interconnect dominance, on-chip variation, and electromigration at advanced FinFET nodes have transformed CTS from a purely timing-focused task into a holistic discipline that requires the co-optimization of timing, power, and reliability.</p>
                 <p class="mb-4">Looking ahead, the challenges are set to intensify. The move towards 3D-ICs, where multiple dies are stacked vertically, will require the development of novel clocking strategies that can distribute a synchronized clock across dies through Through-Silicon Vias (TSVs), introducing a new dimension of complexity to the balancing problem. The ever-increasing scale and complexity of SoC designs will continue to push the limits of computational efficiency, creating opportunities for the application of Artificial Intelligence and Machine Learning (AI/ML) in EDA. ML models show promise in more accurately predicting post-CTS timing and congestion early in the flow, enabling more intelligent placement decisions and optimizing the selection of clock tree architectures. Finally, as systems continue to integrate a heterogeneous mix of high-performance processors, low-power controllers, and sensitive analog IP on a single chip, the need for more sophisticated techniques for managing multiple clock domains and ensuring safe and reliable synchronization between them will become even more critical. The clock tree will remain the vital heartbeat of the chip, and its synthesis will continue to be a cornerstone of successful silicon design.</p>

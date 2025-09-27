@@ -31,6 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <style>
+        html {
+            font-size: 90%;
+        }
         body {
             /* Revert flex centering to allow normal document flow and scrolling */
             display: block;
@@ -97,7 +100,7 @@
             </section>
 
             <section>
-                <h2 class="text-3xl font-bold mb-6">The Primary Goals and Strategic Objectives of Placement</h2>
+                <h2 class="text-3xl font-bold mb-6">Primary Goals and Strategic Objectives of Placement</h2>
                 <p class="mb-4">The overarching goal of placement is to find an arrangement of cells that achieves the best possible balance of the PPA triad: Power, Performance, and Area. This is a complex trade-off, as optimizing for one metric often degrades another. For instance, aggressively optimizing for performance by upsizing cells may increase power consumption and area. To navigate this, the placement tool targets several key strategic objectives:</p>
                 <ul class="mb-4">
                     <li><strong>Minimize Total Wirelength:</strong> A primary objective is to reduce the overall length of the interconnects. This is typically estimated using the Half-Perimeter Wirelength (HPWL) model, which calculates the semi-perimeter of the smallest bounding box enclosing all pins of a net. Shorter wires directly translate to lower parasitic resistance and capacitance (RC), leading to reduced signal delays, lower dynamic power consumption, and improved routability.</li>

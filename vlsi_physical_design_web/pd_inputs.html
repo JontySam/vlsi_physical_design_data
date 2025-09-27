@@ -31,6 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <style>
+        html {
+            font-size: 90%;
+        }
         body {
             /* Revert flex centering to allow normal document flow and scrolling */
             display: block;
@@ -91,7 +94,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Anatomy of a Digital Design Foundation</h2>
+                <h2 class="text-3xl font-bold mb-6">Anatomy of a Digital Design Foundation</h2>
                 <h3 class="text-2xl font-semibold mb-4">Introduction to the Physical Design Flow: From Netlist to GDSII</h3>
                 <p class="mb-4">The creation of a modern integrated circuit (IC) is a monumental feat of engineering, transforming an abstract logical idea into a tangible silicon chip containing billions of transistors. The final stage of this transformation is known as physical design, a process that converts a logical description of a circuit, typically in the form of a gate-level netlist, into a physical layout. This layout, ultimately represented in a format like GDSII, is the manufacturing blueprint that dictates the precise position of every component and the intricate web of metallic routes that interconnect them.</p>
                 <p class="mb-4">This journey from netlist to GDSII is far more than a simple geometric mapping. It is a complex, multi-objective optimization problem governed by three competing metrics: Performance, Power, and Area (PPA). The goal is to produce the smallest possible chip (minimum Area) that runs at the required speed (maximum Performance) while consuming the least amount of energy (minimum Power). Achieving this balance requires a sophisticated set of Electronic Design Automation (EDA) tools and, critically, a rich and unambiguous of input data that defines every aspect of the design, from the components used to the rules of the manufacturing process.</p>
@@ -140,7 +143,7 @@ endmodule</code><button class="copy-btn">Copy</button></pre>
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Defining the Physics - Technology and Interconnect Data</h2>
+                <h2 class="text-3xl font-bold mb-6">Defining the Physics: Technology and Interconnect Data</h2>
                 <p class="mb-4">Before any cells can be placed or routed, the EDA tool must first understand the fundamental "laws of physics" for the specific semiconductor manufacturing process being used. This information is provided by the foundry (the fabrication plant) in a set of files that define the properties of the silicon wafer, the metal layers, and the rules for their construction. These files form the foundational canvas upon which the entire design will be painted.</p>
                 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">The Foundry's Rulebook: The Technology File (.tf, .tech.lef)</h3>
@@ -169,7 +172,7 @@ endmodule</code><button class="copy-btn">Copy</button></pre>
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Building Blocks - A Deep Dive into Standard Cells</h2>
+                <h2 class="text-3xl font-bold mb-6">The Building Blocks: A Deep Dive into Standard Cells</h2>
                 <p class="mb-4">With the physical rules of the foundry established, the next step is to understand the components used to build the design. For most digital application-specific integrated circuits (ASICS), these components are standard cells.</p>
                 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">From Transistors to Gates: The Standard Cell Concept</h3>
@@ -210,7 +213,7 @@ endmodule</code><button class="copy-btn">Copy</button></pre>
             </section>
 
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Two Faces of a Cell - Physical and Timing Library Views</h2>
+                <h2 class="text-3xl font-bold mb-6">The Two Faces of a Cell: Physical and Timing Library Views</h2>
                 <p class="mb-4">A fundamental concept in modern physical design is abstraction. To manage the immense complexity of a billion-transistor design, EDA tools do not work with the full, transistor-level layout of every cell. Instead, they use simplified, abstract "views." This principle is most evident in the separation of a cell's physical representation from its timing and power representation. This separation of concerns is a classic engineering trade-off: it allows the geometric engines of the P&R tool (placer, router) to operate on simple, lightweight physical data, while the complex analysis engines (timer, power analyzer) work with detailed performance models. This decoupling is essential for enabling EDA tools to handle massive designs in a reasonable amount of time and with a manageable memory footprint.</p>
                 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">The Physical Abstract: Library Exchange Format (LEF)</h3>
@@ -385,7 +388,7 @@ END NAND_1</code><button class="copy-btn">Copy</button></pre>
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Evolving Blueprint - Representing the Physical Layout</h2>
+                <h2 class="text-3xl font-bold mb-6">The Evolving Blueprint: Representing the Physical Layout</h2>
                 <p class="mb-4">While LEF files describe the library of available components and LIB files describe their performance, a different format is needed to describe the actual design as it is being implemented by the place-and-route tool. This format must capture which library cells are used, where they are placed, and how they are routed.</p>
                 <h3 class="text-2xl font-semibold mt-8 mb-4">The Design Snapshot: Design Exchange Format (DEF)</h3>
                 <p class="mb-4">The Design Exchange Format (DEF) is an open, ASCII-based specification that represents the complete physical state of a design at any point during the P&R flow. It serves as a "snapshot" of the layout, effectively combining the logical connectivity from the netlist with the physical data generated by the EDA tools.</p>
@@ -407,7 +410,7 @@ END NAND_1</code><button class="copy-btn">Copy</button></pre>
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">EDA-Specific Ecosystems - The Synopsys Data Model</h2>
+                <h2 class="text-3xl font-bold mb-6">EDA-Specific Ecosystems: The Synopsys Data Model</h2>
                 <p class="mb-4">While open ASCII formats like LEF, DEF, and LIB are essential for interoperability, they are not optimized for the high-performance demands of modern EDA tools. For speed and memory efficiency, major EDA vendors ingest these standard files and compile them into a proprietary, unified, binary database format. This internal data model becomes the single source of truth that all of the tool's engines-placer, router, timer, extractor-operate on. This section focuses on the evolution and structure of the data model within the Synopsys ecosystem.</p>
                 <h3 class="text-2xl font-semibold mt-8 mb-4">From Files to a Database: Milkyway (ICC) and NDM (ICC2)</h3>
                 <p class="mb-4">The shift from ASCII files to an integrated binary database is a direct response to the data management crisis posed by Moore's Law. A file-based system struggles with the interdependencies and sheer scale of designs at 10nm, 7nm, and below. A unified database architecture enables faster data access, a lower memory footprint, and, most importantly, tighter correlation between different analysis engines that all operate on the same consistent data.</p>
@@ -486,7 +489,7 @@ END NAND_1</code><button class="copy-btn">Copy</button></pre>
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Putting It All Together - A Practical Guide to Starting a Design</h2>
+                <h2 class="text-3xl font-bold mb-6">Putting It All Together: A Practical Guide to Starting a Design</h2>
                 <p class="mb-4">Having explored the individual files and libraries, this final section synthesizes these concepts into a practical, step-by-step guide for setting up a physical design project. It addresses the critical procedural dependencies and illustrates how all the disparate pieces of data are linked together in a cohesive flow.</p>
 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">The Critical First Step: Why Libraries Must Be Loaded Before the Design</h3>

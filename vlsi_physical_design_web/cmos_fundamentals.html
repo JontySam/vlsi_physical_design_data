@@ -31,6 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <style>
+        html {
+            font-size: 90%;
+        }
         body {
             /* Revert flex centering to allow normal document flow and scrolling */
             display: block;
@@ -88,7 +91,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 1: The Foundation of Solid-State Electronics</h2>
+                <h2>The Foundation of Solid-State Electronics</h2>
                 <p class="mb-4">The remarkable evolution of Very Large Scale Integration (VLSI) technology, which has enabled the integration of billions of transistors onto a single silicon chip, is fundamentally rooted in the physics of semiconductor materials. Understanding how electricity flows—or is prevented from flowing—within these materials is the first step toward comprehending the operation of any modern electronic device. This section establishes the foundational principles, beginning with the quantum mechanical nature of semiconductors and culminating in the behavior of the PN junction, the elemental building block of the transistor.</p>
                 
                 <h3 class="mt-8 mb-4">1.1 Semiconductor Physics and the Flow of Electricity</h3>
@@ -132,7 +135,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 2: The Metal-Oxide-Semiconductor (MOS) System</h2>
+                <h2>The Metal-Oxide-Semiconductor (MOS) System</h2>
                 <p class="mb-4">While the PN junction is the fundamental building block, the engine of the digital revolution is the Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET). Its operation is based on the principles of the MOS capacitor, a structure that allows an electric field to control the concentration of charge carriers at a semiconductor surface.</p>
 
                 <h3 class="mt-8 mb-4">2.1 The MOS Capacitor</h3>
@@ -171,7 +174,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 3: The Threshold Voltage and Second-Order Effects</h2>
+                <h2>The Threshold Voltage and Second-Order Effects</h2>
                 <p class="mb-4">The threshold voltage (V<sub>th</sub>) is arguably the most important parameter of a MOSFET, as it defines the transition point between the ON and OFF states. While the first-order model provides a foundational understanding, the behavior of modern, scaled-down transistors is heavily influenced by second-order effects that cause V<sub>th</sub> to deviate significantly from a simple constant. In contemporary VLSI design, these are not minor corrections but dominant factors that must be managed.</p>
 
                 <h3 class="mt-8 mb-4">3.1 Defining the Threshold Voltage (V<sub>th</sub>)</h3>
@@ -209,7 +212,7 @@
             </section>
 
             <section class="scroll-reveal">
-                <h2>Section 4: The CMOS Inverter: Static and Dynamic Behavior</h2>
+                <h2>The CMOS Inverter: Static and Dynamic Behavior</h2>
                 <p class="mb-4">The CMOS inverter is the most fundamental logic gate in digital VLSI design. Its design and analysis serve as a template for understanding all static CMOS logic. It consists of a complementary pair of transistors—one nMOS and one pMOS—with their gates and drains connected together. This simple structure provides a robust, low-power implementation of the logical NOT operation.</p>
 
                 <h3 class="mt-8 mb-4">4.1 The Ideal Inverter and Performance Metrics</h3>
@@ -291,7 +294,7 @@
             </section>
             
             <section class="scroll-reveal">
-                 <h2>Section 5: Combinational and Sequential Logic Design</h2>
+                 <h2>Combinational and Sequential Logic Design</h2>
                  <p class="mb-4">Building on the principles of the CMOS inverter, this section explores the design of more complex logic functions. It covers how to construct combinational logic gates that perform Boolean operations and introduces sequential circuits, which add the critical element of memory or state to digital systems.</p>
                  <h3 class="mt-8 mb-4">5.1 Static CMOS Logic Gates</h3>
                  <p class="mb-4">Static CMOS logic gates are constructed using a complementary pull-up network (PUN) and pull-down network (PDN). The PDN is built with nMOS transistors to connect the output to ground (V<sub>SS</sub>), while the PUN is built with pMOS transistors to connect the output to the power supply (V<sub>DD</sub>).</p>
@@ -344,7 +347,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 6: Power Dissipation in CMOS Circuits</h2>
+                <h2>Power Dissipation in CMOS Circuits</h2>
                 <p class="mb-4">Power consumption has evolved from a secondary concern in early VLSI to a primary design constraint, especially for portable devices and high-performance processors. The low static power of CMOS was its key advantage, but as technologies have scaled down, dynamic and leakage power have become critical challenges.</p>
                 <h3 class="mt-8 mb-4">6.1 Sources of Power Consumption</h3>
                 <p class="mb-4">The total power consumed by a CMOS circuit is the sum of three main components.</p>
@@ -413,7 +416,7 @@
             </section>
 
             <section class="scroll-reveal">
-                <h2>Section 7: Timing Analysis in VLSI</h2>
+                <h2>Timing Analysis in VLSI</h2>
                 <p class="mb-4">Ensuring that a digital design operates correctly at its target clock frequency is the goal of timing analysis. In a synchronous system, all operations are coordinated by a clock signal, and data must be successfully transmitted and captured between sequential elements (like flip-flops) within a single clock cycle. Static Timing Analysis (STA) is the industry-standard methodology for verifying this.</p>
                 <h3 class="mt-8 mb-4">7.1 Fundamental Timing Concepts for Sequential Elements</h3>
                 <p class="mb-4">The behavior of a flip-flop is governed by strict timing requirements relative to the active clock edge.</p>
@@ -453,7 +456,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2>Section 8: The Broader VLSI Context: From Design to Silicon</h2>
+                <h2>The Broader VLSI Context: From Design to Silicon</h2>
                 <p class="mb-4">The theoretical concepts of device physics, circuit operation, and timing analysis all converge within the practical framework of the VLSI design flow. This process transforms a high-level functional description into a physical layout ready for manufacturing. A successful design must not only be logically correct and meet performance targets but also be robust, reliable, and manufacturable.</p>
                 <h3 class="mt-8 mb-4">8.1 The VLSI Design Flow (RTL-to-GDSII)</h3>
                 <p class="mb-4">The modern automated design flow is a sequence of steps, each managed by sophisticated EDA tools, that progressively refine the design from abstract logic to concrete geometry.</p>
@@ -492,7 +495,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Section 9: Conclusions</h2>
+                <h2>Conclusions</h2>
                 <p class="mb-4">The journey from a single PN junction to a multi-billion transistor VLSI chip is a story of layered abstraction built upon a consistent foundation of semiconductor physics. The behavior of every digital circuit, from the simplest inverter to the most complex microprocessor, can be traced back to the fundamental principles of energy bands, carrier transport, and the voltage-controlled modulation of charge at a silicon-oxide interface.</p>
                 <p class="mb-4">This comprehensive guide has traversed this landscape, establishing several key conclusions for the aspiring VLSI designer:</p>
                 <ol>

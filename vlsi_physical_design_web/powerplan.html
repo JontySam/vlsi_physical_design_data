@@ -88,7 +88,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Defining Power Planning: Role and Significance in the VLSI Flow</h2>
+                <h2 class="text-3xl font-bold mb-6">Defining Power Planning: Role and Significance</h2>
                 <p class="mb-4">Power planning, also known as pre-routing, is the process of architecting and implementing the on-chip network of metal wires that delivers stable and clean power (voltage, VDD) and ground (VSS) to every transistor in the design. This critical phase occurs early in the physical design (back-end) flow, typically after floorplanning but before the placement of standard cells and the routing of signal nets. Its primary objective is to establish the complete power infrastructure while proactively mitigating catastrophic reliability issues such as voltage (IR) drop and electromigration (EM).</p>
                 <p class="mb-4">The importance of power planning has undergone a significant transformation. In older process technologies, the PDN was often overdesigned with substantial margins to ensure stability, a viable approach when power densities were lower and supply voltages were higher. However, the breakdown of Dennard scaling has changed this paradigm. As transistors shrink into the deep sub-micron and nanometer regimes, supply voltages have fallen below 1 volt, drastically reducing noise margins. A voltage fluctuation of 50 mV is far more consequential on a 0.8 V supply than on a 1.2 V supply, as it represents a much larger percentage of the operating voltage, directly impacting gate delay and logic integrity. Concurrently, the exponential increase in transistor density and switching speeds leads to massive, localized current demands, exacerbating both IR drop and EM. This has forced a methodological "shift-left," transforming power planning from a late-stage implementation detail into a frontline, co-design challenge that is deeply intertwined with floorplanning, timing, and reliability from the earliest stages of the design cycle.</p>
                 
@@ -106,7 +106,7 @@
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Blueprint for a Robust PDN: Properties of an Ideal Network</h2>
+                <h2 class="text-3xl font-bold mb-6">The Blueprint for a Robust PDN: Ideal Properties</h2>
                 <p class="mb-4">The quality of the PDN is a direct determinant of the chip's overall quality. An ideal power distribution network is defined by a set of key characteristics that collectively ensure reliable and high-performance operation.</p>
                 <ul class="mb-4">
                     <li><strong>Voltage Stability:</strong> The network must maintain a stable voltage with minimal noise at the power pins of every cell on the chip. It must ensure that voltage fluctuations from effects like IR drop and Ldi/dt noise remain within a specified budget (e.g., <5% of VDD) so that all logic, memory, and analog blocks receive sufficient voltage to operate correctly and meet timing.</li>
@@ -263,7 +263,7 @@ set_level_shifter LtoH_sig_to_aonpgd \
             </section>
 
             <section class="scroll-reveal">
-                 <h2 class="text-3xl font-bold mb-6">Life Without UPF: Consequences and Tool Behavior</h2>
+                 <h2 class="text-3xl font-bold mb-6">Life Without UPF: Consequences</h2>
                  <p class="mb-4">In the context of modern low-power design, UPF is not merely a convenience but a mandatory component of the flow. Attempting to implement a complex power management scheme without it would be practically impossible and fraught with risk.</p>
                  <p class="mb-4">The consequences of not using UPF are severe:</p>
                  <ul class="mb-4">
@@ -288,7 +288,7 @@ set_level_shifter LtoH_sig_to_aonpgd \
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Building Blocks of Low-Power Design: Specialized Power Cells</h2>
+                <h2 class="text-3xl font-bold mb-6">Building Blocks of Low-Power Design: Specialized Cells</h2>
                 <p class="mb-4">The power intent described logically in the UPF file is physically realized using a suite of specialized standard cells. These power management cells are not logic gates but are crucial components available in modern standard cell libraries that enable the implementation of advanced power-saving techniques.</p>
                 <h3 class="text-2xl font-semibold mt-8 mb-4">An Introduction to Power Management Cells in Standard Cell Libraries</h3>
                 <p class="mb-4">Standard cell libraries are the fundamental building blocks for automated digital design. Beyond the familiar AND gates, flip-flops, and buffers, these libraries contain a rich variety of special-purpose cells designed to address physical design, reliability, and power management challenges. Power management cells are a critical category of these specialized cells, instantiated by synthesis and place-and-route tools based on the strategies defined in the UPF file to build the specified low-power architecture. The interaction of these cells is critical; they form an interconnected system where the timing and sequencing of their control signals, typically orchestrated by a central Power Management Unit (PMU), must be perfect. A failure in one component, such as an isolation cell enabling too late, can cause a cascade of failures that undermines the entire power-gating strategy and leads to chip failure.</p>
@@ -427,7 +427,7 @@ set_level_shifter LtoH_sig_to_aonpgd \
             </section>
 
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Strategies for Power Reduction in the Nanometer Era</h2>
+                <h2 class="text-3xl font-bold mb-6">Strategies for Power Reduction</h2>
                 <p class="mb-4">Minimizing power consumption is a multi-faceted challenge that requires a deep understanding of the underlying physics of CMOS circuits and the application of a wide spectrum of reduction techniques. These strategies range from fundamental circuit-level optimizations to sophisticated architectural and system-level approaches, with new innovations constantly emerging to address the unique challenges of cutting-edge transistor technologies like FinFET and Gate-All-Around (GAA).</p>
 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">Understanding Power Dissipation in CMOS Circuits: Static vs. Dynamic</h3>
@@ -615,7 +615,7 @@ set_level_shifter LtoH_sig_to_aonpgd \
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Arsenal: EDA Tools and Algorithms for Power Signoff</h2>
+                <h2 class="text-3xl font-bold mb-6">The Arsenal: EDA Tools for Power Signoff</h2>
                 <p class="mb-4">To tackle the complex challenges of power integrity, the VLSI industry relies on a sophisticated arsenal of Electronic Design Automation (EDA) tools. These tools employ advanced algorithms to analyze the PDN for IR drop and electromigration, ensuring the design meets its power, performance, and reliability targets before tape-out.</p>
 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">Methodologies for IR Drop Analysis</h3>
@@ -651,7 +651,7 @@ set_level_shifter LtoH_sig_to_aonpgd \
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Appendix: The Ideal Clock Distribution Network</h2>
+                <h2 class="text-3xl font-bold mb-6">Appendix: Ideal Clock Distribution Network</h2>
                 <p class="mb-4">The clock signal is the heartbeat of a synchronous digital circuit, and its distribution network is a critical piece of infrastructure. While not part of the power distribution network, its design is intimately linked to power consumption and overall chip performance.</p>
                 
                 <h3 class="text-2xl font-semibold mt-8 mb-4">Contrasting Ideal vs. Real Clock Networks</h3>
