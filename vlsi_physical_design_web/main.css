@@ -333,6 +333,14 @@ ol li::before {
     color: var(--text-body);
 }
 
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem; /* Reduce heading size on mobile */
+    }
+    .hero-section p {
+        font-size: 1.1rem; /* Adjust paragraph size on mobile */
+    }
+}
 /* 
  * 5. ANIMATIONS
  * Smooth fade-in and slide-up effect for content sections.
@@ -708,8 +716,8 @@ ol li::before {
         padding: 2rem 1rem;
     }
     .content-grid {
-        /* Forcing 3 columns on mobile can be very narrow, but as requested */
-        grid-template-columns: repeat(3, 1fr);
+        /* Switch to a single column on mobile for better readability */
+        grid-template-columns: 1fr;
     }
     .grid-item__content {
         height: 180px;
