@@ -523,3 +523,199 @@ ol li::before {
 .bottom-nav .nav-next {
     text-align: right;
 }
+
+/* --- CONSOLIDATED STYLES --- */
+
+/* 
+ * Styles for sub-pages (articles, who-am-i, etc.)
+ * Previously inline in multiple HTML files.
+*/
+.sub-page-body {
+    /* Revert flex centering to allow normal document flow and scrolling */
+    display: block;
+    height: auto;
+    overflow-y: auto;
+    padding: 0; /* Reset body padding */
+}
+
+.sub-page-body main.container {
+    /* Add vertical margin and center horizontally */
+    margin: 3rem auto;
+    
+    /* Apply visual styles to make it a distinct box */
+    background-color: #F5F1EC; /* var(--bg-container) */
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2rem 4rem;
+
+    /* Explicitly un-scale the container */
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .sub-page-body main.container {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+}
+
+/* Unique style from who-am-i.html */
+.welcome-note {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+.welcome-note p {
+    margin-bottom: 0;
+}
+
+/* 
+ * Styles for index.html homepage
+ * Previously inline in index.html
+*/
+.index-body {
+    font-family: 'Lora', serif;
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    display: block;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.site-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-heading);
+    margin: 0;
+}
+
+.site-header p {
+    font-size: 1.1rem;
+    max-width: 60ch;
+    color: var(--text-body);
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem;
+    z-index: 20;
+}
+
+.main-nav a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: var(--text-body);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-primary);
+}
+
+.content-grid-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--bg-container);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-item {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item__content {
+    position: relative; /* For overlay positioning */
+    background-color: var(--bg-tile);
+    border: 1px solid var(--border-tile);
+    border-radius: 12px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* To keep rounded corners on overlay */
+    z-index: 1;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.grid-item:hover .grid-item__content {
+    box-shadow: 0 15px 35px rgba(44, 62, 80, 0.15);
+}
+
+.grid-item__content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(44, 62, 80, 0.6); /* Dark Slate Blue overlay */
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
+
+.grid-item:hover .grid-item__content::before {
+    background-color: rgba(0, 128, 128, 0.7); /* Teal overlay on hover */
+}
+
+.grid-item__content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #FFFFFF; /* Change heading to white for readability on image */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Add shadow for readability */
+    margin-top: 0;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .index-body {
+        padding: 1rem;
+        overflow-y: auto; /* Ensure scrolling is enabled on mobile */
+    }
+    .site-header {
+        flex-direction: column; /* Stack header items vertically */
+        gap: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .content-grid-container {
+        padding: 2rem 1rem;
+    }
+    .content-grid {
+        /* Forcing 3 columns on mobile can be very narrow, but as requested */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-item__content {
+        height: 180px;
+    }
+}
