@@ -24,176 +24,153 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.vlsiphysicaldesign.site/ccs_modeling.html" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <style>
+        html {
+            font-size: 105%;
+        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-            color: #334155; /* slate-700 */
+            /* Revert flex centering to allow normal document flow and scrolling */
+            display: block;
+            height: auto;
+            overflow-y: auto;
+            padding: 0; /* Reset body padding */
         }
-        h1, h2, h3 {
-            font-weight: 700;
-            color: #0f172a; /* slate-900 */
+        main.container {
+            /* Add vertical margin and center horizontally */
+            margin: 3rem auto;
+            
+            /* Apply visual styles to make it a distinct box */
+            background-color: #F5F1EC; /* var(--bg-container) */
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem 4rem;
+
+            /* Explicitly un-scale the container */
+            transform: none !important;
         }
-        h2 {
-            border-bottom: 2px solid #e2e8f0; /* slate-200 */
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        code {
-            font-family: 'Roboto Mono', monospace;
-            background-color: #e2e8f0; /* slate-200 */
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-size: 0.9em;
-        }
-        pre {
-            font-family: 'Roboto Mono', monospace;
-            background-color: #1e293b; /* slate-800 */
-            color: #e2e8f0; /* slate-200 */
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            white-space: pre-wrap;
-        }
-        pre code {
-            background-color: transparent;
-            padding: 0;
-            border-radius: 0;
-            font-size: 0.875rem;
-        }
-        .active-nav {
-            color: #2563eb;
-            font-weight: 600;
-            border-left: 3px solid #2563eb;
-            background-color: #eff6ff;
-        }
-        .nav-link {
-             padding: 0.5rem 1rem;
-             display: block;
-             border-left: 3px solid transparent;
+
+        @media (max-width: 768px) {
+            main.container {
+                margin: 1.5rem auto;
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="antialiased">
 
-    <header id="main-header" style="position: sticky; top: 0; background-color: rgba(248, 250, 252, 0.8); backdrop-filter: blur(10px);">
+    <header id="main-header">
         <a href="index.html" class="logo">VLSI <span>Hub</span></a>
+        
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
         <nav class="page-nav" id="page-navigation">
             <a href="blog.html">Blog</a>
             <a href="work_sited.html">Works Cited</a>
             <a href="about.html#about">About</a>
             <a href="about.html#contact">Contact</a>
-            <a href="index.html" class="back-link">&larr; Back to Home</a>
+            <a href="index.html" class="back-link">&larr; Back</a>
         </nav>
     </header>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row">
+    <main class="container">
+        <article class="space-y-12">
+            <section class="text-center mb-16 hero-section py-20 rounded-lg scroll-reveal">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">CCS Modeling</h1>
+            </section>
 
-            <!-- Sticky Sidebar Navigation -->
-            <aside class="md:w-64 md:sticky top-16 md:h-screen py-8 md:pr-8">
-                <nav id="navbar" class="space-y-2">
-                    <a href="#intro" class="nav-link text-slate-600 hover:text-blue-600">Introduction</a>
-                    <a href="#nldm-vs-ccs" class="nav-link text-slate-600 hover:text-blue-600">NLDM vs. CCS</a>
-                    <a href="#ccs-driver" class="nav-link text-slate-600 hover:text-blue-600">CCS Driver Model</a>
-                    <a href="#ccs-receiver" class="nav-link text-slate-600 hover:text-blue-600">CCS Receiver Model</a>
-                    <a href="#liberty-syntax" class="nav-link text-slate-600 hover:text-blue-600">Liberty File Syntax</a>
-                    <a href="#ccsn" class="nav-link text-slate-600 hover:text-blue-600">CCS Noise (CCSN)</a>
-                    <a href="#advanced-ccsn" class="nav-link text-slate-600 hover:text-blue-600">Advanced CCSN</a>
-                </nav>
-            </aside>
+            <section id="intro" class="scroll-reveal">
+                <h2>Introduction</h2>
+                <p>In VLSI design, cell models are abstract representations of standard logic gates (like inverters or NAND gates). Static Timing Analysis (STA) tools use these models to predict chip performance. As technology shrinks below 90nm (submicron), physical effects that were once minor become dominant, requiring more advanced models. The Composite Current Source (CCS) model is the modern standard for this task.</p>
+            </section>
 
-            <!-- Main Content -->
-            <main class="flex-1 py-8">
-                <div class="prose max-w-none">
-                    <section id="intro" class="scroll-mt-16">
-                        <h1 class="text-4xl font-bold mb-4">A Technical Guide to CCS Modeling</h1>
-                        <p class="text-lg text-slate-600">In VLSI design, cell models are abstract representations of standard logic gates (like inverters or NAND gates). Static Timing Analysis (STA) tools use these models to predict chip performance. As technology shrinks below 90nm (submicron), physical effects that were once minor become dominant, requiring more advanced models. The Composite Current Source (CCS) model is the modern standard for this task.</p>
-                    </section>
+            <section id="nldm-vs-ccs" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">From NLDM to CCS: The Need for a Better Model</h2>
+                <p class="mb-4">The industry standard before CCS was the <strong>Non-Linear Delay Model (NLDM)</strong>. NLDM uses lookup tables to find a cell's delay based on input signal speed (slew) and the total capacitance of the output wire (load). This approach has critical failures in modern designs:</p>
+                <ul class="mb-4">
+                    <li><strong>Inaccuracy with Resistance:</strong> NLDM assumes wires are purely capacitive. Modern wires have significant resistance, which NLDM cannot model, leading to errors of 10-18%.</li>
+                    <li><strong>Miller Effect Blindness:</strong> It uses a single, fixed value for a gate's input capacitance. In reality, this capacitance changes dynamically during switching (the Miller effect), a major factor NLDM misses.</li>
+                    <li><strong>Waveform Distortion:</strong> It simplifies signals into simple ramps, ignoring distortions from crosstalk that affect the timing of subsequent gates.</li>
+                </ul>
+                <p class="mb-4">To solve these issues, the industry shifted to the <strong>Composite Current Source (CCS)</strong> model. CCS represents a fundamental change: instead of providing a delay value, it provides the full output current waveform. The STA tool uses this current to calculate the resulting voltage waveform on any connected wire network, accurately predicting the final delay.</p>
+                
+                <div class="overflow-x-auto">
+                     <h3 class="text-2xl font-semibold mt-8 mb-4">Model Comparison</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>NLDM (Legacy)</th>
+                                <th>CCS (Modern Standard)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Core Principle</strong></td>
+                                <td>Voltage Source</td>
+                                <td>Current Source</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analysis Type</strong></td>
+                                <td>Threshold-based (e.g., 50% VDD crossing)</td>
+                                <td>Waveform-based (full signal shape)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Receiver Model</strong></td>
+                                <td>Single static capacitance</td>
+                                <td>Dynamic multi-capacitor model (C1/C2)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Miller Effect</strong></td>
+                                <td>Poorly handled</td>
+                                <td>Accurately modeled</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resistive Wires</strong></td>
+                                <td>Highly inaccurate</td>
+                                <td>Accurate by design</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accuracy vs. SPICE</strong></td>
+                                <td>~5-18% error</td>
+                                <td>~2-7% error</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                    <section id="nldm-vs-ccs" class="mt-12 scroll-mt-16">
-                        <h2 class="text-3xl">From NLDM to CCS</h2>
-                        <p>The industry standard before CCS was the <strong>Non-Linear Delay Model (NLDM)</strong>. NLDM uses lookup tables to find a cell's delay based on input signal speed (slew) and the total capacitance of the output wire (load). This approach has critical failures in modern designs:</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>Inaccuracy with Resistance:</strong> NLDM assumes wires are purely capacitive. Modern wires have significant resistance, which NLDM cannot model, leading to errors of 10-18%.</li>
-                            <li><strong>Miller Effect Blindness:</strong> It uses a single, fixed value for a gate's input capacitance. In reality, this capacitance changes dynamically during switching (the Miller effect), a major factor NLDM misses.</li>
-                            <li><strong>Waveform Distortion:</strong> It simplifies signals into simple ramps, ignoring distortions from crosstalk that affect the timing of subsequent gates.</li>
-                        </ul>
-                        <p>To solve these issues, the industry shifted to the <strong>Composite Current Source (CCS)</strong> model. CCS represents a fundamental change: instead of providing a delay value, it provides the full output current waveform. The STA tool uses this current to calculate the resulting voltage waveform on any connected wire network, accurately predicting the final delay.</p>
-                        
-                        <div class="mt-8 overflow-x-auto">
-                             <h3 class="text-2xl mb-4">Model Comparison</h3>
-                            <table class="min-w-full divide-y divide-slate-200 border border-slate-200 rounded-lg">
-                                <thead class="bg-slate-100">
-                                    <tr>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">Feature</th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">NLDM (Legacy)</th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-slate-600 uppercase tracking-wider">CCS (Modern Standard)</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-slate-200">
-                                    <tr>
-                                        <td class="px-6 py-4 font-semibold">Core Principle</td>
-                                        <td class="px-6 py-4">Voltage Source</td>
-                                        <td class="px-6 py-4">Current Source</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 font-semibold">Analysis Type</td>
-                                        <td class="px-6 py-4">Threshold-based (e.g., 50% VDD crossing)</td>
-                                        <td class="px-6 py-4">Waveform-based (full signal shape)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 font-semibold">Receiver Model</td>
-                                        <td class="px-6 py-4">Single static capacitance</td>
-                                        <td class="px-6 py-4">Dynamic multi-capacitor model (C1/C2)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 font-semibold">Miller Effect</td>
-                                        <td class="px-6 py-4">Poorly handled</td>
-                                        <td class="px-6 py-4">Accurately modeled</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 font-semibold">Resistive Wires</td>
-                                        <td class="px-6 py-4">Highly inaccurate</td>
-                                        <td class="px-6 py-4">Accurate by design</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-6 py-4 font-semibold">Accuracy vs. SPICE</td>
-                                        <td class="px-6 py-4">~5-18% error</td>
-                                        <td class="px-6 py-4">~2-7% error</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-
-                    <section id="ccs-driver" class="mt-12 scroll-mt-16">
-                        <h2 class="text-3xl">The CCS Driver Model</h2>
-                        <p>The core of CCS is modeling the output of a gate as a <strong>time-varying, nonlinear current source</strong>. The Liberty file contains a lookup table that stores different output current waveforms, indexed by the input signal's slew and the total output load capacitance. Because a current source model is independent of the load's topology, it remains accurate even when driving complex, resistive-capacitive (RC) wires.</p>
-                    </section>
-                    
-                    <section id="ccs-receiver" class="mt-12 scroll-mt-16">
-                        <h2 class="text-3xl">The CCS Receiver Model</h2>
-                        <p>An accurate receiver model must account for the <strong>Miller effect</strong>, where the effective input capacitance of an inverting gate increases during its transition. CCS solves this by modeling the input capacitance with two distinct values:</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><code>C1</code>: The capacitance used for the part of the transition <strong>before</strong> the 50% voltage threshold.</li>
-                            <li><code>C2</code>: The capacitance used for the part of the transition <strong>after</strong> the 50% threshold, capturing the peak of the Miller effect.</li>
-                        </ul>
-                        <p>This two-stage capacitance model allows the STA tool to accurately calculate the total charge needed to switch the node, resulting in precise delay and slew calculations.</p>
-                    </section>
-                    
-                    <section id="liberty-syntax" class="mt-12 scroll-mt-16">
-                        <h2 class="text-3xl">Liberty File Syntax for CCS</h2>
-                        <p>CCS models are defined in Liberty (<code>.lib</code>) text files. Below are simplified examples of the syntax for the driver and receiver models.</p>
-                        
-                        <h3 class="text-2xl mt-6 mb-4">Driver Model Syntax</h3>
-                        <p>The driver's current waveform data is stored in an <code>output_current_rise</code> or <code>output_current_fall</code> group. The <code>vector</code> block contains the actual current values for a specific input slew (<code>index_1</code>) and output load (<code>index_2</code>) over time (<code>index_3</code>).</p>
-                        <pre><code>timing() {
+            <section id="ccs-driver" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">The CCS Driver Model</h2>
+                <p class="mb-4">The core of CCS is modeling the output of a gate as a <strong>time-varying, nonlinear current source</strong>. The Liberty file contains a lookup table that stores different output current waveforms, indexed by the input signal's slew and the total output load capacitance. Because a current source model is independent of the load's topology, it remains accurate even when driving complex, resistive-capacitive (RC) wires.</p>
+            </section>
+            
+            <section id="ccs-receiver" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">The CCS Receiver Model</h2>
+                <p class="mb-4">An accurate receiver model must account for the <strong>Miller effect</strong>, where the effective input capacitance of an inverting gate increases during its transition. CCS solves this by modeling the input capacitance with two distinct values:</p>
+                <ul class="mb-4">
+                    <li><code>C1</code>: The capacitance used for the part of the transition <strong>before</strong> the 50% voltage threshold.</li>
+                    <li><code>C2</code>: The capacitance used for the part of the transition <strong>after</strong> the 50% threshold, capturing the peak of the Miller effect.</li>
+                </ul>
+                <p class="mb-4">This two-stage capacitance model allows the STA tool to accurately calculate the total charge needed to switch the node, resulting in precise delay and slew calculations.</p>
+            </section>
+            
+            <section id="liberty-syntax" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">Liberty File Syntax for CCS</h2>
+                <p class="mb-4">CCS models are defined in Liberty (<code>.lib</code>) text files. Below are simplified examples of the syntax for the driver and receiver models.</p>
+                
+                <h3 class="text-2xl font-semibold mt-8 mb-4">Driver Model Syntax</h3>
+                <p class="mb-4">The driver's current waveform data is stored in an <code>output_current_rise</code> or <code>output_current_fall</code> group. The <code>vector</code> block contains the actual current values for a specific input slew (<code>index_1</code>) and output load (<code>index_2</code>) over time (<code>index_3</code>).</p>
+                <div class="my-4">
+                    <pre><code class="language-none">timing() {
     output_current_rise() {
         vector (CCS) {
             reference_time: 0.05;
@@ -203,11 +180,13 @@
             values("-0.1, -0.2, -0.3"); /* Current values (mA) */
         }
     }
-}</code></pre>
+}</code></pre><button class="copy-btn">Copy</button>
+                </div>
 
-                        <h3 class="text-2xl mt-6 mb-4">Receiver Model Syntax</h3>
-                        <p>The receiver's two-capacitor model is defined with <code>receiver_capacitance1_rise</code> and <code>receiver_capacitance2_rise</code> attributes. These point to a lookup table where the capacitance values are indexed by input slew and output load.</p>
-                        <pre><code>timing() {
+                <h3 class="text-2xl font-semibold mt-8 mb-4">Receiver Model Syntax</h3>
+                <p class="mb-4">The receiver's two-capacitor model is defined with <code>receiver_capacitance1_rise</code> and <code>receiver_capacitance2_rise</code> attributes. These point to a lookup table where the capacitance values are indexed by input slew and output load.</p>
+                <div class="my-4">
+                    <pre><code class="language-none">timing() {
     related_pin: "A";
     receiver_capacitance1_rise (TEMPLATE_NAME) {
         values("0.0076, 0.0080, 0.0081, \\
@@ -217,19 +196,21 @@
         values("0.0093, 0.0087, 0.0081, \\
                 0.0095, 0.0088, 0.0082"); /* C2 values */
     }
-}</code></pre>
-                    </section>
-                    
-                    <section id="ccsn" class="mt-12 scroll-mt-16">
-                        <h2 class="text-3xl">CCS for Noise Analysis (CCSN)</h2>
-                        <p>Beyond timing, CCS also has an extension for signal integrity analysis called <strong>CCS Noise (CCSN)</strong>. It is used to analyze crosstalk, where a switching signal (aggressor) induces an unwanted voltage spike (glitch) on a quiet neighboring wire (victim).</p>
-                        <p>The CCSN model includes:</p>
-                         <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>DC Current Tables:</strong> Define the cell's ability to reject an incoming noise glitch (noise immunity).</li>
-                            <li><strong>Propagated Noise Tables:</strong> Characterize how an input glitch is reshaped as it passes through the cell, determining if it will be amplified or attenuated.</li>
-                        </ul>
-                        <p>Models can be <strong>arc-based</strong> (for simple gates, modeling full propagation) or <strong>pin-based</strong> (for complex cells like flip-flops, modeling only the input and output stages).</p>
-                        <pre><code>pin(D) {
+}</code></pre><button class="copy-btn">Copy</button>
+                </div>
+            </section>
+            
+            <section id="ccsn" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">CCS for Noise Analysis (CCSN)</h2>
+                <p class="mb-4">Beyond timing, CCS also has an extension for signal integrity analysis called <strong>CCS Noise (CCSN)</strong>. It is used to analyze crosstalk, where a switching signal (aggressor) induces an unwanted voltage spike (glitch) on a quiet neighboring wire (victim).</p>
+                <p class="mb-4">The CCSN model includes:</p>
+                 <ul class="mb-4">
+                    <li><strong>DC Current Tables:</strong> Define the cell's ability to reject an incoming noise glitch (noise immunity).</li>
+                    <li><strong>Propagated Noise Tables:</strong> Characterize how an input glitch is reshaped as it passes through the cell, determining if it will be amplified or attenuated.</li>
+                </ul>
+                <p class="mb-4">Models can be <strong>arc-based</strong> (for simple gates, modeling full propagation) or <strong>pin-based</strong> (for complex cells like flip-flops, modeling only the input and output stages).</p>
+                <div class="my-4">
+                    <pre><code class="language-none">pin(D) {
     /* Pin-based model for a flip-flop input */
     ccsn_first_stage() {
         is_needed: true;
@@ -237,103 +218,79 @@
         dc_current (DC_TEMPLATE) { ... }
         propagated_noise_low (PROP_TEMPLATE) { ... }
     }
-}</code></pre>
-                    </section>
-                    
-                    <section id="advanced-ccsn" class="mt-12 scroll-mt-16">
-                        <h2 class="text-3xl">Advanced CCSN for Sub-10nm</h2>
-                        <p>For technologies at 10nm and below, even standard CCSN can be inaccurate for complex cells. <strong>Advanced CCSN</strong> enhances the model by breaking a cell down into its fundamental <strong>Channel-Connected Blocks (CCBs)</strong>, which are groups of physically connected transistors.</p>
-                        <p>This allows the model to describe a noise propagation path through a specific sequence of internal CCBs, providing much higher fidelity for complex internal logic. The Liberty syntax is extended with attributes like <code>propagating_ccb</code> to define this path.</p>
-                        <pre><code>timing () {
+}</code></pre><button class="copy-btn">Copy</button>
+                </div>
+            </section>
+            
+            <section id="advanced-ccsn" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">Advanced CCSN for Sub-10nm</h2>
+                <p class="mb-4">For technologies at 10nm and below, even standard CCSN can be inaccurate for complex cells. <strong>Advanced CCSN</strong> enhances the model by breaking a cell down into its fundamental <strong>Channel-Connected Blocks (CCBs)</strong>, which are groups of physically connected transistors.</p>
+                <p class="mb-4">This allows the model to describe a noise propagation path through a specific sequence of internal CCBs, providing much higher fidelity for complex internal logic. The Liberty syntax is extended with attributes like <code>propagating_ccb</code> to define this path.</p>
+                <div class="my-4">
+                    <pre><code class="language-none">timing () {
     related_pin: "A";
     /* Defines the specific internal path for this timing arc */
     propagating_ccb ("CCB_A_NAND1", "CCB_Z_INV");
-}</code></pre>
-                    </section>
+}</code></pre><button class="copy-btn">Copy</button>
                 </div>
-            </main>
+            </section>
+ 
+            <section id="conclusion" class="scroll-reveal">
+                <h2 class="text-3xl font-bold mb-6">Conclusion: The CCS Paradigm Shift</h2>
+                
+                <h3 class="text-2xl font-semibold mt-8 mb-4">The Problem: Why Old Models Fail</h3>
+                <p class="mb-4">In older semiconductor technologies (like 90nm and above), the behavior of transistors and wires was predictable enough to be simplified. We could use linear models like <strong>Thévenin's theorem</strong>, which represents a driving gate as a simple voltage source with a <strong>fixed internal resistance (<code>R_on</code>)</strong>. The load it was driving could be modeled as a <strong>single, fixed capacitor (<code>C_L</code>)</strong>.</p>
+                <p class="mb-4">This allowed for a simple, one-step delay calculation: <code>τ_p ≈ 0.69 ⋅ R_on ⋅ C_L</code></p>
+                <p class="mb-4">However, in modern <strong>Deep Submicron (DSM)</strong> nodes (like 7nm), this linear approximation completely breaks down. The internal "resistance" and "capacitance" are no longer fixed values; they become highly <strong>non-linear</strong> and <strong>dynamic</strong> due to two main physical effects:</p>
+                <ol class="mb-4">
+                    <li><strong>Velocity Saturation:</strong> In the short channel of a DSM transistor, electrons reach a maximum speed limit. This means the drive current (<code>I_ds</code>) is no longer proportional to the voltage, so the effective <strong>resistance is not constant</strong> during a switch.</li>
+                    <li><strong>The Miller Effect:</strong> The capacitance between the input and output of the receiving gate creates a feedback loop. This makes the effective <strong>load capacitance dynamically increase</strong> during the middle of a transition.</li>
+                </ol>
+   
+                <h3 class="mt-8 mb-4">The Solution: The Composite Current Source (CCS) Model</h3>
+                <p>CCS solves this problem by abandoning the flawed R and C model entirely. Instead, it models the components as they behave in the real world: as complex, non-linear <strong>current sources</strong>.</p>
+   
+                <h4 class="text-xl font-semibold mt-6 mb-2">1. Modeling the Driver</h4>
+                <p class="mb-4">The driving gate is modeled as a dynamic current source whose output, <strong><code>I_driver</code></strong>, is a function of <em>both</em> the <strong>input slew</strong> and the <strong>instantaneous output voltage (<code>V_out</code>)</strong>. This is stored in a 2D lookup table pre-characterized with thousands of accurate SPICE simulations.</p>
+                <p class="mb-4"><code>I_driver(t) = f(Input Slew, V_out(t))</code></p>
+                <p class="mb-4">This inherently captures the non-linear current behavior caused by velocity saturation.</p>
+   
+                <h4 class="text-xl font-semibold mt-6 mb-2">2. Modeling the Load</h4>
+                <p class="mb-4">The receiving gate is modeled with two components:</p>
+                <ul class="mb-4">
+                    <li>A <strong>static capacitor (<code>C_static</code>)</strong> for the fixed part of the load.</li>
+                    <li>A dynamic <strong>current source (<code>I_Miller</code>)</strong> that explicitly models the extra current drawn due to the Miller effect during the transition.</li>
+                </ul>
+                <p class="mb-4"><code>I_load(t) = C_static * dV_out/dt + I_Miller(t)</code></p>
+   
+                <h3 class="mt-8 mb-4">The Calculation: A Step-by-Step Simulation</h3>
+                <p>A Static Timing Analysis (STA) tool uses these current-based models to perform a precise, iterative simulation. It no longer uses a simple one-step formula.</p>
+                <ol class="mb-4">
+                    <li><strong>Select Driver Model:</strong> Based on the input signal's slew rate, the STA tool selects the appropriate current model (a "row" in the 2D table) for the driver.</li>
+                    <li><strong>Iterate Over Time:</strong> For each tiny time-step (<code>Δt</code>), the tool solves Kirchhoff's Current Law for the output node: <code>I_driver(t) - I_load(t) = 0</code></li>
+                    <li><strong>Find Slew Rate:</strong> It rearranges this to find the instantaneous output slew rate: <code>dV_out/dt = (I_driver(t) - I_Miller(t)) / C_static</code></li>
+                    <li><strong>Update Voltage:</strong> It uses the slew rate to calculate the new output voltage for the next time-step.</li>
+                    <li><strong>Repeat:</strong> The tool repeats this loop, constantly looking up the new <code>I_driver</code> based on the new <code>V_out</code>, until the output voltage crosses the 50% threshold.</li>
+                </ol>
+                <p>The total time elapsed during this simulation is the <strong>propagation delay</strong>. This dynamic, iterative method is far more accurate because it directly simulates the real, non-linear physics of the circuit.</p>
+            </section>
+        </article>
 
-        </div>
-    </div>
-
-    <!-- Bottom Navigation -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Bottom Navigation -->
         <section class="bottom-nav">
             <a href="routing.html" class="nav-prev">
                 <span class="nav-label">&larr; Previous</span>
                 <span class="nav-title">Routing</span>
             </a>
-            <a href="blog.html" class="nav-next">
+            <a href="projects.html" class="nav-next">
                 <span class="nav-label">Next &rarr;</span>
-                <span class="nav-title">Blog</span>
+                <span class="nav-title">Projects</span>
             </a>
         </section>
-    </div>
+    </main>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('main section');
-    const navLinks = document.querySelectorAll('#navbar a');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active-nav');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active-nav');
-                    }
-                });
-            }
-        });
-    }, { rootMargin: '-20% 0px -80% 0px' });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.vlsiphysicaldesign.site/ccs_modeling.html"
-  },
-  "headline": "A Technical Guide to Composite Current Source (CCS) Modeling",
-  "description": "An in-depth technical guide to Composite Current Source (CCS) modeling in VLSI, covering NLDM vs. CCS, driver/receiver models, Liberty syntax, and CCSN for noise analysis.",
-  "image": "https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg",
-  "datePublished": "2024-09-18",
-  "dateModified": "2024-09-18",
-  "author": {
-    "@type": "Organization",
-    "name": "VLSI Hub",
-    "url": "https://www.vlsiphysicaldesign.site/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "VLSI Hub",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.vlsiphysicaldesign.site/assets/images/logo.png"
-    }
-  },
-  "keywords": "CCS Modeling, VLSI, STA, Static Timing Analysis, Liberty, NLDM, CCSN, Composite Current Source, Signal Integrity",
-  "about": [
-    {"@type": "Thing", "name": "Composite Current Source", "sameAs": "https://en.wikipedia.org/wiki/Composite_Current_Source"},
-    {"@type": "Thing", "name": "Static timing analysis", "sameAs": "https://en.wikipedia.org/wiki/Static_timing_analysis"},
-    {"@type": "Thing", "name": "Liberty (EDA)", "sameAs": "https://en.wikipedia.org/wiki/Liberty_(EDA)"}
-  ],
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "VLSI Physical Design Hub",
-    "url": "https://www.vlsiphysicaldesign.site/"
-  }
-}
-</script>
+    <script src="main.js"></script>
 
 </body>
+
 </html>
