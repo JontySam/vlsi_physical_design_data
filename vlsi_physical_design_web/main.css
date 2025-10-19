@@ -526,6 +526,7 @@ ol li::before {
  * Previously inline in multiple HTML files.
 */
 .sub-page-body {
+    background-color: #e9ecef; /* Light grey background for sub-pages */
     /* Revert flex centering to allow normal document flow and scrolling */
     display: block;
     height: auto;
@@ -572,7 +573,7 @@ ol li::before {
 */
 .index-body {
     font-family: 'Lora', serif;
-    background-color: var(--bg-main);
+    background-color: #f8f9fa; /* Light bluish-grey */
     color: var(--text-body);
     display: block;
     min-height: 100vh;
@@ -624,7 +625,7 @@ ol li::before {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    background-color: var(--bg-container);
+    background-color: #ffffff; /* Keep content cards white for contrast */
     border-radius: 12px;
     padding: 3rem 2rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
