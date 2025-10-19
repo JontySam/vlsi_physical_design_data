@@ -64,9 +64,9 @@ body {
 header#main-header {
     width: 100%;
     z-index: 50;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    padding: 1rem 2rem;    
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 2rem;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -111,6 +111,8 @@ header#main-header.is-scrolled {
 .page-nav {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+    justify-content: flex-end; /* Align nav items to the right */
     gap: 2rem;
 }
 
@@ -359,6 +361,7 @@ ol li::before {
         flex-wrap: nowrap; 
     }
 
+    /* Revert grid for mobile to a simpler flex layout */
     .page-nav {
         position: fixed;
         inset: 0 0 0 15%; /* Make the mobile nav wider (85% of screen) */
@@ -370,22 +373,13 @@ ol li::before {
         transform: translateX(100%);
         transition: transform 350ms ease-out, box-shadow 0.3s ease;
         align-items: flex-start;
+        justify-content: flex-start; /* Align to top on mobile */
         gap: 1.5rem;
         z-index: 900;
     }
 
     .page-nav[data-visible="true"] {
         transform: translateX(0%);
-    }
-    
-    .page-nav .back-link { /* Revert to button-like styling on mobile, but adjust for vertical layout */
-        border: 1px solid var(--border-muted);
-        padding: 0.5rem 1rem;
-        background-color: var(--bg-content); /* Give it a background */
-        color: var(--text-heading); /* Ensure text is visible */
-        text-align: center;
-        width: fit-content; /* Adjust width to content */
-        margin: 2rem auto 0; /* Center the button horizontally and add space above */
     }
     .page-nav .back-link:hover {
         background: none;
@@ -400,6 +394,7 @@ ol li::before {
         border: none;
         cursor: pointer;
         z-index: 1000;
+        grid-column: 3 / 4; /* Place in the last grid column */
     }
 
     .hamburger-line {
@@ -718,4 +713,51 @@ ol li::before {
     .grid-item__content {
         height: 180px;
     }
+}
+
+/* Styles for the horizontal 'Who Am I' item */
+.horizontal-item {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.horizontal-item:hover {
+    transform: translateY(-5px);
+}
+
+.horizontal-item__content {
+    position: relative;
+    background-color: var(--bg-tile);
+    border: 1px solid var(--border-tile);
+    border-radius: 12px;
+    height: 200px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.horizontal-item:hover .horizontal-item__content {
+    box-shadow: 0 15px 35px rgba(44, 62, 80, 0.15);
+}
+
+.horizontal-item__content::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(44, 62, 80, 0.6);
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
+.horizontal-item:hover .horizontal-item__content::before {
+    background-color: rgba(0, 128, 128, 0.7);
+}
+.horizontal-item__content h3 {
+    font-size: 2rem; /* Larger font for the bigger block */
 }
