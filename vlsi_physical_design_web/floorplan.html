@@ -25,14 +25,13 @@
     <link rel="canonical" href="https://www.vlsiphysicaldesign.site/floorplan.html" />
 
     <!-- Link to production-ready CSS. Generate this file using the command in the documentation. -->
-    <link href="dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
     <link rel="stylesheet" href="main.css">
 </head>
-<body class="antialiased sub-page-body">
+<body class="sub-page-body">
 
     <header id="main-header">
         <a href="index.html" class="logo">VLSI <span>Hub</span></a>
@@ -53,37 +52,37 @@
     </header>
 
     <main class="container">
-        <article class="space-y-12">
-            <section class="text-center mb-16 hero-section py-20 rounded-lg scroll-reveal">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">Floorplanning</h1>
-                <p class="text-lg md:text-xl">The architect's blueprint for physical design.</p>
+        <article>
+            <section class="hero-section scroll-reveal">
+                <h1>Floorplanning</h1>
+                <p>The architect's blueprint for physical design.</p>
             </section>
             
             <section>
-                <h2 class="mb-6">The Foundation of Physical Design: Understanding Floorplanning</h2>
-                <p class="mb-4">In the intricate and demanding world of Very Large-Scale Integration (VLSI), where billions of transistors are orchestrated on a single piece of silicon, the physical design process transforms a logical circuit description into a manufacturable layout. Within this process, floorplanning stands as the most foundational and arguably most critical stage. It is the architectural blueprint of the chip, a phase where high-level decisions have a profound and often irreversible impact on the final product's performance, power consumption, area, and ultimately, its commercial viability.</p>
+                <h2>The Foundation of Physical Design: Understanding Floorplanning</h2>
+                <p>In the intricate and demanding world of Very Large-Scale Integration (VLSI), where billions of transistors are orchestrated on a single piece of silicon, the physical design process transforms a logical circuit description into a manufacturable layout. Within this process, floorplanning stands as the most foundational and arguably most critical stage. It is the architectural blueprint of the chip, a phase where high-level decisions have a profound and often irreversible impact on the final product's performance, power consumption, area, and ultimately, its commercial viability.</p>
                 
-                <h3 class="mt-8 mb-4">What is Floorplanning? A Precise Definition</h3>
-                <p class="mb-4">At its core, floorplanning is the strategic process of arranging major functional blocks, Input/Output (I/O) pads, and other key physical structures on the die. It is an early, pivotal step in the physical design flow that establishes the overall topology and structure of the chip's layout, setting the stage for all subsequent, more granular implementation tasks.</p>
-                <p class="mb-4">A crucial distinction must be made between floorplanning and the subsequent stage of placement. Floorplanning operates at a higher level of abstraction, dealing with large, pre-designed blocks known as macros or Intellectual Property (IP) cores (e.g., memory blocks, processor cores, analog circuits), and partitions of the design. These blocks may have fixed dimensions (hard macros) or offer some flexibility in their shape (soft or semi-soft macros). This stage is often a semi-automated or even manual process, heavily guided by the design architect's intent and experience. In contrast, placement is a highly automated, algorithm-driven process that takes the floorplan as a fixed canvas and meticulously places millions of individual standard cells (the basic logic gates like NAND, NOR, and flip-flops) into the predefined rows and regions. In essence, floorplanning is analogous to creating a city plan—deciding where to locate the residential districts, industrial zones, and major highways. Placement is the subsequent task of arranging every individual house on its designated street within those districts.</p>
-                <p class="mb-4">This distinction highlights the dual nature of floorplanning as both a science and an art. The "science" is rooted in combinatorial optimization, where algorithms strive to minimize concrete, measurable metrics such as total chip area and estimated wirelength. The "art" resides in the human-guided navigation of a complex, multi-dimensional problem space with numerous, often conflicting, objectives. Achieving an optimal balance between performance, power, area, and routability requires a deep, intuitive understanding of the design's architecture and data flow—a skill honed through experience.</p>
+                <h3>What is Floorplanning? A Precise Definition</h3>
+                <p>At its core, floorplanning is the strategic process of arranging major functional blocks, Input/Output (I/O) pads, and other key physical structures on the die. It is an early, pivotal step in the physical design flow that establishes the overall topology and structure of the chip's layout, setting the stage for all subsequent, more granular implementation tasks.</p>
+                <p>A crucial distinction must be made between floorplanning and the subsequent stage of placement. Floorplanning operates at a higher level of abstraction, dealing with large, pre-designed blocks known as macros or Intellectual Property (IP) cores (e.g., memory blocks, processor cores, analog circuits), and partitions of the design. These blocks may have fixed dimensions (hard macros) or offer some flexibility in their shape (soft or semi-soft macros). This stage is often a semi-automated or even manual process, heavily guided by the design architect's intent and experience. In contrast, placement is a highly automated, algorithm-driven process that takes the floorplan as a fixed canvas and meticulously places millions of individual standard cells (the basic logic gates like NAND, NOR, and flip-flops) into the predefined rows and regions. In essence, floorplanning is analogous to creating a city plan—deciding where to locate the residential districts, industrial zones, and major highways. Placement is the subsequent task of arranging every individual house on its designated street within those districts.</p>
+                <p>This distinction highlights the dual nature of floorplanning as both a science and an art. The "science" is rooted in combinatorial optimization, where algorithms strive to minimize concrete, measurable metrics such as total chip area and estimated wirelength. The "art" resides in the human-guided navigation of a complex, multi-dimensional problem space with numerous, often conflicting, objectives. Achieving an optimal balance between performance, power, area, and routability requires a deep, intuitive understanding of the design's architecture and data flow—a skill honed through experience.</p>
 
-                <h3 class="mt-8 mb-4">The Critical Role of a Good Floorplan: Why It's the "Make or Break" Stage</h3>
-                <p class="mb-4">The quality of a chip is fundamentally determined by its floorplan. A well-conceived floorplan can render the complex downstream tasks of placement, Clock Tree Synthesis (CTS), and routing a "cake walk," ensuring a smooth path to design closure. Conversely, a poor floorplan creates a cascade of intractable problems that no amount of optimization in later stages can resolve, dooming the design to failure. The decisions made during floorplanning directly dictate the chip's final Power, Performance, and Area (PPA) metrics, which are the primary measures of its quality and competitiveness. A suboptimal floorplan can lead to an inflated die size, excessive power consumption, and degraded performance, ultimately affecting the Integrated Circuit's (IC) manufacturing cost, operational reliability, and even its functional lifespan.</p>
-                <p class="mb-4">The paramount importance of floorplanning is mandated by a fundamental physical reality of modern semiconductor technology: the dominance of interconnect delay. As manufacturing processes have advanced into the deep-submicron era (e.g., 7nm, 5nm, and beyond), the performance of transistors has scaled dramatically, leading to a significant reduction in gate delay—the time it takes for a logic gate to perform its function. However, the interconnects—the metal wires that connect these gates—have not scaled at the same rate. The resistance and capacitance of these wires per unit length have increased, making them relatively slower. Consequently, the time it takes for a signal to travel along a wire now constitutes the majority of the total path delay in a critical path. This physical shift means that the physical distance between communicating blocks, a quantity determined entirely by the floorplan, has become the primary bottleneck for chip performance. Therefore, floorplanning has evolved from a simple block-packing exercise into the principal stage for performance optimization in any modern VLSI design.</p>
+                <h3>The Critical Role of a Good Floorplan: Why It's the "Make or Break" Stage</h3>
+                <p>The quality of a chip is fundamentally determined by its floorplan. A well-conceived floorplan can render the complex downstream tasks of placement, Clock Tree Synthesis (CTS), and routing a "cake walk," ensuring a smooth path to design closure. Conversely, a poor floorplan creates a cascade of intractable problems that no amount of optimization in later stages can resolve, dooming the design to failure. The decisions made during floorplanning directly dictate the chip's final Power, Performance, and Area (PPA) metrics, which are the primary measures of its quality and competitiveness. A suboptimal floorplan can lead to an inflated die size, excessive power consumption, and degraded performance, ultimately affecting the Integrated Circuit's (IC) manufacturing cost, operational reliability, and even its functional lifespan.</p>
+                <p>The paramount importance of floorplanning is mandated by a fundamental physical reality of modern semiconductor technology: the dominance of interconnect delay. As manufacturing processes have advanced into the deep-submicron era (e.g., 7nm, 5nm, and beyond), the performance of transistors has scaled dramatically, leading to a significant reduction in gate delay—the time it takes for a logic gate to perform its function. However, the interconnects—the metal wires that connect these gates—have not scaled at the same rate. The resistance and capacitance of these wires per unit length have increased, making them relatively slower. Consequently, the time it takes for a signal to travel along a wire now constitutes the majority of the total path delay in a critical path. This physical shift means that the physical distance between communicating blocks, a quantity determined entirely by the floorplan, has become the primary bottleneck for chip performance. Therefore, floorplanning has evolved from a simple block-packing exercise into the principal stage for performance optimization in any modern VLSI design.</p>
                 
-                <h3 class="mt-8 mb-4">The Core Objectives of Floorplanning</h3>
-                <p class="mb-4">Floorplanning is a multi-objective optimization problem, tasked with simultaneously achieving several competing goals. The primary objectives include:</p>
-                <ul class="mb-4">
+                <h3>The Core Objectives of Floorplanning</h3>
+                <p>Floorplanning is a multi-objective optimization problem, tasked with simultaneously achieving several competing goals. The primary objectives include:</p>
+                <ul>
                     <li><strong>Minimize Area:</strong> The most straightforward objective is to arrange all blocks in the most compact way possible. This minimizes the overall die size, which directly reduces the manufacturing cost per chip, as more chips can be fabricated on a single silicon wafer.</li>
                     <li><strong>Minimize Timing / Reduce Wirelength:</strong> To meet performance targets, blocks that have a high degree of connectivity or lie on timing-critical paths must be placed physically close to one another. This shortens the interconnecting wires, reducing their parasitic resistance and capacitance, which in turn minimizes signal propagation delay.</li>
                     <li><strong>Enable Routability / Reduce Congestion:</strong> The floorplan must allocate sufficient space and create clear, unobstructed pathways for the millions of wires that will be added during the routing stage. A poorly planned arrangement can create "congestion hotspots"—areas where the demand for routing tracks exceeds the available supply—making it impossible to connect all the components without creating electrical shorts or other violations.</li>
                     <li><strong>Ensure Power Integrity / Reduce IR Drop:</strong> A robust Power Delivery Network (PDN) must be planned to supply a stable and clean voltage to every component on the chip. This involves creating a grid of power and ground wires that minimizes voltage drop (IR drop), a phenomenon that can slow down transistors and cause timing failures.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">Floorplanning in the VLSI Physical Design Flow</h3>
-                <p class="mb-4">The floorplanning stage is situated early in the back-end or physical design phase of the overall VLSI design cycle. A typical flow proceeds as follows:</p>
-                <ol class="mb-4">
+                <h3>Floorplanning in the VLSI Physical Design Flow</h3>
+                <p>The floorplanning stage is situated early in the back-end or physical design phase of the overall VLSI design cycle. A typical flow proceeds as follows:</p>
+                <ol>
                     <li>RTL Design & Verification: The chip's functionality is described using a Hardware Description Language (HDL) like Verilog or VHDL.</li>
                     <li>Logic Synthesis: The HDL code is translated into a gate-level netlist, which is a description of the circuit in terms of standard logic cells and their interconnections.</li>
                     <li>Partitioning: For very large designs, the netlist is divided into smaller, hierarchical blocks.</li>
@@ -93,18 +92,18 @@
                     <li>Routing: The physical wire connections between all cell pins are created.</li>
                     <li>Physical Verification: The final layout is checked for manufacturability (DRC), correctness (LVS), and other electrical rules before being sent for fabrication (GDSII tape-out).</li>
                 </ol>
-                <p class="mt-4 mb-4">Floorplanning takes the synthesized gate-level netlist and a set of physical and timing library files as its primary inputs. Its output is a physical layout plan, typically encapsulated in a Design Exchange Format (DEF) file, which serves as the foundational input and set of constraints for the subsequent placement stage.</p>
+                <p>Floorplanning takes the synthesized gate-level netlist and a set of physical and timing library files as its primary inputs. Its output is a physical layout plan, typically encapsulated in a Design Exchange Format (DEF) file, which serves as the foundational input and set of constraints for the subsequent placement stage.</p>
             </section>
 
             <section>
-                <h2 class="mb-6">Preparing the Canvas: Pre-Floorplanning Essentials</h2>
-                <p class="mb-4">Before the creative and analytical work of floorplanning can begin, a rigorous preparatory phase is required to gather and validate all necessary inputs. This phase acts as a critical quality gate, ensuring that the Place and Route (PnR) tool is equipped with accurate and consistent data. Neglecting this step inevitably leads to the "Garbage In, Garbage Out" syndrome, where flawed inputs result in a flawed and often unworkable physical design.</p>
+                <h2>Preparing the Canvas: Pre-Floorplanning Essentials</h2>
+                <p>Before the creative and analytical work of floorplanning can begin, a rigorous preparatory phase is required to gather and validate all necessary inputs. This phase acts as a critical quality gate, ensuring that the Place and Route (PnR) tool is equipped with accurate and consistent data. Neglecting this step inevitably leads to the "Garbage In, Garbage Out" syndrome, where flawed inputs result in a flawed and often unworkable physical design.</p>
                 
-                <h3 class="mt-8 mb-4">Design Import: Gathering the Ingredients</h3>
-                <p class="mb-4">The first step in the physical design flow is to load all the required design files into the PnR tool. The order of loading is significant; typically, physical libraries containing the geometric information of cells are loaded before the timing libraries that characterize their performance. Each file provides a different piece of the puzzle, defining the logical, physical, timing, and manufacturing constraints of the design.</p>
+                <h3>Design Import: Gathering the Ingredients</h3>
+                <p>The first step in the physical design flow is to load all the required design files into the PnR tool. The order of loading is significant; typically, physical libraries containing the geometric information of cells are loaded before the timing libraries that characterize their performance. Each file provides a different piece of the puzzle, defining the logical, physical, timing, and manufacturing constraints of the design.</p>
                 
-                <div class="overflow-x-auto">
-                    <h4 class="mt-6 mb-2 my-4">Table 1: Floorplanning Input File Summary</h4>
+                <div>
+                    <h4>Table 1: Floorplanning Input File Summary</h4>
                     <table>
                         <thead>
                             <tr>
@@ -169,67 +168,67 @@
                     </table>
                 </div>
 
-                <h3 class="mt-8 mb-4">Pre-Floorplan Sanity Checks: A Critical Quality Gate</h3>
-                <p class="mb-4">Once the design data is loaded, it is imperative to perform a series of sanity checks to verify the quality and consistency of the inputs. This step is not merely a technical debugging exercise; it is a fundamental risk mitigation strategy with significant financial and schedule implications. A modern System-on-Chip (SoC) design cycle can span many months and consume millions of dollars in engineering resources and EDA license costs. A fundamental error in the input netlist, such as a combinational timing loop, or an omission in the constraints file, like an unconstrained critical path, may not be detected during initial logic simulation. If such a "showstopper" bug is only discovered late in the design cycle—for example, after weeks of placement and routing have been completed—it can invalidate a substantial amount of work, forcing a costly and time-consuming restart from the floorplanning stage or even from the RTL design phase. This represents a major schedule slip and budget overrun. Therefore, the pre-floorplan sanity checks serve as the most cost-effective and rapid point at which to identify and rectify these critical issues, acting as a crucial financial control point for the entire project.</p>
-                <p class="mb-4">The comprehensive checklist for these sanity checks can be categorized as follows:</p>
-                <ul class="mb-4">
+                <h3>Pre-Floorplan Sanity Checks: A Critical Quality Gate</h3>
+                <p>Once the design data is loaded, it is imperative to perform a series of sanity checks to verify the quality and consistency of the inputs. This step is not merely a technical debugging exercise; it is a fundamental risk mitigation strategy with significant financial and schedule implications. A modern System-on-Chip (SoC) design cycle can span many months and consume millions of dollars in engineering resources and EDA license costs. A fundamental error in the input netlist, such as a combinational timing loop, or an omission in the constraints file, like an unconstrained critical path, may not be detected during initial logic simulation. If such a "showstopper" bug is only discovered late in the design cycle—for example, after weeks of placement and routing have been completed—it can invalidate a substantial amount of work, forcing a costly and time-consuming restart from the floorplanning stage or even from the RTL design phase. This represents a major schedule slip and budget overrun. Therefore, the pre-floorplan sanity checks serve as the most cost-effective and rapid point at which to identify and rectify these critical issues, acting as a crucial financial control point for the entire project.</p>
+                <p>The comprehensive checklist for these sanity checks can be categorized as follows:</p>
+                <ul>
                     <li><strong>Library Checks:</strong> Verifying the integrity of the physical and timing libraries. This includes checking for missing cell definitions, missing pin information within a cell, or duplicate cell definitions that could confuse the tool.</li>
                     <li><strong>Design Checks:</strong> Analyzing the logical structure of the netlist for common issues that can cause problems in physical implementation. These include inputs with floating (unconnected) pins, nets with multiple drivers (contention), combinational timing loops which can cause oscillations, empty modules that waste area, and assign statements which can create unintentional feedthrough paths.</li>
                     <li><strong>Constraint Checks:</strong> Validating the completeness and correctness of the timing constraints (.sdc file). This involves ensuring that all sequential elements (flip-flops) are driven by a defined clock, that there are no unconstrained paths between registers (which the tool would otherwise ignore during optimization), and that input and output delays are properly specified to model the chip's external environment.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">The Art of Partitioning: Divide and Conquer</h3>
-                <p class="mb-4">For the vast and complex SoCs common today, attempting to floorplan and place the entire design as a single, flat entity is computationally infeasible. Partitioning is the essential strategy of "divide and conquer," where the chip is broken down into smaller, more manageable blocks. This approach is fundamental to managing design complexity, enabling parallel development, and achieving a better overall PPA.</p>
+                <h3>The Art of Partitioning: Divide and Conquer</h3>
+                <p>For the vast and complex SoCs common today, attempting to floorplan and place the entire design as a single, flat entity is computationally infeasible. Partitioning is the essential strategy of "divide and conquer," where the chip is broken down into smaller, more manageable blocks. This approach is fundamental to managing design complexity, enabling parallel development, and achieving a better overall PPA.</p>
                 
-                <h4 class="mt-6 mb-2">Logical vs. Physical Partitioning</h4>
-                <p class="mb-4">The concept of partitioning exists at two distinct levels of the design process:</p>
-                <ul class="mb-4">
+                <h4>Logical vs. Physical Partitioning</h4>
+                <p>The concept of partitioning exists at two distinct levels of the design process:</p>
+                <ul>
                     <li><strong>Logical Partitioning:</strong> This occurs early in the design cycle, during the Register-Transfer Level (RTL) design phase. The system architect divides the design into functional sub-modules based on the chip's architecture, such as a CPU core, a GPU, a memory controller, or a high-speed serial interface. This is a high-level decision that defines the logical hierarchy of the design.</li>
                     <li><strong>Physical Partitioning:</strong> This takes place during the physical design stage. It involves mapping the pre-defined logical partitions to distinct physical regions on the die. This step includes defining the physical boundaries, aspect ratio, and pin locations for each partition, effectively creating a floorplan at the partition level.</li>
                 </ul>
                 
-                <h4 class="mt-6 mb-2">Implementation Styles</h4>
-                <p class="mb-4">Based on the partitioning strategy, a design can be implemented using one of two primary styles:</p>
-                <ul class="mb-4">
+                <h4>Implementation Styles</h4>
+                <p>Based on the partitioning strategy, a design can be implemented using one of two primary styles:</p>
+                <ul>
                     <li><strong>Flat:</strong> The entire design is treated as a single partition. This approach is suitable for small to medium-sized designs. Its main advantage is superior area utilization, as no physical space needs to be reserved for routing channels or power structures between partitions.</li>
                     <li><strong>Hierarchical:</strong> The design is implemented as a collection of distinct physical partitions (or blocks). Each block is implemented independently—often by different teams working in parallel—through its own floorplanning, placement, and routing flow. These completed blocks are then integrated at the top level of the chip. This methodology is indispensable for managing the complexity of very large SoCs.</li>
                 </ul>
                 
-                <h4 class="mt-6 mb-2">Criteria for Deciding Partitions</h4>
-                <p class="mb-4">The primary goal of partitioning is to create blocks that are functionally self-contained and have minimal interaction (i.e., a low number of connections) with other blocks. This minimizes routing complexity at the top level. Key criteria for defining partitions include:</p>
-                <ul class="mb-4">
+                <h4>Criteria for Deciding Partitions</h4>
+                <p>The primary goal of partitioning is to create blocks that are functionally self-contained and have minimal interaction (i.e., a low number of connections) with other blocks. This minimizes routing complexity at the top level. Key criteria for defining partitions include:</p>
+                <ul>
                     <li><strong>Design Hierarchy:</strong> Aligning physical partitions with the logical hierarchy defined in the RTL is the most natural approach.</li>
                     <li><strong>Timing Criticality:</strong> Grouping all the logic that forms a timing-critical path into a single partition ensures that these components can be placed physically close together, minimizing interconnect delay.</li>
                     <li><strong>Functionality and Clock Domains:</strong> Grouping logic with related functionality or logic that operates on the same clock domain simplifies the implementation and timing closure process for that partition.</li>
                 </ul>
                 
-                <h4 class="mt-6 mb-2">How Partitions are Reconnected</h4>
-                <p class="mb-4">Once the individual partitions are physically implemented, they must be connected at the top level of the chip. This involves two key concepts:</p>
-                <ul class="mb-4">
+                <h4>How Partitions are Reconnected</h4>
+                <p>Once the individual partitions are physically implemented, they must be connected at the top level of the chip. This involves two key concepts:</p>
+                <ul>
                     <li><strong>Pin Assignment:</strong> The logical connections between partitions, defined in the top-level netlist, must be mapped to physical pin locations on the boundaries of each partition. The process of assigning these pins is a complex optimization problem in itself. A poor pin assignment can lead to significant routing congestion at the top level, as wires may have to cross over each other in convoluted paths to reach their destinations.</li>
                     <li><strong>Feedthroughs:</strong> In some cases, a signal may need to travel from a pin on one side of a partition to a pin on the other side without interacting with any of the logic inside. This requires the creation of a feedthrough path, which is essentially a dedicated wire, often with buffers, that cuts across the partition. Feedthroughs must be planned during the partition's floorplan stage, as they consume valuable internal routing resources. A key objective in partitioning is to minimize the number of cross-partition I/Os to reduce the need for complex pin assignments and resource-consuming feedthroughs.</li>
                 </ul>
             </section>
             
             <section>
-                 <h2 class="mb-6">Constructing the Floorplan: A Step-by-Step Guide</h2>
-                 <p class="mb-4">With the design data imported and validated, the process of constructing the floorplan begins. This is a methodical procedure where the physical designer, aided by the PnR tool, makes a series of foundational decisions that define the chip's physical architecture. The typical flow involves defining the overall chip dimensions, placing I/O structures, creating the internal core structure, and establishing the power delivery network.</p>
+                 <h2>Constructing the Floorplan: A Step-by-Step Guide</h2>
+                 <p>With the design data imported and validated, the process of constructing the floorplan begins. This is a methodical procedure where the physical designer, aided by the PnR tool, makes a series of foundational decisions that define the chip's physical architecture. The typical flow involves defining the overall chip dimensions, placing I/O structures, creating the internal core structure, and establishing the power delivery network.</p>
 
-                <h3 class="mt-8 mb-4">Defining the Chip Canvas: Die Size, Aspect Ratio, and Core Utilization</h3>
-                <p class="mb-4">The first step is to define the physical boundaries of the design. This involves estimating the total silicon area required and determining its shape and how densely it will be populated.</p>
-                <ul class="mb-4">
+                <h3>Defining the Chip Canvas: Die Size, Aspect Ratio, and Core Utilization</h3>
+                <p>The first step is to define the physical boundaries of the design. This involves estimating the total silicon area required and determining its shape and how densely it will be populated.</p>
+                <ul>
                     <li><strong>Die Size Estimation:</strong> The tool performs an initial estimation of the required die size based on the sum of the areas of all standard cells from the netlist, all macros from the physical libraries, and any required I/O cells. This provides a starting point for the chip's dimensions.</li>
                     <li><strong>Aspect Ratio (AR):</strong> The aspect ratio is the ratio of the core's height to its width (AR = Height / Width). An aspect ratio of 1.0 results in a perfectly square core, while values greater or less than 1.0 produce a rectangular shape. The choice of AR is a critical decision. It must balance the availability of horizontal and vertical routing resources; for instance, a tall, narrow floorplan will have more horizontal routing tracks but fewer (and longer) vertical ones. The AR may also be constrained by external factors, such as the chip's packaging or its integration into a larger system-level design.</li>
                     <li><strong>Core Utilization:</strong> This metric defines the percentage of the core area that will be occupied by placeable components (standard cells and macros). It is calculated as Utilization = (Area<sub>StdCell</sub> + Area<sub>Macro</sub>) / Area<sub>Core</sub>. A typical target utilization for modern designs is in the range of 70% to 80%. The remaining 20-30% of the core area is not wasted space; it is essential "white space" that is reserved for two critical purposes: allowing the placement of new buffers and inverters that are added during timing and CTS optimization, and providing the necessary tracks for signal routing.</li>
                 </ul>
-                <p class="mt-4 mb-4">Core utilization serves as the primary control knob for managing routing congestion. Setting a high utilization target (e.g., >85%) is tempting as it reduces the die size and thus the chip's cost. However, it leaves very little room for routing, drastically increasing the risk of congestion hotspots, which can make the design unroutable or prevent it from meeting timing requirements. Conversely, a low utilization (e.g., <65%) provides ample routing space, making design closure easier, but it wastes expensive silicon real estate. Therefore, the selected utilization target represents a strategic trade-off between manufacturing cost and the risk associated with achieving design closure.</p>
+                <p>Core utilization serves as the primary control knob for managing routing congestion. Setting a high utilization target (e.g., >85%) is tempting as it reduces the die size and thus the chip's cost. However, it leaves very little room for routing, drastically increasing the risk of congestion hotspots, which can make the design unroutable or prevent it from meeting timing requirements. Conversely, a low utilization (e.g., <65%) provides ample routing space, making design closure easier, but it wastes expensive silicon real estate. Therefore, the selected utilization target represents a strategic trade-off between manufacturing cost and the risk associated with achieving design closure.</p>
 
-                <h3 class="mt-8 mb-4">The Chip's Interface: I/O and Pad Placement</h3>
-                <p class="mb-4">The Input/Output (I/O) pads and pins are the physical entities that form the electrical interface between the chip and the external world, such as a printed circuit board (PCB).</p>
-                <ul class="mb-4">
+                <h3>The Chip's Interface: I/O and Pad Placement</h3>
+                <p>The Input/Output (I/O) pads and pins are the physical entities that form the electrical interface between the chip and the external world, such as a printed circuit board (PCB).</p>
+                <ul>
                     <li><strong>Pad Ring Creation:</strong> The arrangement of these I/O pads around the periphery of the core forms a structure known as the "pad ring". The placement of individual pads is guided by system-level connectivity requirements (e.g., placing the memory interface pads on the side of the chip that will face the DRAM) and by timing constraints.</li>
                     <li><strong>Specialized Pad Cells:</strong> The pad ring is not composed solely of signal pads. It also includes several types of specialized, physical-only cells:
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Core Power and Ground Pads:</strong> These connect the on-chip power grid to the external power supply.</li>
                             <li><strong>I/O Power and Ground Pads:</strong> These provide a separate, often higher-voltage, supply for the I/O drivers.</li>
                             <li><strong>Corner Pads:</strong> These are placed at the corners of the die to ensure the physical and electrical continuity of the pad ring.</li>
@@ -239,31 +238,31 @@
                     <li><strong>Core to I/O Spacing:</strong> A specific clearance or channel must be maintained between the boundary of the core (where standard cells are placed) and the inner edge of the I/O pads. This space is crucial for routing the main power and ground rings that supply the core and for routing the signals from the I/O pads to the core logic.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">Structuring the Core: Row Configuration and Cell Orientation</h3>
-                <p class="mb-4">The core area, defined by the floorplan, must be structured to accommodate the millions of standard cells that will be placed within it.</p>
-                <ul class="mb-4">
+                <h3>Structuring the Core: Row Configuration and Cell Orientation</h3>
+                <p>The core area, defined by the floorplan, must be structured to accommodate the millions of standard cells that will be placed within it.</p>
+                <ul>
                     <li><strong>Standard Cell Rows:</strong> The core is filled with a series of horizontal Standard Cell Rows. These rows act as the tracks upon which the standard cells are placed.</li>
                     <li><strong>Standard Cell Sites:</strong> Each row is composed of fundamental units called Standard Cell Sites or Unit Tiles. A site represents the smallest placeable unit in the design. The height of a site is equal to the height of the standard cells, and its width is typically determined by the width of the smallest cell in the library (often a filler cell). All standard cells must have a width that is an integer multiple of the site width.</li>
                     <li><strong>Cell Orientation:</strong> To maximize area efficiency and facilitate power sharing, standard cell rows are typically arranged with alternating orientations. The most common configuration is the "Butt and flip" method, where adjacent rows are placed directly next to each other (butted), and every other row is flipped vertically (e.g., R0, R1F, R2, R3F...). This allows the VDD power rail of one row and the VSS (ground) rail of the adjacent row to be shared, saving significant area compared to configurations that require a gap between every row.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">Power Planning: Energizing the Chip</h3>
-                <p class="mb-4">Concurrent with the structural definition of the floorplan, the designer must create the Power Delivery Network (PDN). This is a critical sub-task often referred to as power planning, and it is integral to the floorplanning stage, not an afterthought. A robust PDN is essential for delivering a stable voltage supply to every transistor on the chip.</p>
-                <p class="mb-4">The PDN is typically constructed as a hierarchical grid of metal wires:</p>
-                <ul class="mb-4">
+                <h3>Power Planning: Energizing the Chip</h3>
+                <p>Concurrent with the structural definition of the floorplan, the designer must create the Power Delivery Network (PDN). This is a critical sub-task often referred to as power planning, and it is integral to the floorplanning stage, not an afterthought. A robust PDN is essential for delivering a stable voltage supply to every transistor on the chip.</p>
+                <p>The PDN is typically constructed as a hierarchical grid of metal wires:</p>
+                <ul>
                     <li><strong>Power Rings:</strong> One or more wide metal rings are created around the periphery of the core. Separate, dedicated rings are often created around large power-hungry macros.</li>
                     <li><strong>Power Straps:</strong> A mesh of horizontal and vertical metal straps is laid out over the entire core area. These straps are connected to the peripheral rings and serve to distribute power from the edges of the chip into the center.</li>
                     <li><strong>Standard Cell Rails:</strong> Within each standard cell row, thin metal wires, known as rails, run horizontally. These rails connect directly to the VDD and VSS pins of the standard cells and tap into the power from the overlying strap mesh.</li>
                 </ul>
-                <p class="mb-4">Designing the PDN involves addressing two major power integrity challenges:</p>
-                <ul class="mb-4">
+                <p>Designing the PDN involves addressing two major power integrity challenges:</p>
+                <ul>
                     <li><strong>IR Drop:</strong> The metal wires of the PDN have a finite resistance. As current flows through these wires to power the cells, a voltage drop (V = I &times; R) occurs. This is known as IR drop. If the IR drop is excessive, the voltage supplied to a cell will be lower than intended, which can significantly increase its delay, leading to timing violations, or in severe cases, functional failure. IR drop can be static, caused by average leakage currents, or dynamic, caused by the large instantaneous current draw when many cells switch simultaneously. Mitigation techniques include using wider and thicker power straps (often on higher, less resistive metal layers), increasing the number of straps to create a denser grid, and strategically placing decoupling capacitors (DCAPs) to act as local charge reservoirs.</li>
                     <li><strong>Electromigration (EM):</strong> This is a long-term reliability issue caused by the physical displacement of metal atoms due to the momentum transfer from a high-density flow of electrons. Over time, this can lead to the formation of voids (open circuits) or hillocks (short circuits) in the power grid, causing the chip to fail in the field. EM is exacerbated by high current density and high temperatures. The mitigation strategies are similar to those for IR drop: using wider wires to reduce current density and avoiding excessively long, unbroken stretches of metal.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">The Floorplan Outputs: Hand-off to Placement</h3>
-                <p class="mb-4">The culmination of the floorplanning stage is a comprehensive physical database that is handed off to the placement tool. This database is typically stored in a Design Exchange Format (DEF) file and contains the following finalized information:</p>
-                <ul class="mb-4">
+                <h3>The Floorplan Outputs: Hand-off to Placement</h3>
+                <p>The culmination of the floorplanning stage is a comprehensive physical database that is handed off to the placement tool. This database is typically stored in a Design Exchange Format (DEF) file and contains the following finalized information:</p>
+                <ul>
                     <li>The defined core boundary and overall die area.</li>
                     <li>The precise locations, layers, and orientations of all placed I/O ports.</li>
                     <li>The final, fixed locations and orientations of all hard macros.</li>
@@ -271,22 +270,22 @@
                     <li>The detailed layout of the power delivery network (rings and straps).</li>
                     <li>The locations and types of all placement blockages.</li>
                 </ul>
-                <p class="mt-4 mb-4">This DEF file provides the complete physical context and set of constraints within which the placement and routing engines will operate.</p>
+                <p>This DEF file provides the complete physical context and set of constraints within which the placement and routing engines will operate.</p>
             </section>
             
             <section>
-                 <h2 class="mb-6">Mastering the Craft: Strategies for a Perfect Floorplan</h2>
-                 <p class="mb-4">Moving beyond the procedural steps of floorplanning, achieving an optimal layout requires a strategic approach that balances competing objectives and anticipates downstream challenges. This section delves into the advanced techniques and decision-making processes that distinguish a merely functional floorplan from a high-performance, robust, and cost-effective one. These strategies involve the artful placement of large macros, the judicious use of placement blockages, and the integration of timing constraints directly into the floorplanning process.</p>
+                 <h2>Mastering the Craft: Strategies for a Perfect Floorplan</h2>
+                 <p>Moving beyond the procedural steps of floorplanning, achieving an optimal layout requires a strategic approach that balances competing objectives and anticipates downstream challenges. This section delves into the advanced techniques and decision-making processes that distinguish a merely functional floorplan from a high-performance, robust, and cost-effective one. These strategies involve the artful placement of large macros, the judicious use of placement blockages, and the integration of timing constraints directly into the floorplanning process.</p>
                 
-                 <h3 class="mt-8 mb-4">Advanced Macro Placement: The Art of Placing the "Big Rocks"</h3>
-                <p class="mb-4">The placement of macros is the single most impactful decision made during floorplanning. These large blocks act as immovable islands in a sea of standard cells, fundamentally dictating the chip's data flow, defining the shape of the areas available for standard cell placement, and creating the major channels and choke points for routing.</p>
+                 <h3>Advanced Macro Placement: The Art of Placing the "Big Rocks"</h3>
+                <p>The placement of macros is the single most impactful decision made during floorplanning. These large blocks act as immovable islands in a sea of standard cells, fundamentally dictating the chip's data flow, defining the shape of the areas available for standard cell placement, and creating the major channels and choke points for routing.</p>
                 
-                <h4 class="mt-6 mb-2">Fly-line Analysis</h4>
-                <p class="mb-4">Before any macros are placed, a crucial initial step is to perform fly-line analysis. Fly-lines are straight, virtual lines drawn on the layout canvas that represent the logical connections (nets) between macros and between macros and I/O pins. A dense bundle of fly-lines between two blocks indicates a high degree of connectivity and a strong justification for placing them close together. This visualization provides an immediate, high-level understanding of the chip's communication architecture and guides the initial grouping and placement of macros.</p>
+                <h4>Fly-line Analysis</h4>
+                <p>Before any macros are placed, a crucial initial step is to perform fly-line analysis. Fly-lines are straight, virtual lines drawn on the layout canvas that represent the logical connections (nets) between macros and between macros and I/O pins. A dense bundle of fly-lines between two blocks indicates a high degree of connectivity and a strong justification for placing them close together. This visualization provides an immediate, high-level understanding of the chip's communication architecture and guides the initial grouping and placement of macros.</p>
                 
-                <h4 class="mt-6 mb-2">Strategic Guidelines & Trade-offs</h4>
-                <p class="mb-4">Achieving an optimal macro placement involves adhering to a set of proven guidelines while intelligently navigating the necessary trade-offs:</p>
-                <ul class="mb-4">
+                <h4>Strategic Guidelines & Trade-offs</h4>
+                <p>Achieving an optimal macro placement involves adhering to a set of proven guidelines while intelligently navigating the necessary trade-offs:</p>
+                <ul>
                     <li><strong>Place Macros on the Periphery:</strong> Whenever possible, macros should be placed around the edges of the core area. This strategy is highly beneficial because it creates a large, contiguous, and regularly shaped (ideally rectangular) region in the center for the standard cells. A contiguous standard cell area is far easier for automated placement and CTS tools to handle efficiently, leading to better timing and lower congestion. Placing a large macro in the center of the core acts as a massive obstacle, fragmenting the standard cell area and forcing global signals to take long, convoluted detours around it.</li>
                     <li><strong>Optimize Macro Orientation:</strong> The orientation of a macro should be chosen to minimize the distance between its pins and the logic it connects to. Ideally, pins should face towards the core if they connect primarily to standard cells, or towards other macros if they form a critical macro-to-macro interface. In advanced technology nodes, the orientation of macros may be restricted due to lithographic constraints related to polysilicon directionality, limiting the designer's flexibility.</li>
                     <li><strong>Ensure I/O Proximity:</strong> Macros that communicate heavily with external signals should be placed near their corresponding I/O pads on the chip's periphery. This minimizes the length of long I/O routes, which can be a significant source of delay and signal integrity issues.</li>
@@ -294,131 +293,131 @@
                     <li><strong>Shape the Standard Cell Area:</strong> The arrangement of macros implicitly defines the shape of the remaining area available for standard cells. It is crucial to avoid creating odd or problematic shapes, such as long, narrow channels or enclosed "traps" where standard cells can be placed but are difficult to route to. The goal is to create a homogeneous, contiguous, and ideally square-like area for the standard cell logic, as this provides the most flexibility for the placement and routing tools.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">Guiding the Placer: Blockage and Halo Management</h3>
-                <p class="mb-4">To enforce the strategic decisions made during macro placement and to guide the subsequent automated placement of standard cells, designers use placement blockages. These are defined regions where the placement tool is forbidden or restricted from placing cells. They are an essential tool for proactively managing congestion and controlling the distribution of logic.</p>
+                <h3>Guiding the Placer: Blockage and Halo Management</h3>
+                <p>To enforce the strategic decisions made during macro placement and to guide the subsequent automated placement of standard cells, designers use placement blockages. These are defined regions where the placement tool is forbidden or restricted from placing cells. They are an essential tool for proactively managing congestion and controlling the distribution of logic.</p>
                 
-                <h4 class="mt-6 mb-2">Types of Placement Blockages</h4>
-                <ul class="mb-4">
+                <h4>Types of Placement Blockages</h4>
+                <ul>
                     <li><strong>Hard Blockage:</strong> An area where no cells of any type are allowed to be placed. Hard blockages are used to reserve areas exclusively for routing, to prevent the placer from putting cells in geometrically awkward regions (like the sharp corners formed by two adjacent macros), or to control the generation of power rails.</li>
                     <li><strong>Soft Blockage:</strong> An area where general-purpose standard cells are forbidden, but buffers and inverters are permitted. This is a powerful technique for creating routing channels between blocks where timing can be optimized by buffer insertion without adding to the logical complexity and congestion of the area.</li>
                     <li><strong>Partial Blockage:</strong> A region where the placement tool is allowed to fill only a certain percentage of the available sites with standard cells. This is used to gently reduce the cell density in areas that are anticipated to be congested, thereby alleviating routing pressure without completely blocking off the area.</li>
                 </ul>
                 
-                <h4 class="mt-6 mb-2">Halos (Keep-outs)</h4>
-                <p class="mb-4">A halo, also known as a keep-out margin, is a special type of blockage that is defined relative to a macro rather than by absolute coordinates on the die. The halo forms a perimeter around the macro and moves with it if the macro is relocated. Halos are typically defined as soft blockages and are extremely useful for ensuring that a clear zone is maintained around a macro's pins for routing access and for the placement of drivers or buffers that connect directly to those pins.</p>
+                <h4>Halos (Keep-outs)</h4>
+                <p>A halo, also known as a keep-out margin, is a special type of blockage that is defined relative to a macro rather than by absolute coordinates on the die. The halo forms a perimeter around the macro and moves with it if the macro is relocated. Halos are typically defined as soft blockages and are extremely useful for ensuring that a clear zone is maintained around a macro's pins for routing access and for the placement of drivers or buffers that connect directly to those pins.</p>
 
-                <h3 class="mt-8 mb-4">Timing-Driven Floorplanning: Racing Against the Clock</h3>
-                <p class="mb-4">In performance-critical designs, the floorplan cannot be created based on geometric considerations alone. Timing-driven floorplanning is an approach that explicitly uses the timing constraints defined in the SDC file to guide the placement of blocks, with the primary objective of ensuring the chip can operate at its target frequency.</p>
+                <h3>Timing-Driven Floorplanning: Racing Against the Clock</h3>
+                <p>In performance-critical designs, the floorplan cannot be created based on geometric considerations alone. Timing-driven floorplanning is an approach that explicitly uses the timing constraints defined in the SDC file to guide the placement of blocks, with the primary objective of ensuring the chip can operate at its target frequency.</p>
                 
-                <h4 class="mt-6 mb-2">Understanding Timing Paths</h4>
-                <p class="mb-4">Static Timing Analysis (STA) is the method used to verify a design's timing performance. STA tools analyze millions of timing paths in the design. A valid timing path typically starts at an input port of the chip or the clock pin of a sequential element (like a flip-flop) and ends at an output port or the data input pin of another sequential element. The tool calculates the total delay along each path and compares it to the time allowed by the clock period, reporting the difference as slack. A negative slack indicates a timing violation that must be fixed.</p>
+                <h4>Understanding Timing Paths</h4>
+                <p>Static Timing Analysis (STA) is the method used to verify a design's timing performance. STA tools analyze millions of timing paths in the design. A valid timing path typically starts at an input port of the chip or the clock pin of a sequential element (like a flip-flop) and ends at an output port or the data input pin of another sequential element. The tool calculates the total delay along each path and compares it to the time allowed by the clock period, reporting the difference as slack. A negative slack indicates a timing violation that must be fixed.</p>
                 
-                <h4 class="mt-6 mb-2">Net-Based vs. Path-Based Approaches</h4>
-                <p class="mb-4">There are two main strategies for incorporating timing into the floorplanning process:</p>
-                <ul class="mb-4">
+                <h4>Net-Based vs. Path-Based Approaches</h4>
+                <p>There are two main strategies for incorporating timing into the floorplanning process:</p>
+                <ul>
                     <li><strong>Net-Based:</strong> This is a simpler, more heuristic approach. The designer or a preliminary STA run identifies nets that are part of known critical paths. These nets are then assigned a higher weight or a stricter length constraint. The floorplanning tool's optimization engine then prioritizes minimizing the length of these high-weight nets, with the assumption that shortening them will help fix the critical path.</li>
                     <li><strong>Path-Based:</strong> This is a more sophisticated and accurate approach. The floorplanner is tightly integrated with a lightweight STA engine. During optimization, the tool analyzes the delay of entire timing paths, not just individual nets. It identifies the path with the Worst Negative Slack (WNS) and makes floorplanning decisions—such as moving two macros closer together—that are specifically aimed at reducing the delay of that most critical path. This allows for a more direct and effective optimization of the chip's overall performance.</li>
                 </ul>
-                <p class="mt-4 mb-4">The outcome of a timing-driven floorplanning process is a layout where the placement of critical blocks is dictated by performance requirements. For example, two macros that are part of a critical reg2reg path will be forced to be placed physically adjacent, even if this creates a less-than-ideal geometric arrangement, because meeting the timing constraint is the overriding priority.</p>
+                <p>The outcome of a timing-driven floorplanning process is a layout where the placement of critical blocks is dictated by performance requirements. For example, two macros that are part of a critical reg2reg path will be forced to be placed physically adjacent, even if this creates a less-than-ideal geometric arrangement, because meeting the timing constraint is the overriding priority.</p>
 
-                <h3 class="mt-8 mb-4">Clarifying Terminology: Design Planning vs. Floorplanning</h3>
-                <p class="mb-4">In the lexicon of the semiconductor industry and EDA tool vendors like Synopsys and Cadence, the term "Design Planning" is often used to describe a broader, more holistic set of early-stage physical design activities that encompasses traditional floorplanning.</p>
-                <p class="mb-4">Design Planning can be thought of as the complete architectural phase of physical design. It includes not only the placement of macros and I/Os (i.e., floorplanning) but also high-level design partitioning, detailed power network planning, and initial exploration of global routing feasibility. It represents a system-level approach to defining the chip's physical hierarchy and infrastructure before committing to the detailed, computationally intensive stages of placement and routing. In this context, floorplanning is the core activity and primary component within the broader discipline of design planning.</p>
+                <h3>Clarifying Terminology: Design Planning vs. Floorplanning</h3>
+                <p>In the lexicon of the semiconductor industry and EDA tool vendors like Synopsys and Cadence, the term "Design Planning" is often used to describe a broader, more holistic set of early-stage physical design activities that encompasses traditional floorplanning.</p>
+                <p>Design Planning can be thought of as the complete architectural phase of physical design. It includes not only the placement of macros and I/Os (i.e., floorplanning) but also high-level design partitioning, detailed power network planning, and initial exploration of global routing feasibility. It represents a system-level approach to defining the chip's physical hierarchy and infrastructure before committing to the detailed, computationally intensive stages of placement and routing. In this context, floorplanning is the core activity and primary component within the broader discipline of design planning.</p>
             </section>
             
             <section>
-                <h2 class="mb-6">Verification, Consequences, and Iteration</h2>
-                <p class="mb-4">Once an initial floorplan is created, it must be rigorously verified before the design can proceed to the next stage. This qualification step is essential because the consequences of a flawed floorplan are severe, often creating a domino effect of problems that ripple through the entire physical design flow. Understanding these consequences and the high cost of iterating back to the floorplan stage underscores the immense pressure to achieve a high-quality result from the outset.</p>
+                <h2>Verification, Consequences, and Iteration</h2>
+                <p>Once an initial floorplan is created, it must be rigorously verified before the design can proceed to the next stage. This qualification step is essential because the consequences of a flawed floorplan are severe, often creating a domino effect of problems that ripple through the entire physical design flow. Understanding these consequences and the high cost of iterating back to the floorplan stage underscores the immense pressure to achieve a high-quality result from the outset.</p>
 
-                <h3 class="mt-8 mb-4">Floorplan Qualification: The Final Checklist</h3>
-                <p class="mb-4">Before handing off the design to the placement tool, the floorplan must be subjected to a series of qualification checks to ensure its legality, quality, and feasibility. This checklist serves as a final sign-off for the architectural phase of the layout.</p>
-                <ul class="mb-4">
+                <h3>Floorplan Qualification: The Final Checklist</h3>
+                <p>Before handing off the design to the placement tool, the floorplan must be subjected to a series of qualification checks to ensure its legality, quality, and feasibility. This checklist serves as a final sign-off for the architectural phase of the layout.</p>
+                <ul>
                     <li><strong>Geometric and Legal Checks:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>No Overlaps:</strong> There must be no geometric overlaps between any macros or other fixed blocks.</li>
                             <li><strong>Grid Alignment:</strong> All macros and I/O ports must be placed on the legal manufacturing grid defined in the technology file.</li>
                             <li><strong>Notch Avoidance:</strong> The arrangement of macros should not create concave or "notched" regions in the standard cell area. If unavoidable, these areas must be properly managed with placement blockages to prevent congestion.</li>
                         </ul>
                     </li>
                     <li><strong>Connectivity and Power Checks:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>I/O Port Integrity:</strong> No I/O ports should be electrically shorted together by the pad ring structure.</li>
                             <li><strong>Power/Ground (PG) Connections:</strong> The PG connections for all macros and pre-placed cells must be correctly hooked up to the power grid.</li>
                         </ul>
                     </li>
                     <li><strong>Layout Quality and Feasibility Checks:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Blockage Cleanup:</strong> All temporary or unnecessary placement and routing blockages used during the exploratory phase should be removed.</li>
                             <li><strong>Preliminary Analysis:</strong> An initial, quick analysis of timing and routing congestion should be run. While full timing closure and routing are not expected, this check should indicate that there is a feasible path forward and that no catastrophic issues have been created.</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">The Domino Effect: Consequences of a Bad Floorplan</h3>
-                <p class="mb-4">A suboptimal floorplan does not create a single, isolated problem. Instead, it triggers a cascade of interconnected issues that compound and magnify at each subsequent stage of the physical design flow, often culminating in a design that is impossible to close. This magnification of initial errors is a critical concept to grasp.</p>
-                <p class="mb-4">Consider the consequences of a seemingly simple floorplanning mistake: placing two highly connected macros far apart from each other, creating a long critical path.</p>
-                <ol class="mb-4">
+                <h3>The Domino Effect: Consequences of a Bad Floorplan</h3>
+                <p>A suboptimal floorplan does not create a single, isolated problem. Instead, it triggers a cascade of interconnected issues that compound and magnify at each subsequent stage of the physical design flow, often culminating in a design that is impossible to close. This magnification of initial errors is a critical concept to grasp.</p>
+                <p>Consider the consequences of a seemingly simple floorplanning mistake: placing two highly connected macros far apart from each other, creating a long critical path.</p>
+                <ol>
                     <li>The Initial Error (Floorplanning): The macros are placed on opposite sides of the chip.</li>
                     <li>Placement Stage Consequence: The placement tool, driven by the timing constraints, attempts to fix this long path. Its only recourse is to insert a chain of buffers along the path and to place the standard cell logic associated with this path in a direct line between the two macros. This leads to an extremely high concentration of cells in this narrow channel, creating a region of very high cell density.</li>
                     <li>CTS Stage Consequence: The flip-flops associated with this critical path are now physically spread out. To deliver the clock signal to them with low skew, the CTS tool must build a large and complex clock tree with many levels of buffers. This results in high clock latency and skew, consuming excessive power and further degrading the timing on other paths that are now affected by the unbalanced clock.</li>
                     <li>Routing Stage Consequence: The combination of the high cell density from placement and the massive number of nets trying to traverse the channel between the macros creates a severe routing congestion hotspot. There are physically not enough metal tracks available to accommodate all the required connections. The router may fail completely, or it may create enormous detours for the wires, which dramatically increases their length and parasitic effects, causing the timing violations to become even worse.</li>
                     <li>The Final Result: The design is now a catastrophic failure across multiple domains. The initial timing problem is worse than before, the design is unroutable due to congestion, and the power consumption has ballooned due to the oversized clock tree and excessive buffering. The "small" floorplanning error has been magnified at each step into a complete, multi-domain design failure.</li>
                 </ol>
-                <p class="mt-4 mb-4">This example illustrates the specific downstream impacts of a bad floorplan:</p>
-                <ul class="mb-4">
+                <p>This example illustrates the specific downstream impacts of a bad floorplan:</p>
+                <ul>
                     <li><strong>Routing Congestion:</strong> Caused directly by insufficient channel spacing between macros, high pin density at macro edges, or excessively high core utilization.</li>
                     <li><strong>Clock Tree Synthesis (CTS) Issues:</strong> A fragmented standard cell area leads to scattered flip-flop placement, which in turn leads to large, power-hungry clock trees with high latency and skew.</li>
                     <li><strong>Timing Violations:</strong> Long interconnect paths created by poor macro placement are often impossible to fix with downstream optimizations like buffer insertion, leading to persistent, unfixable timing violations.</li>
                     <li><strong>Power Integrity (IR Drop):</strong> An inefficient power grid or poor placement of high-power macros will result in unacceptable voltage drops, jeopardizing the chip's functionality and performance.</li>
                 </ul>
 
-                <h3 class="mt-8 mb-4">Flexibility and Iteration: Can We Go Back?</h3>
-                <p class="mb-4">The VLSI design process is, by nature, iterative. It is common to perform minor loops within a stage (e.g., re-running placement optimization). However, if a fundamental, "showstopper" issue is discovered during placement or routing—such as massive, unresolvable congestion or timing violations that are far from the target—the only viable solution is often to perform a major iteration by returning to the floorplanning stage.</p>
-                <ul class="mb-4">
+                <h3>Flexibility and Iteration: Can We Go Back?</h3>
+                <p>The VLSI design process is, by nature, iterative. It is common to perform minor loops within a stage (e.g., re-running placement optimization). However, if a fundamental, "showstopper" issue is discovered during placement or routing—such as massive, unresolvable congestion or timing violations that are far from the target—the only viable solution is often to perform a major iteration by returning to the floorplanning stage.</p>
+                <ul>
                     <li><strong>Pros of Iterating Back to Floorplan:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Corrects Fundamental Flaws:</strong> It is the only way to fix architectural layout problems that are the root cause of downstream failures. No amount of placement or routing effort can fix a fundamentally broken floorplan.</li>
                             <li><strong>Enables Design Closure:</strong> For a design that is otherwise stuck, a floorplan iteration can be the necessary step to unlock a path to successful closure.</li>
                         </ul>
                     </li>
                      <li><strong>Cons of Iterating Back to Floorplan:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Massive Schedule Impact:</strong> This is the most significant drawback. Returning to the floorplan stage means discarding all the computational work performed during placement, CTS, and routing. For a large SoC, these stages can take days or even weeks of runtime on a server farm. A single major floorplan iteration can easily delay a project by several weeks or even months.</li>
                             <li><strong>High Cost:</strong> The cost of an iteration is multi-faceted. It includes the direct cost of wasted engineering hours and expensive EDA tool license time, as well as the significant opportunity cost associated with a delayed product launch in a competitive market.</li>
                         </ul>
                     </li>
                 </ul>
-                <p class="mt-4 mb-4">The prohibitively high cost and schedule impact of major iterations are the primary drivers behind the intense industry focus on "first-time right" physical design methodologies. The goal is to invest heavily in the initial planning, analysis, and verification at the floorplan stage to minimize the probability of requiring a costly and disruptive loop back from later stages.</p>
+                <p>The prohibitively high cost and schedule impact of major iterations are the primary drivers behind the intense industry focus on "first-time right" physical design methodologies. The goal is to invest heavily in the initial planning, analysis, and verification at the floorplan stage to minimize the probability of requiring a costly and disruptive loop back from later stages.</p>
             </section>
             
             <section>
-                <h2 class="mb-6">Deep Dive: Algorithms and Future Frontiers in Floorplanning</h2>
-                <p class="mb-4">At its heart, floorplanning is a problem of combinatorial optimization, seeking the best arrangement of objects within a constrained space according to a set of objectives. This section delves into the computational engines that power modern floorplanning tools, exploring the classical algorithms, the data structures used to represent a floorplan, and the transformative impact of emerging technologies like machine learning, thermal-aware design, and three-dimensional integrated circuits (3D-ICs).</p>
+                <h2>Deep Dive: Algorithms and Future Frontiers in Floorplanning</h2>
+                <p>At its heart, floorplanning is a problem of combinatorial optimization, seeking the best arrangement of objects within a constrained space according to a set of objectives. This section delves into the computational engines that power modern floorplanning tools, exploring the classical algorithms, the data structures used to represent a floorplan, and the transformative impact of emerging technologies like machine learning, thermal-aware design, and three-dimensional integrated circuits (3D-ICs).</p>
                 
-                <h3 class="mt-8 mb-4">The Algorithmic Engine: How Floorplanners "Think"</h3>
-                <p class="mb-4">The task of finding the optimal placement for a set of blocks is computationally classified as an NP-hard problem. This means that for any non-trivial number of blocks, it is computationally infeasible to explore every possible arrangement to find the absolute best one. Consequently, floorplanning tools rely on sophisticated heuristic and metaheuristic algorithms that are designed to find very good, near-optimal solutions in a reasonable amount of time.</p>
+                <h3>The Algorithmic Engine: How Floorplanners "Think"</h3>
+                <p>The task of finding the optimal placement for a set of blocks is computationally classified as an NP-hard problem. This means that for any non-trivial number of blocks, it is computationally infeasible to explore every possible arrangement to find the absolute best one. Consequently, floorplanning tools rely on sophisticated heuristic and metaheuristic algorithms that are designed to find very good, near-optimal solutions in a reasonable amount of time.</p>
                 
-                <h4 class="mt-6 mb-2">Classical Algorithms</h4>
-                <ul class="mb-4">
+                <h4>Classical Algorithms</h4>
+                <ul>
                     <li><strong>Partitioning-Based (Min-Cut):</strong> This is a top-down, "divide and conquer" approach. The algorithm starts with the entire chip and recursively partitions it into two smaller regions (a "cut"), while simultaneously partitioning the netlist of components. The goal at each step is to minimize the number of nets that are cut by the partition boundary. This process continues until each partition contains a single block or a small group of cells. This method is often used for an initial rough placement.</li>
                     <li><strong>Simulated Annealing (SA):</strong> This is one of the most successful and widely used metaheuristic algorithms for floorplanning. Inspired by the physical process of annealing in metallurgy, where a material is heated and then slowly cooled to reach a low-energy, stable state, SA is a probabilistic optimization technique. The process works as follows:
-                        <ol class="pl-6 mt-2">
+                        <ol>
                             <li>Start with an initial, often random, floorplan configuration.</li>
                             <li>Define a "cost function" that numerically evaluates the quality of a floorplan (e.g., a weighted sum of area, wirelength, and overlap).</li>
                             <li>Iteratively make a small, random change to the current floorplan (a "move," such as swapping two blocks or rotating one).</li>
                             <li>If the move improves the cost (a "downhill" move), it is always accepted.</li>
                             <li>If the move worsens the cost (an "uphill" move), it is accepted with a certain probability. This probability is high at the beginning (high "temperature") and gradually decreases as the algorithm progresses ("cools").</li>
                         </ol>
-                        <p class="mt-2">This ability to occasionally accept bad moves allows the algorithm to "climb out" of local minima in the solution space and explore a wider range of configurations to find a better, more globally optimal solution.</p>
+                        <p>This ability to occasionally accept bad moves allows the algorithm to "climb out" of local minima in the solution space and explore a wider range of configurations to find a better, more globally optimal solution.</p>
                     </li>
                 </ul>
                 
-                <h3 class="mt-8 mb-4">Floorplan Representations (Data Structures)</h3>
-                <p class="mb-4">The effectiveness of any floorplanning algorithm is deeply tied to the underlying data structure used to represent the geometric relationships between blocks. The choice of representation defines the algorithm's search space and the efficiency of its operations.</p>
-                <ul class="mb-4">
+                <h3>Floorplan Representations (Data Structures)</h3>
+                <p>The effectiveness of any floorplanning algorithm is deeply tied to the underlying data structure used to represent the geometric relationships between blocks. The choice of representation defines the algorithm's search space and the efficiency of its operations.</p>
+                <ul>
                     <li><strong>Slicing vs. Non-Slicing Structures:</strong> A key distinction is between slicing and non-slicing floorplans. A slicing floorplan is one that can be obtained by recursively cutting a rectangle into two smaller pieces, either with a horizontal or a vertical cut. While simple to represent and manipulate, slicing structures cannot represent all possible topological arrangements. A non-slicing floorplan is a more general structure that may contain arrangements (like a pinwheel of five blocks) that cannot be created by simple slicing. Non-slicing representations allow for denser packing and are essential for modern, area-constrained designs.</li>
                     <li><strong>Key Representations:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Polish Expression:</strong> A classic representation for slicing floorplans. It is a string of operands (the modules) and operators (+ for a horizontal cut, * for a vertical cut) derived from a post-order traversal of a binary tree that represents the slicing structure. Its simplicity and efficiency are its main advantages.</li>
                             <li><strong>Sequence Pair (SP):</strong> A powerful and elegant representation for general non-slicing floorplans. An SP consists of two permutations of the n module names. The relative placement of any two blocks (e.g., 'A is to the left of B' or 'A is above B') is uniquely determined by their relative ordering within these two permutations. This allows the encoding of any possible floorplan topology.</li>
                             <li><strong>B*-Tree:</strong> An ordered binary tree representation for non-slicing, "compacted" floorplans (where all blocks are pushed to the bottom and left). The B*-Tree is known for its efficient operations and a more constrained (and thus smaller) solution space compared to the Sequence Pair, making it a very popular choice for modern, high-performance floorplanners.</li>
@@ -426,8 +425,8 @@
                     </li>
                 </ul>
 
-                <div class="overflow-x-auto">
-                     <h4 class="mt-6 mb-2 my-4">Table 2: Comparison of Floorplan Representation Models</h4>
+                <div>
+                     <h4>Table 2: Comparison of Floorplan Representation Models</h4>
                     <table>
                         <thead>
                             <tr>
@@ -443,12 +442,12 @@
                     </table>
                 </div>
 
-                <h3 class="mt-8 mb-4">The AI Revolution: Machine Learning in Floorplanning</h3>
-                <p class="mb-4">As design complexity continues to explode, even the most sophisticated classical algorithms struggle to navigate the vast, multi-objective search space efficiently. This has opened the door for a paradigm shift: the application of Machine Learning (ML), and particularly Reinforcement Learning (RL), to physical design automation.</p>
-                <p class="mb-4">In the RL framework, floorplanning is modeled as a sequential decision-making game. An AI "agent" learns to place macros one by one onto the chip canvas. After placing a block, the agent receives a numerical "reward" based on an estimate of the resulting quality (e.g., a score derived from predicted wirelength and congestion). Through a process of trial and error over millions of training "games," the agent learns a "policy"—a strategy for making placements that maximizes its cumulative reward. In effect, the agent learns the complex, multi-faceted "art" of floorplanning from experience, without being explicitly programmed with human-derived heuristics.</p>
-                <ul class="mb-4">
+                <h3>The AI Revolution: Machine Learning in Floorplanning</h3>
+                <p>As design complexity continues to explode, even the most sophisticated classical algorithms struggle to navigate the vast, multi-objective search space efficiently. This has opened the door for a paradigm shift: the application of Machine Learning (ML), and particularly Reinforcement Learning (RL), to physical design automation.</p>
+                <p>In the RL framework, floorplanning is modeled as a sequential decision-making game. An AI "agent" learns to place macros one by one onto the chip canvas. After placing a block, the agent receives a numerical "reward" based on an estimate of the resulting quality (e.g., a score derived from predicted wirelength and congestion). Through a process of trial and error over millions of training "games," the agent learns a "policy"—a strategy for making placements that maximizes its cumulative reward. In effect, the agent learns the complex, multi-faceted "art" of floorplanning from experience, without being explicitly programmed with human-derived heuristics.</p>
+                <ul>
                     <li><strong>Key Benefits:</strong>
-                        <ul class="pl-6 mt-2">
+                        <ul>
                             <li><strong>Superior Quality of Results (QoR):</strong> Pioneering work by Google demonstrated that an RL-based placer could generate floorplans for high-performance chips that were superior to those produced by human experts in terms of PPA metrics.</li>
                             <li><strong>Dramatically Reduced Turnaround Time:</strong> The floorplanning process, which can take human design teams weeks or months of manual iteration, can be accomplished by a trained ML model in a matter of hours. This represents a revolutionary acceleration of the chip design cycle.</li>
                         </ul>
@@ -456,18 +455,18 @@
                     <li><strong>Current Challenges:</strong> The field is still nascent, and significant research challenges remain. These include scaling the techniques to handle designs with millions of placeable objects, the immense computational cost and data required for training effective models, and ensuring that a policy learned on one set of designs can generalize well to new, unseen chip architectures.</li>
                 </ul>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">Emerging Challenges and Future Research Frontiers</h3>
-                <p class="mb-4">The relentless pace of semiconductor innovation continues to introduce new challenges that require fundamental advancements in floorplanning technology.</p>
+                <h3>Emerging Challenges and Future Research Frontiers</h3>
+                <p>The relentless pace of semiconductor innovation continues to introduce new challenges that require fundamental advancements in floorplanning technology.</p>
                 
-                <h4 class="text-xl font-semibold mt-6 mb-2">Thermal-Aware Floorplanning</h4>
-                <p class="mb-4">With the ever-increasing power density of modern chips, managing on-chip temperature has become a first-order design constraint. Localized "hotspots" can severely degrade performance and compromise the long-term reliability of the chip. Thermal-aware floorplanning addresses this by integrating a thermal model directly into the optimization loop. The algorithm's cost function is augmented to include a penalty for high peak temperatures. This drives the floorplanner to find solutions that improve heat dissipation, for example, by placing high-power-density blocks away from each other or adjacent to low-power blocks that can act as heat sinks.</p>
+                <h4>Thermal-Aware Floorplanning</h4>
+                <p>With the ever-increasing power density of modern chips, managing on-chip temperature has become a first-order design constraint. Localized "hotspots" can severely degrade performance and compromise the long-term reliability of the chip. Thermal-aware floorplanning addresses this by integrating a thermal model directly into the optimization loop. The algorithm's cost function is augmented to include a penalty for high peak temperatures. This drives the floorplanner to find solutions that improve heat dissipation, for example, by placing high-power-density blocks away from each other or adjacent to low-power blocks that can act as heat sinks.</p>
                 
-                <h4 class="text-xl font-semibold mt-6 mb-2">Floorplanning for 3D-ICs</h4>
-                <p class="mb-4">One of the most exciting frontiers in semiconductor technology is the move from planar 2D chips to 3D-ICs, where multiple silicon dies are stacked vertically and connected using high-density interconnects. This approach offers transformative benefits in terms of integration density, performance, and power efficiency, but it introduces a new dimension of complexity to floorplanning.</p>
-                <p class="mb-4">The 3D floorplanning problem requires the algorithm to decide not only the (x, y) coordinates for each block but also its z-coordinate—that is, on which die layer it should be placed. Furthermore, it must manage the placement and routing of the vertical interconnects, such as Through-Silicon Vias (TSVs). These TSVs are not free; they consume silicon area, introduce their own signal delay, and can act as conduits for heat, creating complex thermal challenges. The co-optimization of block placement and TSV placement to balance wirelength, delay, power, and thermal constraints is a critical and highly active area of academic and industrial research.</p>
+                <h4>Floorplanning for 3D-ICs</h4>
+                <p>One of the most exciting frontiers in semiconductor technology is the move from planar 2D chips to 3D-ICs, where multiple silicon dies are stacked vertically and connected using high-density interconnects. This approach offers transformative benefits in terms of integration density, performance, and power efficiency, but it introduces a new dimension of complexity to floorplanning.</p>
+                <p>The 3D floorplanning problem requires the algorithm to decide not only the (x, y) coordinates for each block but also its z-coordinate—that is, on which die layer it should be placed. Furthermore, it must manage the placement and routing of the vertical interconnects, such as Through-Silicon Vias (TSVs). These TSVs are not free; they consume silicon area, introduce their own signal delay, and can act as conduits for heat, creating complex thermal challenges. The co-optimization of block placement and TSV placement to balance wirelength, delay, power, and thermal constraints is a critical and highly active area of academic and industrial research.</p>
 
-                <div class="overflow-x-auto">
-                    <h4 class="text-xl font-semibold my-4">Table 3: 2D vs. 3D Floorplanning Challenges</h4>
+                <div>
+                    <h4>Table 3: 2D vs. 3D Floorplanning Challenges</h4>
                     <table>
                         <thead>
                             <tr>
@@ -486,15 +485,15 @@
             </section>
             
             <section>
-                <h2 class="mb-6">Conclusions</h2>
-                <p class="mb-4">Floorplanning is far more than a simple geometric packing problem; it is the architectural soul of a VLSI chip. As the cornerstone of the physical design flow, the decisions made during this stage propagate and amplify, ultimately determining the success or failure of the entire project. A deep understanding of its principles—from the foundational objectives of PPA to the strategic nuances of macro placement and power planning—is indispensable for any physical design engineer.</p>
-                <p class="mb-4">The consequences of a suboptimal floorplan are severe and multifaceted, leading to a cascade of intractable issues in timing, congestion, and power that can derail a project. The high cost of iterating back from later stages places an immense premium on getting the floorplan right the first time through meticulous preparation, analysis, and verification.</p>
-                <p class="mb-4">Looking forward, the field is evolving at a rapid pace. The computational complexity of modern designs is pushing classical algorithms to their limits, paving the way for the transformative potential of machine learning to automate and optimize this intricate art. Simultaneously, the advent of new technological paradigms like 3D-ICs is introducing fundamentally new challenges, demanding novel algorithms that can navigate a multi-physics optimization space encompassing electrical, thermal, and mechanical domains. The continued innovation in floorplanning algorithms and methodologies will be a key enabler for the next generation of complex, high-performance integrated systems.</p>
+                <h2>Conclusions</h2>
+                <p>Floorplanning is far more than a simple geometric packing problem; it is the architectural soul of a VLSI chip. As the cornerstone of the physical design flow, the decisions made during this stage propagate and amplify, ultimately determining the success or failure of the entire project. A deep understanding of its principles—from the foundational objectives of PPA to the strategic nuances of macro placement and power planning—is indispensable for any physical design engineer.</p>
+                <p>The consequences of a suboptimal floorplan are severe and multifaceted, leading to a cascade of intractable issues in timing, congestion, and power that can derail a project. The high cost of iterating back from later stages places an immense premium on getting the floorplan right the first time through meticulous preparation, analysis, and verification.</p>
+                <p>Looking forward, the field is evolving at a rapid pace. The computational complexity of modern designs is pushing classical algorithms to their limits, paving the way for the transformative potential of machine learning to automate and optimize this intricate art. Simultaneously, the advent of new technological paradigms like 3D-ICs is introducing fundamentally new challenges, demanding novel algorithms that can navigate a multi-physics optimization space encompassing electrical, thermal, and mechanical domains. The continued innovation in floorplanning algorithms and methodologies will be a key enabler for the next generation of complex, high-performance integrated systems.</p>
             </section>
 
             <!-- Bottom Navigation -->
             <section class="bottom-nav">
-                <a href="pd_inputs.html" class="nav-prev">
+                <a href="pd_inputs.html">
                     <span class="nav-label">&larr; Previous</span>
                     <span class="nav-title">PD Inputs</span>
                 </a>

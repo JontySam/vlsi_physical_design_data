@@ -25,7 +25,6 @@
     <link rel="canonical" href="https://www.vlsiphysicaldesign.site/routing.html" />
 
     <!-- Link to production-ready CSS. Generate this file using the command in the documentation. -->
-    <link href="dist/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -64,7 +63,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
     <header id="main-header">
         <a href="index.html" class="logo">VLSI <span>Hub</span></a>
@@ -85,53 +84,53 @@
     </header>
 
     <main class="container">
-        <article class="space-y-12">
-            <section class="text-center mb-16 hero-section py-20 rounded-lg scroll-reveal">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">Routing</h1>
-                <p class="text-lg md:text-xl">Weaving the web of interconnects that brings a chip to life.</p>
+        <article>
+            <section class="hero-section scroll-reveal">
+                <h1>Routing</h1>
+                <p>Weaving the web of interconnects that brings a chip to life.</p>
             </section>
             
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Introduction: The Last Mile of Physical Design</h2>
-                <p class="mb-4">Routing is the final, and arguably most complex, stage of VLSI physical design. It is the process of creating the physical metal wires and vias that connect the millions of components placed on the silicon die, transforming the logical netlist into a fully interconnected physical layout. If floorplanning is the city plan and placement is the arrangement of buildings, then routing is the construction of the entire road network, from multi-lane highways to local streets, that allows traffic to flow between them. The success of this stage is binary: either all connections are made correctly, or the chip is non-functional. A successful routing solution must not only achieve 100% connectivity but also do so while meeting stringent timing, signal integrity, and power constraints, making it a formidable multi-objective optimization problem.</p>
+                <h2>Introduction: The Last Mile of Physical Design</h2>
+                <p>Routing is the final, and arguably most complex, stage of VLSI physical design. It is the process of creating the physical metal wires and vias that connect the millions of components placed on the silicon die, transforming the logical netlist into a fully interconnected physical layout. If floorplanning is the city plan and placement is the arrangement of buildings, then routing is the construction of the entire road network, from multi-lane highways to local streets, that allows traffic to flow between them. The success of this stage is binary: either all connections are made correctly, or the chip is non-functional. A successful routing solution must not only achieve 100% connectivity but also do so while meeting stringent timing, signal integrity, and power constraints, making it a formidable multi-objective optimization problem.</p>
             </section>
 
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">The Two-Stage Routing Process: Global to Detailed</h2>
-                <p class="mb-4">Given the immense complexity of routing millions of nets simultaneously, EDA tools employ a "divide and conquer" strategy, breaking the problem into two distinct phases: global routing and detailed routing.</p>
+                <h2>The Two-Stage Routing Process: Global to Detailed</h2>
+                <p>Given the immense complexity of routing millions of nets simultaneously, EDA tools employ a "divide and conquer" strategy, breaking the problem into two distinct phases: global routing and detailed routing.</p>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">Global Routing: Charting the Course</h3>
-                <p class="mb-4">Global routing is the high-level planning phase. Its goal is not to define the exact path of each wire but to determine a coarse, approximate route for every net in the design. The chip's routing area is divided into a grid of rectangular regions called "g-cells" (global routing cells). The global router's task is to find a path for each net through a sequence of adjacent g-cells, from its source pin to all its sink pins.</p>
-                <p class="mb-4">The primary objective of global routing is to manage routing resources and minimize congestion. For each g-cell boundary, the tool knows the total number of available routing tracks (the "supply"). As it routes nets, it keeps track of how many nets cross that boundary (the "demand"). By analyzing the supply versus demand across the entire chip, the global router generates a congestion map, which provides a "weather map" of potential routing hotspots. This allows the tool to proactively reroute nets away from congested areas to find a more balanced and globally routable solution. Pathfinding is often done using variations of maze routing (like Lee's algorithm) or graph-based search algorithms (like A* search) on a graph where g-cells are nodes and their adjacencies are edges.</p>
+                <h3>Global Routing: Charting the Course</h3>
+                <p>Global routing is the high-level planning phase. Its goal is not to define the exact path of each wire but to determine a coarse, approximate route for every net in the design. The chip's routing area is divided into a grid of rectangular regions called "g-cells" (global routing cells). The global router's task is to find a path for each net through a sequence of adjacent g-cells, from its source pin to all its sink pins.</p>
+                <p>The primary objective of global routing is to manage routing resources and minimize congestion. For each g-cell boundary, the tool knows the total number of available routing tracks (the "supply"). As it routes nets, it keeps track of how many nets cross that boundary (the "demand"). By analyzing the supply versus demand across the entire chip, the global router generates a congestion map, which provides a "weather map" of potential routing hotspots. This allows the tool to proactively reroute nets away from congested areas to find a more balanced and globally routable solution. Pathfinding is often done using variations of maze routing (like Lee's algorithm) or graph-based search algorithms (like A* search) on a graph where g-cells are nodes and their adjacencies are edges.</p>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">Detailed Routing: Laying the Tracks</h3>
-                <p class="mb-4">Once the global router has assigned a path of g-cells to each net, the detailed router takes over. Its task is to perform the final, precise implementation within the confines of the global route. For each net, the detailed router assigns specific metal tracks and via locations, creating the exact geometric shapes that form the physical wires. This process must adhere to all the complex design rules of the manufacturing process, such as minimum wire widths and spacing, to avoid creating shorts or opens.</p>
-                <p class="mb-4">Detailed routing is an intensely geometric problem. Modern tools often use a combination of "channel routers," which are highly effective in the spaces between cell rows, and more flexible "area routers" or "maze routers" that can navigate complex regions around macros and other blockages. The detailed router's success is heavily dependent on the quality of the global route; if the global router created a plan that sends too many nets through a small area, the detailed router may be physically unable to find a legal path for all of them, resulting in a routing failure.</p>
+                <h3>Detailed Routing: Laying the Tracks</h3>
+                <p>Once the global router has assigned a path of g-cells to each net, the detailed router takes over. Its task is to perform the final, precise implementation within the confines of the global route. For each net, the detailed router assigns specific metal tracks and via locations, creating the exact geometric shapes that form the physical wires. This process must adhere to all the complex design rules of the manufacturing process, such as minimum wire widths and spacing, to avoid creating shorts or opens.</p>
+                <p>Detailed routing is an intensely geometric problem. Modern tools often use a combination of "channel routers," which are highly effective in the spaces between cell rows, and more flexible "area routers" or "maze routers" that can navigate complex regions around macros and other blockages. The detailed router's success is heavily dependent on the quality of the global route; if the global router created a plan that sends too many nets through a small area, the detailed router may be physically unable to find a legal path for all of them, resulting in a routing failure.</p>
             </section>
 
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Key Challenges and Optimizations in Routing</h2>
-                <p class="mb-4">A modern router does not just connect pins; it is a sophisticated optimization engine that must simultaneously address timing, signal integrity, and power.</p>
+                <h2>Key Challenges and Optimizations in Routing</h2>
+                <p>A modern router does not just connect pins; it is a sophisticated optimization engine that must simultaneously address timing, signal integrity, and power.</p>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">Timing-Driven Routing</h3>
-                <p class="mb-4">To meet the chip's performance goals, the router must prioritize timing-critical paths. It uses the timing information from the SDC file to identify nets with little or no timing slack. For these critical nets, the router will attempt to find the shortest possible path, often using lower-resistance upper metal layers to minimize RC delay. This may come at the expense of routing non-critical nets on longer, more convoluted paths. The router also performs in-route optimizations, such as inserting buffers on long nets to regenerate the signal and improve delay.</p>
+                <h3>Timing-Driven Routing</h3>
+                <p>To meet the chip's performance goals, the router must prioritize timing-critical paths. It uses the timing information from the SDC file to identify nets with little or no timing slack. For these critical nets, the router will attempt to find the shortest possible path, often using lower-resistance upper metal layers to minimize RC delay. This may come at the expense of routing non-critical nets on longer, more convoluted paths. The router also performs in-route optimizations, such as inserting buffers on long nets to regenerate the signal and improve delay.</p>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">Signal Integrity (SI) Management</h3>
-                <p class="mb-4">At advanced nodes, the close proximity of wires leads to significant capacitive coupling, or "crosstalk," where the switching of one net (the "aggressor") can induce noise or a delay variation on a neighboring net (the "victim"). The router employs several techniques to mitigate these SI issues:</p>
-                <ul class="mb-4">
+                <h3>Signal Integrity (SI) Management</h3>
+                <p>At advanced nodes, the close proximity of wires leads to significant capacitive coupling, or "crosstalk," where the switching of one net (the "aggressor") can induce noise or a delay variation on a neighboring net (the "victim"). The router employs several techniques to mitigate these SI issues:</p>
+                <ul>
                     <li><strong>Shielding:</strong> For highly sensitive nets (like clocks or analog signals), the router can insert "shield" wires on one or both sides, connecting them to VDD or VSS. These shields act as a barrier, absorbing coupled noise.</li>
                     <li><strong>Spacing (NDRs):</strong> The router can apply Non-Default Rules (NDRs) to enforce extra spacing between a critical net and its neighbors, reducing the coupling capacitance.</li>
                     <li><strong>Layer Promotion:</strong> Routing a sensitive net on a higher metal layer, farther away from the dense lower layers, can also reduce coupling.</li>
                 </ul>
 
-                <h3 class="text-2xl font-semibold mt-8 mb-4">Power Optimization</h3>
-                <p class="mb-4">The routing solution directly impacts the chip's power consumption. The total length of all wires determines the total switched capacitance, a key component of dynamic power. By finding the most efficient routes, the router helps minimize this capacitance. For power integrity, the router must also ensure robust connections to the power grid. This includes using multi-cut vias for high-current nets to reduce resistance and improve reliability against electromigration.</p>
+                <h3>Power Optimization</h3>
+                <p>The routing solution directly impacts the chip's power consumption. The total length of all wires determines the total switched capacitance, a key component of dynamic power. By finding the most efficient routes, the router helps minimize this capacitance. For power integrity, the router must also ensure robust connections to the power grid. This includes using multi-cut vias for high-current nets to reduce resistance and improve reliability against electromigration.</p>
             </section>
 
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Post-Routing Verification: The Final Signoff</h2>
-                <p class="mb-4">After the detailed router has completed its work, the design is physically complete. However, before it can be sent for manufacturing, it must undergo a rigorous series of final verification checks to ensure it is correct and manufacturable.</p>
-                <ul class="mb-4">
+                <h2>Post-Routing Verification: The Final Signoff</h2>
+                <p>After the detailed router has completed its work, the design is physically complete. However, before it can be sent for manufacturing, it must undergo a rigorous series of final verification checks to ensure it is correct and manufacturable.</p>
+                <ul>
                     <li><strong>Design Rule Checking (DRC):</strong> The entire layout is checked against the foundry's rulebook to ensure that no geometric rules (e.g., spacing, width, enclosure) have been violated. The design must be 100% DRC clean.</li>
                     <li><strong>Layout Versus Schematic (LVS):</strong> This critical check compares the extracted netlist from the final layout against the original, "golden" netlist from synthesis. It proves that the physical layout is a correct implementation of the intended logic, with no accidental shorts or opens. The design must be 100% LVS clean.</li>
                     <li><strong>Antenna Checks:</strong> During fabrication, long metal wires can accumulate charge during plasma etching processes. If this wire is connected only to a small transistor gate, the charge can build up to a voltage high enough to destroy the gate oxide. Antenna checks identify such violations, which are typically fixed by inserting "antenna diodes" to provide a safe discharge path.</li>
@@ -140,13 +139,13 @@
             </section>
 
             <section class="scroll-reveal">
-                <h2 class="text-3xl font-bold mb-6">Conclusion</h2>
-                <p class="mb-4">Routing is the final, decisive stage where the logical abstraction of a circuit is fully realized as a physical, manufacturable entity. It is a process of immense complexity, requiring the successful connection of millions of nets while navigating a dense maze of physical obstacles and adhering to a vast set of electrical and manufacturing constraints. The evolution of routing from a simple connectivity problem to a multi-objective physical synthesis challenge, deeply intertwined with timing, power, and signal integrity, highlights the incredible sophistication of modern EDA tools. A successful routing solution is the culmination of the entire physical design effort, delivering a final layout that is not only logically correct but also fast, efficient, and robust—ready for the journey to silicon.</p>
+                <h2>Conclusion</h2>
+                <p>Routing is the final, decisive stage where the logical abstraction of a circuit is fully realized as a physical, manufacturable entity. It is a process of immense complexity, requiring the successful connection of millions of nets while navigating a dense maze of physical obstacles and adhering to a vast set of electrical and manufacturing constraints. The evolution of routing from a simple connectivity problem to a multi-objective physical synthesis challenge, deeply intertwined with timing, power, and signal integrity, highlights the incredible sophistication of modern EDA tools. A successful routing solution is the culmination of the entire physical design effort, delivering a final layout that is not only logically correct but also fast, efficient, and robust—ready for the journey to silicon.</p>
             </section>
 
             <!-- Bottom Navigation -->
             <section class="bottom-nav">
-                <a href="cts.html" class="nav-prev">
+                <a href="cts.html">
                     <span class="nav-label">&larr; Previous</span>
                     <span class="nav-title">Clock Tree Synthesis</span>
                 </a>
