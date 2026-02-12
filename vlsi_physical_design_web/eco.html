@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Change Orders (ECO) | VLSI Physical Design Hub</title>
+    <meta name="description" content="Why ECOs are used, how they are implemented, and how to reduce risk.">
+    <meta name="keywords" content="ECO, engineering change order, VLSI, metal-only ECO">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.site/eco.html">
+    <meta property="og:title" content="Engineering Change Orders (ECO) | VLSI Physical Design Hub">
+    <meta property="og:description" content="Why ECOs are used, how they are implemented, and how to reduce risk.">
+    <meta property="og:image" content="https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.site/eco.html">
+    <meta property="twitter:title" content="Engineering Change Orders (ECO) | VLSI Physical Design Hub">
+    <meta property="twitter:description" content="Why ECOs are used, how they are implemented, and how to reduce risk.">
+    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.site/eco.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="sub-page-body">
+    <header id="main-header">
+        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
+
+        <nav class="page-nav" id="page-navigation">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="work_sited.html">Works Cited</a>
+            <a href="about.html#about">About</a>
+            <a href="about.html#contact">Contact</a>
+        </nav>
+
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </header>
+    <main class="container">
+        <article>
+            <section class="hero-section scroll-reveal">
+                <h1>Engineering Change Orders</h1>
+                <p>Late fixes without full redesign.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Overview</h2>
+                <p>ECOs fix functional or timing issues late in the flow without restarting the entire design. They are common in modern tapeouts.</p>
+                <p>Metal-only ECOs are faster and cheaper because they change only interconnect layers.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Typical ECO Triggers</h2>
+                <p>Functional bugs discovered after signoff.</p>
+                <p>Timing violations caused by routing or late constraints.</p>
+                <p>Power or signal integrity issues that need targeted fixes.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Best Practices</h2>
+                <p>Sprinkle spare cells throughout the layout.</p>
+                <p>Keep ECO changes localized to reduce risk.</p>
+                <p>Re-run critical signoff checks after ECO insertion.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Related Topics</h2>
+                <ul>
+                    <li><a href="pd_issues.html">Common PD Issues</a></li>
+                    <li><a href="sta.html">Static Timing Analysis</a></li>
+                    <li><a href="pd_verification.html">PD Verification</a></li>
+                </ul>
+            </section>
+
+            <section class="bottom-nav">
+                <a href="power_analysis.html">
+                    <span class="nav-label">&larr; Previous</span>
+                    <span class="nav-title">Power Analysis</span>
+                </a>
+                <a href="index.html" class="nav-next">
+                    <span class="nav-label">Next &rarr;</span>
+                    <span class="nav-title">Home</span>
+                </a>
+            </section>
+        </article>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

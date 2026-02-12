@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STA Numericals | VLSI Physical Design Hub</title>
+    <meta name="description" content="Simple numerical examples to interpret setup/hold slack and path delay calculations.">
+    <meta name="keywords" content="STA numericals, slack calculation, setup, hold, timing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.site/sta_numericals.html">
+    <meta property="og:title" content="STA Numericals | VLSI Physical Design Hub">
+    <meta property="og:description" content="Simple numerical examples to interpret setup/hold slack and path delay calculations.">
+    <meta property="og:image" content="https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.site/sta_numericals.html">
+    <meta property="twitter:title" content="STA Numericals | VLSI Physical Design Hub">
+    <meta property="twitter:description" content="Simple numerical examples to interpret setup/hold slack and path delay calculations.">
+    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.site/assets/images/social-share-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.site/sta_numericals.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="sub-page-body">
+    <header id="main-header">
+        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
+
+        <nav class="page-nav" id="page-navigation">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="work_sited.html">Works Cited</a>
+            <a href="about.html#about">About</a>
+            <a href="about.html#contact">Contact</a>
+        </nav>
+
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </header>
+    <main class="container">
+        <article>
+            <section class="hero-section scroll-reveal">
+                <h1>STA Numericals</h1>
+                <p>Quick numeric intuition for timing reports.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Setup Slack Example</h2>
+                <p>Required time = clock period - setup - uncertainty.</p>
+                <p>Arrival time = launch clock + data path delay.</p>
+                <p>Slack = required - arrival. Negative slack indicates violation.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Hold Slack Example</h2>
+                <p>Required time = launch clock + hold + uncertainty.</p>
+                <p>Arrival time = capture clock + data path minimum delay.</p>
+                <p>Slack = arrival - required. Negative slack indicates violation.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Interpretation Tips</h2>
+                <p>WNS is the single worst path; TNS sums all negative slacks.</p>
+                <p>Fix the root cause, not just the worst number, to avoid churn.</p>
+                <p>Always confirm constraints before changing implementation.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Related Topics</h2>
+                <ul>
+                    <li><a href="sta.html">Static Timing Analysis</a></li>
+                    <li><a href="delay_models.html">Delay Models</a></li>
+                    <li><a href="placement.html">Placement</a></li>
+                </ul>
+            </section>
+
+            <section class="bottom-nav">
+                <a href="sta.html">
+                    <span class="nav-label">&larr; Previous</span>
+                    <span class="nav-title">Static Timing Analysis</span>
+                </a>
+                <a href="io_design.html" class="nav-next">
+                    <span class="nav-label">Next &rarr;</span>
+                    <span class="nav-title">I/O Design</span>
+                </a>
+            </section>
+        </article>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

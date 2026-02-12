@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (header && mainContainer) {
         mainContainer.addEventListener('scroll', () => {
             if (mainContainer.scrollTop > 50) {
-                header.classList.add('scrolled');
+                header.classList.add('is-scrolled');
             } else {
-                header.classList.remove('scrolled');
+                header.classList.remove('is-scrolled');
             }
         });
     }
