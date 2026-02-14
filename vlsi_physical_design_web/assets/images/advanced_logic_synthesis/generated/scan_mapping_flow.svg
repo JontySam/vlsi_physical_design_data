@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+  <rect width="1000" height="500" fill="#f7fbff"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#0f3b5f">Scan Mapping (Simple View)</text>
+
+  <rect x="70" y="100" width="360" height="250" rx="12" fill="#ffffff" stroke="#2f5da4" stroke-width="3"/>
+  <text x="250" y="140" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#164b74">DFF</text>
+  <text x="110" y="200" font-family="Arial" font-size="20" fill="#1e3e5f">CLK</text>
+  <text x="110" y="235" font-family="Arial" font-size="20" fill="#1e3e5f">D</text>
+  <text x="110" y="270" font-family="Arial" font-size="20" fill="#1e3e5f">Q</text>
+
+  <line x1="460" y1="220" x2="560" y2="220" stroke="#0c7f72" stroke-width="6"/>
+  <polygon points="560,220 535,206 535,234" fill="#0c7f72"/>
+  <text x="510" y="190" text-anchor="middle" font-family="Arial" font-size="18" fill="#0c7f72">replace</text>
+
+  <rect x="600" y="90" width="330" height="280" rx="12" fill="#ffffff" stroke="#1f6aa5" stroke-width="3"/>
+  <text x="765" y="130" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#164b74">Scan DFF</text>
+  <text x="640" y="180" font-family="Arial" font-size="18" fill="#1e3e5f">CLK</text>
+  <text x="640" y="215" font-family="Arial" font-size="18" fill="#1e3e5f">D</text>
+  <text x="640" y="250" font-family="Arial" font-size="18" fill="#1e3e5f">SI</text>
+  <text x="640" y="285" font-family="Arial" font-size="18" fill="#1e3e5f">SE</text>
+  <text x="640" y="320" font-family="Arial" font-size="18" fill="#1e3e5f">Q</text>
+
+  <rect x="80" y="400" width="840" height="70" rx="10" fill="#e7f2ff" stroke="#78a8dd" stroke-width="2"/>
+  <text x="500" y="444" text-anchor="middle" font-family="Arial" font-size="20" fill="#0f3b5f">SE=0 uses D path. SE=1 uses SI path for scan shift.</text>
+</svg>

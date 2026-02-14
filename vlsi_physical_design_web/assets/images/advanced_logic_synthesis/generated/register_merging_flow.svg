@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+  <rect width="1000" height="500" fill="#f7fbff"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#0f3b5f">Register Merging (Simple View)</text>
+
+  <rect x="100" y="120" width="250" height="100" rx="10" fill="#ffffff" stroke="#b04b4b" stroke-width="3"/>
+  <text x="225" y="180" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#8f3535">R_A</text>
+
+  <rect x="100" y="260" width="250" height="100" rx="10" fill="#ffffff" stroke="#b04b4b" stroke-width="3"/>
+  <text x="225" y="320" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#8f3535">R_B</text>
+
+  <line x1="380" y1="240" x2="560" y2="240" stroke="#0c7f72" stroke-width="6"/>
+  <polygon points="560,240 536,226 536,254" fill="#0c7f72"/>
+  <text x="470" y="210" text-anchor="middle" font-family="Arial" font-size="18" fill="#0c7f72">merge if equivalent</text>
+
+  <rect x="610" y="185" width="260" height="120" rx="10" fill="#ffffff" stroke="#1b7f4f" stroke-width="3"/>
+  <text x="740" y="250" text-anchor="middle" font-family="Arial" font-size="26" font-weight="700" fill="#1b7f4f">R_MERGED</text>
+
+  <line x1="870" y1="220" x2="940" y2="170" stroke="#1b7f4f" stroke-width="3"/>
+  <line x1="870" y1="270" x2="940" y2="320" stroke="#1b7f4f" stroke-width="3"/>
+
+  <rect x="80" y="410" width="840" height="70" rx="10" fill="#e8f4ff" stroke="#7fb2dd" stroke-width="2"/>
+  <text x="500" y="452" text-anchor="middle" font-family="Arial" font-size="20" fill="#0f3b5f">One equivalent register drives both fanout groups.</text>
+</svg>
