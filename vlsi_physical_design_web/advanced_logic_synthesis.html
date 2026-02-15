@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -176,7 +176,7 @@
                 <p>Before mapping the design to physical standard cells, synthesis tools perform technology-independent logic optimization on a generic representation of the circuit.</p>
                 <p><strong>Optimization landscape:</strong> The chart organizes the major optimization families and shows how timing, area, and power objectives are balanced before and during mapping.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Optimizations.png" alt="High-level optimization landscape" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Optimizations.webp" alt="High-level optimization landscape" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Optimization landscape spanning structural logic cleanup, timing closure, area recovery, and power control.</figcaption>
                 </figure>
                 <p class="figure-explain">This figure shows synthesis as a closed optimization loop rather than a one-pass transform. The flow starts with structural cleanup, then repeatedly checks timing, area, power, and design-rule limits as mapping decisions evolve. Each loop changes the starting conditions for the next step, so QoR improves through convergence, not through a single isolated optimization.</p>
@@ -197,21 +197,21 @@
                 <p>Boundary optimization involves the propagation of logic values across hierarchical module boundaries to simplify the overarching circuit and eliminate redundant logic.</p>
                 <p><strong>Constant propagation across hierarchy:</strong> When a hardcoded logic 0 is driven from Block A into Block B, downstream gates become mathematically deterministic and can be removed.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/constant%20Propagation.png" alt="Constant propagation across module boundary" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/constant%20Propagation.webp" alt="Constant propagation across module boundary" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Constant propagation eliminates logic that no longer influences functional outputs.</figcaption>
                 </figure>
                 <p class="figure-explain">The diagram captures a common hierarchical case where one block drives a fixed logic value into the next block. Once that constant reaches the downstream cone, multiple gates become mathematically deterministic and can be simplified or removed without affecting outputs. The result is shorter logic depth, fewer switching nodes, and lower area because the cone is rebuilt around only the functionally active paths.</p>
 
                 <p><strong>Phase inversion push:</strong> If inversion sits only at a hierarchy boundary, the tool can move it into the receiving cone so inversion can be absorbed or shared by downstream gates.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Inversion%20Push.png" alt="Inversion push through boundary for logic absorption" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Inversion%20Push.webp" alt="Inversion push through boundary for logic absorption" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Inversion relocation preserves logic meaning while improving optimization freedom.</figcaption>
                 </figure>
                 <p class="figure-explain">This transformation moves inversion across module boundaries so the same Boolean meaning is preserved while the internal cone becomes easier to optimize. After inversion is pushed inward, the tool can absorb polarity into NAND/NOR structures, merge equivalent terms, and reduce standalone inverter count. That improves both delay and area because redundant polarity conversions are eliminated from the active path.</p>
 
                 <p><strong>Unloaded logic removal:</strong> If a logic cone has no valid fanout endpoint, it is dead code and should be removed. Equal-opposite logic propagation also merges equivalent or inverted-equivalent nets.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Unused%20logic%20removal.png" alt="Dead logic cone pruning for unused output paths" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Unused%20logic%20removal.webp" alt="Dead logic cone pruning for unused output paths" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Dead cone pruning removes disconnected logic, recovering area and switching power.</figcaption>
                 </figure>
                 <p class="figure-explain">Here the removed logic cone has no observable fanout at chip outputs or state elements, so it contributes no functional behavior. Keeping it would still consume gates, routing tracks, and internal toggling energy during simulation activity. Pruning this cone recovers silicon resources and reduces dynamic power while preserving exact functional equivalence of all visible outputs.</p>
@@ -231,21 +231,21 @@
                 <p>Datapath optimization specifically targets arithmetic operators (addition, subtraction, multiplication, shifting) and combinational logic paths to improve timing and area.</p>
                 <p><strong>Arithmetic datapath extraction:</strong> A + B + C + D implemented as cascaded carry-propagate adders creates a long linear bottleneck. A carry-save architecture compresses operands in parallel and postpones carry combination to a later stage.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Carry%20Save%20adder.png" alt="Carry-save adder extraction from cascaded arithmetic chain" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Carry%20Save%20adder.webp" alt="Carry-save adder extraction from cascaded arithmetic chain" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Carry-save extraction converts serial carry dependence into a faster parallel datapath structure.</figcaption>
                 </figure>
                 <p class="figure-explain">The image shows a transition from serial carry propagation to carry-save compression across multiple operands. Instead of waiting for each carry to settle stage by stage, partial sums and carries are generated in parallel and only resolved in a final stage. This shortens the critical arithmetic path and gives the placer/router a more balanced timing structure for wide datapaths.</p>
 
                 <p><strong>Data-path reshaping:</strong> Deep serial combinational chains are restructured to reduce logic depth, while critical cells are selectively resized to improve propagation on constrained paths.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Data%20Path%20optimization.png" alt="Data-path restructuring and gate sizing for setup closure" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Data%20Path%20optimization.webp" alt="Data-path restructuring and gate sizing for setup closure" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Logic restructuring and targeted sizing recover setup slack on deep paths.</figcaption>
                 </figure>
                 <p class="figure-explain">This scenario illustrates selective datapath tuning where only true setup-limited arcs are restructured or resized. Non-critical branches are intentionally left stable so the design does not pay unnecessary area and leakage cost for blanket optimizations. The payoff is targeted timing recovery with better overall QoR balance across timing, area, and power.</p>
 
                 <p><strong>MUX intent mapping:</strong> Selection behavior built from generic AND/OR/NOT logic is recognized and mapped to dedicated multiplexer cells from the technology library.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Mux%20Mapping.png" alt="MUX intent mapping from generic logic web to native mux cell" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Mux%20Mapping.webp" alt="MUX intent mapping from generic logic web to native mux cell" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>MUX mapping replaces complex selection webs with compact native library mux cells.</figcaption>
                 </figure>
                 <p class="figure-explain">The before/after structure shows generic gate networks being recognized as multiplexing intent and then remapped into dedicated mux cells. Native mux cells use transistor topology optimized for select-path delay, pin capacitance, and compact footprint compared with decomposed AND/OR/INV trees. Mapping this intent early improves both timing predictability and placement density in control-heavy logic.</p>
@@ -256,7 +256,7 @@
                 <p><strong>Core Target:</strong> To enable post-manufacturing silicon testing without degrading functional timing or area targets unnecessarily. During the initial synthesis mapping, the engine prepares the design for automated test equipment (ATE) by modifying the sequential elements. The tool systematically identifies standard registers inferred from the RTL and replaces them with scan-equivalent library cells. This ensures that the physical layout tools can stitch these registers into long &quot;scan chains&quot; later in the flow, allowing test patterns to be shifted in and out of the chip to identify manufacturing defects.</p>
                 <p><strong>Scan-aware replacement behavior:</strong> Functional data capture is preserved, and additional scan control pins are introduced so the same state elements can operate in functional mode and test-shift mode.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/generated/scan_mapping_flow.svg" alt="Generated scan mapping from standard DFF to scan-enabled DFF" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/generated/scan_mapping_flow.svg" alt="Generated scan mapping from standard DFF to scan-enabled DFF" loading="lazy" decoding="async" width="1000" height="500">
                     <figcaption>Generated scan-mapping flow showing how functional and scan paths coexist inside the mapped sequential cell.</figcaption>
                 </figure>
                 <p class="figure-explain">This flow tracks how a functional DFF is replaced by a scan-capable cell while preserving functional behavior in mission mode. The scan-enable path multiplexes between normal data and serial scan input so internal states become controllable and observable during manufacturing test. The value is high test coverage without redesigning RTL functionality, with timing impact managed during later optimization passes.</p>
@@ -271,7 +271,7 @@
                 <p><strong>Core Target:</strong> Resolve setup timing violations and electrical design rule (DRC) violations caused by excessive capacitive loading on high-fanout nets. When a single register drives a massive number of endpoints (a high-fanout net), the immense capacitive load severely slows down the signal&#39;s transition time. This sluggish transition eats into the available clock cycle, causing downstream setup timing violations. While traditional High-Fanout Net Synthesis (HFNS) attempts to fix this by inserting a deep tree of buffer cells, buffer trees inherently add their own insertion delay. An often superior timing optimization is Register Replication . The synthesis tool duplicates the driving register and geographically partitions the fanout loads among the new clones. This slashes the capacitive load on each individual output pin, accelerating the signal transition and resolving the setup timing crisis without adding buffer layers.</p>
                 <p><strong>Load partitioning behavior:</strong> Register clones divide sink groups so each driver sees lower capacitance and cleaner transition behavior.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/generated/register_replication_flow.svg" alt="Generated register replication for high fanout optimization" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/generated/register_replication_flow.svg" alt="Generated register replication for high fanout optimization" loading="lazy" decoding="async" width="1000" height="500">
                     <figcaption>Generated high-fanout replication flow splitting one overloaded source into two balanced drivers.</figcaption>
                 </figure>
                 <p class="figure-explain">The figure starts with one register driving excessive fanout, which creates heavy capacitive loading and slow transition edges. Replication splits sinks across cloned registers so each output drives a smaller load, improving slew and reducing delay variability. This is especially effective when high-fanout control nets block setup closure on multiple endpoint groups.</p>
@@ -286,7 +286,7 @@
                 <p><strong>Core Target:</strong> Reclaim physical silicon area and reduce static leakage power on non-critical timing paths. Logic synthesis is a continuous, dynamic tradeoff between speed, area, and power. During the initial timing-driven mapping phases, the synthesis engine aggressively up-sizes standard cells (choosing high-drive-strength, large-area gates) to guarantee that all setup timing constraints are met. However, this often results in non-critical paths being far faster than necessary, wasting area and leaking power. Area Recovery is a specialized pass where the tool analyzes the timing graph to identify paths with an excess of positive slack. It then deliberately scales back the logic on those paths, swapping the large, fast gates for smaller, slower, and less power-hungry variants.</p>
                 <p><strong>Slack-to-area tradeoff behavior:</strong> Surplus timing margin is intentionally consumed so cell sizes can be reduced while preserving timing legality.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/generated/area_recovery_tradeoff.svg" alt="Generated chart for area recovery and leakage reduction" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/generated/area_recovery_tradeoff.svg" alt="Generated chart for area recovery and leakage reduction" loading="lazy" decoding="async" width="1000" height="500">
                     <figcaption>Generated area-recovery chart showing area and leakage reduction while timing remains in-range.</figcaption>
                 </figure>
                 <p class="figure-explain">This chart captures a guarded tradeoff: cells with healthy positive slack are candidates for lower drive strength, while timing-sensitive cells remain protected. The optimization intentionally converts excess margin into reduced cell area and leakage current, then rechecks setup and hold to prevent regressions. It is a recovery step after timing closure, not a random size reduction across the netlist.</p>
@@ -301,7 +301,7 @@
                 <p><strong>Core Target:</strong> Reduce area and dynamic/static power by eliminating logical redundancy in sequential elements. While register replication duplicates registers to fix timing, Register Merging does the exact opposite to save area and power. During synthesis, the tool actively scans the design for logical redundancy. If it identifies multiple individual registers that are strictly equivalent-meaning they receive the exact same data input and share the exact same clock and control signals-it automatically merges them into a single physical register. The tool deletes the redundant duplicates, and the single surviving register takes over driving all of the downstream loads. It is important to clearly distinguish this from Multibit Banking. While banking physically groups distinct data bits (that happen to share control logic) into a shared macro footprint, register merging entirely eliminates the duplicate data paths from the netlist, resulting in a direct, absolute reduction in total gate count and switching power.</p>
                 <p><strong>Equivalence-driven merge behavior:</strong> Only sequential elements with identical data/control semantics are merged, so function is preserved while redundant state hardware is removed.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/generated/register_merging_flow.svg" alt="Generated equivalent register merging process" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/generated/register_merging_flow.svg" alt="Generated equivalent register merging process" loading="lazy" decoding="async" width="1000" height="500">
                     <figcaption>Generated merging flow where equivalent registers collapse into one physical state element.</figcaption>
                 </figure>
                 <p class="figure-explain">The merge path begins when two sequential elements are proven equivalent in data, clock, reset, and enable behavior. One register is removed and fanouts are reconnected to the survivor, reducing sequential cell count and local routing complexity. Because equivalence is validated before rewiring, the transformation cuts area and clocked switching load without altering cycle-accurate behavior.</p>
@@ -326,7 +326,7 @@
                     <li>7. Handoff to PnR: The final output is a physically optimized, legally placed, and legally routed (globally) gate-level netlist, ready for handoff to the detailed Place and Route (PnR) engines.</li>
                 </ul>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/physical%20synthesis%20Flow.png" alt="Unified physical synthesis stages from RTL to PnR handoff" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/physical%20synthesis%20Flow.webp" alt="Unified physical synthesis stages from RTL to PnR handoff" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Unified physical synthesis pipeline used for timing-correlation-driven convergence.</figcaption>
                 </figure>
                 <p class="figure-explain">This flow makes clear that modern synthesis quality depends on physical awareness from the earliest stages. Netlist choices are evaluated with placement estimates, congestion feedback, and extracted electrical context instead of idealized wire assumptions. That early correlation reduces late-stage surprises, shortens closure loops, and produces a handoff netlist that is much closer to final routed behavior.</p>
@@ -351,21 +351,21 @@
                 <p>Concurrent Clock and Data (CCD) optimization discards the zero-skew paradigm in favor of Useful Skew . CCD intentionally adjusts the clock arrival times (clock latencies) at specific registers to &quot;borrow&quot; or &quot;steal&quot; time from a path with positive slack and donate it to an adjacent path with negative slack.</p>
                 <p><strong>Useful-skew timing shift:</strong> In failing cases, the capture edge can be delayed so late-arriving data gains enough time to satisfy setup at the destination register.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Useful%20skew%20based%20optimization.png" alt="Useful skew timing shift to recover setup margin" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Useful%20skew%20based%20optimization.webp" alt="Useful skew timing shift to recover setup margin" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Useful skew redistributes timing margin from non-critical windows to failing setup paths.</figcaption>
                 </figure>
                 <p class="figure-explain">The timing windows in this image show how capture and launch relationships are intentionally shifted to donate time where setup is failing. Useful skew is applied with bounds so hold margins on adjacent short paths are not accidentally broken. The method improves worst paths by redistributing existing margin across the clock network rather than only pushing data-path upsizing.</p>
 
                 <p><strong>Clock-path tuning for launch/capture balance:</strong> Buffer sizing and insertion-delay control can move launch or capture timing to align with real datapath delay.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Clock%20Path%20Optimization.png" alt="Clock path optimization by localized buffer tuning" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Clock%20Path%20Optimization.webp" alt="Clock path optimization by localized buffer tuning" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Clock-path optimization shifts edge positions to improve setup closure on constrained paths.</figcaption>
                 </figure>
                 <p class="figure-explain">The clock-tree view highlights localized latency tuning through buffer sizing, insertion, and branch-level balancing. Instead of perturbing the entire tree, adjustments are focused on sinks that participate in violating paths, preserving stability for unaffected domains. This targeted clock shaping increases effective data travel time where needed while keeping skew and insertion-delay constraints controlled.</p>
 
                 <p><strong>Joint clock-data optimization:</strong> The most robust closure comes when skew edits and datapath restructuring are solved together rather than in isolation.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/clock%20and%20data%20path%20Optimization.png" alt="Combined clock and data path optimization under CCD" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/clock%20and%20data%20path%20Optimization.webp" alt="Combined clock and data path optimization under CCD" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>CCD co-optimizes clock and data networks to improve convergence on difficult endpoints.</figcaption>
                 </figure>
                 <p class="figure-explain">This diagram explains why CCD is more effective than isolated data-path fixes on advanced nodes. Clock adjustments and logic restructuring are solved together so each action is evaluated against the other in the same iteration. The coupled approach reduces ping-pong behavior between CTS and logic optimization and converges faster on legal setup/hold closure.</p>
@@ -407,28 +407,28 @@
                 <p>The Multibit Banking process requires seamless coordination between the RTL parser and the physical placement engine.</p>
                 <p><strong>Optimization loop control:</strong> Banking is applied when legal and beneficial, then re-evaluated during placement and routing. Debanking is triggered only where local closure quality degrades.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Multibit%20Banking%20Optimization%20Flow.png" alt="Multibit banking and debanking optimization loop" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Multibit%20Banking%20Optimization%20Flow.webp" alt="Multibit banking and debanking optimization loop" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Banking-debanking loop used to balance power gains with physical closure constraints.</figcaption>
                 </figure>
                 <p class="figure-explain">The sequence in this flow starts with candidate grouping, then validates each banking decision against timing, congestion, pin access, and placement legality. When a bank degrades local QoR, the loop triggers selective debanking so only problematic bits are split back out. This closed-loop behavior is important because the best power structure is often not the same as the best physical implementation structure in every region.</p>
 
                 <p><strong>Physical banking of single-bit registers:</strong> Four 1-bit DFFs are mapped to one MBIT register so clock/reset hardware is shared.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Multibit%20Banking.png" alt="Physical banking of single-bit flip-flops into one multibit register" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Multibit%20Banking.webp" alt="Physical banking of single-bit flip-flops into one multibit register" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Physical banking reduces clock sinks and shared-control overhead.</figcaption>
                 </figure>
                 <p class="figure-explain">This figure shows how multiple single-bit flops are physically replaced by a multibit register with shared clock and control circuitry. Sharing those internal drivers reduces total pin capacitance and cuts redundant transistors, which directly lowers clock-tree switching power. It also frees routing channels because fewer control connections need to be distributed at the cell boundary.</p>
 
                 <p><strong>Inference from RTL vectors:</strong> Vectorized RTL declarations (such as reg [3:0]) allow early inference of multibit cells during mapping.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Multibit%20bankng%20from%20RTL%20Inference.png" alt="Multibit register inference from RTL vector declaration" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Multibit%20bankng%20from%20RTL%20Inference.webp" alt="Multibit register inference from RTL vector declaration" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>RTL-driven MBFF inference reduces remapping churn later in the physical flow.</figcaption>
                 </figure>
                 <p class="figure-explain">The RTL-centric view explains that vectorized register intent can be inferred before full physical mapping. Early recognition allows synthesis to carry multibit candidates through optimization instead of reconstructing intent late after logic has fragmented. This improves consistency between RTL structure and implementation and enables earlier power and area gains with less rework downstream.</p>
 
                 <p><strong>Debanking for local recovery:</strong> If a banked cell causes localized congestion or endpoint detours, the tool can split it back into individual flops.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Multi%20Bit%20Debanking.png" alt="Multibit debanking to restore timing and routing flexibility" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Multi%20Bit%20Debanking.webp" alt="Multibit debanking to restore timing and routing flexibility" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Debanking restores placement flexibility where dense regions need finer-grain optimization.</figcaption>
                 </figure>
                 <p class="figure-explain">This image captures the corrective step where a previously banked group is split in only the congested or timing-sensitive region. Debanking restores placement freedom, shortens detoured routes, and can recover hold/setup margins that were lost due to over-constrained clustering. Applying it selectively protects most multibit power benefit while removing local closure blockers.</p>
@@ -457,7 +457,7 @@
                     <li>Timing Verification: Both power reduction branches continuously feed into a &quot;Timing Verification&quot; step to ensure that the aggressive power optimizations do not create new timing violations, establishing a closed-loop optimization cycle.</li>
                 </ul>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Power%20optimization.png" alt="Power-target optimization loop with timing verification" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Power%20optimization.webp" alt="Power-target optimization loop with timing verification" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Closed-loop power optimization balancing dynamic and static reductions against timing constraints.</figcaption>
                 </figure>
                 <p class="figure-explain">The power loop in this figure begins with activity-driven hotspots, applies structural changes, and then immediately rechecks timing and design rules. Some low-power transforms reduce slack or worsen transitions, so the loop keeps only those that remain electrically and temporally legal. This is why practical power closure is iterative and metrics-driven, not a single pass of power-only edits.</p>
@@ -472,7 +472,7 @@
                     <li>After Optimization: Utilizing precise slack data, the tool implements a Mixed-Vt mapping strategy. It meticulously restricts the fast, high-leakage Low-Vt (LVT) standard cells exclusively to the critical timing path (marked dynamically), ensuring the frequency targets are safeguarded. Concurrently, it aggressively swaps the Standard-Vt cells on all non-critical paths to slower, highly efficient High-Vt (HVT) cells. This tactical threshold swapping dramatically reduces the overall static leakage power gauge without inducing any negative timing slack.</li>
                 </ul>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Multi%20Vt%20cells.png" alt="Multi-Vt mapping between critical and non-critical paths" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Multi%20Vt%20cells.webp" alt="Multi-Vt mapping between critical and non-critical paths" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Multi-Vt mapping keeps speed on critical arcs and lowers leakage on relaxed arcs.</figcaption>
                 </figure>
                 <p class="figure-explain">The mapping split shown here assigns threshold-voltage flavors according to path criticality and available slack. Fast but leakier cells are retained on tight timing cones, while relaxed cones are remapped to higher-Vt variants to suppress standby leakage. This targeted assignment preserves frequency goals while reducing static power without requiring architectural RTL changes.</p>
@@ -488,7 +488,7 @@
                     <li>Glitch-Free Internal Architecture: To prevent catastrophic false clock triggers (glitches), the standard ICG cell is architected using a negative-level-sensitive latch driving an AND gate. The incoming CLK drives the latch (inverted) and one leg of the AND gate, while the Enable (EN) signal controls the latch input. This internal latch ensures that the Enable signal is securely captured and only passed to the AND gate when the global clock is low, fundamentally preventing the EN signal from transitioning during a high clock phase and causing a clipped clock pulse (glitch). Multilevel Clock Gate Expansion and Collapsing: If multiple register banks share the same overarching enable signal, the synthesis tool performs multilevel expansion. It inserts a primary &quot;parent&quot; clock gate that disables the clock for an entire hierarchical block, feeding secondary &quot;child&quot; clock gates. Conversely, if activity profiling (via SAIF) shows that a parent clock gate is always enabled (toggle rate of 0), the tool collapses the hierarchy to remove the redundant gating cell, saving area and reducing clock insertion delay.</li>
                 </ul>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Clock%20Gating.png" alt="Integrated clock-gating architecture and gated clock behavior" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Clock%20Gating.webp" alt="Integrated clock-gating architecture and gated clock behavior" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Integrated clock-gating structure showing enable-controlled clock suppression with glitch-safe behavior.</figcaption>
                 </figure>
                 <p class="figure-explain">This structure gates switching at the clock entry point of a register cluster, which suppresses unnecessary toggling before it propagates through sequential elements. The latch-based control path guarantees glitch-safe enable sampling so clipped pulses are avoided. Because it disables high-capacitance clock activity directly, the savings are typically larger than data-path-only power tweaks.</p>
@@ -498,7 +498,7 @@
                 <h3>6.3 Smart Registers: Self-Gating</h3>
                 <p>Standard clock gating relies on explicit enable conditions written into the RTL by the designer. However, many registers receive new data every cycle, but the actual value of that data hasn&#39;t changed. Self-Gating automatically detects this scenario. The synthesis tool inserts an XOR comparator gate across the D (input) and Q (output) pins of a register. If the XOR gate determines that , the data is unchanged. The XOR output triggers an ICG cell to block the clock pulse for that specific cycle. While this adds area (the XOR gate and the ICG), if the SAIF file indicates high temporal redundancy on a wide bus, the dynamic power saved by preventing the clock pulse vastly outweighs the power consumed by the comparator logic.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/generated/self_gating_xor.svg" alt="Generated self-gating register with XOR enable and ICG" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/generated/self_gating_xor.svg" alt="Generated self-gating register with XOR enable and ICG" loading="lazy" decoding="async" width="1000" height="500">
                     <figcaption>Generated self-gating structure where D-Q comparison controls local clock admission.</figcaption>
                 </figure>
                 <p class="figure-explain">The generated topology compares incoming data and stored state each cycle so the local clock is admitted only when a state update is required. When D equals Q, the enable remains inactive and the register skips redundant clock switching while function remains unchanged. This mechanism is most beneficial on wide buses with repeated values, where avoided toggles accumulate into meaningful dynamic-power reduction.</p>
@@ -508,7 +508,7 @@
                 <h3>6.4 IR-Drop Mitigation</h3>
                 <p>During the postroute optimization stage, regions with high densities of simultaneously switching cells suffer from severe dynamic voltage drop (IR Drop). This starvation of voltage increases cell delay unpredictably and can induce logic failures. By integrating advanced dynamic voltage drop (IR Drop) analysis natively, the synthesis tool identifies these hotspots. The engine performs Dynamic Power Shaping , actively spreading high-toggle cells apart or downsizing them to disperse the power density, successfully mitigating the IR drop while maintaining strict setup and hold timing closure.</p>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/generated/ir_drop_shaping.svg" alt="Generated dynamic power shaping for IR-drop mitigation" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/generated/ir_drop_shaping.svg" alt="Generated dynamic power shaping for IR-drop mitigation" loading="lazy" decoding="async" width="1000" height="500">
                     <figcaption>Generated power-shaping view: high-toggle clustering is spread to reduce localized voltage droop.</figcaption>
                 </figure>
                 <p class="figure-explain">This placement-aware diagram shows how concentrated high-toggle cells can produce localized current spikes and voltage droop on the power grid. The optimization disperses or reshapes switching demand so peak current density is reduced in hotspot windows. Lower droop improves timing stability and noise robustness, especially during simultaneous switching bursts that would otherwise destabilize critical paths.</p>
@@ -538,7 +538,7 @@
                     <li>Elimination (Collapsing): The inverse of substitution. If an intermediate node&#39;s delay penalty is too high (causing a timing violation), it is mathematically collapsed back into its fanout nodes to flatten the logic depth at the cost of duplicating logic area. Synthesis tools leverage both Algebraic methods (which treat logic like standard polynomial algebra for extreme speed, ignoring identities like ) and Boolean methods (which utilize full Boolean identities and &quot;don&#39;t care&quot; conditions for exact optimization). Modern tools apply fast algebraic factoring first to structure the DAG, followed by localized Boolean optimization on the most critical control paths to squeeze out the final margins of area and delay.</li>
                 </ul>
                 <figure class="figure-center">
-                    <img src="assets/images/advanced_logic_synthesis/Logic%20simplification.png" alt="Logic simplification by factoring and decomposition" loading="lazy">
+                    <img src="assets/images/advanced_logic_synthesis/Logic%20simplification.webp" alt="Logic simplification by factoring and decomposition" loading="lazy" decoding="async" width="2816" height="1536">
                     <figcaption>Multi-level simplification flow combining factoring, decomposition, and selective collapsing.</figcaption>
                 </figure>
                 <p class="figure-explain">The simplification flow illustrates how factoring, decomposition, and selective collapsing are combined to build realizable multi-level logic. Complex equations are restructured into smaller shared nodes that respect library fan-in limits while preserving optimization freedom. This balance is critical in silicon implementation because it controls depth, gate count, and electrical load simultaneously instead of optimizing only one metric.</p>
@@ -660,6 +660,20 @@
             </section>
 
 
+                        <section class="related-topics scroll-reveal">
+                <h3>Related Topics</h3>
+                <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
+                <ul class="related-links-grid">
+                    <li><a href="logic_synthesis.html">Logic Synthesis</a></li>
+                    <li><a href="advanced_synthesis.html">Advanced Synthesis</a></li>
+                    <li><a href="cmos_fundamentals.html">CMOS Fundamentals</a></li>
+                    <li><a href="ccs_modeling.html">CCS Modeling</a></li>
+                    <li><a href="delay_models.html">Delay Models</a></li>
+                    <li><a href="std_cell_types.html">Standard Cell Types</a></li>
+                    <li><a href="pd_cells.html">Physical Design Cells</a></li>
+                    <li><a href="pd_inputs.html">PD Inputs</a></li>
+                </ul>
+            </section>
             <section class="bottom-nav">
                 <a href="logic_synthesis.html">
                     <span class="nav-label">&larr; Previous</span>
@@ -673,7 +687,7 @@
         </article>
     </main>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
 

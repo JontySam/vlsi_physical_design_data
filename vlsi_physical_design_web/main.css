@@ -838,3 +838,54 @@ ol li::before {
 .faq-item h3 {
     margin-top: 0;
 }
+
+.related-topics {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border-muted);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.related-topics h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    color: var(--text-heading);
+}
+
+.related-topics p {
+    margin-bottom: 0.9rem;
+}
+
+.related-links-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.4rem 1rem;
+}
+
+.related-links-grid li {
+    margin: 0;
+}
+
+.related-links-grid a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.related-links-grid a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .related-topics {
+        padding: 1rem;
+    }
+
+    .related-links-grid {
+        grid-template-columns: 1fr;
+    }
+}
