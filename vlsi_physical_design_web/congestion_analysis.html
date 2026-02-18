@@ -1,115 +1,317 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congestion Analysis in VLSI | VLSI Physical Design Hub</title>
-    <meta name="description" content="Understand routing congestion, how to measure it, and strategies to reduce hotspots.">
-    <meta name="keywords" content="congestion analysis, routing, VLSI, congestion hotspots">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/congestion_analysis.html">
-    <meta property="og:title" content="Congestion Analysis in VLSI | VLSI Physical Design Hub">
-    <meta property="og:description" content="Understand routing congestion, how to measure it, and strategies to reduce hotspots.">
-    <meta property="og:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/congestion_analysis.html">
-    <meta property="twitter:title" content="Congestion Analysis in VLSI | VLSI Physical Design Hub">
-    <meta property="twitter:description" content="Understand routing congestion, how to measure it, and strategies to reduce hotspots.">
-    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/congestion_analysis.html" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body class="sub-page-body">
-    <header id="main-header">
-        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
-
-        <nav class="page-nav" id="page-navigation">
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="work_sited.html">Works Cited</a>
-            <a href="about.html#about">About</a>
-            <a href="about.html#contact">Contact</a>
-        </nav>
-
-        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
-    <main class="container">
-        <article>
-            <section class="hero-section scroll-reveal">
-                <h1>Congestion Analysis</h1>
-                <p>Predict routing risk before it becomes a blocker.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Overview</h2>
-                <p>Congestion analysis estimates where routing demand exceeds available tracks. It is most valuable early, during floorplanning and placement.</p>
-                <p>Hotspots often appear near macros, narrow channels, or high pin-density blocks.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>What to Look For</h2>
-                <p>High demand-to-supply ratios on horizontal and vertical layers.</p>
-                <p>Pins clustered in a small area with limited routing tracks.</p>
-                <p>Long detours that inflate RC delay and timing risk.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Mitigation</h2>
-                <p>Add whitespace or widen channels between macros.</p>
-                <p>Spread high-fanout logic or insert buffers to reduce density.</p>
-                <p>Reserve routing resources for clocks and critical nets.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Related Topics</h2>
-                <ul>
-                    <li><a href="placement.html">Placement</a></li>
-                    <li><a href="routing.html">Routing</a></li>
-                    <li><a href="pd_issues.html">Common PD Issues</a></li>
-                </ul>
-            </section>
-
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Congestion Analysis in VLSI | VLSI Physical Design Hub</title>
+
+
+    <meta name="description" content="Understand routing congestion, how to measure it, and strategies to reduce hotspots.">
+
+
+    <meta name="keywords" content="congestion analysis, routing, VLSI, congestion hotspots">
+
+
+
+
+
+    <!-- Open Graph / Facebook -->
+
+
+    <meta property="og:type" content="article">
+
+
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/congestion_analysis">
+
+
+    <meta property="og:title" content="Congestion Analysis in VLSI | VLSI Physical Design Hub">
+
+
+    <meta property="og:description" content="Understand routing congestion, how to measure it, and strategies to reduce hotspots.">
+
+
+    <meta property="og:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
+
+
+
+
+
+    <!-- Twitter -->
+
+
+    <meta property="twitter:card" content="summary_large_image">
+
+
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/congestion_analysis">
+
+
+    <meta property="twitter:title" content="Congestion Analysis in VLSI | VLSI Physical Design Hub">
+
+
+    <meta property="twitter:description" content="Understand routing congestion, how to measure it, and strategies to reduce hotspots.">
+
+
+    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
+
+
+
+
+
+    <!-- Canonical URL -->
+
+
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/congestion_analysis" />
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+
+
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+
+<body class="sub-page-body">
+
+
+    <header id="main-header">
+
+
+        <a href="/" class="logo">VLSI <span>Hub</span></a>
+
+
+
+
+
+        <nav class="page-nav" id="page-navigation">
+
+
+            <a href="/">Home</a>
+
+
+            <a href="blog">Blog</a>
+
+
+            <a href="work_sited">Works Cited</a>
+
+
+            <a href="about#about">About</a>
+
+
+            <a href="about#contact">Contact</a>
+
+
+        </nav>
+
+
+
+
+
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+
+
+            <span class="hamburger-line"></span>
+
+
+            <span class="hamburger-line"></span>
+
+
+            <span class="hamburger-line"></span>
+
+
+        </button>
+
+
+    </header>
+
+
+    <main class="container">
+
+
+        <article>
+
+
+            <section class="hero-section scroll-reveal">
+
+
+                <h1>Congestion Analysis</h1>
+
+
+                <p>Predict routing risk before it becomes a blocker.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Overview</h2>
+
+
+                <p>Congestion analysis estimates where routing demand exceeds available tracks. It is most valuable early, during floorplanning and placement.</p>
+
+
+                <p>Hotspots often appear near macros, narrow channels, or high pin-density blocks.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>What to Look For</h2>
+
+
+                <p>High demand-to-supply ratios on horizontal and vertical layers.</p>
+
+
+                <p>Pins clustered in a small area with limited routing tracks.</p>
+
+
+                <p>Long detours that inflate RC delay and timing risk.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Mitigation</h2>
+
+
+                <p>Add whitespace or widen channels between macros.</p>
+
+
+                <p>Spread high-fanout logic or insert buffers to reduce density.</p>
+
+
+                <p>Reserve routing resources for clocks and critical nets.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Related Topics</h2>
+
+
+                <ul>
+
+
+                    <li><a href="placement">Placement</a></li>
+
+
+                    <li><a href="routing">Routing</a></li>
+
+
+                    <li><a href="pd_issues">Common PD Issues</a></li>
+
+
+                </ul>
+
+
+            </section>
+
+
+
+
+
                         <section class="related-topics scroll-reveal">
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="pd_inputs.html">PD Inputs</a></li>
-                    <li><a href="floorplan.html">Floorplanning</a></li>
-                    <li><a href="powerplan.html">Power Planning</a></li>
-                    <li><a href="placement.html">Placement</a></li>
-                    <li><a href="cts.html">Clock Tree Synthesis</a></li>
-                    <li><a href="routing.html">Routing</a></li>
-                    <li><a href="sta.html">Static Timing Analysis</a></li>
-                    <li><a href="power_analysis.html">Power Analysis</a></li>
+                    <li><a href="pd_inputs">PD Inputs</a></li>
+                    <li><a href="floorplan">Floorplanning</a></li>
+                    <li><a href="powerplan">Power Planning</a></li>
+                    <li><a href="placement">Placement</a></li>
+                    <li><a href="cts">Clock Tree Synthesis</a></li>
+                    <li><a href="routing">Routing</a></li>
+                    <li><a href="sta">Static Timing Analysis</a></li>
+                    <li><a href="power_analysis">Power Analysis</a></li>
                 </ul>
             </section>
-            <section class="bottom-nav">
-                <a href="pd_verification.html">
-                    <span class="nav-label">&larr; Previous</span>
-                    <span class="nav-title">PD Verification</span>
-                </a>
-                <a href="ir_analysis.html" class="nav-next">
-                    <span class="nav-label">Next &rarr;</span>
-                    <span class="nav-title">IR Drop Analysis</span>
-                </a>
-            </section>
-        </article>
-    </main>
-    <script src="main.js" defer></script>
-</body>
-</html>
+            <section class="bottom-nav">
+
+
+                <a href="pd_verification">
+
+
+                    <span class="nav-label">&larr; Previous</span>
+
+
+                    <span class="nav-title">PD Verification</span>
+
+
+                </a>
+
+
+                <a href="ir_analysis" class="nav-next">
+
+
+                    <span class="nav-label">Next &rarr;</span>
+
+
+                    <span class="nav-title">IR Drop Analysis</span>
+
+
+                </a>
+
+
+            </section>
+
+
+        </article>
+
+
+    </main>
+
+
+    <script src="main.js" defer></script>
+
+
+</body>
+
+
+</html>
+
+

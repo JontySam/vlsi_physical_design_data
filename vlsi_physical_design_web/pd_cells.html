@@ -1,117 +1,323 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physical Design Cells | VLSI Physical Design Hub</title>
-    <meta name="description" content="Purpose and usage of tap cells, endcaps, fillers, tie cells, and decap cells.">
-    <meta name="keywords" content="tap cells, endcap, filler, tie cells, decap, physical design">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/pd_cells.html">
-    <meta property="og:title" content="Physical Design Cells | VLSI Physical Design Hub">
-    <meta property="og:description" content="Purpose and usage of tap cells, endcaps, fillers, tie cells, and decap cells.">
-    <meta property="og:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/pd_cells.html">
-    <meta property="twitter:title" content="Physical Design Cells | VLSI Physical Design Hub">
-    <meta property="twitter:description" content="Purpose and usage of tap cells, endcaps, fillers, tie cells, and decap cells.">
-    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/pd_cells.html" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body class="sub-page-body">
-    <header id="main-header">
-        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
-
-        <nav class="page-nav" id="page-navigation">
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="work_sited.html">Works Cited</a>
-            <a href="about.html#about">About</a>
-            <a href="about.html#contact">Contact</a>
-        </nav>
-
-        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
-    <main class="container">
-        <article>
-            <section class="hero-section scroll-reveal">
-                <h1>Physical Design Cells</h1>
-                <p>Non-functional cells that keep layouts legal and robust.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Overview</h2>
-                <p>Physical-only cells do not implement logic, but they are required for manufacturability and reliability. They close gaps, protect wells, and stabilize power.</p>
-                <p>Ignoring these cells leads to DRC violations, latch-up risk, or power integrity issues.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Common Cell Types</h2>
-                <p>Tap cells and well ties maintain substrate and well biasing.</p>
-                <p>Endcaps seal standard cell rows and avoid boundary DRC issues.</p>
-                <p>Filler cells close spacing gaps and maintain metal density.</p>
-                <p>Tie-high/low cells provide stable constants with proper isolation.</p>
-                <p>Decap cells smooth dynamic IR drop near high-activity logic.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Implementation Tips</h2>
-                <p>Insert tap cells at foundry-specified intervals.</p>
-                <p>Spread decaps near clock buffers and high toggle logic.</p>
-                <p>Run DRC after physical-only cell insertion.</p>
-            </section>
-
-            <section class="scroll-reveal">
-                <h2>Related Topics</h2>
-                <ul>
-                    <li><a href="std_cell_types.html">Standard Cell Types</a></li>
-                    <li><a href="pd_verification.html">PD Verification</a></li>
-                    <li><a href="powerplan.html">Power Plan</a></li>
-                </ul>
-            </section>
-
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Physical Design Cells | VLSI Physical Design Hub</title>
+
+
+    <meta name="description" content="Purpose and usage of tap cells, endcaps, fillers, tie cells, and decap cells.">
+
+
+    <meta name="keywords" content="tap cells, endcap, filler, tie cells, decap, physical design">
+
+
+
+
+
+    <!-- Open Graph / Facebook -->
+
+
+    <meta property="og:type" content="article">
+
+
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/pd_cells">
+
+
+    <meta property="og:title" content="Physical Design Cells | VLSI Physical Design Hub">
+
+
+    <meta property="og:description" content="Purpose and usage of tap cells, endcaps, fillers, tie cells, and decap cells.">
+
+
+    <meta property="og:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
+
+
+
+
+
+    <!-- Twitter -->
+
+
+    <meta property="twitter:card" content="summary_large_image">
+
+
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/pd_cells">
+
+
+    <meta property="twitter:title" content="Physical Design Cells | VLSI Physical Design Hub">
+
+
+    <meta property="twitter:description" content="Purpose and usage of tap cells, endcaps, fillers, tie cells, and decap cells.">
+
+
+    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
+
+
+
+
+
+    <!-- Canonical URL -->
+
+
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/pd_cells" />
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+
+
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+
+<body class="sub-page-body">
+
+
+    <header id="main-header">
+
+
+        <a href="/" class="logo">VLSI <span>Hub</span></a>
+
+
+
+
+
+        <nav class="page-nav" id="page-navigation">
+
+
+            <a href="/">Home</a>
+
+
+            <a href="blog">Blog</a>
+
+
+            <a href="work_sited">Works Cited</a>
+
+
+            <a href="about#about">About</a>
+
+
+            <a href="about#contact">Contact</a>
+
+
+        </nav>
+
+
+
+
+
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+
+
+            <span class="hamburger-line"></span>
+
+
+            <span class="hamburger-line"></span>
+
+
+            <span class="hamburger-line"></span>
+
+
+        </button>
+
+
+    </header>
+
+
+    <main class="container">
+
+
+        <article>
+
+
+            <section class="hero-section scroll-reveal">
+
+
+                <h1>Physical Design Cells</h1>
+
+
+                <p>Non-functional cells that keep layouts legal and robust.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Overview</h2>
+
+
+                <p>Physical-only cells do not implement logic, but they are required for manufacturability and reliability. They close gaps, protect wells, and stabilize power.</p>
+
+
+                <p>Ignoring these cells leads to DRC violations, latch-up risk, or power integrity issues.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Common Cell Types</h2>
+
+
+                <p>Tap cells and well ties maintain substrate and well biasing.</p>
+
+
+                <p>Endcaps seal standard cell rows and avoid boundary DRC issues.</p>
+
+
+                <p>Filler cells close spacing gaps and maintain metal density.</p>
+
+
+                <p>Tie-high/low cells provide stable constants with proper isolation.</p>
+
+
+                <p>Decap cells smooth dynamic IR drop near high-activity logic.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Implementation Tips</h2>
+
+
+                <p>Insert tap cells at foundry-specified intervals.</p>
+
+
+                <p>Spread decaps near clock buffers and high toggle logic.</p>
+
+
+                <p>Run DRC after physical-only cell insertion.</p>
+
+
+            </section>
+
+
+
+
+
+            <section class="scroll-reveal">
+
+
+                <h2>Related Topics</h2>
+
+
+                <ul>
+
+
+                    <li><a href="std_cell_types">Standard Cell Types</a></li>
+
+
+                    <li><a href="pd_verification">PD Verification</a></li>
+
+
+                    <li><a href="powerplan">Power Plan</a></li>
+
+
+                </ul>
+
+
+            </section>
+
+
+
+
+
                         <section class="related-topics scroll-reveal">
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="logic_synthesis.html">Logic Synthesis</a></li>
-                    <li><a href="advanced_logic_synthesis.html">Advanced Logic Synthesis</a></li>
-                    <li><a href="advanced_synthesis.html">Advanced Synthesis</a></li>
-                    <li><a href="cmos_fundamentals.html">CMOS Fundamentals</a></li>
-                    <li><a href="ccs_modeling.html">CCS Modeling</a></li>
-                    <li><a href="delay_models.html">Delay Models</a></li>
-                    <li><a href="std_cell_types.html">Standard Cell Types</a></li>
-                    <li><a href="pd_inputs.html">PD Inputs</a></li>
+                    <li><a href="logic_synthesis">Logic Synthesis</a></li>
+                    <li><a href="advanced_logic_synthesis">Advanced Logic Synthesis</a></li>
+                    <li><a href="advanced_synthesis">Advanced Synthesis</a></li>
+                    <li><a href="cmos_fundamentals">CMOS Fundamentals</a></li>
+                    <li><a href="ccs_modeling">CCS Modeling</a></li>
+                    <li><a href="delay_models">Delay Models</a></li>
+                    <li><a href="std_cell_types">Standard Cell Types</a></li>
+                    <li><a href="pd_inputs">PD Inputs</a></li>
                 </ul>
             </section>
-            <section class="bottom-nav">
-                <a href="io_design.html">
-                    <span class="nav-label">&larr; Previous</span>
-                    <span class="nav-title">I/O Design</span>
-                </a>
-                <a href="pd_issues.html" class="nav-next">
-                    <span class="nav-label">Next &rarr;</span>
-                    <span class="nav-title">Common PD Issues</span>
-                </a>
-            </section>
-        </article>
-    </main>
-    <script src="main.js" defer></script>
-</body>
-</html>
+            <section class="bottom-nav">
+
+
+                <a href="io_design">
+
+
+                    <span class="nav-label">&larr; Previous</span>
+
+
+                    <span class="nav-title">I/O Design</span>
+
+
+                </a>
+
+
+                <a href="pd_issues" class="nav-next">
+
+
+                    <span class="nav-label">Next &rarr;</span>
+
+
+                    <span class="nav-title">Common PD Issues</span>
+
+
+                </a>
+
+
+            </section>
+
+
+        </article>
+
+
+    </main>
+
+
+    <script src="main.js" defer></script>
+
+
+</body>
+
+
+</html>
+
+

@@ -1,68 +1,56 @@
-﻿[
+[
     {
-        "title":  "CMOS Fundamentals",
-        "url":  "cmos_fundamentals.html",
-        "description":  "A deep dive into the fundamentals of CMOS technology for VLSI design, covering semiconductor physics, PN junctions, MOSFET operation, and second-order effects.",
-        "keywords":  "CMOS, VLSI, MOSFET, Semiconductor Physics, PN Junction, Threshold Voltage, Body Effect, nMOS, pMOS, VLSI Design"
+        "title": "CMOS Fundamentals",
+        "url": "cmos_fundamentals",
+        "description": "A deep dive into the fundamentals of CMOS technology for VLSI design, covering semiconductor physics, PN junctions, MOSFET operation, and second-order effects.",
+        "keywords": "CMOS, VLSI, MOSFET, Semiconductor Physics, PN Junction, Threshold Voltage, Body Effect, nMOS, pMOS, VLSI Design"
     },
     {
-        "title":  "Logic Synthesis",
-        "url":  "logic_synthesis.html",
-        "description":  "A guide to logic synthesis, covering the process from RTL to gate-level netlist, optimization techniques, and technology mapping.",
-        "keywords":  "Logic Synthesis, VLSI, RTL, Gate-level netlist, Synthesis, EDA, Synopsys, Cadence, PPA"
+        "title": "Logic Synthesis",
+        "url": "logic_synthesis",
+        "description": "A guide to logic synthesis, covering the process from RTL to gate-level netlist, optimization techniques, and technology mapping.",
+        "keywords": "Logic Synthesis, VLSI, RTL, Gate-level netlist, Synthesis, EDA, Synopsys, Cadence, PPA"
     },
     {
-        "title":  "Physical Design Inputs",
-        "url":  "pd_inputs.html",
-        "description":  "A comprehensive guide to the essential libraries and data inputs for VLSI physical design, including netlists, SDC, LEF, LIB, and technology files.",
-        "keywords":  "VLSI, Physical Design, PD Inputs, LEF, LIB, SDC, DEF, Technology File, Standard Cells"
+        "title": "Physical Design Inputs",
+        "url": "pd_inputs",
+        "description": "A comprehensive guide to the essential libraries and data inputs for VLSI physical design, including netlists, SDC, LEF, LIB, and technology files.",
+        "keywords": "VLSI, Physical Design, PD Inputs, LEF, LIB, SDC, DEF, Technology File, Standard Cells"
     },
     {
-        "title":  "Floorplanning",
-        "url":  "floorplan.html",
-        "description":  "An in-depth guide to VLSI floorplanning, covering core objectives, macro placement, power planning, and strategies for achieving an optimal chip layout.",
-        "keywords":  "VLSI, Floorplanning, Physical Design, Macro Placement, PPA, Die Size, Core Utilization, Power Planning"
+        "title": "Floorplanning",
+        "url": "floorplan",
+        "description": "An in-depth guide to VLSI floorplanning, covering core objectives, macro placement, power planning, and strategies for achieving an optimal chip layout.",
+        "keywords": "VLSI, Floorplanning, Physical Design, Macro Placement, PPA, Die Size, Core Utilization, Power Planning"
     },
     {
-        "title":  "Placement",
-        "url":  "placement.html",
-        "description":  "A comprehensive guide to the VLSI placement stage, detailing goals, algorithms, optimization techniques, and the impact on timing and routability.",
-        "keywords":  "VLSI, Placement, Physical Design, Global Placement, Legalization, Detailed Placement, PPA, Congestion, Timing Closure"
+        "title": "Placement",
+        "url": "placement",
+        "description": "A comprehensive guide to the VLSI placement stage, detailing goals, algorithms, optimization techniques, and the impact on timing and routability.",
+        "keywords": "VLSI, Placement, Physical Design, Global Placement, Legalization, Detailed Placement, PPA, Congestion, Timing Closure"
     },
     {
-        "title":  "Clock Tree Synthesis (CTS)",
-        "url":  "cts.html",
-        "description":  "A deep dive into Clock Tree Synthesis (CTS), covering fundamentals, architectures like mesh and H-tree, low-power techniques, and advanced challenges.",
-        "keywords":  "CTS, Clock Tree Synthesis, VLSI, Clock Skew, Clock Latency, OCV, Clock Mesh, Low Power"
+        "title": "Clock Tree Synthesis (CTS)",
+        "url": "cts",
+        "description": "A deep dive into Clock Tree Synthesis (CTS), covering fundamentals, architectures like mesh and H-tree, low-power techniques, and advanced challenges.",
+        "keywords": "CTS, Clock Tree Synthesis, VLSI, Clock Skew, Clock Latency, OCV, Clock Mesh, Low Power"
     },
     {
-        "title":  "Project Showcase",
-        "url":  "projects.html",
-        "description":  "A collection of case studies and practical examples in VLSI design.",
-        "keywords":  "VLSI Projects, Physical Design Projects, ASIC, Case Studies, RISC CPU"
+        "title": "Project Showcase",
+        "url": "projects",
+        "description": "A collection of case studies and practical examples in VLSI design.",
+        "keywords": "VLSI Projects, Physical Design Projects, ASIC, Case Studies, RISC CPU"
     },
     {
-        "title":  "Works Cited",
-        "url":  "work_sited.html",
-        "description":  "A consolidated list of references and sources cited across all articles on the VLSI Physical Design Hub.",
-        "keywords":  "References, Sources, Works Cited, Bibliography"
+        "title": "Works Cited",
+        "url": "work_sited",
+        "description": "A consolidated list of references and sources cited across all articles on the VLSI Physical Design Hub.",
+        "keywords": "References, Sources, Works Cited, Bibliography"
     },
     {
-        "title":  "New Article Template",
-        "url":  "new-article-template.html",
-        "description":  "A template for creating new articles. Replace this content with your own.",
-        "keywords":  "Template, New Article, Placeholder"
-    },
-    {
-        "title":  "Project Template",
-        "url":  "project-template.html",
-        "description":  "A template for creating new project pages. Fill in your project details, specifications, and results.",
-        "keywords":  "Template, Project, Case Study"
-    },
-    {
-        "title":  "Advanced Logic Synthesis and Physical Implementation",
-        "url":  "advanced_logic_synthesis.html",
-        "description":  "Comprehensive educational guide covering advanced logic synthesis, physical synthesis flow, CCD, multibit banking, and power optimization techniques.",
-        "keywords":  "Advanced Logic Synthesis, Physical Implementation, CCD, Multibit Banking, SAIF, Power Optimization, VLSI"
+        "title": "Advanced Logic Synthesis and Physical Implementation",
+        "url": "advanced_logic_synthesis",
+        "description": "Comprehensive educational guide covering advanced logic synthesis, physical synthesis flow, CCD, multibit banking, and power optimization techniques.",
+        "keywords": "Advanced Logic Synthesis, Physical Implementation, CCD, Multibit Banking, SAIF, Power Optimization, VLSI"
     }
 ]

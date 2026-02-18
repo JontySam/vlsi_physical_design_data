@@ -1,157 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/about.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/about</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/advanced_logic_synthesis.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/advanced_logic_synthesis</loc>
     <lastmod>2026-02-14</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/advanced_synthesis.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/advanced_synthesis</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/blog.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/blog</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/ccs_modeling.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/ccs_modeling</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/cmos_fundamentals.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/cmos_fundamentals</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/congestion_analysis.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/congestion_analysis</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/cts.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/cts</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/delay_models.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/delay_models</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/eco.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/eco</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/floorplan.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/floorplan</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/index.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/</loc>
     <lastmod>2026-02-13</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/io_design.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/io_design</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/ir_analysis.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/ir_analysis</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/logic_synthesis.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/logic_synthesis</loc>
     <lastmod>2026-02-13</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/logic_synthesis_new.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/logic_synthesis_new</loc>
     <lastmod>2026-02-13</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/pd_cells.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/pd_cells</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/pd_inputs.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/pd_inputs</loc>
     <lastmod>2026-02-13</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/pd_issues.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/pd_issues</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/pd_verification.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/pd_verification</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/placement.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/placement</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/power_analysis.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/power_analysis</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/powerplan.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/powerplan</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/projects.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/projects</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/project-template.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/routing</loc>
+    <lastmod>2026-02-12</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.top/sta</loc>
+    <lastmod>2026-02-12</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.top/sta_numericals</loc>
+    <lastmod>2026-02-12</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.vlsiphysicaldesign.top/std_cell_types</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/routing.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.vlsiphysicaldesign.top/sta.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.vlsiphysicaldesign.top/sta_numericals.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.vlsiphysicaldesign.top/std_cell_types.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.vlsiphysicaldesign.top/who-am-i.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/who-am-i</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.vlsiphysicaldesign.top/work_sited.html</loc>
+    <loc>https://www.vlsiphysicaldesign.top/work_sited</loc>
     <lastmod>2026-02-12</lastmod>
     <priority>0.70</priority>
   </url>

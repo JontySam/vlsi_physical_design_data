@@ -1,102 +1,506 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+
+
+
+
+<head>
+
+
+
+
+    <meta charset="UTF-8">
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <meta name="robots" content="index,follow">
-    <title>Blog | VLSI Physical Design Hub</title>
-    <meta name="description" content="A collection of articles, insights, and updates on VLSI Physical Design.">
-    <meta name="keywords" content="VLSI Blog, Physical Design Blog, ASIC, Semiconductor, EDA">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/blog.html">
-    <meta property="og:title" content="Blog | VLSI Physical Design Hub">
-    <meta property="og:description" content="A collection of articles, insights, and updates on VLSI Physical Design.">
-    <meta property="og:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/blog.html">
-    <meta property="twitter:title" content="Blog | VLSI Physical Design Hub">
-    <meta property="twitter:description" content="A collection of articles, insights, and updates on VLSI Physical Design.">
-    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body class="sub-page-body">
-    <header id="main-header">
-        <a href="index.html" class="logo">VLSI <span>Hub</span></a>
-
-        <nav class="page-nav" id="page-navigation">
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="work_sited.html">Works Cited</a>
-            <a href="about.html#about">About</a>
-            <a href="about.html#contact">Contact</a>
-        </nav>
-        
-        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
-    <main class="container">
-        <article>
-            <section class="hero-section scroll-reveal">
-                <h1>VLSI Design Blog</h1>
-                <p>Insights, tutorials, and updates on the world of physical design.</p>
-            </section>
-            
-            <section>
-                <p>This section is ready for you to add your blog posts. Follow the instructions provided to add new post cards below.</p>
-                
-                <div>
-                    <!-- 
-                        BLOG POST CARD EXAMPLE:
-                        To add a new blog post, copy the block below and fill in the details.
-                        1. Change the href="..." to the path of your new blog post's HTML file.
-                        2. Update the <img> src="..." to your post's image.
-                        3. Fill in the post title, a brief excerpt, and relevant tags.
-                    -->
-                    
-                    <!-- Example Blog Post Card 1 (You can remove or edit this) -->
-                    <a href="project-template.html" class="project-card"> <!-- You can rename project-template.html to blog-post-template.html -->
-                        <img src="assets/images/unsplash-1581094486392-3901b5539c6d.jpg" alt="Example Blog Post Image" class="project-card-img" decoding="async" loading="lazy" width="800" height="1199">
-                        <div class="project-card-content">
-                            <h3 class="project-card-title">Example Blog Post: Understanding NDRs</h3>
-                            <p class="project-card-desc">A quick look into why Non-Default Rules are critical for routing clock nets in advanced nodes.</p>
-                            <div class="project-card-tags">
-                                <span>CTS</span>
-                                <span>Routing</span>
-                                <span>Signal Integrity</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Add more project cards here by copying the block above -->
-
-                </div>
-            </section>
-
-            <!-- Bottom Navigation -->
-            <section class="bottom-nav">
-                <a href="routing.html">
-                    <span class="nav-label">&larr; Previous</span>
-                    <span class="nav-title">Routing</span>
-                </a>
-                <a href="who-am-i.html" class="nav-next">
-                    <span class="nav-label">Next &rarr;</span>
-                    <span class="nav-title">Who Am I</span>
-                </a>
-            </section>
-        </article>
-    </main>
-    <script src="main.js" defer></script>
-</body>
-</html>
+    <title>Blog | VLSI Physical Design Hub</title>
+
+
+
+
+    <meta name="description" content="A collection of articles, insights, and updates on VLSI Physical Design.">
+
+
+
+
+    <meta name="keywords" content="VLSI Blog, Physical Design Blog, ASIC, Semiconductor, EDA">
+
+
+
+
+
+
+
+
+
+    <!-- Open Graph / Facebook -->
+
+
+
+
+    <meta property="og:type" content="website">
+
+
+
+
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/blog">
+
+
+
+
+    <meta property="og:title" content="Blog | VLSI Physical Design Hub">
+
+
+
+
+    <meta property="og:description" content="A collection of articles, insights, and updates on VLSI Physical Design.">
+
+
+
+
+    <meta property="og:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
+
+
+
+
+
+
+
+
+
+    <!-- Twitter -->
+
+
+
+
+    <meta property="twitter:card" content="summary_large_image">
+
+
+
+
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/blog">
+
+
+
+
+    <meta property="twitter:title" content="Blog | VLSI Physical Design Hub">
+
+
+
+
+    <meta property="twitter:description" content="A collection of articles, insights, and updates on VLSI Physical Design.">
+
+
+
+
+    <meta property="twitter:image" content="https://www.vlsiphysicaldesign.top/assets/images/social-share-image.jpg">
+
+
+
+
+
+
+
+
+
+        <link rel="canonical" href="https://www.vlsiphysicaldesign.top/blog" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+
+
+
+
+    <link rel="stylesheet" href="main.css">
+
+
+
+
+</head>
+
+
+
+
+<body class="sub-page-body">
+
+
+
+
+    <header id="main-header">
+
+
+
+
+        <a href="/" class="logo">VLSI <span>Hub</span></a>
+
+
+
+
+
+
+
+
+
+        <nav class="page-nav" id="page-navigation">
+
+
+
+
+            <a href="/">Home</a>
+
+
+
+
+            <a href="blog">Blog</a>
+
+
+
+
+            <a href="work_sited">Works Cited</a>
+
+
+
+
+            <a href="about#about">About</a>
+
+
+
+
+            <a href="about#contact">Contact</a>
+
+
+
+
+        </nav>
+
+
+
+
+        
+
+
+
+
+        <button class="mobile-nav-toggle" aria-controls="page-navigation" aria-expanded="false">
+
+
+
+
+            <span class="hamburger-line"></span>
+
+
+
+
+            <span class="hamburger-line"></span>
+
+
+
+
+            <span class="hamburger-line"></span>
+
+
+
+
+        </button>
+
+
+
+
+    </header>
+
+
+
+
+    <main class="container">
+
+
+
+
+        <article>
+
+
+
+
+            <section class="hero-section scroll-reveal">
+
+
+
+
+                <h1>VLSI Design Blog</h1>
+
+
+
+
+                <p>Insights, tutorials, and updates on the world of physical design.</p>
+
+
+
+
+            </section>
+
+
+
+
+            
+
+
+
+
+            <section>
+
+
+
+
+                <p>This section is ready for you to add your blog posts. Follow the instructions provided to add new post cards below.</p>
+
+
+
+
+                
+
+
+
+
+                <div>
+
+
+
+
+                    <!-- 
+
+
+
+
+                        BLOG POST CARD EXAMPLE:
+
+
+
+
+                        To add a new blog post, copy the block below and fill in the details.
+
+
+
+
+                        1. Change the href="..." to the path of your new blog post's HTML file.
+
+
+
+
+                        2. Update the <img> src="..." to your post's image.
+
+
+
+
+                        3. Fill in the post title, a brief excerpt, and relevant tags.
+
+
+
+
+                    -->
+
+
+
+
+                    
+
+
+
+
+                    <!-- Example Blog Post Card 1 (You can remove or edit this) -->
+
+
+
+
+                    <a href="advanced_logic_synthesis" class="project-card"> <!-- You can rename project-template.html to blog-post-template.html -->
+
+
+
+
+                        <img src="assets/images/unsplash-1581094486392-3901b5539c6d.jpg" alt="Example Blog Post Image" class="project-card-img" decoding="async" loading="lazy" width="800" height="1199">
+
+
+
+
+                        <div class="project-card-content">
+
+
+
+
+                            <h3 class="project-card-title">Example Blog Post: Understanding NDRs</h3>
+
+
+
+
+                            <p class="project-card-desc">A quick look into why Non-Default Rules are critical for routing clock nets in advanced nodes.</p>
+
+
+
+
+                            <div class="project-card-tags">
+
+
+
+
+                                <span>CTS</span>
+
+
+
+
+                                <span>Routing</span>
+
+
+
+
+                                <span>Signal Integrity</span>
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                    </a>
+
+
+
+
+
+
+
+
+
+                    <!-- Add more project cards here by copying the block above -->
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+            <!-- Bottom Navigation -->
+
+
+
+
+            <section class="bottom-nav">
+
+
+
+
+                <a href="routing">
+
+
+
+
+                    <span class="nav-label">&larr; Previous</span>
+
+
+
+
+                    <span class="nav-title">Routing</span>
+
+
+
+
+                </a>
+
+
+
+
+                <a href="who-am-i" class="nav-next">
+
+
+
+
+                    <span class="nav-label">Next &rarr;</span>
+
+
+
+
+                    <span class="nav-title">Who Am I</span>
+
+
+
+
+                </a>
+
+
+
+
+            </section>
+
+
+
+
+        </article>
+
+
+
+
+    </main>
+
+
+
+
+    <script src="main.js" defer></script>
+
+
+
+
+</body>
+
+
+
+
+</html>
+
+
+
+
