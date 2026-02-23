@@ -115,7 +115,7 @@
             <a href="blog">Blog</a>
 
 
-            <a href="work_sited">Works Cited</a>
+            <a href="works-cited">Works Cited</a>
 
 
             <a href="about#about">About</a>
@@ -238,10 +238,10 @@
                 <ul>
 
 
-                    <li><a href="delay_models">Delay Models</a></li>
+                    <li><a href="delay-models">Delay Models</a></li>
 
 
-                    <li><a href="sta_numericals">STA Numericals</a></li>
+                    <li><a href="sta-numericals">STA Numericals</a></li>
 
 
                     <li><a href="cts">Clock Tree Synthesis</a></li>
@@ -260,20 +260,39 @@
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="pd_inputs">PD Inputs</a></li>
-                    <li><a href="floorplan">Floorplanning</a></li>
-                    <li><a href="powerplan">Power Planning</a></li>
+                    <li><a href="physical-design-inputs">PD Inputs</a></li>
+                    <li><a href="floorplanning">Floorplanning</a></li>
+                    <li><a href="power-planning">Power Planning</a></li>
                     <li><a href="placement">Placement</a></li>
                     <li><a href="cts">Clock Tree Synthesis</a></li>
                     <li><a href="routing">Routing</a></li>
-                    <li><a href="congestion_analysis">Congestion Analysis</a></li>
-                    <li><a href="power_analysis">Power Analysis</a></li>
+                    <li><a href="congestion-analysis">Congestion Analysis</a></li>
+                    <li><a href="power-analysis">Power Analysis</a></li>
                 </ul>
+            </section>
+            
+            <section class="scroll-reveal">
+                <h2>Static Timing Analysis in the Physical Design Flow</h2>
+                <p>Static Timing Analysis is not an isolated step in backend implementation. STA is the backbone of digital signoff because it evaluates setup and hold timing across process, voltage, temperature, and mode combinations without relying on a single simulation waveform. In a practical ASIC flow, engineers revisit this topic at least twice: once to prevent problems early, and again after optimization when the design context changes because of timing fixes, buffering, or routing decisions.</p>
+                <p>When using this page for learning or interview preparation, separate the topic into inputs, tool actions, and outputs. Inputs define what data must be clean before you start. Tool actions describe what the engine is optimizing. Outputs show whether the run is actually improving design quality. The most useful reviews combine those three views instead of memorizing a short definition.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Practical Checklist</h2>
+                <p>Use this quick checklist while studying or debugging static timing analysis. It helps turn theory into repeatable engineering practice and also improves project documentation quality.</p>
+                <ul>
+                    <li>Confirm clocks, generated clocks, and uncertainties are defined correctly</li>
+                    <li>Check input and output delays against real interface assumptions</li>
+                    <li>Separate setup and hold closure strategies to avoid conflicting fixes</li>
+                    <li>Review derates, OCV settings, and corner coverage for signoff readiness</li>
+                    <li>Group violations by root cause before launching broad optimization</li>
+                </ul>
+                <p>Track the result of each change with measurable data instead of intuition alone. Track worst slack, total negative slack, violating endpoints, path groups, and correlation between implementation and signoff STA tools. Keeping a small log of assumptions, changes, and outcomes will make this topic easier to revise later and easier to explain in interviews or design reviews.</p>
             </section>
             <section class="bottom-nav">
 
 
-                <a href="delay_models">
+                <a href="delay-models">
 
 
                     <span class="nav-label">&larr; Previous</span>
@@ -285,7 +304,7 @@
                 </a>
 
 
-                <a href="sta_numericals" class="nav-next">
+                <a href="sta-numericals" class="nav-next">
 
 
                     <span class="nav-label">Next &rarr;</span>

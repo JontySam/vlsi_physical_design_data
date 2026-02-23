@@ -31,7 +31,7 @@
     <meta property="og:type" content="article">
 
 
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/ir_analysis">
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/ir-drop-analysis">
 
 
     <meta property="og:title" content="IR Drop Analysis | VLSI Physical Design Hub">
@@ -52,7 +52,7 @@
     <meta property="twitter:card" content="summary_large_image">
 
 
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/ir_analysis">
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/ir-drop-analysis">
 
 
     <meta property="twitter:title" content="IR Drop Analysis | VLSI Physical Design Hub">
@@ -70,7 +70,7 @@
     <!-- Canonical URL -->
 
 
-    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/ir_analysis" />
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/ir-drop-analysis" />
 
 
 
@@ -115,7 +115,7 @@
             <a href="blog">Blog</a>
 
 
-            <a href="work_sited">Works Cited</a>
+            <a href="works-cited">Works Cited</a>
 
 
             <a href="about#about">About</a>
@@ -238,13 +238,13 @@
                 <ul>
 
 
-                    <li><a href="powerplan">Power Plan</a></li>
+                    <li><a href="power-planning">Power Plan</a></li>
 
 
-                    <li><a href="power_analysis">Power Analysis</a></li>
+                    <li><a href="power-analysis">Power Analysis</a></li>
 
 
-                    <li><a href="pd_verification">PD Verification</a></li>
+                    <li><a href="physical-design-verification">PD Verification</a></li>
 
 
                 </ul>
@@ -260,20 +260,39 @@
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="pd_inputs">PD Inputs</a></li>
-                    <li><a href="floorplan">Floorplanning</a></li>
-                    <li><a href="powerplan">Power Planning</a></li>
+                    <li><a href="physical-design-inputs">PD Inputs</a></li>
+                    <li><a href="floorplanning">Floorplanning</a></li>
+                    <li><a href="power-planning">Power Planning</a></li>
                     <li><a href="placement">Placement</a></li>
                     <li><a href="cts">Clock Tree Synthesis</a></li>
                     <li><a href="routing">Routing</a></li>
-                    <li><a href="congestion_analysis">Congestion Analysis</a></li>
+                    <li><a href="congestion-analysis">Congestion Analysis</a></li>
                     <li><a href="sta">Static Timing Analysis</a></li>
                 </ul>
+            </section>
+            
+            <section class="scroll-reveal">
+                <h2>IR Drop Analysis in the Physical Design Flow</h2>
+                <p>IR Drop Analysis is not an isolated step in backend implementation. IR drop directly impacts timing, noise margin, and silicon reliability, so it must be analyzed as both a power-grid design problem and a workload-dependent verification problem. In a practical ASIC flow, engineers revisit this topic at least twice: once to prevent problems early, and again after optimization when the design context changes because of timing fixes, buffering, or routing decisions.</p>
+                <p>When using this page for learning or interview preparation, separate the topic into inputs, tool actions, and outputs. Inputs define what data must be clean before you start. Tool actions describe what the engine is optimizing. Outputs show whether the run is actually improving design quality. The most useful reviews combine those three views instead of memorizing a short definition.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Practical Checklist</h2>
+                <p>Use this quick checklist while studying or debugging ir drop analysis. It helps turn theory into repeatable engineering practice and also improves project documentation quality.</p>
+                <ul>
+                    <li>Separate static IR checks from dynamic IR scenarios driven by switching activity</li>
+                    <li>Correlate hotspot locations with power straps, vias, macros, and current demand</li>
+                    <li>Review voltage drop on critical timing regions, not only the global maximum</li>
+                    <li>Strengthen the grid using straps, vias, or decaps based on observed bottlenecks</li>
+                    <li>Re-run extraction and analysis after major routing or ECO changes</li>
+                </ul>
+                <p>Track the result of each change with measurable data instead of intuition alone. Measure worst voltage drop, spatial hotspot distribution, current density concentration, and timing sensitivity of affected regions. Keeping a small log of assumptions, changes, and outcomes will make this topic easier to revise later and easier to explain in interviews or design reviews.</p>
             </section>
             <section class="bottom-nav">
 
 
-                <a href="congestion_analysis">
+                <a href="congestion-analysis">
 
 
                     <span class="nav-label">&larr; Previous</span>
@@ -285,7 +304,7 @@
                 </a>
 
 
-                <a href="power_analysis" class="nav-next">
+                <a href="power-analysis" class="nav-next">
 
 
                     <span class="nav-label">Next &rarr;</span>

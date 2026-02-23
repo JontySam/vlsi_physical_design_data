@@ -31,7 +31,7 @@
     <meta property="og:type" content="article">
 
 
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/sta_numericals">
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/sta-numericals">
 
 
     <meta property="og:title" content="STA Numericals | VLSI Physical Design Hub">
@@ -52,7 +52,7 @@
     <meta property="twitter:card" content="summary_large_image">
 
 
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/sta_numericals">
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/sta-numericals">
 
 
     <meta property="twitter:title" content="STA Numericals | VLSI Physical Design Hub">
@@ -70,7 +70,7 @@
     <!-- Canonical URL -->
 
 
-    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/sta_numericals" />
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/sta-numericals" />
 
 
 
@@ -115,7 +115,7 @@
             <a href="blog">Blog</a>
 
 
-            <a href="work_sited">Works Cited</a>
+            <a href="works-cited">Works Cited</a>
 
 
             <a href="about#about">About</a>
@@ -244,7 +244,7 @@
                     <li><a href="sta">Static Timing Analysis</a></li>
 
 
-                    <li><a href="delay_models">Delay Models</a></li>
+                    <li><a href="delay-models">Delay Models</a></li>
 
 
                     <li><a href="placement">Placement</a></li>
@@ -263,15 +263,34 @@
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="pd_inputs">PD Inputs</a></li>
-                    <li><a href="floorplan">Floorplanning</a></li>
-                    <li><a href="powerplan">Power Planning</a></li>
+                    <li><a href="physical-design-inputs">PD Inputs</a></li>
+                    <li><a href="floorplanning">Floorplanning</a></li>
+                    <li><a href="power-planning">Power Planning</a></li>
                     <li><a href="placement">Placement</a></li>
                     <li><a href="cts">Clock Tree Synthesis</a></li>
                     <li><a href="routing">Routing</a></li>
-                    <li><a href="congestion_analysis">Congestion Analysis</a></li>
+                    <li><a href="congestion-analysis">Congestion Analysis</a></li>
                     <li><a href="sta">Static Timing Analysis</a></li>
                 </ul>
+            </section>
+            
+            <section class="scroll-reveal">
+                <h2>STA Numericals in the Physical Design Flow</h2>
+                <p>STA Numericals is not an isolated step in backend implementation. Numerical STA examples are useful because they show how clock latency, uncertainty, combinational delay, and constraints combine to create setup or hold margin. In a practical ASIC flow, engineers revisit this topic at least twice: once to prevent problems early, and again after optimization when the design context changes because of timing fixes, buffering, or routing decisions.</p>
+                <p>When using this page for learning or interview preparation, separate the topic into inputs, tool actions, and outputs. Inputs define what data must be clean before you start. Tool actions describe what the engine is optimizing. Outputs show whether the run is actually improving design quality. The most useful reviews combine those three views instead of memorizing a short definition.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Practical Checklist</h2>
+                <p>Use this quick checklist while studying or debugging sta numericals. It helps turn theory into repeatable engineering practice and also improves project documentation quality.</p>
+                <ul>
+                    <li>Write down launch and capture clock paths separately before calculations</li>
+                    <li>List uncertainty, skew, and library delays explicitly to avoid missed terms</li>
+                    <li>Solve setup and hold cases independently using consistent notation</li>
+                    <li>Verify units and corner assumptions before comparing two examples</li>
+                    <li>Use solved numericals to build intuition for tool-reported timing paths</li>
+                </ul>
+                <p>Track the result of each change with measurable data instead of intuition alone. Track each term in the timing equation and confirm sign conventions so the final slack value can be explained clearly. Keeping a small log of assumptions, changes, and outcomes will make this topic easier to revise later and easier to explain in interviews or design reviews.</p>
             </section>
             <section class="bottom-nav">
 
@@ -288,7 +307,7 @@
                 </a>
 
 
-                <a href="io_design" class="nav-next">
+                <a href="io-design" class="nav-next">
 
 
                     <span class="nav-label">Next &rarr;</span>

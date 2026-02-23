@@ -31,7 +31,7 @@
     <meta property="og:type" content="article">
 
 
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/pd_verification">
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/physical-design-verification">
 
 
     <meta property="og:title" content="Physical Design Verification | VLSI Physical Design Hub">
@@ -52,7 +52,7 @@
     <meta property="twitter:card" content="summary_large_image">
 
 
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/pd_verification">
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/physical-design-verification">
 
 
     <meta property="twitter:title" content="Physical Design Verification | VLSI Physical Design Hub">
@@ -70,7 +70,7 @@
     <!-- Canonical URL -->
 
 
-    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/pd_verification" />
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/physical-design-verification" />
 
 
 
@@ -115,7 +115,7 @@
             <a href="blog">Blog</a>
 
 
-            <a href="work_sited">Works Cited</a>
+            <a href="works-cited">Works Cited</a>
 
 
             <a href="about#about">About</a>
@@ -241,13 +241,13 @@
                 <ul>
 
 
-                    <li><a href="pd_issues">Common PD Issues</a></li>
+                    <li><a href="physical-design-issues">Common PD Issues</a></li>
 
 
                     <li><a href="sta">Static Timing Analysis</a></li>
 
 
-                    <li><a href="power_analysis">Power Analysis</a></li>
+                    <li><a href="power-analysis">Power Analysis</a></li>
 
 
                 </ul>
@@ -263,20 +263,39 @@
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="pd_inputs">PD Inputs</a></li>
-                    <li><a href="floorplan">Floorplanning</a></li>
-                    <li><a href="powerplan">Power Planning</a></li>
+                    <li><a href="physical-design-inputs">PD Inputs</a></li>
+                    <li><a href="floorplanning">Floorplanning</a></li>
+                    <li><a href="power-planning">Power Planning</a></li>
                     <li><a href="placement">Placement</a></li>
                     <li><a href="cts">Clock Tree Synthesis</a></li>
                     <li><a href="routing">Routing</a></li>
-                    <li><a href="congestion_analysis">Congestion Analysis</a></li>
+                    <li><a href="congestion-analysis">Congestion Analysis</a></li>
                     <li><a href="sta">Static Timing Analysis</a></li>
                 </ul>
+            </section>
+            
+            <section class="scroll-reveal">
+                <h2>Physical Design Verification in the Physical Design Flow</h2>
+                <p>Physical Design Verification is not an isolated step in backend implementation. Physical verification ensures the implemented layout matches manufacturing and connectivity requirements before tapeout, making it a core signoff gate rather than a final checklist item. In a practical ASIC flow, engineers revisit this topic at least twice: once to prevent problems early, and again after optimization when the design context changes because of timing fixes, buffering, or routing decisions.</p>
+                <p>When using this page for learning or interview preparation, separate the topic into inputs, tool actions, and outputs. Inputs define what data must be clean before you start. Tool actions describe what the engine is optimizing. Outputs show whether the run is actually improving design quality. The most useful reviews combine those three views instead of memorizing a short definition.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Practical Checklist</h2>
+                <p>Use this quick checklist while studying or debugging physical design verification. It helps turn theory into repeatable engineering practice and also improves project documentation quality.</p>
+                <ul>
+                    <li>Run DRC, LVS, antenna, and density checks with the correct rule deck version</li>
+                    <li>Classify violations into systematic versus isolated issues before fixing</li>
+                    <li>Confirm that ECO changes do not reopen previously closed verification errors</li>
+                    <li>Coordinate with routing and layout updates to fix root causes efficiently</li>
+                    <li>Preserve clean signoff reports for review and tapeout documentation</li>
+                </ul>
+                <p>Track the result of each change with measurable data instead of intuition alone. Track DRC count, LVS status, antenna results, density compliance, and turnaround time for each verification iteration. Keeping a small log of assumptions, changes, and outcomes will make this topic easier to revise later and easier to explain in interviews or design reviews.</p>
             </section>
             <section class="bottom-nav">
 
 
-                <a href="pd_issues">
+                <a href="physical-design-issues">
 
 
                     <span class="nav-label">&larr; Previous</span>
@@ -288,7 +307,7 @@
                 </a>
 
 
-                <a href="congestion_analysis" class="nav-next">
+                <a href="congestion-analysis" class="nav-next">
 
 
                     <span class="nav-label">Next &rarr;</span>

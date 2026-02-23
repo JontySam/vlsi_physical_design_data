@@ -31,7 +31,7 @@
     <meta property="og:type" content="article">
 
 
-    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/pd_cells">
+    <meta property="og:url" content="https://www.vlsiphysicaldesign.top/physical-design-cells">
 
 
     <meta property="og:title" content="Physical Design Cells | VLSI Physical Design Hub">
@@ -52,7 +52,7 @@
     <meta property="twitter:card" content="summary_large_image">
 
 
-    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/pd_cells">
+    <meta property="twitter:url" content="https://www.vlsiphysicaldesign.top/physical-design-cells">
 
 
     <meta property="twitter:title" content="Physical Design Cells | VLSI Physical Design Hub">
@@ -70,7 +70,7 @@
     <!-- Canonical URL -->
 
 
-    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/pd_cells" />
+    <link rel="canonical" href="https://www.vlsiphysicaldesign.top/physical-design-cells" />
 
 
 
@@ -115,7 +115,7 @@
             <a href="blog">Blog</a>
 
 
-            <a href="work_sited">Works Cited</a>
+            <a href="works-cited">Works Cited</a>
 
 
             <a href="about#about">About</a>
@@ -244,13 +244,13 @@
                 <ul>
 
 
-                    <li><a href="std_cell_types">Standard Cell Types</a></li>
+                    <li><a href="standard-cell-types">Standard Cell Types</a></li>
 
 
-                    <li><a href="pd_verification">PD Verification</a></li>
+                    <li><a href="physical-design-verification">PD Verification</a></li>
 
 
-                    <li><a href="powerplan">Power Plan</a></li>
+                    <li><a href="power-planning">Power Plan</a></li>
 
 
                 </ul>
@@ -266,20 +266,39 @@
                 <h3>Related Topics</h3>
                 <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
                 <ul class="related-links-grid">
-                    <li><a href="logic_synthesis">Logic Synthesis</a></li>
-                    <li><a href="advanced_logic_synthesis">Advanced Logic Synthesis</a></li>
-                    <li><a href="advanced_synthesis">Advanced Synthesis</a></li>
-                    <li><a href="cmos_fundamentals">CMOS Fundamentals</a></li>
-                    <li><a href="ccs_modeling">CCS Modeling</a></li>
-                    <li><a href="delay_models">Delay Models</a></li>
-                    <li><a href="std_cell_types">Standard Cell Types</a></li>
-                    <li><a href="pd_inputs">PD Inputs</a></li>
+                    <li><a href="logic-synthesis">Logic Synthesis</a></li>
+                    <li><a href="advanced-logic-synthesis">Advanced Logic Synthesis</a></li>
+                    <li><a href="advanced-synthesis">Advanced Synthesis</a></li>
+                    <li><a href="cmos-fundamentals">CMOS Fundamentals</a></li>
+                    <li><a href="ccs-modeling">CCS Modeling</a></li>
+                    <li><a href="delay-models">Delay Models</a></li>
+                    <li><a href="standard-cell-types">Standard Cell Types</a></li>
+                    <li><a href="physical-design-inputs">PD Inputs</a></li>
                 </ul>
+            </section>
+            
+            <section class="scroll-reveal">
+                <h2>Physical Design Cells in the Physical Design Flow</h2>
+                <p>Physical Design Cells is not an isolated step in backend implementation. Physical design cells such as fillers, tap cells, endcaps, decaps, and spare cells are small structures with a large effect on manufacturability, reliability, and ECO readiness. In a practical ASIC flow, engineers revisit this topic at least twice: once to prevent problems early, and again after optimization when the design context changes because of timing fixes, buffering, or routing decisions.</p>
+                <p>When using this page for learning or interview preparation, separate the topic into inputs, tool actions, and outputs. Inputs define what data must be clean before you start. Tool actions describe what the engine is optimizing. Outputs show whether the run is actually improving design quality. The most useful reviews combine those three views instead of memorizing a short definition.</p>
+            </section>
+
+            <section class="scroll-reveal">
+                <h2>Practical Checklist</h2>
+                <p>Use this quick checklist while studying or debugging physical design cells. It helps turn theory into repeatable engineering practice and also improves project documentation quality.</p>
+                <ul>
+                    <li>Understand the role of filler, decap, tap, endcap, tie, and spare cells</li>
+                    <li>Confirm insertion order and constraints used by the implementation tool</li>
+                    <li>Review library-specific placement rules for tap pitch and boundary cells</li>
+                    <li>Verify that spare cells remain accessible for late ECO usage</li>
+                    <li>Recheck DRC and power integrity after utility-cell insertion</li>
+                </ul>
+                <p>Track the result of each change with measurable data instead of intuition alone. Check insertion coverage, spacing rules, well continuity requirements, and any signoff violations related to missing utility cells. Keeping a small log of assumptions, changes, and outcomes will make this topic easier to revise later and easier to explain in interviews or design reviews.</p>
             </section>
             <section class="bottom-nav">
 
 
-                <a href="io_design">
+                <a href="io-design">
 
 
                     <span class="nav-label">&larr; Previous</span>
@@ -291,7 +310,7 @@
                 </a>
 
 
-                <a href="pd_issues" class="nav-next">
+                <a href="physical-design-issues" class="nav-next">
 
 
                     <span class="nav-label">Next &rarr;</span>
