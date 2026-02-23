@@ -1,4 +1,11 @@
-User-agent: *
-Allow: /
-
+User-agent: *
+Allow: /
+Disallow: /blue-theme
+Disallow: /blue-theme.html
+Disallow: /project-template
+Disallow: /project-template.html
+Disallow: /_tmp_advanced_raw.txt
+Disallow: /_tmp_advanced_norm.txt
+Disallow: /search-data.json
+
 Sitemap: https://www.vlsiphysicaldesign.top/sitemap.xml
