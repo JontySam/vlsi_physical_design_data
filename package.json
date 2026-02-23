@@ -1,0 +1,14 @@
+{
+  "name": "vlsi-physical-design-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eleventy build for vlsiphysicaldesign.top static site",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "build:clean": "powershell -NoProfile -Command \"if (Test-Path dist) { Remove-Item -Recurse -Force dist }; npx @11ty/eleventy\""
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
