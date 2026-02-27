@@ -7,6 +7,5 @@ Disallow: /project-template.html
 Disallow: /_tmp_advanced_raw.txt
 Disallow: /_tmp_advanced_norm.txt
 Disallow: /search-data.json
-Disallow: /cdn-cgi/
 
 Sitemap: https://www.vlsiphysicaldesign.top/sitemap.xml

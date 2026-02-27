@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Build email links at runtime to avoid static mailto scraping/rewrites.
+    const emailLinks = document.querySelectorAll("a[data-email-user][data-email-domain]");
+    emailLinks.forEach((link) => {
+        const user = link.getAttribute("data-email-user");
+        const domain = link.getAttribute("data-email-domain");
+        if (!user || !domain) return;
+
+        const email = `${user}@${domain}`;
+        link.setAttribute("href", `mailto:${email}`);
+        link.textContent = email;
+    });
+
     // Sticky header logic
     const header = document.getElementById('main-header');
     const mainContainer = document.querySelector('main.container');
