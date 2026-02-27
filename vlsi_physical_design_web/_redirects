@@ -18,8 +18,8 @@
 /io_design.html /io-design/ 301
 /ir_analysis /ir-drop-analysis/ 301
 /ir_analysis.html /ir-drop-analysis/ 301
-/logic_synthesis_new /logic-synthesis-practical-guide/ 301
-/logic_synthesis_new.html /logic-synthesis-practical-guide/ 301
+/logic_synthesis_new /logic-synthesis/ 301
+/logic_synthesis_new.html /logic-synthesis/ 301
 /logic_synthesis /logic-synthesis/ 301
 /logic_synthesis.html /logic-synthesis/ 301
 /pd_cells /physical-design-cells/ 301
@@ -58,7 +58,9 @@
 /io-design.html /io-design/ 301
 /ir-drop-analysis.html /ir-drop-analysis/ 301
 /logic-synthesis.html /logic-synthesis/ 301
-/logic-synthesis-practical-guide.html /logic-synthesis-practical-guide/ 301
+/logic-synthesis-practical-guide /logic-synthesis/ 301
+/logic-synthesis-practical-guide/ /logic-synthesis/ 301
+/logic-synthesis-practical-guide.html /logic-synthesis/ 301
 /physical-design-cells.html /physical-design-cells/ 301
 /physical-design-inputs.html /physical-design-inputs/ 301
 /physical-design-issues.html /physical-design-issues/ 301
