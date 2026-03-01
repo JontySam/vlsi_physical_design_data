@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 
 
@@ -250,6 +250,168 @@
 
 
 
+        .concept-figure {
+            width: min(65%, 860px);
+            margin: 1.5rem auto 2rem;
+            scroll-margin-top: 6rem;
+            padding: 1rem;
+            background: #fff9f2;
+            border: 1px solid #dccfbd;
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(58, 46, 34, 0.07);
+        }
+
+        .concept-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .concept-figure figcaption {
+            margin-top: 0.75rem;
+            color: #5d5348;
+            font-size: 0.95rem;
+        }
+
+        .concept-explainer {
+            margin: 1rem 0 1.25rem;
+            color: #4f463c;
+        }
+
+        .mosfet-lab {
+            margin: 2rem 0 2.5rem;
+            padding: 1.5rem;
+            border-radius: 22px;
+            border: 1px solid #d6c9b6;
+            background:
+                radial-gradient(circle at top left, rgba(217, 108, 74, 0.12), transparent 32%),
+                radial-gradient(circle at top right, rgba(47, 127, 115, 0.14), transparent 28%),
+                #fffaf4;
+            box-shadow: 0 14px 32px rgba(60, 48, 36, 0.08);
+        }
+
+        .mosfet-lab-intro {
+            max-width: 70ch;
+        }
+
+        .mosfet-lab-controls,
+        .mosfet-inline-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.9rem 1rem;
+            margin: 1.25rem 0 1.5rem;
+        }
+
+        .mosfet-control {
+            padding: 0.9rem 1rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid #dfd3c2;
+        }
+
+        .mosfet-control label {
+            display: block;
+            font-weight: 600;
+            color: #2b3b42;
+            margin-bottom: 0.55rem;
+        }
+
+        .mosfet-control input[type="range"] {
+            width: 100%;
+            accent-color: #2f7f73;
+        }
+
+        .mosfet-readout {
+            display: inline-block;
+            margin-top: 0.45rem;
+            color: #6a5f53;
+            font-size: 0.92rem;
+        }
+
+        .mosfet-readout-strong {
+            font-weight: 700;
+            color: #22363d;
+        }
+
+        .mosfet-chart-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .mosfet-chart-card {
+            padding: 1rem 1rem 1.1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid #e0d4c3;
+        }
+
+        .mosfet-chart-card h3 {
+            margin-top: 0.2rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .mosfet-chart-card p {
+            margin-bottom: 0.85rem;
+        }
+
+        .mosfet-chart-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.85fr);
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .mosfet-control-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .mosfet-chart {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            background: #f6efe6;
+            border: 1px solid #dfd2bf;
+        }
+
+        .mosfet-caption-note {
+            margin-top: 0.85rem;
+            font-size: 0.92rem;
+            color: #62574a;
+        }
+
+        .mosfet-meta {
+            margin-top: 0.9rem;
+            font-size: 0.95rem;
+            color: #53483c;
+        }
+
+        .mosfet-meta span {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        @media (max-width: 768px) {
+            .concept-figure {
+                width: 100%;
+                margin: 1.25rem 0 1.75rem;
+            }
+
+            .mosfet-lab {
+                padding: 1.1rem;
+            }
+
+            .mosfet-chart-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 
 
@@ -354,7 +516,7 @@
 
 
 
-                <p>From semiconductor physics to second-order effects.</p>
+                <p>From semiconductor physics to MOSFET behavior, one clear step at a time.</p>
 
 
 
@@ -374,7 +536,7 @@
 
 
 
-                <p>The remarkable evolution of Very Large Scale Integration (VLSI) technology, which has enabled the integration of billions of transistors onto a single silicon chip, is fundamentally rooted in the physics of semiconductor materials. Understanding how electricity flows—or is prevented from flowing—within these materials is the first step toward comprehending the operation of any modern electronic device. This section establishes the foundational principles, beginning with the quantum mechanical nature of semiconductors and culminating in the behavior of the PN junction, the elemental building block of the transistor.</p>
+                <p>Modern VLSI may look like a world of EDA tools, timing reports, and placement constraints, but it still starts with a simpler question: when does silicon allow charge to move, and when does it block it? That answer comes from semiconductor physics. Once you understand carrier motion, energy bands, and PN junction behavior, the rest of CMOS stops feeling mysterious and starts looking like a controlled extension of those basic ideas.</p>
 
 
 
@@ -386,7 +548,19 @@
 
 
 
-                <p>The electrical properties of a solid material are determined by the arrangement of its atoms in a crystal lattice and, more specifically, by the energy levels that its electrons are permitted to occupy. In an isolated atom, electrons exist in discrete energy levels. When atoms are brought together to form a crystal, these discrete levels broaden into continuous energy bands.</p>
+                <p>The electrical behavior of a solid depends on how its atoms are arranged and on which energy states its electrons are allowed to occupy. In a single atom, those states are discrete. In a crystal, where a huge number of atoms sit in a regular lattice, the same states spread out into bands. That shift from isolated energy levels to energy bands is the starting point for understanding why some materials conduct easily, some barely conduct at all, and silicon sits in the useful middle.</p>
+
+                <p class="concept-explainer">The doping story is easiest to follow with <a href="#fig-1">Figure 1</a> and <a href="#fig-2">Figure 2</a>. Figure 1 compares intrinsic, n-type, and p-type silicon in one view, while Figure 2 shows the same shift using the Fermi level. Together, they make the ideas of majority carriers and energy-band shift much easier to see.</p>
+
+                <figure class="concept-figure" id="fig-1">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Intrinic vs Ntype vs Ptype (1).webp" alt="Intrinsic, n-type, and p-type semiconductor comparison" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 1.</strong> Intrinsic silicon has balanced carriers. Donor doping creates electron-rich n-type material, while acceptor doping creates hole-rich p-type material.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-2">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Fermi level Positioning for P type and Ntype (1).webp" alt="Fermi level position in p-type and n-type semiconductor" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 2.</strong> The Fermi level moves upward toward the conduction band in n-type material and downward toward the valence band in p-type material.</figcaption>
+                </figure>
 
 
 
@@ -398,7 +572,7 @@
 
 
 
-                    <li><strong>Intrinsic and Extrinsic Semiconductors:</strong> A pure semiconductor crystal is called an intrinsic semiconductor. At absolute zero temperature, its valence band is completely full and its conduction band is empty, making it a perfect insulator. At room temperature, thermal energy is sufficient to excite a small number of electrons into the conduction band, creating an equal number of electrons and holes. The intrinsic carrier concentration in silicon, denoted n<sub>i</sub>, is approximately 1.45×10<sup>10</sup> cm<sup>-3</sup> at 300 K, which is too low for most practical applications. To dramatically increase the conductivity, semiconductors are intentionally doped with impurity atoms, a process that creates extrinsic semiconductors.
+                    <li><strong>Intrinsic and Extrinsic Semiconductors:</strong> A pure semiconductor crystal is called an intrinsic semiconductor. At absolute zero temperature, its valence band is completely full and its conduction band is empty, making it a perfect insulator. At room temperature, thermal energy is sufficient to excite a small number of electrons into the conduction band, creating an equal number of electrons and holes. The intrinsic carrier concentration in silicon, denoted n<sub>i</sub>, is approximately 1.45Ã—10<sup>10</sup> cm<sup>-3</sup> at 300 K, which is too low for most practical applications. To dramatically increase the conductivity, semiconductors are intentionally doped with impurity atoms, a process that creates extrinsic semiconductors.
 
 
 
@@ -466,7 +640,7 @@
 
 
 
-                <p>The most fundamental structure in semiconductor devices is the PN junction, formed by bringing p-type and n-type semiconductor materials into intimate contact. The behavior of this junction is the basis for diodes, bipolar transistors, and the source/drain regions of MOSFETs.</p>
+                <p>The PN junction is the first structure where semiconductor physics turns into a usable device. Put p-type material next to n-type material and the carriers immediately react to the concentration difference. That single interface becomes the basis for diodes, bipolar devices, and the source/drain junctions that appear inside MOSFETs.</p>
 
 
 
@@ -494,23 +668,26 @@
 
 
 
-                <p>The energy band diagram provides the clearest visualization of this equilibrium state. For the system to be in equilibrium, the Fermi level (E<sub>F</sub>) must be constant throughout the entire structure. To achieve this alignment, the energy bands of the p-type and n-type regions must shift relative to each other. The bands on the p-side are higher in energy than the bands on the n-side, resulting in a "bending" of the conduction and valence bands across the depletion region. This band bending creates a potential energy barrier of height q&phi;<sub>0</sub> that majority carriers must overcome to diffuse across the junction.</p>
+                <p>The energy band diagram provides the clearest visualization of this equilibrium state. For the system to be in equilibrium, the Fermi level (E<sub>F</sub>) must be constant throughout the entire structure. To achieve this alignment, the energy bands of the p-type and n-type regions must shift relative to each other. The bands on the p-side are higher in energy than the bands on the n-side, resulting in a bending of the conduction and valence bands across the depletion region. This band bending creates a potential energy barrier of height q&phi;<sub>0</sub> that majority carriers must overcome to diffuse across the junction.</p>
+                <p>Equilibrium does not mean nothing is happening. It means two opposite processes cancel each other exactly. Diffusion pushes majority carriers across the junction, while the built-in electric field pulls minority carriers the other way by drift. The measured current is zero only because those two internal currents are equal. That idea matters, because biasing the junction simply breaks this balance.</p>
 
+                <p class="concept-explainer"><a href="#fig-3">Figure 3</a> shows the drift-versus-diffusion balance directly, and <a href="#fig-4">Figure 4</a> shows the same equilibrium through band bending. One picture focuses on carrier motion; the other focuses on the barrier that the carriers see.</p>
 
+                <figure class="concept-figure" id="fig-3">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Difusion vs Drift (1).webp" alt="Diffusion and drift balance in a PN junction" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 3.</strong> Diffusion pushes carriers across the junction because of concentration difference, while drift pulls them back because of the built-in electric field.</figcaption>
+                </figure>
 
-                <p>The equilibrium state is not static but a dynamic balance. The internal electric field (represented by the slope of the energy bands) creates a drift current that sweeps minority carriers across the junction. Simultaneously, a concentration gradient drives a diffusion current of majority carriers in the opposite direction. In equilibrium, these two opposing currents are equal in magnitude, resulting in zero net current. This concept—that zero external current is a result of two perfectly balanced internal currents—is essential for understanding how applying an external voltage disrupts this balance to produce a net current flow.</p>
-
-
-
-
-
-
+                <figure class="concept-figure" id="fig-4">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Energy Band Diagram PN diagram (1).webp" alt="Energy band diagram of a PN junction in equilibrium" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 4.</strong> The bent bands show the barrier height directly. A flat Fermi level across the full structure is the signature of thermal equilibrium.</figcaption>
+                </figure>
 
                 <h3>1.3 The Junction Under Bias</h3>
 
 
 
-                <p>Applying an external voltage across the PN junction, known as biasing, disturbs the equilibrium and allows for the control of current flow.</p>
+                <p>Once an external voltage is applied, the junction leaves equilibrium. The job of the applied bias is simple: it either lowers the barrier so carriers can cross more easily, or raises it so current is strongly suppressed.</p>
 
 
 
@@ -530,7 +707,14 @@
 
 
 
-                <p>This asymmetric current-flow characteristic—allowing large current in one direction (forward bias) while blocking it in the other (reverse bias)—is known as rectification, and it is the primary function of a diode.</p>
+                <p>This one-way current behavior is called rectification. In practice, it is what makes the diode useful: forward bias gives you strong conduction, while reverse bias gives you isolation except for a small leakage current.</p>
+
+                <p class="concept-explainer"><a href="#fig-5">Figure 5</a> is worth reading next to the text because it turns the idea into one simple visual rule: forward bias lowers the barrier and encourages majority-carrier transport, while reverse bias widens the barrier and leaves only a small leakage path.</p>
+
+                <figure class="concept-figure" id="fig-5">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Junction bias (1).webp" alt="Forward and reverse bias behavior of a PN junction" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 5.</strong> Forward bias reduces the barrier for carrier motion. Reverse bias increases it and suppresses majority-carrier diffusion.</figcaption>
+                </figure>
 
 
 
@@ -550,51 +734,75 @@
 
 
 
-                <p>While the PN junction is the fundamental building block, the engine of the digital revolution is the Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET). Its operation is based on the principles of the MOS capacitor, a structure that allows an electric field to control the concentration of charge carriers at a semiconductor surface.</p>
+                <p>The PN junction gives us the basic electrostatics, but the transistor that drives digital VLSI is the MOSFET. Its power comes from field control. Instead of forcing carriers across a junction, the gate reshapes the charge distribution at the silicon surface and decides whether a conducting path exists at all.</p>
+                <h3>2.1 MOSFET Structure</h3>
 
-
-
-
-
-
-
-                <h3>2.1 The MOS Capacitor</h3>
-
-
-
-                <p>The MOS capacitor is a three-layer structure composed of a metal gate electrode, a thin insulating layer of silicon dioxide (SiO<sub>2</sub>), and a semiconductor substrate (or body). This forms a capacitor where the gate and substrate act as the two plates, separated by the oxide dielectric. The key principle is that applying a voltage to the gate creates an electric field across the oxide, which in turn modulates the charge distribution at the surface of the semiconductor. For a p-type silicon substrate, the operation can be divided into three distinct modes based on the gate voltage (V<sub>G</sub>).</p>
-
-
+                <p>The MOSFET turns the MOS idea into a real switching device by adding two heavily doped terminals, source and drain, on either side of the gate. Once those terminals exist, the inversion layer is no longer just a surface-charge effect. It becomes the path through which current can move.</p>
 
                 <ul>
 
+                    <li><strong>nMOS Structure:</strong> An n-channel MOSFET (nMOS) uses a p-type body with two n+ regions for source and drain. The gate sits above a thin SiO<sub>2</sub> layer, and the silicon directly under the gate becomes the channel region. When the gate bias is large enough, an electron channel forms and connects source to drain.</li>
 
+                    <li><strong>pMOS Structure:</strong> A p-channel MOSFET (pMOS) is the complementary device. It uses an n-type body or n-well with p+ source and drain regions, and it conducts by forming a hole channel under the gate.</li>
+
+                    <li><strong>Why CMOS Uses Both:</strong> CMOS logic places nMOS and pMOS devices together so one side pulls a node down while the other pulls it up. That complementary action is the reason CMOS gives strong logic levels with low static power.</li>
+
+                </ul>
+
+                <p class="concept-explainer"><a href="#fig-6">Figure 6</a> shows the nMOS cross-section and <a href="#fig-7">Figure 7</a> shows the matching pMOS view. Looking at both back to back makes the complementary idea much easier to remember than reading the device names alone.</p>
+
+                <figure class="concept-figure" id="fig-6">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/N Type Mosfet (1).webp" alt="Cross section of an n-type MOSFET" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 6.</strong> In an nMOS transistor, a positive gate bias creates an electron channel between the n+ source and n+ drain regions.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-7">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/P type MOSFET (1).webp" alt="Cross section of a p-type MOSFET" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 7.</strong> The pMOS structure is the complement of nMOS. Its gate bias and carrier type reverse, but the channel-control idea is the same.</figcaption>
+                </figure>
+
+                <h3>2.2 The MOS Capacitor</h3>
+
+                <p>The MOS capacitor is the cleanest way to see how the gate controls silicon. It is just a gate electrode, a thin oxide, and a semiconductor body. But that simple stack is enough to show the full story. A gate voltage builds an electric field across the oxide, and that field changes the carrier concentration right at the silicon surface. For a p-type substrate, the response naturally falls into three modes.</p>
+
+                <ul>
 
                     <li><strong>Accumulation (V<sub>G</sub> &lt; 0):</strong> A negative voltage on the gate attracts the majority carriers (holes) from the p-type substrate to the silicon-oxide interface. This results in a higher concentration of holes at the surface than in the bulk, a condition known as accumulation. The energy bands at the surface bend upwards, indicating an increase in potential energy for electrons and a decrease for holes, which draws the valence band edge closer to the Fermi level.</li>
 
+                    <li><strong>Depletion (V<sub>G</sub> &gt; 0, small):</strong> A small positive voltage on the gate repels the mobile majority carriers (holes) from the interface, pushing them deeper into the substrate. This leaves behind a region near the surface that is depleted of mobile carriers and contains only fixed, negatively charged acceptor ions (N<sub>A</sub><sup>-</sup>). This is the depletion region. The energy bands at the surface bend downwards, indicating that the surface potential has increased.</li>
 
-
-                    <li><strong>Depletion (V<sub>G</sub> > 0, small):</strong> A small positive voltage on the gate repels the mobile majority carriers (holes) from the interface, pushing them deeper into the substrate. This leaves behind a region near the surface that is depleted of mobile carriers and contains only fixed, negatively charged acceptor ions (N<sub>A</sub><sup>-</sup>). This is the depletion region. The energy bands at the surface bend downwards, indicating that the surface potential has increased.</li>
-
-
-
-                    <li><strong>Inversion (V<sub>G</sub> > V<sub>th</sub>):</strong> As the positive gate voltage is increased further, the downward bending of the energy bands becomes more pronounced. Eventually, the gate voltage becomes strong enough to attract minority carriers (electrons) from the bulk to the surface. When the concentration of these electrons at the surface becomes greater than the concentration of holes in the bulk, the surface is said to be inverted. This thin layer of mobile electrons at the interface forms a conducting n-channel. The gate voltage at which strong inversion occurs is known as the threshold voltage (V<sub>th</sub>). In the energy band diagram, strong inversion corresponds to the point where the intrinsic Fermi level at the surface (E<sub>i</sub>) drops below the bulk Fermi level (E<sub>F</sub>), and the surface potential becomes equal in magnitude but opposite in sign to the bulk Fermi potential (&phi;<sub>S</sub> = -2&phi;<sub>F</sub>).</li>
-
-
+                    <li><strong>Inversion (V<sub>G</sub> &gt; V<sub>th</sub>):</strong> As the positive gate voltage is increased further, the downward bending of the energy bands becomes more pronounced. Eventually, the gate voltage becomes strong enough to attract minority carriers (electrons) from the bulk to the surface. When the concentration of these electrons at the surface becomes greater than the concentration of holes in the bulk, the surface is said to be inverted. This thin layer of mobile electrons at the interface forms a conducting n-channel. The gate voltage at which strong inversion occurs is known as the threshold voltage (V<sub>th</sub>). In the energy band diagram, strong inversion corresponds to the point where the intrinsic Fermi level at the surface (E<sub>i</sub>) drops below the bulk Fermi level (E<sub>F</sub>), and the surface potential becomes equal in magnitude but opposite in sign to the bulk Fermi potential (&phi;<sub>S</sub> = -2&phi;<sub>F</sub>).</li>
 
                 </ul>
 
+                <p class="concept-explainer">Figures <a href="#fig-8">8</a> through <a href="#fig-11">11</a> show the full bias sequence: thermal equilibrium, accumulation, depletion, and inversion. Taken together, they show how gate bias reshapes the surface and finally creates a channel.</p>
+
+                <figure class="concept-figure" id="fig-8">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/MOSFET Thermal Equillibrium.webp" alt="MOS structure at thermal equilibrium" loading="lazy" decoding="async" width="930" height="642">
+                    <figcaption><strong>Figure 8.</strong> At thermal equilibrium, the surface charge is set by the natural balance of the structure, before any external gate bias reshapes the carrier distribution.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-9">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Cmos Accumulation .webp" alt="MOS capacitor in accumulation" loading="lazy" decoding="async" width="911" height="633">
+                    <figcaption><strong>Figure 9.</strong> Negative gate bias on a p-type body attracts holes toward the oxide interface, so the surface enters accumulation.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-10">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Mosfet Depletion region Vg _0.webp" alt="MOS capacitor in depletion under small positive gate bias" loading="lazy" decoding="async" width="930" height="642">
+                    <figcaption><strong>Figure 10.</strong> A small positive gate voltage pushes holes away from the surface and leaves behind fixed acceptor charge, creating depletion.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-11">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Mosfet Inversion.webp" alt="MOS capacitor in inversion" loading="lazy" decoding="async" width="915" height="632">
+                    <figcaption><strong>Figure 11.</strong> Once the gate field is strong enough, electrons gather at the surface and create the inversion layer that can act as a channel.</figcaption>
+                </figure>
 
 
-                
+                <h3>2.3 MOSFET Operation and I-V Characteristics</h3>
 
 
 
-                <h3>2.2 The MOSFET: Structure and Operation</h3>
-
-
-
-                <p>The MOSFET transforms the MOS capacitor's ability to control surface charge into a practical three-terminal switching device. This is achieved by adding two heavily doped regions of the opposite type to the substrate on either side of the gate.</p>
+                <p>Once the device structure and MOS electrostatics are clear, the operation becomes easier to read. The gate-to-source voltage (V<sub>GS</sub>) decides whether a channel exists, and the drain-to-source voltage (V<sub>DS</sub>) decides how strongly that channel is used. The I-V curves simply translate those two voltages into current.</p>
 
 
 
@@ -602,55 +810,7 @@
 
 
 
-                    <li><strong>Structure:</strong> An n-channel MOSFET (nMOS) consists of a p-type substrate into which two heavily doped n-type regions, the source and the drain, are diffused or implanted. The region between the source and drain is the channel, and it is controlled by the gate electrode, which is separated from the silicon surface by a thin layer of SiO<sub>2</sub>. A p-channel MOSFET (pMOS) has the complementary structure: an n-type substrate with p-type source and drain regions. In CMOS (Complementary MOS) technology, both nMOS and pMOS transistors are fabricated on the same chip, typically by creating an n-type "well" within a p-type substrate to house the pMOS devices.</li>
-
-
-
-                    <li><strong>Operation:</strong> The MOSFET acts as a voltage-controlled switch. The gate-to-source voltage (V<sub>GS</sub>) controls the conductivity of the channel. For an nMOS transistor:
-
-
-
-                        <ul>
-
-
-
-                            <li>If V<sub>GS</sub> is less than the threshold voltage (V<sub>th</sub>), no inversion layer is formed, and the path between source and drain consists of two back-to-back PN junctions. No current can flow, and the transistor is in the cut-off state.</li>
-
-
-
-                            <li>If V<sub>GS</sub> is greater than V<sub>th</sub>, a continuous n-type inversion channel is formed, connecting the source and drain. Now, if a positive drain-to-source voltage (V<sub>DS</sub>) is applied, electrons are drawn from the source, travel through the channel, and are collected at the drain. This flow of electrons constitutes the drain current, I<sub>D</sub>. The transistor is ON.</li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                </ul>
-
-
-
-
-
-
-
-                <h3>2.3 MOSFET Current-Voltage (I-V) Characteristics</h3>
-
-
-
-                <p>The relationship between the drain current (I<sub>D</sub>) and the terminal voltages (V<sub>GS</sub>, V<sub>DS</sub>) defines the MOSFET's I-V characteristics. The behavior of the device in the ON state is divided into two main regions of operation.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Cut-off Region (V<sub>GS</sub> &lt; V<sub>th</sub>):</strong> As described above, the transistor is OFF, and the drain current is ideally zero (I<sub>D</sub> = 0).</li>
+                    <li><strong>Cut-off Region (V<sub>GS</sub> &lt; V<sub>th</sub>):</strong> No inversion layer is formed, and the path between source and drain behaves like two back-to-back PN junctions. The transistor is OFF, and the drain current is ideally zero (I<sub>D</sub> = 0).</li>
 
 
 
@@ -686,7 +846,18 @@
 
 
 
-                <p>This dual functionality is the cornerstone of CMOS circuit design. The ability to act as a switch (cut-off vs. ON), a resistor (linear region), and a current source (saturation region) allows the MOSFET to be used in a vast array of analog and digital circuits. In a CMOS inverter, for instance, during a switching event, one transistor often operates in the saturation region, acting as a current source to charge or discharge the output load, while the other operates in the linear region, acting as a resistive load. This dynamic interaction between the two operational modes is what enables the sharp, robust switching characteristics of CMOS logic.</p>
+                <p>This mix of behaviors is exactly why the MOSFET is so useful. The same device can look like an open switch, a controlled resistor, or a current source depending on the operating point. In a CMOS inverter, one device may be charging or discharging the output in saturation while the other behaves more like a resistive path. Good digital switching comes from that interaction, not from a single simplified device mode.</p>
+                <p class="concept-explainer"><a href="#fig-12">Figure 12</a> shows the channel shape once a positive V<sub>DS</sub> is applied, and <a href="#fig-13">Figure 13</a> shows the pinch-off condition that marks deep saturation. Those two views connect the equations to the physical shape of the channel.</p>
+
+                <figure class="concept-figure" id="fig-12">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Mosfet inversion Vds positive.webp" alt="MOSFET inversion layer with positive drain voltage" loading="lazy" decoding="async" width="920" height="672">
+                    <figcaption><strong>Figure 12.</strong> Applying positive V<sub>DS</sub> tilts the channel potential, so the inversion layer becomes weaker near the drain than near the source.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-13">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/pinch off deep saturation.webp" alt="Pinch-off condition of a MOSFET in deep saturation" loading="lazy" decoding="async" width="801" height="722">
+                    <figcaption><strong>Figure 13.</strong> At pinch-off, the drain end of the channel collapses first. Current still flows, but it is now controlled mainly by gate overdrive rather than by additional channel length.</figcaption>
+                </figure>
 
 
 
@@ -706,7 +877,7 @@
 
 
 
-                <p>The threshold voltage (V<sub>th</sub>) is arguably the most important parameter of a MOSFET, as it defines the transition point between the ON and OFF states. While the first-order model provides a foundational understanding, the behavior of modern, scaled-down transistors is heavily influenced by second-order effects that cause V<sub>th</sub> to deviate significantly from a simple constant. In contemporary VLSI design, these are not minor corrections but dominant factors that must be managed.</p>
+                <p>The threshold voltage (V<sub>th</sub>) is the line between "channel not formed well enough" and "device conducts strongly enough to use." In first-pass analysis we often treat it as a fixed number. Real transistors do not give us that luxury. Bias conditions, geometry, and short-channel physics all move V<sub>th</sub> around, and those shifts directly affect speed, leakage, and noise margins.</p>
 
 
 
@@ -718,7 +889,7 @@
 
 
 
-                <p>The threshold voltage is the minimum gate-to-source voltage required to create a strong inversion layer (the channel). Its value is determined by the fundamental physics of the MOS structure and is composed of several components:</p>
+                <p>Threshold voltage is the minimum gate-to-source voltage needed to form strong inversion under the gate. It is not set by one knob; it comes from several physical contributions in the MOS stack:</p>
 
 
 
@@ -730,15 +901,15 @@
 
 
 
-                    <li><strong>Surface Inversion Component (−2&phi;<sub>F</sub>):</strong> The portion of the gate voltage needed to bend the energy bands sufficiently to achieve strong inversion at the surface. &phi;<sub>F</sub> is the bulk Fermi potential of the substrate.</li>
+                    <li><strong>Surface Inversion Component (âˆ’2&phi;<sub>F</sub>):</strong> The portion of the gate voltage needed to bend the energy bands sufficiently to achieve strong inversion at the surface. &phi;<sub>F</sub> is the bulk Fermi potential of the substrate.</li>
 
 
 
-                    <li><strong>Depletion Charge Component (−Q<sub>B0</sub>/C<sub>ox</sub>):</strong> The voltage required to offset the charge of the fixed ions in the depletion region that forms under the gate before inversion occurs.</li>
+                    <li><strong>Depletion Charge Component (âˆ’Q<sub>B0</sub>/C<sub>ox</sub>):</strong> The voltage required to offset the charge of the fixed ions in the depletion region that forms under the gate before inversion occurs.</li>
 
 
 
-                    <li><strong>Fixed Oxide Charge Component (−Q<sub>ox</sub>/C<sub>ox</sub>):</strong> The voltage needed to compensate for fixed positive charges that are trapped at the silicon-oxide interface during fabrication.</li>
+                    <li><strong>Fixed Oxide Charge Component (âˆ’Q<sub>ox</sub>/C<sub>ox</sub>):</strong> The voltage needed to compensate for fixed positive charges that are trapped at the silicon-oxide interface during fabrication.</li>
 
 
 
@@ -746,7 +917,7 @@
 
 
 
-                <p>Combining these terms gives the expression for the zero-bias threshold voltage, V<sub>T0</sub>: <code>V<sub>T0</sub> = &Phi;<sub>GC</sub> − 2&phi;<sub>F</sub> − Q<sub>B0</sub>/C<sub>ox</sub> − Q<sub>ox</sub>/C<sub>ox</sub></code></p>
+                <p>Combining these terms gives the expression for the zero-bias threshold voltage, V<sub>T0</sub>: <code>V<sub>T0</sub> = &Phi;<sub>GC</sub> âˆ’ 2&phi;<sub>F</sub> âˆ’ Q<sub>B0</sub>/C<sub>ox</sub> âˆ’ Q<sub>ox</sub>/C<sub>ox</sub></code></p>
 
 
 
@@ -758,7 +929,7 @@
 
 
 
-                <p>In many circuit configurations, particularly when transistors are connected in series (stacked), the source terminal of a transistor is not at the same potential as its substrate (or body). This source-to-substrate voltage (V<sub>SB</sub>) has a direct impact on the threshold voltage.</p>
+                <p>In real circuits, the source terminal is often not sitting at the same potential as the body. That is common in stacked logic, transmission structures, and many internal nodes. Once V<sub>SB</sub> is non-zero, the channel no longer forms at the same gate voltage as before.</p>
 
 
 
@@ -774,7 +945,7 @@
 
 
 
-                        <pre><code>V<sub>T</sub> = V<sub>T0</sub> + &gamma;(&radic;(|−2&phi;<sub>F</sub> + V<sub>SB</sub>|) − &radic;(|2&phi;<sub>F</sub>|))</code></pre>
+                        <pre><code>V<sub>T</sub> = V<sub>T0</sub> + &gamma;(&radic;(|âˆ’2&phi;<sub>F</sub> + V<sub>SB</sub>|) âˆ’ &radic;(|2&phi;<sub>F</sub>|))</code></pre>
 
 
 
@@ -790,55 +961,66 @@
 
 
 
-                <p>The body effect is a critical consideration in physical design. For example, in a two-input NAND gate, the pull-down network consists of two nMOS transistors in series. When both inputs are high, the source of the top transistor is at the drain voltage of the bottom transistor, which is above ground. This non-zero V<sub>SB</sub> increases the V<sub>th</sub> of the top transistor, making it "weaker" (i.e., providing less current) than the bottom one. To achieve a fast and symmetrical pull-down, designers must compensate for this by increasing the width-to-length (W/L) ratio of the top transistor, which in turn increases its area and input capacitance.</p>
+                <p>The body effect shows up immediately in real standard cells. In a two-input NAND gate, the pull-down network uses two nMOS transistors in series. When both inputs are high, the source of the upper device rises above ground, which means V<sub>SB</sub> is no longer zero. Its threshold voltage increases, the device becomes weaker, and designers often compensate by increasing its W/L ratio. That fix improves current, but it also costs area and adds input capacitance.</p>
 
+                <h3>3.3 Channel Length Modulation and Velocity Saturation</h3>
 
-
-                
-
-
-
-                <h3>3.3 Small-Geometry Effects on V<sub>th</sub> and Current</h3>
-
-
-
-                <p>As transistor dimensions shrink into the deep submicron regime, the simple long-channel models become inadequate. Several small-geometry effects emerge that significantly alter device behavior.</p>
-
-
+                <p>As the channel gets shorter, the clean long-channel picture starts to bend. Effects that used to look like minor corrections begin to shape the current directly. That is why modern device behavior has to be read with geometry in mind, not just with the basic square-law equations.</p>
 
                 <ul>
 
-
-
-                    <li><strong>Channel Length Modulation (CLM):</strong> In the saturation region, the drain current is ideally independent of V<sub>DS</sub>. In reality, as V<sub>DS</sub> increases beyond the saturation point (V<sub>DSAT</sub>), the depletion region around the drain expands and the channel pinch-off point moves slightly towards the source. This reduces the effective channel length (L<sub>eff</sub>). Since drain current is inversely proportional to channel length, this effect causes the saturation current to increase slightly with V<sub>DS</sub>. This gives the transistor a finite output resistance and is modeled by adding a corrective term to the saturation current equation:
-
-
+                    <li><strong>Channel Length Modulation (CLM):</strong> In the saturation region, the drain current is ideally independent of V<sub>DS</sub>. In reality, as V<sub>DS</sub> increases beyond the saturation point (V<sub>DSAT</sub>), the depletion region around the drain expands and the channel pinch-off point moves slightly toward the source. This reduces the effective channel length (L<sub>eff</sub>). Since drain current is inversely proportional to channel length, this effect causes the saturation current to increase slightly with V<sub>DS</sub>. This gives the transistor a finite output resistance and is modeled by adding a corrective term to the saturation current equation:
 
                         <pre><code>I<sub>D,sat</sub> = I<sub>D,sat,ideal</sub> &sdot; (1 + &lambda;V<sub>DS</sub>)</code></pre>
 
-
-
                         where &lambda; is the channel length modulation parameter.
-
-
 
                     </li>
 
-
-
-                    <li><strong>Short-Channel Effects and DIBL:</strong> When the channel length (L) becomes comparable to the source and drain junction depletion depths, the gate loses some control over the channel. The source and drain junctions themselves help to support a portion of the depletion charge, meaning less charge needs to be supported by the gate. This results in a reduction of the threshold voltage as L decreases. Furthermore, the potential barrier in the channel that prevents current flow in the subthreshold region is controlled not just by V<sub>GS</sub> but also by V<sub>DS</sub>. A high drain voltage can lower this barrier, an effect known as Drain-Induced Barrier Lowering (DIBL). DIBL causes a further reduction in V<sub>th</sub> at high V<sub>DS</sub> and is a major contributor to subthreshold leakage current in modern devices.</li>
-
-
-
-                    <li><strong>Velocity Saturation:</strong> In long-channel devices, carrier velocity is proportional to the electric field. In short-channel devices, the lateral electric field along the channel can be very high (>10<sup>4</sup> V/cm). At such high fields, the velocity of charge carriers no longer increases linearly with the field and approaches a saturation velocity (v<sub>sat</sub>). This means the current delivered by the transistor stops increasing quadratically with V<sub>GS</sub> in saturation and becomes approximately linear. This effect limits the maximum current a transistor can provide, reducing its drive strength compared to what long-channel models would predict.</li>
-
-
+                    <li><strong>Velocity Saturation:</strong> In long-channel devices, carrier velocity is proportional to the electric field. In short-channel devices, the lateral electric field along the channel can be very high (&gt;10<sup>4</sup> V/cm). At such high fields, the velocity of charge carriers no longer increases linearly with the field and approaches a saturation velocity (v<sub>sat</sub>). This means the current delivered by the transistor stops increasing quadratically with V<sub>GS</sub> in saturation and becomes approximately linear. This effect limits the maximum current a transistor can provide, reducing its drive strength compared to what long-channel models would predict.</li>
 
                 </ul>
 
+                <p>The practical takeaway is simple: transistor parameters move with bias and geometry. In modern VLSI, managing those shifts through modeling, cell design, and signoff analysis is part of the job, not a refinement added at the end.</p>
 
+                <h3>3.4 Drain-Induced Barrier Lowering (DIBL)</h3>
 
-                <p>These second-order effects illustrate that in modern VLSI, device parameters are not static but are complex functions of the operating conditions and physical geometry. Managing these variations through careful design and modeling is a central task of the VLSI engineer.</p>
+                <p>Drain-Induced Barrier Lowering shows up when the drain gets strong enough to interfere with a job that should mostly belong to the gate. In a long-channel device, the source-side barrier is controlled mainly by gate electrostatics. In a short-channel device, a large drain voltage reaches back into the channel and pulls that barrier down.</p>
+
+                <p>That change matters because the transistor can begin to conduct more easily even though V<sub>GS</sub> has not increased. In plain terms, the apparent threshold voltage falls as V<sub>DS</sub> rises. The off-state gets leakier, subthreshold current increases, and bias conditions that once looked safe start to move. <a href="#fig-14">Figure 14</a> gives the quick intuition, and <a href="#fig-15">Figure 15</a> shows the same idea with a more detailed electrostatic picture.</p>
+
+                <figure class="concept-figure" id="fig-14">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/DIBIL short.webp" alt="Short explanation view of drain-induced barrier lowering" loading="lazy" decoding="async" width="853" height="545">
+                    <figcaption><strong>Figure 14.</strong> DIBL makes the off-state barrier smaller, so the transistor starts leaking more current as the drain voltage rises.</figcaption>
+                </figure>
+
+                <p>Figure 14 gives the quick picture: a stronger drain does not just wait at the end of the channel. It reaches toward the source and makes it easier for carriers to enter.</p>
+
+                <figure class="concept-figure" id="fig-15">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/DIBIL.webp" alt="Detailed drain-induced barrier lowering diagram" loading="lazy" decoding="async" width="853" height="540">
+                    <figcaption><strong>Figure 15.</strong> This detailed view shows the real issue in a short channel: the drain starts helping the gate shape the barrier, which weakens gate control.</figcaption>
+                </figure>
+
+                <p>Figure 15 adds the deeper message: DIBL is not just a leakage keyword. It is a sign that the device electrostatics are being shared between terminals in a way that hurts threshold stability.</p>
+
+                <h3>3.5 Gate-Induced Drain Leakage (GIDL)</h3>
+
+                <p>GIDL is a different leakage path from ordinary subthreshold current. It does not require a fully formed channel between source and drain. Instead, it appears near the drain-side edge of the gate when the local electric field becomes extremely strong.</p>
+
+                <p>Under that field, band-to-band tunneling can generate carriers near the gate-drain overlap region. That means leakage can appear even when the transistor is supposed to be off. The important distinction is that the current is born near the drain edge, not simply because the entire channel barrier has dropped. <a href="#fig-16">Figure 16</a> and <a href="#fig-17">Figure 17</a> make that local high-field picture much easier to see.</p>
+
+                <figure class="concept-figure" id="fig-16">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/GIDIL 1.webp" alt="Gate-induced drain leakage illustration" loading="lazy" decoding="async" width="875" height="550">
+                    <figcaption><strong>Figure 16.</strong> GIDL is a field-driven leakage effect near the drain-side edge of the gate, not just a simple channel-conduction problem.</figcaption>
+                </figure>
+
+                <figure class="concept-figure" id="fig-17">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/GIDIL 2 (1).webp" alt="Second view of gate-induced drain leakage" loading="lazy" decoding="async" width="895" height="1131">
+                    <figcaption><strong>Figure 17.</strong> The second GIDL image reinforces that overlap regions and edge fields matter strongly in scaled devices.</figcaption>
+                </figure>
+
+                <p>In scaled technologies, GIDL matters in high-field corners, IO devices, and bias conditions where the gate and drain create a harsh local field. That is why device engineers pay attention to overlap design, junction shaping, and oxide field management instead of treating leakage as a single-number problem.</p>
+
 
 
 
@@ -858,7 +1040,7 @@
 
 
 
-                <p>The CMOS inverter is the most fundamental logic gate in digital VLSI design. Its design and analysis serve as a template for understanding all static CMOS logic. It consists of a complementary pair of transistors—one nMOS and one pMOS—with their gates and drains connected together. This simple structure provides a robust, low-power implementation of the logical NOT operation.</p>
+                <p>The CMOS inverter is the first complete digital building block worth mastering. It looks simple, but it contains the same ideas that appear again in larger logic: complementary pull-up and pull-down action, a well-defined transfer curve, useful noise margins, and delay set by current charging or discharging capacitance. The circuit uses one nMOS and one pMOS transistor with their gates tied together and their drains tied together to implement the NOT function cleanly and efficiently.</p>
 
 
 
@@ -870,7 +1052,7 @@
 
 
 
-                <p>An ideal inverter would exhibit a perfectly sharp transition in its Voltage Transfer Characteristic (VTC), which plots the output voltage (V<sub>out</sub>) as a function of the input voltage (V<sub>in</sub>). Its key characteristics would be:</p>
+                <p>An ideal inverter would switch instantly and cleanly. Its Voltage Transfer Characteristic (VTC), a plot of V<sub>out</sub> versus V<sub>in</sub>, would have a few obvious features:</p>
 
 
 
@@ -898,7 +1080,7 @@
 
 
 
-                <p>Real inverters deviate from this ideal. To quantify their performance, several critical voltage points and metrics are defined:</p>
+                <p>Real inverters do not switch that sharply. To describe how close a practical design gets, we define a set of voltage points and robustness metrics:</p>
 
 
 
@@ -930,11 +1112,11 @@
 
 
 
-                            <li>Low Noise Margin (NM<sub>L</sub>): NM<sub>L</sub> = V<sub>IL</sub> − V<sub>OL</sub></li>
+                            <li>Low Noise Margin (NM<sub>L</sub>): NM<sub>L</sub> = V<sub>IL</sub> âˆ’ V<sub>OL</sub></li>
 
 
 
-                            <li>High Noise Margin (NM<sub>H</sub>): NM<sub>H</sub> = V<sub>OH</sub> − V<sub>IH</sub></li>
+                            <li>High Noise Margin (NM<sub>H</sub>): NM<sub>H</sub> = V<sub>OH</sub> âˆ’ V<sub>IH</sub></li>
 
 
 
@@ -958,7 +1140,7 @@
 
 
 
-                <p>The VTC of a CMOS inverter is derived by equating the drain currents of the nMOS (I<sub>Dn</sub>) and pMOS (I<sub>Dp</sub>) transistors (I<sub>Dn</sub> = I<sub>Dp</sub>) and solving for V<sub>out</sub> as V<sub>in</sub> is swept from 0 to V<sub>DD</sub>. The analysis reveals five distinct regions of operation, defined by the states (cut-off, linear, or saturation) of the two transistors.</p>
+                <p>The DC analysis comes from matching the pull-down current of the nMOS and the pull-up current of the pMOS as the input sweeps from 0 to V<sub>DD</sub>. That current balance breaks the VTC into five operating regions, depending on whether each device is in cut-off, linear, or saturation.</p>
 
 
 
@@ -1006,7 +1188,7 @@
 
 
 
-                <p>The shape of the VTC, and thus the noise margins and switching point, is critically dependent on the ratio of the transconductance parameters, often denoted as the beta ratio (&beta;<sub>n</sub>/&beta;<sub>p</sub>) or transconductance ratio (k<sub>R</sub> = k<sub>n</sub>/k<sub>p</sub>). Since hole mobility (&mu;<sub>p</sub>) is typically 2-3 times lower than electron mobility (&mu;<sub>n</sub>), a pMOS transistor needs a correspondingly wider channel (larger W) than an nMOS transistor to provide the same amount of current.</p>
+                <p>The shape of the VTC, and therefore the switching point and noise margins, depends strongly on the ratio between nMOS and pMOS drive strength. Designers often call this the beta ratio (&beta;<sub>n</sub>/&beta;<sub>p</sub>) or the transconductance ratio (k<sub>R</sub> = k<sub>n</sub>/k<sub>p</sub>).</p>
 
 
 
@@ -1022,7 +1204,7 @@
 
 
 
-                <p>The dynamic performance of an inverter is characterized by its propagation delay—the time it takes for the output to respond to a change at the input. This delay is primarily determined by the time required to charge or discharge the total load capacitance (C<sub>load</sub>) connected to the output node. C<sub>load</sub> is the sum of the internal parasitic capacitances of the inverter itself and the external capacitances from interconnects and the gates of subsequent logic stages.</p>
+                <p>Dynamic behavior answers a different question: once the input changes, how fast does the output move? The propagation delay is mainly the time required to charge or discharge the total load capacitance (C<sub>load</sub>) connected to the output node.</p>
 
 
 
@@ -1058,11 +1240,18 @@
 
 
 
-                <p>The delay is fundamentally governed by the relationship I = C(dV/dt). A stronger transistor (larger W/L ratio) can source or sink more current (I), allowing it to charge or discharge the capacitance (C) faster, thus reducing the delay. However, increasing a transistor's size also increases its own parasitic gate and diffusion capacitances, which adds to the load of the preceding stage. This creates a fundamental trade-off between the drive strength of a gate and the load it presents to its driver, a central theme in performance optimization.</p>
+                <p>The key relationship is I = C(dV/dt). A stronger transistor can move more current and change the node voltage faster. But that same larger device adds gate and diffusion capacitance, which loads the previous stage. So sizing is never free. You gain drive strength locally and pay for it somewhere else in the path.</p>
 
+                <p class="concept-explainer">Delay is never set by an ideal load alone. <a href="#fig-18">Figure 18</a> marks the extra capacitances that sit around a real MOSFET, including overlap capacitance, junction capacitance, and gate capacitance. Every transition has to charge or discharge those hidden capacitors too.</p>
 
+                <figure class="concept-figure" id="fig-18">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Nmos Parasitic Cap .drawio.webp" alt="Parasitic capacitances around an nMOS transistor" loading="lazy" decoding="async" width="762" height="311">
+                    <figcaption><strong>Figure 18.</strong> Real MOSFETs carry several parasitic capacitances. Those hidden capacitors slow switching and add directly to dynamic power.</figcaption>
+                </figure>
 
-                <p>The superiority of the CMOS inverter is best understood when compared to earlier technologies.</p>
+                <p>In CMOS switching, power is usually discussed in three pieces: dynamic power from charging and discharging capacitance, short-circuit power during the brief overlap when both devices conduct, and static leakage power when the gate is nominally idle. That basic split is enough to connect inverter behavior to later power analysis.</p>
+
+                <p>The advantage of CMOS becomes even clearer when it is compared with older inverter styles.</p>
 
 
 
@@ -1158,7 +1347,7 @@
 
 
 
-                    <p>Data synthesized from source document.</p>
+                    
 
 
 
@@ -1166,7 +1355,7 @@
 
 
 
-                <p>This comparison starkly illustrates the advantages of CMOS. Its rail-to-rail output swing (V<sub>OH</sub> = V<sub>DD</sub>, V<sub>OL</sub> = 0) results in large, symmetric noise margins, making it highly robust. Most importantly, in a static state (input high or low), one of the transistors is always off, meaning there is no direct path from V<sub>DD</sub> to ground. This results in near-zero static power dissipation, a decisive advantage that has made CMOS the dominant technology for virtually all digital applications.</p>
+                <p>This comparison makes the CMOS advantage easy to see. Rail-to-rail output gives large, balanced noise margins, and in either steady logic state one transistor is off, so there is no direct DC path from V<sub>DD</sub> to ground. That near-zero static power is the main reason CMOS replaced the older ratioed styles for mainstream digital design.</p>
 
 
 
@@ -1186,7 +1375,7 @@
 
 
 
-                 <p>Building on the principles of the CMOS inverter, this section explores the design of more complex logic functions. It covers how to construct combinational logic gates that perform Boolean operations and introduces sequential circuits, which add the critical element of memory or state to digital systems.</p>
+                 <p>Once the inverter is clear, larger logic gates become much easier to read. The same complementary design idea scales from a single NOT gate to NANDs, NORs, AOI/OAI structures, and the storage elements that give digital systems memory.</p>
 
 
 
@@ -1194,7 +1383,7 @@
 
 
 
-                 <p>Static CMOS logic gates are constructed using a complementary pull-up network (PUN) and pull-down network (PDN). The PDN is built with nMOS transistors to connect the output to ground (V<sub>SS</sub>), while the PUN is built with pMOS transistors to connect the output to the power supply (V<sub>DD</sub>).</p>
+                 <p>Static CMOS gates use a pull-up network (PUN) made of pMOS devices and a pull-down network (PDN) made of nMOS devices. One network connects the output to V<sub>DD</sub>, the other to ground, and the two are built as logical duals.</p>
 
 
 
@@ -1266,7 +1455,7 @@
 
 
 
-                 <p>Optimizing the performance of complex logic gates requires careful transistor sizing, which involves adjusting the width-to-length (W/L) ratios of the transistors. The goal is typically to achieve balanced rise and fall times, equivalent to the drive strength of a reference inverter.</p>
+                 <p>Complex gates only work well when the transistor sizes are chosen carefully. Sizing means adjusting W/L so the gate meets delay targets without creating excessive capacitance or area.</p>
 
 
 
@@ -1287,378 +1476,57 @@
 
 
                  </ul>
-
-
-
                  <h3>5.3 Sequential Logic: Latches and Flip-Flops</h3>
 
-
-
-                 <p>While combinational logic produces outputs based on current inputs, sequential logic incorporates memory to produce outputs based on both current inputs and past states. The fundamental building block of memory is the bistable element.</p>
-
-
+                 <p>Combinational logic reacts to the input of the moment. Sequential logic keeps state, which lets the circuit remember what happened earlier. That memory starts with bistable feedback.</p>
 
                  <ul>
 
-
-
                     <li><strong>Bistable Elements:</strong> The simplest memory element is formed by cross-coupling two inverters. This circuit has two stable states (one output high and the other low, or vice-versa) and will hold its state indefinitely as long as power is supplied.</li>
-
-
 
                     <li><strong>Latches (Level-Sensitive):</strong> A latch is a memory element whose output can change whenever its clock (or enable) input is active.
 
-
-
                         <ul>
-
-
 
                             <li><strong>SR Latch:</strong> Formed from cross-coupled NOR or NAND gates, it has Set (S) and Reset (R) inputs to control its state.</li>
 
-
-
                             <li><strong>Clocked D-Latch:</strong> A more common variant that has a single data input (D) and a clock input (CLK). When CLK is high, the latch is transparent, meaning its output Q follows the D input. When CLK goes low, the latch stores the value of D at that instant and holds it until the next active clock phase.</li>
-
-
 
                         </ul>
 
-
-
                     </li>
 
-
-
-                    <li><strong>Flip-Flops (Edge-Triggered):</strong> A flip-flop is a memory element that samples its input and changes its output only at a specific instant in time—the active edge (either rising or falling) of the clock signal.
-
-
+                    <li><strong>Flip-Flops (Edge-Triggered):</strong> A flip-flop is a memory element that samples its input and changes its output only at a specific instant in time, the active edge of the clock signal.
 
                         <ul>
 
-
-
-                            <li><strong>Master-Slave D-Flip-Flop:</strong> A common implementation consists of two cascaded D-latches. The first latch (the "master") is controlled by the clock signal, while the second (the "slave") is controlled by the inverted clock signal. For a positive-edge-triggered flip-flop:
-
-
+                            <li><strong>Master-Slave D-Flip-Flop:</strong> A common implementation consists of two cascaded D-latches. The first latch (the master) is controlled by the clock signal, while the second (the slave) is controlled by the inverted clock signal. For a positive-edge-triggered flip-flop:
 
                                 <ol>
 
-
-
                                     <li>When CLK is low, the master latch is transparent and samples the D input. The slave latch is closed and holds the previous value.</li>
 
+                                    <li>On the rising edge of CLK, the master latch closes, capturing the value of D at that instant. At the same time, the slave latch becomes transparent and passes the newly captured value from the master to the final output Q.</li>
 
-
-                                    <li>On the rising edge of CLK, the master latch closes, capturing the value of D at that instant. Simultaneously, the slave latch becomes transparent, passing the newly captured value from the master to the final output Q.</li>
-
-
-
-                                    <li>When CLK is high, the slave latch remains transparent, but its input from the master is stable. The master latch is closed and is immune to any further changes on the D input.</li>
-
-
+                                    <li>When CLK is high, the slave latch remains transparent, but its input from the master is stable. The master latch is closed and ignores any further changes on D.</li>
 
                                 </ol>
 
-
-
-                                This master-slave structure ensures that the output changes only in response to the clock edge, making flip-flops the preferred storage element for building synchronous digital systems like registers and state machines.
-
-
+                                This master-slave structure ensures that the output changes only in response to the clock edge, which is why flip-flops are the preferred storage element for synchronous digital systems such as registers and state machines.
 
                             </li>
 
-
-
                         </ul>
 
-
-
                     </li>
-
-
 
                  </ul>
 
 
 
+
             </section>
 
-
-
-            
-
-
-
-            <section class="scroll-reveal">
-
-
-
-                <h2>Power Dissipation in CMOS Circuits</h2>
-
-
-
-                <p>Power consumption has evolved from a secondary concern in early VLSI to a primary design constraint, especially for portable devices and high-performance processors. The low static power of CMOS was its key advantage, but as technologies have scaled down, dynamic and leakage power have become critical challenges.</p>
-
-
-
-                <h3>6.1 Sources of Power Consumption</h3>
-
-
-
-                <p>The total power consumed by a CMOS circuit is the sum of three main components.</p>
-
-
-
-                <ol>
-
-
-
-                    <li><strong>Dynamic (Switching) Power:</strong> This is the power consumed during the charging and discharging of the load capacitances at the output of logic gates. When a node transitions from 0 to 1, energy is drawn from the power supply (V<sub>DD</sub>) to charge the node's capacitance (C<sub>L</sub>). Half of this energy is stored in the capacitor, and the other half is dissipated as heat in the pull-up pMOS transistor. When the node transitions from 1 to 0, the stored energy is dissipated as heat in the pull-down nMOS transistor. The average dynamic power is given by the well-known formula:
-
-
-
-                        <pre><code>P<sub>dynamic</sub> = &alpha; &sdot; C<sub>L</sub> &sdot; V<sub>DD</sub><sup>2</sup> &sdot; f<sub>clk</sub></code></pre>
-
-
-
-                        where &alpha; is the activity factor (the probability that a power-consuming transition occurs in a clock cycle), C<sub>L</sub> is the total load capacitance, V<sub>DD</sub> is the supply voltage, and f<sub>clk</sub> is the clock frequency.
-
-
-
-                    </li>
-
-
-
-                    <li><strong>Short-Circuit Power:</strong> During the finite rise and fall times of an input signal, there is a brief period when both the pMOS and nMOS transistors in a CMOS gate are simultaneously ON. This creates a direct "short-circuit" path from V<sub>DD</sub> to ground, causing a current spike that dissipates power without contributing to charging the load capacitance. This component is exacerbated by slow input transition times and small output loads.</li>
-
-
-
-                    <li><strong>Static (Leakage) Power:</strong> This is the power consumed when the circuit is in a steady state (not switching). In deep submicron technologies, leakage has become a dominant contributor to total power consumption. The primary sources of leakage are:
-
-
-
-                        <ul>
-
-
-
-                           <li><strong>Subthreshold Leakage:</strong> The current that flows between the source and drain even when the gate-to-source voltage is below the threshold voltage (V<sub>GS</sub> &lt; V<sub>th</sub>). This current is exponentially dependent on V<sub>th</sub> and temperature, making it a severe problem for low-V<sub>th</sub> devices used in high-performance circuits.</li>
-
-
-
-                           <li><strong>Gate Oxide Tunneling:</strong> In modern devices, the gate oxide layer is so thin (a few atomic layers) that electrons can tunnel directly through it from the gate to the substrate or channel, creating a gate leakage current.</li>
-
-
-
-                           <li><strong>Junction Leakage:</strong> The reverse-bias current that flows through the PN junctions formed by the source/drain diffusion regions and the substrate or well.</li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                </ol>
-
-
-
-                <h3>6.2 Low-Power Design Methodologies</h3>
-
-
-
-                <p>Low-power design strategies target the parameters in the power equation. A comprehensive approach involves optimization at all levels of design, from architecture to circuit and physical layout.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Reducing Supply Voltage (V<sub>DD</sub>):</strong> Since dynamic power is proportional to V<sub>DD</sub><sup>2</sup>, reducing the supply voltage is the most effective method for power reduction. However, this comes at the cost of increased gate delay, which degrades performance.</li>
-
-
-
-                    <li><strong>Voltage Scaling and Performance Trade-off:</strong> The central challenge is to lower V<sub>DD</sub> without sacrificing speed. This can be partially achieved by also scaling down the threshold voltage (V<sub>th</sub>), but this increases subthreshold leakage.</li>
-
-
-
-                    <li><strong>Architectural Techniques:</strong> To maintain system throughput at a lower clock frequency (and thus lower V<sub>DD</sub>), architectural parallelism or pipelining can be employed. By processing multiple data streams in parallel or by breaking a long combinational path into smaller pipelined stages, the time available for each operation is increased, allowing for a lower, power-saving supply voltage.</li>
-
-
-
-                    <li><strong>Multiple Voltage Domains (MVS):</strong> In this advanced technique, different parts of a chip run on different supply voltages. Critical paths that require high performance are powered by a higher V<sub>DD</sub>, while less critical paths operate at a lower V<sub>DD</sub> to save power. This requires level-shifter circuits to interface between the different voltage domains.</li>
-
-
-
-                    <li><strong>Technology Scaling:</strong> Historically, technology scaling has been a key driver for performance and power improvements. Two primary scaling models exist:
-
-
-
-                        <div>
-
-
-
-                            <h4>Table 2: Comparison of Technology Scaling Methodologies</h4>
-
-
-
-                            <table>
-
-
-
-                                <thead>
-
-
-
-                                    <tr>
-
-
-
-                                        <th>Parameter</th>
-
-
-
-                                        <th>Constant Field Scaling (Factor S > 1)</th>
-
-
-
-                                        <th>Constant Voltage Scaling (Factor S > 1)</th>
-
-
-
-                                    </tr>
-
-
-
-                                </thead>
-
-
-
-                                <tbody>
-
-
-
-                                    <tr><td>Dimensions (W, L, t<sub>ox</sub>)</td><td>1/S</td><td>1/S</td></tr>
-
-
-
-                                    <tr><td>Supply Voltage (V<sub>DD</sub>)</td><td>1/S</td><td>1 (Constant)</td></tr>
-
-
-
-                                    <tr><td>Threshold Voltage (V<sub>th</sub>)</td><td>1/S</td><td>1 (Constant)</td></tr>
-
-
-
-                                    <tr><td>Gate Capacitance (C<sub>g</sub>)</td><td>1/S</td><td>1/S</td></tr>
-
-
-
-                                    <tr><td>Drain Current (I<sub>D</sub>)</td><td>1/S</td><td>S</td></tr>
-
-
-
-                                    <tr><td>Power Dissipation (P)</td><td>1/S<sup>2</sup></td><td>S</td></tr>
-
-
-
-                                    <tr><td>Power Density (P/Area)</td><td>1 (Constant)</td><td>S<sup>3</sup></td></tr>
-
-
-
-                                    <tr><td>Delay (t<sub>d</sub>)</td><td>1/S</td><td>1/S<sup>2</sup></td></tr>
-
-
-
-                                    <tr><td>Energy (E=P&sdot;t<sub>d</sub>)</td><td>1/S<sup>3</sup></td><td>1/S</td></tr>
-
-
-
-                                </tbody>
-
-
-
-                            </table>
-
-
-
-                             <p>Data sourced from source document.</p>
-
-
-
-                        </div>
-
-
-
-                        <p>This table reveals a critical historical trend. Constant field scaling keeps power density constant but requires changing voltage standards. For many years, the industry followed constant voltage scaling to maintain compatibility, which provided immense performance gains (delay improved as 1/S<sup>2</sup>) but led to an unsustainable explosion in power density (S<sup>3</sup>). This is the primary reason power management has become a central focus of modern VLSI design.</p>
-
-
-
-                    </li>
-
-
-
-                    <li><strong>Reducing Switching Activity (&alpha;):</strong>
-
-
-
-                        <ul>
-
-
-
-                            <li><strong>Clock Gating:</strong> This is one of the most effective techniques. The clock signal is a major power consumer as it switches every cycle and drives a large capacitive load. Clock gating involves using logic (e.g., an AND gate with an enable signal) to disable the clock to modules or registers that are idle, thus preventing all switching activity within them.</li>
-
-
-
-                            <li><strong>Glitch Reduction:</strong> Spurious transitions, or glitches, in combinational logic can cause significant unnecessary power dissipation. These can be minimized by balancing the delays of paths that converge at a logic gate.</li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                    <li><strong>Reducing Switched Capacitance (C<sub>L</sub>):</strong> This involves minimizing both the physical capacitance of wires and the size of transistors. It is achieved through careful logic synthesis, selection of appropriate circuit styles (e.g., pass-transistor logic can sometimes implement functions with fewer transistors), and optimized physical design (placement and routing).</li>
-
-
-
-                    <li><strong>Controlling Leakage Power:</strong> As leakage becomes dominant, specific techniques are required:
-
-
-
-                        <ul>
-
-
-
-                            <li><strong>Multiple Threshold Voltages (Multi-V<sub>th</sub>):</strong> The standard cell library contains cells with different threshold voltages. High-V<sub>th</sub> cells are slower but have very low leakage. Low-V<sub>th</sub> cells are fast but leaky. Synthesis tools use low-V<sub>th</sub> cells only on timing-critical paths and high-V<sub>th</sub> cells elsewhere to minimize leakage without impacting performance.</li>
-
-
-
-                            <li><strong>Power Gating:</strong> Entire blocks of the chip that are idle for long periods can be powered down completely by using high-V<sub>th</sub> "sleep" transistors that act as switches to cut off the connection to V<sub>DD</sub> or ground.</li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                </ul>
-
-
-
-            </section>
 
 
 
@@ -1667,374 +1535,122 @@
 
 
             <section class="scroll-reveal">
-
-
-
-                <h2>Timing Analysis in VLSI</h2>
-
-
-
-                <p>Ensuring that a digital design operates correctly at its target clock frequency is the goal of timing analysis. In a synchronous system, all operations are coordinated by a clock signal, and data must be successfully transmitted and captured between sequential elements (like flip-flops) within a single clock cycle. Static Timing Analysis (STA) is the industry-standard methodology for verifying this.</p>
-
-
-
-                <h3>7.1 Fundamental Timing Concepts for Sequential Elements</h3>
-
-
-
-                <p>The behavior of a flip-flop is governed by strict timing requirements relative to the active clock edge.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Setup Time (T<sub>su</sub>):</strong> This is the minimum amount of time that the data input (D) of a flip-flop must be stable before the arrival of the active clock edge. If the data changes within this setup window, the flip-flop may enter a metastable state and capture an incorrect value.</li>
-
-
-
-                    <li><strong>Hold Time (T<sub>h</sub>):</strong> This is the minimum amount of time that the data input (D) must remain stable after the arrival of the active clock edge. If the data changes within this hold window, the new value might corrupt the data that was supposed to be captured.</li>
-
-
-
-                    <li><strong>Clock-to-Q Delay (T<sub>cq</sub>):</strong> This is the propagation delay of the flip-flop itself—the time it takes for the output (Q) to reflect the captured data value after the active clock edge.</li>
-
-
-
-                </ul>
-
-
-
-                <h3>7.2 The Clock Signal: Skew and Jitter</h3>
-
-
-
-                <p>The clock signal is assumed to be a perfect, periodic signal in ideal analysis, but in reality, it is subject to variations that impact timing.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Clock Skew:</strong> This is the difference in the arrival time of the same clock edge at different flip-flops across the chip. It is a spatial variation caused by differences in the physical path (wire length and buffer delays) of the clock distribution network. A positive skew between a launching and capturing flip-flop helps with setup timing but hurts hold timing, while a negative skew does the opposite.</li>
-
-
-
-                    <li><strong>Clock Jitter:</strong> This is the deviation of a clock edge from its ideal position in time. It is a temporal variation caused by noise in the clock generation circuitry (e.g., PLLs) and power supply noise. Jitter effectively reduces the available time within a clock cycle and must be budgeted for in timing analysis.</li>
-
-
-
-                    <li><strong>Clock Uncertainty:</strong> In STA, a timing margin called clock uncertainty is used to model the combined effects of jitter and other unpredictable variations, effectively tightening the timing requirements to ensure a robust design.</li>
-
-
-
-                </ul>
-
-
-
-                <h3>7.3 Introduction to Static Timing Analysis (STA)</h3>
-
-
-
-                <p>STA is a method of verifying the timing of a design by analyzing all possible paths without performing circuit simulation. It is a cornerstone of modern digital design verification due to its speed and completeness.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Key Concepts:</strong>
-
-
-
-                        <ul>
-
-
-
-                            <li><strong>Timing Paths:</strong> STA decomposes the circuit into a collection of timing paths. Each path starts at a startpoint (an input port of the chip or the clock pin of a flip-flop) and ends at an endpoint (an output port or the data input pin of a flip-flop).</li>
-
-
-
-                            <li><strong>Arrival Time (AT):</strong> The time it takes for a signal to propagate from its startpoint to any given point along a path.</li>
-
-
-
-                            <li><strong>Required Arrival Time (RAT):</strong> The latest time a signal can arrive at a point without causing a timing violation.</li>
-
-
-
-                            <li><strong>Slack:</strong> The difference between the RAT and the AT. A positive slack indicates that timing is met with some margin, while a negative slack indicates a timing violation that must be fixed.</li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                    <li><strong>Setup and Hold Checks:</strong> STA performs two fundamental checks for every timing path between sequential elements.
-
-
-
-                        <ul>
-
-
-
-                            <li><strong>Setup Check (Maximum Delay Check):</strong> This check ensures that the data path is not too slow. Data launched from a flip-flop at one clock edge must arrive at the next flip-flop before its setup time window for the next clock edge. The analysis considers the longest possible delay through the combinational logic and the shortest possible delay for the clock path to the capturing flop (worst-case scenario). The setup slack is calculated as:<br>
-
-
-
-                            <code>Slack<sub>setup</sub> = (Clock Period + T<sub>skew</sub>) - (T<sub>cq</sub> + T<sub>logic,max</sub> + T<sub>su</sub>)</code></li>
-
-
-
-                            <li><strong>Hold Check (Minimum Delay Check):</strong> This check ensures that the data path is not too fast. New data launched from a flip-flop must not arrive at the next flip-flop so quickly that it violates the hold time of the data captured on the previous clock edge. The analysis considers the shortest possible delay through the combinational logic and the longest possible delay for the clock path to the capturing flop. The hold slack is calculated as:<br>
-
-
-
-                            <code>Slack<sub>hold</sub> = (T<sub>cq</sub> + T<sub>logic,min</sub>) - (T<sub>skew</sub> + T<sub>h</sub>)</code></li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                </ul>
-
-
-
-                <p>A fundamental tension exists between these two checks. The most common way to fix a setup violation is to make the logic path faster (e.g., by upsizing gates or using lower-V<sub>th</sub> cells). However, making the path faster increases the risk of creating a hold violation. Conversely, the standard way to fix a hold violation is to make the logic path slower by adding delay (e.g., inserting buffers). This, in turn, can introduce a setup violation. For this reason, timing closure is a complex, iterative optimization process performed by EDA tools, typically involving fixing setup violations first at the worst-case (slow) process corner, followed by fixing hold violations at the best-case (fast) process corner.</p>
-
-
-
+                <div class="mosfet-lab" aria-labelledby="mosfet-visual-lab">
+                    <div class="mosfet-lab-intro">
+                        <h2 id="mosfet-visual-lab">VLSI MOSFET Lab</h2>
+                        <p>Each plot has its own local sliders, so the output, transfer, and transconductance views can be explored independently.</p>
+                    </div>
+
+                    <div class="mosfet-chart-grid">
+                        <article class="mosfet-chart-card">
+                            <h3>Graph 1: I<sub>DS</sub> vs V<sub>DS</sub> at different V<sub>GS</sub></h3>
+                            <p>This is the classic output family. As V<sub>GS</sub> rises, the channel gets stronger, the current rises, and the knee shifts because saturation begins near V<sub>DS</sub> = V<sub>GS</sub> - V<sub>th</sub>.</p>
+                            <div class="mosfet-chart-layout">
+                                <svg class="mosfet-chart" id="mosfet-output-chart" role="img" aria-label="Drain current versus drain voltage at different gate voltages"></svg>
+                                <div class="mosfet-control-stack">
+                                    <div class="mosfet-control">
+                                        <label for="out-vth">V<sub>th</sub> <span id="out-vth-value" class="mosfet-readout">0.70 V</span></label>
+                                        <input id="out-vth" type="range" min="0.35" max="1.20" step="0.05" value="0.70">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="out-beta">&beta; <span id="out-beta-value" class="mosfet-readout">1.00 mA/V<sup>2</sup></span></label>
+                                        <input id="out-beta" type="range" min="0.40" max="2.40" step="0.05" value="1.00">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="out-lambda">&lambda; <span id="out-lambda-value" class="mosfet-readout">0.06 1/V</span></label>
+                                        <input id="out-lambda" type="range" min="0.00" max="0.20" step="0.01" value="0.06">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="out-highlight-vgs">Highlighted V<sub>GS</sub> <span id="out-highlight-vgs-value" class="mosfet-readout">2.40 V</span></label>
+                                        <input id="out-highlight-vgs" type="range" min="0.80" max="3.20" step="0.40" value="2.40">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="out-point-vgs">Marker V<sub>GS</sub> <span id="out-point-vgs-value" class="mosfet-readout">2.00 V</span></label>
+                                        <input id="out-point-vgs" type="range" min="0.00" max="3.30" step="0.05" value="2.00">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="out-point-vds">Marker V<sub>DS</sub> <span id="out-point-vds-value" class="mosfet-readout">1.20 V</span></label>
+                                        <input id="out-point-vds" type="range" min="0.00" max="3.30" step="0.05" value="1.20">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <span class="mosfet-readout-strong">Region: <span id="out-region">Saturation</span></span><br>
+                                        <span class="mosfet-readout">I<sub>DS</sub> = <span id="out-id">0.93 mA</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mosfet-caption-note">The highlighted curve tracks its own V<sub>GS</sub> setting, while the marker shows one operating point directly on the family.</p>
+                        </article>
+
+                        <article class="mosfet-chart-card">
+                            <h3>Graph 2: I<sub>DS</sub> vs V<sub>GS</sub> at different V<sub>DS</sub></h3>
+                            <p>This transfer family shows how the same device looks as the drain bias changes. A low V<sub>DS</sub> keeps the device in the linear region longer, while a higher V<sub>DS</sub> pushes the curve closer to saturation behavior.</p>
+                            <div class="mosfet-chart-layout">
+                                <svg class="mosfet-chart" id="mosfet-transfer-chart" role="img" aria-label="Drain current versus gate voltage at different drain voltages"></svg>
+                                <div class="mosfet-control-stack">
+                                    <div class="mosfet-control">
+                                        <label for="tr-vth">V<sub>th</sub> <span id="tr-vth-value" class="mosfet-readout">0.70 V</span></label>
+                                        <input id="tr-vth" type="range" min="0.35" max="1.20" step="0.05" value="0.70">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="tr-beta">&beta; <span id="tr-beta-value" class="mosfet-readout">1.00 mA/V<sup>2</sup></span></label>
+                                        <input id="tr-beta" type="range" min="0.40" max="2.40" step="0.05" value="1.00">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="tr-lambda">&lambda; <span id="tr-lambda-value" class="mosfet-readout">0.06 1/V</span></label>
+                                        <input id="tr-lambda" type="range" min="0.00" max="0.20" step="0.01" value="0.06">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="tr-highlight-vds">Highlighted V<sub>DS</sub> <span id="tr-highlight-vds-value" class="mosfet-readout">1.80 V</span></label>
+                                        <input id="tr-highlight-vds" type="range" min="0.40" max="3.00" step="0.20" value="1.80">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="tr-point-vgs">Marker V<sub>GS</sub> <span id="tr-point-vgs-value" class="mosfet-readout">2.00 V</span></label>
+                                        <input id="tr-point-vgs" type="range" min="0.00" max="3.30" step="0.05" value="2.00">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <span class="mosfet-readout-strong">I<sub>DS</sub>: <span id="tr-id">1.04 mA</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mosfet-caption-note">The transfer family responds to its own drain-bias slider, so it can be explored independently from the other plots.</p>
+                        </article>
+
+                        <article class="mosfet-chart-card">
+                            <h3>Graph 3: g<sub>m</sub> vs V<sub>GS</sub> at different V<sub>DS</sub></h3>
+                            <p>Transconductance tells you how much extra drain current you gain from a small change in gate voltage. Showing it as a drain-bias family makes the small-signal side of MOSFET behavior easier to connect to switching strength.</p>
+                            <div class="mosfet-chart-layout">
+                                <svg class="mosfet-chart" id="mosfet-gm-chart" role="img" aria-label="Transconductance versus gate voltage at different drain voltages"></svg>
+                                <div class="mosfet-control-stack">
+                                    <div class="mosfet-control">
+                                        <label for="gm-vth">V<sub>th</sub> <span id="gm-vth-value" class="mosfet-readout">0.70 V</span></label>
+                                        <input id="gm-vth" type="range" min="0.35" max="1.20" step="0.05" value="0.70">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="gm-beta">&beta; <span id="gm-beta-value" class="mosfet-readout">1.00 mA/V<sup>2</sup></span></label>
+                                        <input id="gm-beta" type="range" min="0.40" max="2.40" step="0.05" value="1.00">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="gm-lambda">&lambda; <span id="gm-lambda-value" class="mosfet-readout">0.06 1/V</span></label>
+                                        <input id="gm-lambda" type="range" min="0.00" max="0.20" step="0.01" value="0.06">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="gm-highlight-vds">Highlighted V<sub>DS</sub> <span id="gm-highlight-vds-value" class="mosfet-readout">1.80 V</span></label>
+                                        <input id="gm-highlight-vds" type="range" min="0.40" max="3.00" step="0.20" value="1.80">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <label for="gm-point-vgs">Marker V<sub>GS</sub> <span id="gm-point-vgs-value" class="mosfet-readout">2.00 V</span></label>
+                                        <input id="gm-point-vgs" type="range" min="0.00" max="3.30" step="0.05" value="2.00">
+                                    </div>
+                                    <div class="mosfet-control">
+                                        <span class="mosfet-readout-strong">g<sub>m</sub>: <span id="gm-gm">1.30 mS</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mosfet-caption-note">The transconductance plot has its own slider set, so its behavior can be adjusted without changing the other charts.</p>
+                        </article>
+                    </div>
+                </div>
             </section>
-
-
-
-            
-
-
-
-            <section class="scroll-reveal">
-
-
-
-                <h2>The Broader VLSI Context: From Design to Silicon</h2>
-
-
-
-                <p>The theoretical concepts of device physics, circuit operation, and timing analysis all converge within the practical framework of the VLSI design flow. This process transforms a high-level functional description into a physical layout ready for manufacturing. A successful design must not only be logically correct and meet performance targets but also be robust, reliable, and manufacturable.</p>
-
-
-
-                <h3>8.1 The VLSI Design Flow (RTL-to-GDSII)</h3>
-
-
-
-                <p>The modern automated design flow is a sequence of steps, each managed by sophisticated EDA tools, that progressively refine the design from abstract logic to concrete geometry.</p>
-
-
-
-                <ol>
-
-
-
-                    <li><strong>RTL Design:</strong> The functionality of the chip is described using a Hardware Description Language (HDL) like Verilog or VHDL.</li>
-
-
-
-                    <li><strong>Logic Synthesis:</strong> An EDA tool translates the RTL code into a gate-level netlist, which is an interconnection of standard cells (like NANDs, NORs, and flip-flops) from a specific technology library. This step involves logic optimization to meet initial timing, area, and power goals.</li>
-
-
-
-                    <li><strong>Floorplanning:</strong> This is the first step of physical design. The overall chip area is defined, large blocks (macros like memories and IP cores) are placed, and the power delivery network (PDN) is planned. A good floorplan is critical for avoiding problems later in the flow.</li>
-
-
-
-                    <li><strong>Placement:</strong> The standard cells from the netlist are placed into rows within the floorplan. The goal is to place connected cells close together to minimize wire length and routing congestion.</li>
-
-
-
-                    <li><strong>Clock Tree Synthesis (CTS):</strong> A balanced clock distribution network is built to deliver the clock signal to all sequential elements with minimal skew and acceptable insertion delay.</li>
-
-
-
-                    <li><strong>Routing:</strong> The metal wires that connect the terminals of the placed cells are created, following the connections specified in the netlist.</li>
-
-
-
-                    <li><strong>Physical Verification:</strong> The final layout is checked for design rule violations (DRC) and to ensure it matches the original netlist (LVS - Layout Versus Schematic).</li>
-
-
-
-                </ol>
-
-
-
-                <p>This flow is highly iterative. For instance, timing analysis is performed after each major step, and the results are used to guide further optimization. The placement of macros during floorplanning directly impacts the routability (congestion), power integrity (IR drop), and the structure of the clock tree, illustrating the deep interdependence of these stages.</p>
-
-
-
-                
-
-
-
-                <h3>8.2 Physical Design and Signal Integrity</h3>
-
-
-
-                <p>As designs operate at higher frequencies and lower voltages, physical effects that were once negligible become major concerns.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Congestion:</strong> This occurs when the demand for routing resources in a particular area exceeds the available supply of metal tracks. It is often caused by high local cell density or poor floorplanning, such as placing macros in a way that creates routing bottlenecks. To mitigate congestion, designers use placement blockages to prevent cells from being placed in sensitive areas and density screens to limit the cell density in a region.</li>
-
-
-
-                    <li><strong>IR Drop:</strong> The metal wires of the power delivery network have finite resistance. As cells draw current, a voltage drop (V = I &times; R) occurs along these wires. This IR drop means that cells farther from the power pads receive a lower effective supply voltage. Static IR drop is the average voltage drop, while dynamic IR drop is a transient drop caused by a large number of cells switching simultaneously. Severe IR drop can slow down cells, causing timing violations, or even lead to functional failure. Remedies include designing a robust PDN with wider power straps and inserting decoupling capacitors (decaps)—on-chip capacitors that act as local charge reservoirs to supply current during peak demand.</li>
-
-
-
-                </ul>
-
-
-
-
-
-
-
-                <h3>8.3 Reliability and Manufacturability</h3>
-
-
-
-                <p>A design must be robust not only to its own operational stresses but also to external events and the imperfections of the manufacturing process.</p>
-
-
-
-                <ul>
-
-
-
-                    <li><strong>Latch-up:</strong> The bulk CMOS structure contains parasitic bipolar transistors (a pnp and an npn) that can form a parasitic Silicon-Controlled Rectifier (SCR). If triggered by a transient current (e.g., from an I/O pin), this SCR can create a low-impedance path between V<sub>DD</sub> and ground, causing a short circuit that can permanently damage the chip. Latch-up is prevented through careful layout practices, such as including guard rings and well taps to collect stray carriers and provide low-resistance paths to the power rails.</li>
-
-
-
-                    <li><strong>Electrostatic Discharge (ESD):</strong> A high-voltage discharge from an external source (like a human body) can destroy the ultra-thin gate oxides of the transistors. To protect the internal core logic, I/O pads contain specialized protection circuits, including large diodes and ESD clamps, that are designed to safely shunt the high ESD current to ground.</li>
-
-
-
-                    <li><strong>Special Physical-Only Cells:</strong> The standard cell library includes many cells that have no logical function but are essential for manufacturability and reliability.
-
-
-
-                        <ul>
-
-
-
-                            <li><strong>Well Taps:</strong> Connect the n-well and p-substrate to the power rails to prevent latch-up.</li>
-
-
-
-                            <li><strong>End Caps:</strong> Placed at the ends of cell rows to ensure proper well continuity and terminate the rows correctly.</li>
-
-
-
-                            <li><strong>Filler Cells:</strong> Fill empty spaces in the cell rows to ensure continuity of power rails and meet manufacturing density rules.</li>
-
-
-
-                        </ul>
-
-
-
-                    </li>
-
-
-
-                    <li><strong>Engineering Change Orders (ECO):</strong> It is often necessary to fix functional bugs or timing violations late in the design cycle after the layout is complete. To avoid the massive cost and delay of redoing the entire physical design, an ECO process is used. Designers pre-populate the layout with spare cells (unused logic gates). An ECO can then be implemented by changing only the metal interconnect layers to wire these spare cells into the circuit to implement the required fix. This "metal-only" ECO is much faster and cheaper than a full mask set change.</li>
-
-
-
-                </ul>
-
-
-
-            </section>
-
-
-
-            
-
-
-
-            <section class="scroll-reveal">
-
-
-
-                <h2>Conclusions</h2>
-
-
-
-                <p>The journey from a single PN junction to a multi-billion transistor VLSI chip is a story of layered abstraction built upon a consistent foundation of semiconductor physics. The behavior of every digital circuit, from the simplest inverter to the most complex microprocessor, can be traced back to the fundamental principles of energy bands, carrier transport, and the voltage-controlled modulation of charge at a silicon-oxide interface.</p>
-
-
-
-                <p>This comprehensive guide has traversed this landscape, establishing several key conclusions for the aspiring VLSI designer:</p>
-
-
-
-                <ol>
-
-
-
-                    <li><strong>Physics Informs Design:</strong> A deep understanding of device physics is not merely academic; it is the basis for practical design decisions. Concepts like mobility difference directly dictate transistor sizing for symmetric inverters, while the body effect explains the need for careful sizing in stacked logic. Second-order effects like DIBL and velocity saturation are no longer secondary—they are the primary drivers of leakage power and current limitations in modern nodes.</li>
-
-
-
-                    <li><strong>CMOS Dominance is Built on Fundamental Advantages:</strong> The analysis of various inverter topologies reveals precisely why CMOS technology prevails. Its rail-to-rail output swing provides superior noise immunity, and its complementary structure results in near-zero static power consumption. These are not incremental improvements but order-of-magnitude advantages that have enabled the scaling of complex digital systems.</li>
-
-
-
-                    <li><strong>Performance is a System-Level, Path-Based Problem:</strong> Optimizing a single gate in isolation is a flawed strategy. The performance of a digital circuit is determined by the timing of its critical paths. A decision to upsize a gate to make it faster has a direct, and potentially negative, impact on the preceding gate by increasing its load. This inherent trade-off between a gate's drive strength and its input capacitance makes timing closure a holistic optimization problem, elegantly captured by the theory of Logical Effort and automated by sophisticated EDA tools.</li>
-
-
-
-                    <li><strong>Power is a First-Order Design Constraint:</strong> The exponential increase in power density forced a paradigm shift in VLSI design. Power is no longer an afterthought but a primary metric to be optimized alongside performance and area (PPA). The most effective low-power techniques, such as voltage scaling, clock gating, and power gating, require a deep understanding of the sources of power dissipation and must be considered from the earliest stages of architectural design.</li>
-
-
-
-                    <li><strong>Physical Design is the Convergence of Logic, Electrical, and Manufacturing Realities:</strong> The physical layout of a circuit is where abstract logic meets the laws of physics and the limitations of manufacturing. Issues like routing congestion, IR drop, latch-up, and ESD are not peripheral concerns; they are central challenges that determine whether a design will function reliably, or at all. The modern VLSI design flow is a process of co-optimization, where logical intent is continuously refined against physical constraints to produce a robust and manufacturable final product.</li>
-
-
-
-                </ol>
-
-
-
-                <p>For the student preparing for a career in VLSI physical design, this integrated perspective is crucial. An expert-level understanding is not just about knowing the "what" (e.g., what is setup time?) but the "why" (e.g., why does fixing a setup violation risk creating a hold violation?). It is the ability to connect a physical phenomenon like the body effect to a design choice like transistor sizing, and to understand how that choice ripples through the entire design, impacting power, performance, and area, that defines true expertise in this field.</p>
-
-
-
-            </section>
-
-
-
-
 
 
 
@@ -2108,7 +1724,7 @@
 
                         <section class="related-topics scroll-reveal">
                 <h3>Related Topics</h3>
-                <p>Use these connected concepts to move to the next stage in the physical design flow.</p>
+                <p>These connected concepts lead naturally into the next stage of the physical design flow.</p>
                 <ul class="related-links-grid">
                     <li><a href="/logic-synthesis/">Logic Synthesis</a></li>
                     <li><a href="/advanced-logic-synthesis/">Advanced Logic Synthesis</a></li>
@@ -2184,7 +1800,46 @@
 
 
 
-    <script type="application/ld+json">
+        <script>
+            (() => {
+                const lab = document.querySelector(".mosfet-lab");
+                if (!lab) {
+                    return;
+                }
+
+                let requested = false;
+                const loadLab = () => {
+                    if (requested) {
+                        return;
+                    }
+                    requested = true;
+                    const script = document.createElement("script");
+                    script.src = "/assets/js/cmos-fundamentals.js";
+                    script.async = true;
+                    script.onload = () => {
+                        if (typeof window.initCmosFundamentalsLab === "function") {
+                            window.initCmosFundamentalsLab();
+                        }
+                    };
+                    document.body.appendChild(script);
+                };
+
+                if ("IntersectionObserver" in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        if (entries.some((entry) => entry.isIntersecting)) {
+                            observer.disconnect();
+                            loadLab();
+                        }
+                    }, { rootMargin: "280px 0px" });
+                    observer.observe(lab);
+                    return;
+                }
+
+                loadLab();
+            })();
+        </script>
+
+<script type="application/ld+json">
 
 
 
@@ -2345,6 +2000,13 @@
 
 
 </html>
+
+
+
+
+
+
+
 
 
 

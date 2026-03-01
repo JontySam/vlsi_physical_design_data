@@ -82,10 +82,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2-family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2-family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
 
 
     <link rel="stylesheet" href="/main.css">
@@ -230,6 +230,25 @@
 
 
             <section class="scroll-reveal">
+
+<h2>Physical Design and Signal Integrity</h2>
+
+<p>As designs operate at higher frequencies and lower voltages, physical effects that were once negligible become major concerns.</p>
+
+<ul>
+
+                    <li><strong>IR Drop:</strong> The metal wires of the power delivery network have finite resistance. As cells draw current, a voltage drop (V = I &times; R) occurs along these wires. This IR drop means that cells farther from the power pads receive a lower effective supply voltage. Static IR drop is the average voltage drop, while dynamic IR drop is a transient drop caused by a large number of cells switching simultaneously. Severe IR drop can slow down cells, causing timing violations, or even lead to functional failure. Remedies include designing a robust PDN with wider power straps and inserting decoupling capacitors (decaps)-on-chip capacitors that act as local charge reservoirs to supply current during peak demand.</li>
+
+                </ul>
+
+            </section>
+
+
+
+
+
+
+<section class="scroll-reveal">
 
 
                 <h2>Related Topics</h2>

@@ -82,10 +82,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2-family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2-family=Lora:wght@400;600&family=Poppins:wght@600;700&display=swap"></noscript>
 
 
     <link rel="stylesheet" href="/main.css">
@@ -230,6 +230,173 @@
 
 
             <section class="scroll-reveal">
+
+<h2>Timing Analysis in VLSI</h2>
+
+
+
+                <p>Ensuring that a digital design operates correctly at its target clock frequency is the goal of timing analysis. In a synchronous system, all operations are coordinated by a clock signal, and data must be successfully transmitted and captured between sequential elements (like flip-flops) within a single clock cycle. Static Timing Analysis (STA) is the industry-standard methodology for verifying this.</p>
+
+
+
+                <h3>7.1 Fundamental Timing Concepts for Sequential Elements</h3>
+
+
+
+                <p>The behavior of a flip-flop is governed by strict timing requirements relative to the active clock edge.</p>
+
+
+
+                <ul>
+
+
+
+                    <li><strong>Setup Time (T<sub>su</sub>):</strong> This is the minimum amount of time that the data input (D) of a flip-flop must be stable before the arrival of the active clock edge. If the data changes within this setup window, the flip-flop may enter a metastable state and capture an incorrect value.</li>
+
+
+
+                    <li><strong>Hold Time (T<sub>h</sub>):</strong> This is the minimum amount of time that the data input (D) must remain stable after the arrival of the active clock edge. If the data changes within this hold window, the new value might corrupt the data that was supposed to be captured.</li>
+
+
+
+                    <li><strong>Clock-to-Q Delay (T<sub>cq</sub>):</strong> This is the propagation delay of the flip-flop itself-the time it takes for the output (Q) to reflect the captured data value after the active clock edge.</li>
+
+
+
+                </ul>
+
+
+
+                <h3>7.2 The Clock Signal: Skew and Jitter</h3>
+
+
+
+                <p>The clock signal is assumed to be a perfect, periodic signal in ideal analysis, but in reality, it is subject to variations that impact timing.</p>
+
+
+
+                <ul>
+
+
+
+                    <li><strong>Clock Skew:</strong> This is the difference in the arrival time of the same clock edge at different flip-flops across the chip. It is a spatial variation caused by differences in the physical path (wire length and buffer delays) of the clock distribution network. A positive skew between a launching and capturing flip-flop helps with setup timing but hurts hold timing, while a negative skew does the opposite.</li>
+
+
+
+                    <li><strong>Clock Jitter:</strong> This is the deviation of a clock edge from its ideal position in time. It is a temporal variation caused by noise in the clock generation circuitry (e.g., PLLs) and power supply noise. Jitter effectively reduces the available time within a clock cycle and must be budgeted for in timing analysis.</li>
+
+
+
+                    <li><strong>Clock Uncertainty:</strong> In STA, a timing margin called clock uncertainty is used to model the combined effects of jitter and other unpredictable variations, effectively tightening the timing requirements to ensure a robust design.</li>
+
+
+
+                </ul>
+
+
+
+                <h3>7.3 Introduction to Static Timing Analysis (STA)</h3>
+
+
+
+                <p>STA is a method of verifying the timing of a design by analyzing all possible paths without performing circuit simulation. It is a cornerstone of modern digital design verification due to its speed and completeness.</p>
+
+
+
+                <ul>
+
+
+
+                    <li><strong>Key Concepts:</strong>
+
+
+
+                        <ul>
+
+
+
+                            <li><strong>Timing Paths:</strong> STA decomposes the circuit into a collection of timing paths. Each path starts at a startpoint (an input port of the chip or the clock pin of a flip-flop) and ends at an endpoint (an output port or the data input pin of a flip-flop).</li>
+
+
+
+                            <li><strong>Arrival Time (AT):</strong> The time it takes for a signal to propagate from its startpoint to any given point along a path.</li>
+
+
+
+                            <li><strong>Required Arrival Time (RAT):</strong> The latest time a signal can arrive at a point without causing a timing violation.</li>
+
+
+
+                            <li><strong>Slack:</strong> The difference between the RAT and the AT. A positive slack indicates that timing is met with some margin, while a negative slack indicates a timing violation that must be fixed.</li>
+
+
+
+                        </ul>
+
+
+
+                    </li>
+
+
+
+                    <li><strong>Setup and Hold Checks:</strong> STA performs two fundamental checks for every timing path between sequential elements.
+
+
+
+                        <ul>
+
+
+
+                            <li><strong>Setup Check (Maximum Delay Check):</strong> This check ensures that the data path is not too slow. Data launched from a flip-flop at one clock edge must arrive at the next flip-flop before its setup time window for the next clock edge. The analysis considers the longest possible delay through the combinational logic and the shortest possible delay for the clock path to the capturing flop (worst-case scenario). The setup slack is calculated as:<br>
+
+
+
+                            <code>Slack<sub>setup</sub> = (Clock Period + T<sub>skew</sub>) - (T<sub>cq</sub> + T<sub>logic,max</sub> + T<sub>su</sub>)</code></li>
+
+
+
+                            <li><strong>Hold Check (Minimum Delay Check):</strong> This check ensures that the data path is not too fast. New data launched from a flip-flop must not arrive at the next flip-flop so quickly that it violates the hold time of the data captured on the previous clock edge. The analysis considers the shortest possible delay through the combinational logic and the longest possible delay for the clock path to the capturing flop. The hold slack is calculated as:<br>
+
+
+
+                            <code>Slack<sub>hold</sub> = (T<sub>cq</sub> + T<sub>logic,min</sub>) - (T<sub>skew</sub> + T<sub>h</sub>)</code></li>
+
+
+
+                        </ul>
+
+
+
+                    </li>
+
+
+
+                </ul>
+
+
+
+                <p>A fundamental tension exists between these two checks. The most common way to fix a setup violation is to make the logic path faster (e.g., by upsizing gates or using lower-V<sub>th</sub> cells). However, making the path faster increases the risk of creating a hold violation. Conversely, the standard way to fix a hold violation is to make the logic path slower by adding delay (e.g., inserting buffers). This, in turn, can introduce a setup violation. For this reason, timing closure is a complex, iterative optimization process performed by EDA tools, typically involving fixing setup violations first at the worst-case (slow) process corner, followed by fixing hold violations at the best-case (fast) process corner.</p>
+
+
+
+            </section>
+
+
+
+            
+
+
+
+            <section class="scroll-reveal">
+
+            </section>
+
+
+
+
+
+
+<section class="scroll-reveal">
 
 
                 <h2>Related Topics</h2>

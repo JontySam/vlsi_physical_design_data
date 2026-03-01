@@ -234,6 +234,29 @@
 
             <section class="scroll-reveal">
 
+<h2>Reliability and Manufacturability</h2>
+
+<p>A design must be robust not only to its own operational stresses but also to external events and the imperfections of the manufacturing process.</p>
+
+<ul>
+
+                    <li><strong>Latch-up:</strong> The bulk CMOS structure contains parasitic bipolar transistors (a pnp and an npn) that can form a parasitic Silicon-Controlled Rectifier (SCR). If triggered by a transient current (e.g., from an I/O pin), this SCR can create a low-impedance path between V<sub>DD</sub> and ground, causing a short circuit that can permanently damage the chip. Latch-up is prevented through careful layout practices, such as including guard rings and well taps to collect stray carriers and provide low-resistance paths to the power rails.</li>
+
+
+
+                    <li><strong>Electrostatic Discharge (ESD):</strong> A high-voltage discharge from an external source (like a human body) can destroy the ultra-thin gate oxides of the transistors. To protect the internal core logic, I/O pads contain specialized protection circuits, including large diodes and ESD clamps, that are designed to safely shunt the high ESD current to ground.</li>
+
+                </ul>
+
+            </section>
+
+
+
+
+
+
+<section class="scroll-reveal">
+
 
                 <h2>Related Topics</h2>
 
