@@ -251,7 +251,7 @@
 
 
         .concept-figure {
-            width: min(65%, 860px);
+            width: min(50%, 680px);
             margin: 1.5rem auto 2rem;
             scroll-margin-top: 6rem;
             padding: 1rem;
@@ -259,6 +259,18 @@
             border: 1px solid #dccfbd;
             border-radius: 18px;
             box-shadow: 0 10px 24px rgba(58, 46, 34, 0.07);
+        }
+
+        .concept-figure--small {
+            width: min(44%, 520px);
+        }
+
+        .concept-figure--medium {
+            width: min(50%, 680px);
+        }
+
+        .concept-figure--wide {
+            width: min(56%, 760px);
         }
 
         .concept-figure img {
@@ -277,6 +289,31 @@
         .concept-explainer {
             margin: 1rem 0 1.25rem;
             color: #4f463c;
+        }
+
+        pre {
+            margin: 1rem 0;
+            padding: 0.9rem 1rem;
+            overflow-x: auto;
+            background: #fffaf3;
+            border: 1px solid #e2d7c8;
+            border-radius: 14px;
+        }
+
+        pre code {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #2f2a24;
+            white-space: pre-wrap;
+        }
+
+        p > code,
+        li > code {
+            padding: 0.14rem 0.35rem;
+            background: #fffaf3;
+            border: 1px solid #e2d7c8;
+            border-radius: 8px;
         }
 
         .mosfet-lab {
@@ -398,7 +435,10 @@
         }
 
         @media (max-width: 768px) {
-            .concept-figure {
+            .concept-figure,
+            .concept-figure--small,
+            .concept-figure--medium,
+            .concept-figure--wide {
                 width: 100%;
                 margin: 1.25rem 0 1.75rem;
             }
@@ -552,12 +592,12 @@
 
                 <p class="concept-explainer">The doping story is easiest to follow with <a href="#fig-1">Figure 1</a> and <a href="#fig-2">Figure 2</a>. Figure 1 compares intrinsic, n-type, and p-type silicon in one view, while Figure 2 shows the same shift using the Fermi level. Together, they make the ideas of majority carriers and energy-band shift much easier to see.</p>
 
-                <figure class="concept-figure" id="fig-1">
+                <figure class="concept-figure concept-figure--medium" id="fig-1">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Intrinic vs Ntype vs Ptype (1).webp" alt="Intrinsic, n-type, and p-type semiconductor comparison" loading="lazy" decoding="async" width="704" height="384">
                     <figcaption><strong>Figure 1.</strong> Intrinsic silicon has balanced carriers. Donor doping creates electron-rich n-type material, while acceptor doping creates hole-rich p-type material.</figcaption>
                 </figure>
 
-                <figure class="concept-figure" id="fig-2">
+                <figure class="concept-figure concept-figure--small" id="fig-2">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Fermi level Positioning for P type and Ntype (1).webp" alt="Fermi level position in p-type and n-type semiconductor" loading="lazy" decoding="async" width="704" height="384">
                     <figcaption><strong>Figure 2.</strong> The Fermi level moves upward toward the conduction band in n-type material and downward toward the valence band in p-type material.</figcaption>
                 </figure>
@@ -572,7 +612,7 @@
 
 
 
-                    <li><strong>Intrinsic and Extrinsic Semiconductors:</strong> A pure semiconductor crystal is called an intrinsic semiconductor. At absolute zero temperature, its valence band is completely full and its conduction band is empty, making it a perfect insulator. At room temperature, thermal energy is sufficient to excite a small number of electrons into the conduction band, creating an equal number of electrons and holes. The intrinsic carrier concentration in silicon, denoted n<sub>i</sub>, is approximately 1.45Ã—10<sup>10</sup> cm<sup>-3</sup> at 300 K, which is too low for most practical applications. To dramatically increase the conductivity, semiconductors are intentionally doped with impurity atoms, a process that creates extrinsic semiconductors.
+                    <li><strong>Intrinsic and Extrinsic Semiconductors:</strong> A pure semiconductor crystal is called an intrinsic semiconductor. At absolute zero temperature, its valence band is completely full and its conduction band is empty, making it a perfect insulator. At room temperature, thermal energy is sufficient to excite a small number of electrons into the conduction band, creating an equal number of electrons and holes. The intrinsic carrier concentration in silicon, denoted n<sub>i</sub>, is approximately 1.45 &times; 10<sup>10</sup> cm<sup>-3</sup> at 300 K, which is too low for most practical applications. To dramatically increase the conductivity, semiconductors are intentionally doped with impurity atoms, a process that creates extrinsic semiconductors.
 
 
 
@@ -669,18 +709,16 @@
 
 
                 <p>The energy band diagram provides the clearest visualization of this equilibrium state. For the system to be in equilibrium, the Fermi level (E<sub>F</sub>) must be constant throughout the entire structure. To achieve this alignment, the energy bands of the p-type and n-type regions must shift relative to each other. The bands on the p-side are higher in energy than the bands on the n-side, resulting in a bending of the conduction and valence bands across the depletion region. This band bending creates a potential energy barrier of height q&phi;<sub>0</sub> that majority carriers must overcome to diffuse across the junction.</p>
-                <p>Equilibrium does not mean nothing is happening. It means two opposite processes cancel each other exactly. Diffusion pushes majority carriers across the junction, while the built-in electric field pulls minority carriers the other way by drift. The measured current is zero only because those two internal currents are equal. That idea matters, because biasing the junction simply breaks this balance.</p>
-
-                <p class="concept-explainer"><a href="#fig-3">Figure 3</a> shows the drift-versus-diffusion balance directly, and <a href="#fig-4">Figure 4</a> shows the same equilibrium through band bending. One picture focuses on carrier motion; the other focuses on the barrier that the carriers see.</p>
-
-                <figure class="concept-figure" id="fig-3">
-                    <img src="/assets/images/cmos_fundamentals/reference created images/Difusion vs Drift (1).webp" alt="Diffusion and drift balance in a PN junction" loading="lazy" decoding="async" width="704" height="384">
-                    <figcaption><strong>Figure 3.</strong> Diffusion pushes carriers across the junction because of concentration difference, while drift pulls them back because of the built-in electric field.</figcaption>
-                </figure>
-
-                <figure class="concept-figure" id="fig-4">
+                <figure class="concept-figure concept-figure--small" id="fig-4">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Energy Band Diagram PN diagram (1).webp" alt="Energy band diagram of a PN junction in equilibrium" loading="lazy" decoding="async" width="704" height="384">
                     <figcaption><strong>Figure 4.</strong> The bent bands show the barrier height directly. A flat Fermi level across the full structure is the signature of thermal equilibrium.</figcaption>
+                </figure>
+
+                <p>Equilibrium does not mean nothing is happening. It means two opposite processes cancel each other exactly. Diffusion pushes majority carriers across the junction, while the built-in electric field pulls minority carriers the other way by drift. The measured current is zero only because those two internal currents are equal. That idea matters, because biasing the junction simply breaks this balance. <a href="#fig-3">Figure 3</a> shows that balance in carrier-flow language rather than band language.</p>
+
+                <figure class="concept-figure concept-figure--medium" id="fig-3">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/Difusion vs Drift (1).webp" alt="Diffusion and drift balance in a PN junction" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 3.</strong> Diffusion pushes carriers across the junction because of concentration difference, while drift pulls them back because of the built-in electric field.</figcaption>
                 </figure>
 
                 <h3>1.3 The Junction Under Bias</h3>
@@ -711,7 +749,7 @@
 
                 <p class="concept-explainer"><a href="#fig-5">Figure 5</a> is worth reading next to the text because it turns the idea into one simple visual rule: forward bias lowers the barrier and encourages majority-carrier transport, while reverse bias widens the barrier and leaves only a small leakage path.</p>
 
-                <figure class="concept-figure" id="fig-5">
+                <figure class="concept-figure concept-figure--medium" id="fig-5">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Junction bias (1).webp" alt="Forward and reverse bias behavior of a PN junction" loading="lazy" decoding="async" width="704" height="384">
                     <figcaption><strong>Figure 5.</strong> Forward bias reduces the barrier for carrier motion. Reverse bias increases it and suppresses majority-carrier diffusion.</figcaption>
                 </figure>
@@ -741,58 +779,72 @@
 
                 <ul>
 
-                    <li><strong>nMOS Structure:</strong> An n-channel MOSFET (nMOS) uses a p-type body with two n+ regions for source and drain. The gate sits above a thin SiO<sub>2</sub> layer, and the silicon directly under the gate becomes the channel region. When the gate bias is large enough, an electron channel forms and connects source to drain.</li>
+                    <li><strong>nMOS Structure:</strong> An n-channel MOSFET (nMOS) uses a p-type body with two n+ regions for source and drain. The gate sits above a thin SiO<sub>2</sub> layer, and the silicon directly under the gate becomes the channel region. When the gate bias is large enough, an electron channel forms and connects source to drain. <a href="#fig-6">Figure 6</a> is the cleanest way to see where the source, drain, gate, oxide, and body actually sit in that stack.</li>
 
-                    <li><strong>pMOS Structure:</strong> A p-channel MOSFET (pMOS) is the complementary device. It uses an n-type body or n-well with p+ source and drain regions, and it conducts by forming a hole channel under the gate.</li>
+                </ul>
+
+                <figure class="concept-figure concept-figure--small" id="fig-6">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/N Type Mosfet (1).webp" alt="Cross section of an n-type MOSFET" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 6.</strong> In an nMOS transistor, a positive gate bias creates an electron channel between the n+ source and n+ drain regions.</figcaption>
+                </figure>
+
+                <ul>
+
+                    <li><strong>pMOS Structure:</strong> A p-channel MOSFET (pMOS) is the complementary device. It uses an n-type body or n-well with p+ source and drain regions, and it conducts by forming a hole channel under the gate. <a href="#fig-7">Figure 7</a> keeps the geometry familiar while flipping the carrier type and bias direction.</li>
+
+                </ul>
+
+                <figure class="concept-figure concept-figure--small" id="fig-7">
+                    <img src="/assets/images/cmos_fundamentals/reference created images/P type MOSFET (1).webp" alt="Cross section of a p-type MOSFET" loading="lazy" decoding="async" width="704" height="384">
+                    <figcaption><strong>Figure 7.</strong> The pMOS structure is the complement of nMOS. Its gate bias and carrier type reverse, but the channel-control idea is the same.</figcaption>
+                </figure>
+
+                <ul>
 
                     <li><strong>Why CMOS Uses Both:</strong> CMOS logic places nMOS and pMOS devices together so one side pulls a node down while the other pulls it up. That complementary action is the reason CMOS gives strong logic levels with low static power.</li>
 
                 </ul>
 
-                <p class="concept-explainer"><a href="#fig-6">Figure 6</a> shows the nMOS cross-section and <a href="#fig-7">Figure 7</a> shows the matching pMOS view. Looking at both back to back makes the complementary idea much easier to remember than reading the device names alone.</p>
-
-                <figure class="concept-figure" id="fig-6">
-                    <img src="/assets/images/cmos_fundamentals/reference created images/N Type Mosfet (1).webp" alt="Cross section of an n-type MOSFET" loading="lazy" decoding="async" width="704" height="384">
-                    <figcaption><strong>Figure 6.</strong> In an nMOS transistor, a positive gate bias creates an electron channel between the n+ source and n+ drain regions.</figcaption>
-                </figure>
-
-                <figure class="concept-figure" id="fig-7">
-                    <img src="/assets/images/cmos_fundamentals/reference created images/P type MOSFET (1).webp" alt="Cross section of a p-type MOSFET" loading="lazy" decoding="async" width="704" height="384">
-                    <figcaption><strong>Figure 7.</strong> The pMOS structure is the complement of nMOS. Its gate bias and carrier type reverse, but the channel-control idea is the same.</figcaption>
-                </figure>
-
                 <h3>2.2 The MOS Capacitor</h3>
 
-                <p>The MOS capacitor is the cleanest way to see how the gate controls silicon. It is just a gate electrode, a thin oxide, and a semiconductor body. But that simple stack is enough to show the full story. A gate voltage builds an electric field across the oxide, and that field changes the carrier concentration right at the silicon surface. For a p-type substrate, the response naturally falls into three modes.</p>
+                <p>The MOS capacitor is the cleanest way to see how the gate controls silicon. It is just a gate electrode, a thin oxide, and a semiconductor body. But that simple stack is enough to show the full story. A gate voltage builds an electric field across the oxide, and that field changes the carrier concentration right at the silicon surface. Before any external bias is applied, the structure sits in thermal equilibrium, shown in <a href="#fig-8">Figure 8</a>.</p>
 
-                <ul>
-
-                    <li><strong>Accumulation (V<sub>G</sub> &lt; 0):</strong> A negative voltage on the gate attracts the majority carriers (holes) from the p-type substrate to the silicon-oxide interface. This results in a higher concentration of holes at the surface than in the bulk, a condition known as accumulation. The energy bands at the surface bend upwards, indicating an increase in potential energy for electrons and a decrease for holes, which draws the valence band edge closer to the Fermi level.</li>
-
-                    <li><strong>Depletion (V<sub>G</sub> &gt; 0, small):</strong> A small positive voltage on the gate repels the mobile majority carriers (holes) from the interface, pushing them deeper into the substrate. This leaves behind a region near the surface that is depleted of mobile carriers and contains only fixed, negatively charged acceptor ions (N<sub>A</sub><sup>-</sup>). This is the depletion region. The energy bands at the surface bend downwards, indicating that the surface potential has increased.</li>
-
-                    <li><strong>Inversion (V<sub>G</sub> &gt; V<sub>th</sub>):</strong> As the positive gate voltage is increased further, the downward bending of the energy bands becomes more pronounced. Eventually, the gate voltage becomes strong enough to attract minority carriers (electrons) from the bulk to the surface. When the concentration of these electrons at the surface becomes greater than the concentration of holes in the bulk, the surface is said to be inverted. This thin layer of mobile electrons at the interface forms a conducting n-channel. The gate voltage at which strong inversion occurs is known as the threshold voltage (V<sub>th</sub>). In the energy band diagram, strong inversion corresponds to the point where the intrinsic Fermi level at the surface (E<sub>i</sub>) drops below the bulk Fermi level (E<sub>F</sub>), and the surface potential becomes equal in magnitude but opposite in sign to the bulk Fermi potential (&phi;<sub>S</sub> = -2&phi;<sub>F</sub>).</li>
-
-                </ul>
-
-                <p class="concept-explainer">Figures <a href="#fig-8">8</a> through <a href="#fig-11">11</a> show the full bias sequence: thermal equilibrium, accumulation, depletion, and inversion. Taken together, they show how gate bias reshapes the surface and finally creates a channel.</p>
-
-                <figure class="concept-figure" id="fig-8">
+                <figure class="concept-figure concept-figure--medium" id="fig-8">
                     <img src="/assets/images/cmos_fundamentals/reference created images/MOSFET Thermal Equillibrium.webp" alt="MOS structure at thermal equilibrium" loading="lazy" decoding="async" width="930" height="642">
                     <figcaption><strong>Figure 8.</strong> At thermal equilibrium, the surface charge is set by the natural balance of the structure, before any external gate bias reshapes the carrier distribution.</figcaption>
                 </figure>
 
-                <figure class="concept-figure" id="fig-9">
+                <p>From that starting point, the gate bias drives the surface through three recognizable regimes.</p>
+
+                <ul>
+
+                    <li><strong>Accumulation (V<sub>G</sub> &lt; 0):</strong> A negative voltage on the gate attracts the majority carriers (holes) from the p-type substrate to the silicon-oxide interface. This results in a higher concentration of holes at the surface than in the bulk, a condition known as accumulation. The energy bands at the surface bend upwards, indicating an increase in potential energy for electrons and a decrease for holes, which draws the valence band edge closer to the Fermi level. <a href="#fig-9">Figure 9</a> shows that crowding of holes right at the interface.</li>
+
+                </ul>
+
+                <figure class="concept-figure concept-figure--medium" id="fig-9">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Cmos Accumulation .webp" alt="MOS capacitor in accumulation" loading="lazy" decoding="async" width="911" height="633">
                     <figcaption><strong>Figure 9.</strong> Negative gate bias on a p-type body attracts holes toward the oxide interface, so the surface enters accumulation.</figcaption>
                 </figure>
 
-                <figure class="concept-figure" id="fig-10">
+                <ul>
+
+                    <li><strong>Depletion (V<sub>G</sub> &gt; 0, small):</strong> A small positive voltage on the gate repels the mobile majority carriers (holes) from the interface, pushing them deeper into the substrate. This leaves behind a region near the surface that is depleted of mobile carriers and contains only fixed, negatively charged acceptor ions (N<sub>A</sub><sup>-</sup>). This is the depletion region. The energy bands at the surface bend downwards, indicating that the surface potential has increased. <a href="#fig-10">Figure 10</a> captures that transition clearly: mobile holes retreat, but the fixed charge remains.</li>
+
+                </ul>
+
+                <figure class="concept-figure concept-figure--medium" id="fig-10">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Mosfet Depletion region Vg _0.webp" alt="MOS capacitor in depletion under small positive gate bias" loading="lazy" decoding="async" width="930" height="642">
                     <figcaption><strong>Figure 10.</strong> A small positive gate voltage pushes holes away from the surface and leaves behind fixed acceptor charge, creating depletion.</figcaption>
                 </figure>
 
-                <figure class="concept-figure" id="fig-11">
+                <ul>
+
+                    <li><strong>Inversion (V<sub>G</sub> &gt; V<sub>th</sub>):</strong> As the positive gate voltage is increased further, the downward bending of the energy bands becomes more pronounced. Eventually, the gate voltage becomes strong enough to attract minority carriers (electrons) from the bulk to the surface. When the concentration of these electrons at the surface becomes greater than the concentration of holes in the bulk, the surface is said to be inverted. This thin layer of mobile electrons at the interface forms a conducting n-channel. The gate voltage at which strong inversion occurs is known as the threshold voltage (V<sub>th</sub>). In the energy band diagram, strong inversion corresponds to the point where the intrinsic Fermi level at the surface (E<sub>i</sub>) drops below the bulk Fermi level (E<sub>F</sub>), and the surface potential becomes equal in magnitude but opposite in sign to the bulk Fermi potential (&phi;<sub>S</sub> = -2&phi;<sub>F</sub>). <a href="#fig-11">Figure 11</a> is the key transition, because this is where the surface stops behaving like depleted p-type silicon and starts behaving like a usable channel.</li>
+
+                </ul>
+
+                <figure class="concept-figure concept-figure--medium" id="fig-11">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Mosfet Inversion.webp" alt="MOS capacitor in inversion" loading="lazy" decoding="async" width="915" height="632">
                     <figcaption><strong>Figure 11.</strong> Once the gate field is strong enough, electrons gather at the surface and create the inversion layer that can act as a channel.</figcaption>
                 </figure>
@@ -846,18 +898,17 @@
 
 
 
-                <p>This mix of behaviors is exactly why the MOSFET is so useful. The same device can look like an open switch, a controlled resistor, or a current source depending on the operating point. In a CMOS inverter, one device may be charging or discharging the output in saturation while the other behaves more like a resistive path. Good digital switching comes from that interaction, not from a single simplified device mode.</p>
-                <p class="concept-explainer"><a href="#fig-12">Figure 12</a> shows the channel shape once a positive V<sub>DS</sub> is applied, and <a href="#fig-13">Figure 13</a> shows the pinch-off condition that marks deep saturation. Those two views connect the equations to the physical shape of the channel.</p>
-
-                <figure class="concept-figure" id="fig-12">
+                <figure class="concept-figure concept-figure--medium" id="fig-12">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Mosfet inversion Vds positive.webp" alt="MOSFET inversion layer with positive drain voltage" loading="lazy" decoding="async" width="920" height="672">
                     <figcaption><strong>Figure 12.</strong> Applying positive V<sub>DS</sub> tilts the channel potential, so the inversion layer becomes weaker near the drain than near the source.</figcaption>
                 </figure>
 
-                <figure class="concept-figure" id="fig-13">
+                <figure class="concept-figure concept-figure--small" id="fig-13">
                     <img src="/assets/images/cmos_fundamentals/reference created images/pinch off deep saturation.webp" alt="Pinch-off condition of a MOSFET in deep saturation" loading="lazy" decoding="async" width="801" height="722">
                     <figcaption><strong>Figure 13.</strong> At pinch-off, the drain end of the channel collapses first. Current still flows, but it is now controlled mainly by gate overdrive rather than by additional channel length.</figcaption>
                 </figure>
+
+                <p>This mix of behaviors is exactly why the MOSFET is so useful. The same device can look like an open switch, a controlled resistor, or a current source depending on the operating point. <a href="#fig-12">Figure 12</a> gives the physical picture of the channel under positive V<sub>DS</sub>, while <a href="#fig-13">Figure 13</a> shows the pinch-off condition that defines deep saturation. In a CMOS inverter, one device may be charging or discharging the output in saturation while the other behaves more like a resistive path. Good digital switching comes from that interaction, not from a single simplified device mode.</p>
 
 
 
@@ -901,15 +952,15 @@
 
 
 
-                    <li><strong>Surface Inversion Component (âˆ’2&phi;<sub>F</sub>):</strong> The portion of the gate voltage needed to bend the energy bands sufficiently to achieve strong inversion at the surface. &phi;<sub>F</sub> is the bulk Fermi potential of the substrate.</li>
+                    <li><strong>Surface Inversion Component (&minus;2&phi;<sub>F</sub>):</strong> The portion of the gate voltage needed to bend the energy bands sufficiently to achieve strong inversion at the surface. &phi;<sub>F</sub> is the bulk Fermi potential of the substrate.</li>
 
 
 
-                    <li><strong>Depletion Charge Component (âˆ’Q<sub>B0</sub>/C<sub>ox</sub>):</strong> The voltage required to offset the charge of the fixed ions in the depletion region that forms under the gate before inversion occurs.</li>
+                    <li><strong>Depletion Charge Component (&minus;Q<sub>B0</sub>/C<sub>ox</sub>):</strong> The voltage required to offset the charge of the fixed ions in the depletion region that forms under the gate before inversion occurs.</li>
 
 
 
-                    <li><strong>Fixed Oxide Charge Component (âˆ’Q<sub>ox</sub>/C<sub>ox</sub>):</strong> The voltage needed to compensate for fixed positive charges that are trapped at the silicon-oxide interface during fabrication.</li>
+                    <li><strong>Fixed Oxide Charge Component (&minus;Q<sub>ox</sub>/C<sub>ox</sub>):</strong> The voltage needed to compensate for fixed positive charges that are trapped at the silicon-oxide interface during fabrication.</li>
 
 
 
@@ -917,7 +968,7 @@
 
 
 
-                <p>Combining these terms gives the expression for the zero-bias threshold voltage, V<sub>T0</sub>: <code>V<sub>T0</sub> = &Phi;<sub>GC</sub> âˆ’ 2&phi;<sub>F</sub> âˆ’ Q<sub>B0</sub>/C<sub>ox</sub> âˆ’ Q<sub>ox</sub>/C<sub>ox</sub></code></p>
+                <p>Combining these terms gives the expression for the zero-bias threshold voltage, V<sub>T0</sub>: <code>V<sub>T0</sub> = &Phi;<sub>GC</sub> &minus; 2&phi;<sub>F</sub> &minus; Q<sub>B0</sub>/C<sub>ox</sub> &minus; Q<sub>ox</sub>/C<sub>ox</sub></code></p>
 
 
 
@@ -945,7 +996,7 @@
 
 
 
-                        <pre><code>V<sub>T</sub> = V<sub>T0</sub> + &gamma;(&radic;(|âˆ’2&phi;<sub>F</sub> + V<sub>SB</sub>|) âˆ’ &radic;(|2&phi;<sub>F</sub>|))</code></pre>
+                        <pre><code>V<sub>T</sub> = V<sub>T0</sub> + &gamma;(&radic;(|&minus;2&phi;<sub>F</sub> + V<sub>SB</sub>|) &minus; &radic;(|2&phi;<sub>F</sub>|))</code></pre>
 
 
 
@@ -989,14 +1040,14 @@
 
                 <p>That change matters because the transistor can begin to conduct more easily even though V<sub>GS</sub> has not increased. In plain terms, the apparent threshold voltage falls as V<sub>DS</sub> rises. The off-state gets leakier, subthreshold current increases, and bias conditions that once looked safe start to move. <a href="#fig-14">Figure 14</a> gives the quick intuition, and <a href="#fig-15">Figure 15</a> shows the same idea with a more detailed electrostatic picture.</p>
 
-                <figure class="concept-figure" id="fig-14">
+                <figure class="concept-figure concept-figure--small" id="fig-14">
                     <img src="/assets/images/cmos_fundamentals/reference created images/DIBIL short.webp" alt="Short explanation view of drain-induced barrier lowering" loading="lazy" decoding="async" width="853" height="545">
                     <figcaption><strong>Figure 14.</strong> DIBL makes the off-state barrier smaller, so the transistor starts leaking more current as the drain voltage rises.</figcaption>
                 </figure>
 
                 <p>Figure 14 gives the quick picture: a stronger drain does not just wait at the end of the channel. It reaches toward the source and makes it easier for carriers to enter.</p>
 
-                <figure class="concept-figure" id="fig-15">
+                <figure class="concept-figure concept-figure--medium" id="fig-15">
                     <img src="/assets/images/cmos_fundamentals/reference created images/DIBIL.webp" alt="Detailed drain-induced barrier lowering diagram" loading="lazy" decoding="async" width="853" height="540">
                     <figcaption><strong>Figure 15.</strong> This detailed view shows the real issue in a short channel: the drain starts helping the gate shape the barrier, which weakens gate control.</figcaption>
                 </figure>
@@ -1009,12 +1060,12 @@
 
                 <p>Under that field, band-to-band tunneling can generate carriers near the gate-drain overlap region. That means leakage can appear even when the transistor is supposed to be off. The important distinction is that the current is born near the drain edge, not simply because the entire channel barrier has dropped. <a href="#fig-16">Figure 16</a> and <a href="#fig-17">Figure 17</a> make that local high-field picture much easier to see.</p>
 
-                <figure class="concept-figure" id="fig-16">
+                <figure class="concept-figure concept-figure--medium" id="fig-16">
                     <img src="/assets/images/cmos_fundamentals/reference created images/GIDIL 1.webp" alt="Gate-induced drain leakage illustration" loading="lazy" decoding="async" width="875" height="550">
                     <figcaption><strong>Figure 16.</strong> GIDL is a field-driven leakage effect near the drain-side edge of the gate, not just a simple channel-conduction problem.</figcaption>
                 </figure>
 
-                <figure class="concept-figure" id="fig-17">
+                <figure class="concept-figure concept-figure--small" id="fig-17">
                     <img src="/assets/images/cmos_fundamentals/reference created images/GIDIL 2 (1).webp" alt="Second view of gate-induced drain leakage" loading="lazy" decoding="async" width="895" height="1131">
                     <figcaption><strong>Figure 17.</strong> The second GIDL image reinforces that overlap regions and edge fields matter strongly in scaled devices.</figcaption>
                 </figure>
@@ -1112,11 +1163,11 @@
 
 
 
-                            <li>Low Noise Margin (NM<sub>L</sub>): NM<sub>L</sub> = V<sub>IL</sub> âˆ’ V<sub>OL</sub></li>
+                            <li>Low Noise Margin (NM<sub>L</sub>): NM<sub>L</sub> = V<sub>IL</sub> &minus; V<sub>OL</sub></li>
 
 
 
-                            <li>High Noise Margin (NM<sub>H</sub>): NM<sub>H</sub> = V<sub>OH</sub> âˆ’ V<sub>IH</sub></li>
+                            <li>High Noise Margin (NM<sub>H</sub>): NM<sub>H</sub> = V<sub>OH</sub> &minus; V<sub>IH</sub></li>
 
 
 
@@ -1244,7 +1295,7 @@
 
                 <p class="concept-explainer">Delay is never set by an ideal load alone. <a href="#fig-18">Figure 18</a> marks the extra capacitances that sit around a real MOSFET, including overlap capacitance, junction capacitance, and gate capacitance. Every transition has to charge or discharge those hidden capacitors too.</p>
 
-                <figure class="concept-figure" id="fig-18">
+                <figure class="concept-figure concept-figure--medium" id="fig-18">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Nmos Parasitic Cap .drawio.webp" alt="Parasitic capacitances around an nMOS transistor" loading="lazy" decoding="async" width="762" height="311">
                     <figcaption><strong>Figure 18.</strong> Real MOSFETs carry several parasitic capacitances. Those hidden capacitors slow switching and add directly to dynamic power.</figcaption>
                 </figure>
