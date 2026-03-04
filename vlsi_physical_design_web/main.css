@@ -249,7 +249,17 @@ header#main-header.is-scrolled {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    gap: 0.65rem;
     line-height: 1;
+}
+
+.logo img {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
 }
 
 
@@ -1778,6 +1788,31 @@ ol li::before {
     letter-spacing: -0.01em;
 }
 
+.site-brand {
+    margin: 0;
+}
+
+.site-brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--text-heading);
+    text-decoration: none;
+}
+
+.site-brand-link span {
+    display: inline-block;
+}
+
+.site-brand-mark {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+
 
 
 .site-header p {
@@ -2107,6 +2142,16 @@ ol li::before {
         margin-bottom: 1.5rem;
 
 
+    }
+
+    .site-brand-link {
+        justify-content: center;
+        gap: 0.7rem;
+    }
+
+    .site-brand-mark {
+        width: 3rem;
+        height: 3rem;
     }
 
 
