@@ -253,12 +253,19 @@ header#main-header.is-scrolled {
     line-height: 1;
 }
 
+.logo:link,
+.logo:visited,
+.logo:hover,
+.logo:active {
+    color: var(--text-heading);
+    text-decoration: none;
+}
+
 .logo img {
     display: block;
     width: 2.5rem;
     height: 2.5rem;
     object-fit: contain;
-    border-radius: 0.75rem;
     flex-shrink: 0;
 }
 
@@ -1800,8 +1807,17 @@ ol li::before {
     text-decoration: none;
 }
 
+.site-brand-link:link,
+.site-brand-link:visited,
+.site-brand-link:hover,
+.site-brand-link:active {
+    color: var(--text-heading);
+    text-decoration: none;
+}
+
 .site-brand-link span {
     display: inline-block;
+    color: var(--text-heading);
 }
 
 .site-brand-mark {
@@ -1809,7 +1825,6 @@ ol li::before {
     width: 3.5rem;
     height: 3.5rem;
     object-fit: contain;
-    border-radius: 1rem;
     flex-shrink: 0;
 }
 
