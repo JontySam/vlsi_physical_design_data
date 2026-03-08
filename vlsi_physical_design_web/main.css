@@ -257,8 +257,13 @@ header#main-header.is-scrolled {
 .logo:visited,
 .logo:hover,
 .logo:active {
-    color: var(--text-heading);
-    text-decoration: none;
+    color: var(--text-heading) !important;
+    text-decoration: none !important;
+}
+
+.logo span {
+    color: var(--accent-primary) !important;
+    text-decoration: none !important;
 }
 
 .logo img {
@@ -1811,13 +1816,14 @@ ol li::before {
 .site-brand-link:visited,
 .site-brand-link:hover,
 .site-brand-link:active {
-    color: var(--text-heading);
-    text-decoration: none;
+    color: var(--text-heading) !important;
+    text-decoration: none !important;
 }
 
 .site-brand-link span {
     display: inline-block;
-    color: var(--text-heading);
+    color: var(--text-heading) !important;
+    text-decoration: none !important;
 }
 
 .site-brand-mark {

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/main.css?v=20260303-brandfix">
 
 
 
@@ -276,6 +276,23 @@
 
         .concept-figure--wide {
             width: min(56%, 760px);
+        }
+
+        .concept-figure-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .concept-figure-row .concept-figure {
+            width: 100%;
+            margin: 0;
+            max-width: 220px;
+        }
+
+        .concept-figure-row .concept-figure figcaption {
+            font-size: 0.85rem;
         }
 
         .concept-figure img {
@@ -448,6 +465,10 @@
                 margin: 1.25rem 0 1.75rem;
             }
 
+            .concept-figure-row {
+                grid-template-columns: 1fr;
+            }
+
             .mosfet-lab {
                 padding: 1.1rem;
             }
@@ -594,11 +615,34 @@
 
                 <h3>1.1 Semiconductor Physics and the Flow of Electricity</h3>
 
+                <p>Before we talk about gates and transistors, start with two short questions: what is an energy band, and why does it matter? In solid materials, this decides whether electrical current flows like a flood, barely dribbles, or sits in-between.</p>
 
+                <p><strong>What is an energy band, and how does this affect conductivity?</strong> A single atom has isolated energy levels for electrons. Put many atoms in a crystal, and those levels broaden into continuous ranges called energy bands. Lets start with a single electron in an atom. Since energy levels are discrete, it occupies a certain level. When many atoms form a crystal, these levels combine and arrange into valence and conduction bands. What does this mean? The electrons in the outermost orbit of an atom that are still bound to the atom fall into the valence band, and electrons that are free from the atom fall into the conduction band. We can only get current from free electrons. Electrons conduct only if they can occupy energy states where they are free to move.</p>
 
-                <p>The electrical behavior of a solid depends on how its atoms are arranged and on which energy states its electrons are allowed to occupy. In a single atom, those states are discrete. In a crystal, where a huge number of atoms sit in a regular lattice, the same states spread out into bands. That shift from isolated energy levels to energy bands is the starting point for understanding why some materials conduct easily, some barely conduct at all, and silicon sits in the useful middle.</p>
+                <ul>
+                    <li><strong>Conductor:</strong> Conduction happens easily because electrons can move freely between energy states. Metals are the classic example.</li>
+                    <li><strong>Insulator:</strong> Conduction is very difficult because the gap between occupied and free states is too large for electrons to cross.</li>
+                    <li><strong>Semiconductor:</strong> Conduction is moderate and controllable because the energy gap is small enough to cross under the right conditions.</li>
+                </ul>
 
-                <p class="concept-explainer">The doping story is easiest to follow with <a href="#fig-1">Figure 1</a> and <a href="#fig-2">Figure 2</a>. Figure 1 compares intrinsic, n-type, and p-type silicon in one view, while Figure 2 shows the same shift using the Fermi level. Together, they make the ideas of majority carriers and energy-band shift much easier to see.</p>
+                <div class="concept-figure-row">
+                    <figure class="concept-figure" id="fig-band-atom">
+                        <img src="/assets/images/cmos_fundamentals/Energy bands from atom .jpg" alt="Energy bands formed from atomic levels" loading="lazy" decoding="async" width="704" height="384">
+                        <figcaption><strong>Figure A.</strong> Atom-level energy levels spreading into energy bands as atoms join into a crystal.</figcaption>
+                    </figure>
+
+                    <figure class="concept-figure" id="fig-band-material">
+                        <img src="/assets/images/cmos_fundamentals/energy bands  of semiconductors and insulators and conductors .jpg" alt="Band structures for conductor, insulator, and semiconductor" loading="lazy" decoding="async" width="704" height="384">
+                        <figcaption><strong>Figure B.</strong> Conductor, insulator, and semiconductor band structures and how the gap size changes conductivity.</figcaption>
+                    </figure>
+
+                    <figure class="concept-figure" id="fig-band-formation">
+                        <img src="/assets/images/cmos_fundamentals/formation of different bands.jpg" alt="Formation of different energy bands in materials" loading="lazy" decoding="async" width="704" height="384">
+                        <figcaption><strong>Figure C.</strong> Different band-shape cases from atomic levels to valence and conduction bands.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="concept-explainer">Review <a href="#fig-band-atom">Figure A</a>, <a href="#fig-band-material">Figure B</a>, and <a href="#fig-band-formation">Figure C</a> first, then use <a href="#fig-1">Figure 1</a> and <a href="#fig-2">Figure 2</a> to connect band concepts with n-type and p-type behavior.</p>
 
                 <figure class="concept-figure concept-figure--medium" id="fig-1">
                     <img src="/assets/images/cmos_fundamentals/reference created images/Intrinic vs Ntype vs Ptype (1).webp" alt="Intrinsic, n-type, and p-type semiconductor comparison" loading="lazy" decoding="async" width="704" height="384">
@@ -610,71 +654,26 @@
                     <figcaption><strong>Figure 2.</strong> The Fermi level moves upward toward the conduction band in n-type material and downward toward the valence band in p-type material.</figcaption>
                 </figure>
 
-
-
                 <ul>
+                    <li><strong>Energy Bands and the Band Gap:</strong> In silicon-like semiconductors, two major bands dominate: the valence band (E<sub>v</sub>) and the conduction band (E<sub>c</sub>). The gap between them, the band gap E<sub>g</sub>, for silicon at room temperature is about 1.12 eV. To carry current, an electron must gain enough energy to jump from the valence band into the conduction band. That jump leaves a vacancy in the valence band, called a hole, which behaves like a positive mobile charge carrier.</li>
 
-
-
-                    <li><strong>Energy Bands and the Band Gap:</strong> In a semiconductor like silicon (Si), two primary energy bands dictate its electrical behavior: the valence band (E<sub>v</sub>) and the conduction band (E<sub>c</sub>). The valence band represents the energy levels of the outermost electrons that are bound to their respective atoms. The conduction band represents the energy levels of electrons that have broken free from their atomic bonds and are able to move throughout the crystal, thereby conducting electricity. These two bands are separated by a forbidden energy range known as the band gap (E<sub>g</sub>). For silicon at room temperature, the band gap is approximately 1.12 eV. For an electron to conduct electricity, it must gain enough energy to jump from the valence band, across the band gap, and into the conduction band. When this occurs, it leaves behind a vacancy in the valence band, known as a hole, which can be considered a mobile positive charge carrier.</li>
-
-
-
-                    <li><strong>Intrinsic and Extrinsic Semiconductors:</strong> A pure semiconductor crystal is called an intrinsic semiconductor. At absolute zero temperature, its valence band is completely full and its conduction band is empty, making it a perfect insulator. At room temperature, thermal energy is sufficient to excite a small number of electrons into the conduction band, creating an equal number of electrons and holes. The intrinsic carrier concentration in silicon, denoted n<sub>i</sub>, is approximately 1.45 &times; 10<sup>10</sup> cm<sup>-3</sup> at 300 K, which is too low for most practical applications. To dramatically increase the conductivity, semiconductors are intentionally doped with impurity atoms, a process that creates extrinsic semiconductors.
-
-
+                    <li><strong>Intrinsic and Extrinsic Semiconductors:</strong> An intrinsic semiconductor is a pure crystal with no intentional dopants. At room temperature, a small number of electrons are thermally promoted into the conduction band, creating equal electrons and holes. The intrinsic carrier concentration in silicon is about 1.45 &times; 10<sup>10</sup> cm<sup>-3</sup> at 300 K, which is usually too low for practical circuits. Doping raises conductivity: extrinsic n-type or p-type materials are created by adding controlled impurities.
 
                         <ul>
-
-
-
-                            <li><strong>N-type Doping:</strong> Introducing pentavalent atoms (e.g., Phosphorus, Arsenic), which have five valence electrons, into the silicon lattice creates an excess of free electrons. These impurity atoms are called donors. The energy level of these donor electrons is very close to the conduction band, so they are easily excited into it, becoming mobile charge carriers. In an n-type semiconductor, electrons are the majority carriers and holes are the minority carriers.</li>
-
-
-
-                            <li><strong>P-type Doping:</strong> Introducing trivalent atoms (e.g., Boron), which have three valence electrons, creates a deficiency of one electron, or a hole. These impurity atoms are called acceptors. The energy level of these acceptor states is very close to the valence band, making it easy for a valence electron to move into this state, effectively creating a mobile hole. In a p-type semiconductor, holes are the majority carriers and electrons are the minority carriers.</li>
-
-
-
+                            <li><strong>N-type Doping:</strong> Pentavalent impurities (for example, phosphorus or arsenic) add electrons. These donors create extra mobile electrons, so electrons become majority carriers.</li>
+                            <li><strong>P-type Doping:</strong> Trivalent impurities (for example, boron) create holes by accepting an electron. These acceptors increase hole concentration, so holes become majority carriers.</li>
                         </ul>
-
-
-
                     </li>
 
+                     <li><strong>The Fermi Level:</strong> The Fermi level E<sub>F</sub> is the energy level that marks the 50% electron occupancy probability at thermal equilibrium. In intrinsic silicon it is near mid-gap. In n-type material, E<sub>F</sub> shifts upward toward E<sub>c</sub>; in p-type, it shifts downward toward E<sub>v</sub>.</li>
 
-
-                     <li><strong>The Fermi Level:</strong> The Fermi level (E<sub>F</sub>) is a conceptual energy level that represents the statistical probability of an energy state being occupied by an electron. In an intrinsic semiconductor, E<sub>F</sub> lies near the middle of the band gap. Doping shifts the Fermi level: in an n-type material, E<sub>F</sub> moves closer to the conduction band, while in a p-type material, it moves closer to the valence band. This shift is a direct consequence of the altered carrier concentrations and is a key concept for understanding the behavior of semiconductor junctions.</li>
-
-
-
-                     <li><strong>Carrier Transport Mechanisms:</strong> The movement of charge carriers (electrons and holes) constitutes the flow of electricity. There are two primary mechanisms for this transport:
-
-
-
+                     <li><strong>Carrier Transport Mechanisms:</strong> The movement of charge carriers (electrons and holes) is how electricity flows.
                         <ol>
-
-
-
-                           <li><strong>Drift:</strong> The movement of charge carriers under the influence of an applied electric field (E). Electrons drift in the direction opposite to the field, while holes drift in the same direction. The resulting drift current density is proportional to the electric field and the carrier concentration.</li>
-
-
-
-                           <li><strong>Diffusion:</strong> The movement of charge carriers from a region of high concentration to a region of low concentration. This movement is a natural statistical process driven by the concentration gradient and does not require an electric field. The resulting diffusion current is proportional to the gradient of the carrier concentration.</li>
-
-
-
+                           <li><strong>Drift:</strong> Carriers move when an electric field is applied. Electrons drift opposite the field direction; holes drift in the same direction.</li>
+                           <li><strong>Diffusion:</strong> Carriers move from regions of high concentration to low concentration, even without an external field.</li>
                         </ol>
-
-
-
                      </li>
-
-
-
                 </ul>
-
-
 
                 <p>The interplay between drift and diffusion is the central principle governing the operation of the PN junction.</p>
 
@@ -2059,6 +2058,8 @@
 
 
 </html>
+
+
 
 
 
